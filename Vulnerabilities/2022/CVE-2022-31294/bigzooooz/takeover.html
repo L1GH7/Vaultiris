@@ -1,0 +1,34 @@
+ 
+<!-- Replace form action URL with the target's URL -->
+  <form action="http://localhost/odfs/classes/Users.php?f=save" method="post" id="manage-user">	
+        <!-- to takeover an existing account, provide the accound ID .. or keep empty to create new account -->
+				<input type="text" name="id" value="" placeholder="Keep empty if you want to create new user / put user ID to edit existing user">
+				<div class="form-group">
+					<label for="name">First Name</label>
+					<input type="text" name="firstname" id="firstname" class="form-control" value="" required>
+				</div>
+				<div class="form-group">
+					<label for="name">Middle Name</label>
+					<input type="text" name="middlename" id="middlename" class="form-control" value="">
+				</div>
+				<div class="form-group">
+					<label for="name">Last Name</label>
+					<input type="text" name="lastname" id="lastname" class="form-control" value="" required>
+				</div>
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input type="text" name="username" id="username" class="form-control" value="" required  autocomplete="off">
+				</div>
+				<div class="form-group">
+					<label for="password"> Password</label>
+					<input type="password" name="password" id="password" class="form-control" value="" autocomplete="off">
+        </div>
+         <div class="form-group">
+          <label for="type" class="control-label">Type</label>
+          <select name="type" id="type" class="form-control form-control-sm rounded-0" required>
+            <option value="1" >Administrator</option>
+            <option value="2" >Registered User</option>
+          </select>
+        </div>
+        <button type="submit">Save</button>
+	</form>

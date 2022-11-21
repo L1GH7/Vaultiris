@@ -1,0 +1,6 @@
+requests
+re
+wx
+base64
+http.client
+urllib3

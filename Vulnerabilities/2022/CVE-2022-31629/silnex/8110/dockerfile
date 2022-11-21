@@ -1,0 +1,7 @@
+FROM php:8.1.10-cli
+
+WORKDIR /app
+
+CMD ["php", "-S", "0.0.0.0:8110", "-t", "/app"]
+
+EXPOSE 8110

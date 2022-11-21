@@ -1,0 +1,6 @@
+[package]
+script_dir = scripts
+test_command = cd testing && btest -c btest.cfg
+summary =  Detection for CVE-2022-3602 - OpenSSL RCE/DOC v3.0.0 - v3.0.6
+description = CVE-2022-3602 exploit Detection
+

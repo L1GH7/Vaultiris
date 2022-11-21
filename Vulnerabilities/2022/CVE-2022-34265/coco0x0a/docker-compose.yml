@@ -1,0 +1,25 @@
+version: "3.0"
+
+services:
+  app:
+    container_name: CVE-2022-34265-v4.0.5
+    build: ./
+    ports:
+      - 8000:8000
+    depends_on:
+      mysql:
+        condition: service_healthy
+    links:
+      - mysql
+    command: bash -c "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+
+  mysql:
+    image: mysql:5.7
+    container_name: CVE-2022-34265-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: lab
+      MYSQL_DATABASE: lab
+    healthcheck:
+      test: ["CMD", 'mysqladmin', 'ping', '-h', 'localhost', '-u', '$MYSQL_USER', '-p$MYSQL_ROOT_PASSWORD']
+      timeout: 5s
+      retries: 5
