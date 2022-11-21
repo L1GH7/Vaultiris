@@ -1,5 +1,5 @@
 
-# Vaultiris CVE Monitor ![Version](https://img.shields.io/badge/version-1.0-blue.svg)
+# Vaultiris• CVE Monitor ![Version](https://img.shields.io/badge/version-1.0-blue.svg)
 
 > Automated CVE Monitoring - Used for POC Identification and CVE Details
 
