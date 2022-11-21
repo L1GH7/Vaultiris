@@ -1,0 +1,1816 @@
+ Volume in drive F is Share
+ Volume Serial Number is BA79-F0D5
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37201\AgainstTheLight
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37201\AgainstTheLight\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37201\AgainstTheLight\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37201\AgainstTheLight\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37201\AgainstTheLight\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37201\AgainstTheLight\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37201\AgainstTheLight\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37202\AgainstTheLight
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37202\AgainstTheLight\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37202\AgainstTheLight\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37202\AgainstTheLight\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37202\AgainstTheLight\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37202\AgainstTheLight\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37202\AgainstTheLight\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37203\AgainstTheLight
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37203\AgainstTheLight\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37203\AgainstTheLight\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37203\AgainstTheLight\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37203\AgainstTheLight\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37203\AgainstTheLight\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37203\AgainstTheLight\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37204\AgainstTheLight
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37204\AgainstTheLight\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37204\AgainstTheLight\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37204\AgainstTheLight\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37204\AgainstTheLight\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37204\AgainstTheLight\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37204\AgainstTheLight\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37205\AgainstTheLight
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37205\AgainstTheLight\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37205\AgainstTheLight\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37205\AgainstTheLight\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37205\AgainstTheLight\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37205\AgainstTheLight\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37205\AgainstTheLight\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37207\AgainstTheLight
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37207\AgainstTheLight\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37207\AgainstTheLight\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37207\AgainstTheLight\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37207\AgainstTheLight\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37207\AgainstTheLight\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37207\AgainstTheLight\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37208\AgainstTheLight
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37208\AgainstTheLight\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37208\AgainstTheLight\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37208\AgainstTheLight\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37208\AgainstTheLight\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37208\AgainstTheLight\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37208\AgainstTheLight\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\nidhi7598
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\nidhi7598\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\nidhi7598\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\nidhi7598\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\nidhi7598\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\nidhi7598\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\nidhi7598\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\xen0bit
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\xen0bit\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\xen0bit\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\xen0bit\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\xen0bit\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\xen0bit\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37434\xen0bit\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37703\MaherAzzouzi
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37703\MaherAzzouzi\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37703\MaherAzzouzi\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37703\MaherAzzouzi\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37703\MaherAzzouzi\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37703\MaherAzzouzi\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-37703\MaherAzzouzi\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38553\4websecurity
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38553\4websecurity\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38553\4websecurity\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38553\4websecurity\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38553\4websecurity\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38553\4websecurity\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38553\4websecurity\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38577\sornram9254
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38577\sornram9254\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38577\sornram9254\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38577\sornram9254\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38577\sornram9254\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38577\sornram9254\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38577\sornram9254\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38789\ProxyStaffy
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38789\ProxyStaffy\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38789\ProxyStaffy\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38789\ProxyStaffy\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38789\ProxyStaffy\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38789\ProxyStaffy\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-38789\ProxyStaffy\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39196\DayiliWaseem
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39196\DayiliWaseem\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39196\DayiliWaseem\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39196\DayiliWaseem\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39196\DayiliWaseem\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39196\DayiliWaseem\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39196\DayiliWaseem\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\its-arun
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\its-arun\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\its-arun\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\its-arun\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\its-arun\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\its-arun\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\its-arun\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\PyterSmithDarkGhost
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\PyterSmithDarkGhost\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\PyterSmithDarkGhost\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\PyterSmithDarkGhost\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\PyterSmithDarkGhost\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\PyterSmithDarkGhost\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\PyterSmithDarkGhost\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\TheCryingGame
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\TheCryingGame\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\TheCryingGame\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\TheCryingGame\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\TheCryingGame\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\TheCryingGame\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39197\TheCryingGame\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3942\maikroservice
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3942\maikroservice\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3942\maikroservice\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3942\maikroservice\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3942\maikroservice\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3942\maikroservice\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3942\maikroservice\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3949\maikroservice
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3949\maikroservice\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3949\maikroservice\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3949\maikroservice\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3949\maikroservice\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3949\maikroservice\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3949\maikroservice\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\redrays-io
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\redrays-io\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\redrays-io\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\redrays-io\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\redrays-io\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\redrays-io\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\redrays-io\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\vah13
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\vah13\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\vah13\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\vah13\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\vah13\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39802\vah13\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3992\Urban4
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3992\Urban4\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3992\Urban4\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3992\Urban4\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3992\Urban4\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3992\Urban4\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-3992\Urban4\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39959\usmarine2141
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39959\usmarine2141\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39959\usmarine2141\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39959\usmarine2141\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39959\usmarine2141\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39959\usmarine2141\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-39959\usmarine2141\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40126\LovelyWei
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40126\LovelyWei\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40126\LovelyWei\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40126\LovelyWei\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40126\LovelyWei\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40126\LovelyWei\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40126\LovelyWei\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40127\Mr-xn
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40127\Mr-xn\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40127\Mr-xn\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40127\Mr-xn\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40127\Mr-xn\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40127\Mr-xn\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40127\Mr-xn\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ipsBruno
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ipsBruno\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ipsBruno\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ipsBruno\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ipsBruno\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ipsBruno\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ipsBruno\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\mr-r3b00t
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\mr-r3b00t\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\mr-r3b00t\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\mr-r3b00t\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\mr-r3b00t\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\mr-r3b00t\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\mr-r3b00t\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ZephrFish
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ZephrFish\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ZephrFish\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ZephrFish\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ZephrFish\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ZephrFish\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40140\ZephrFish\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40146\cckuailong
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40146\cckuailong\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40146\cckuailong\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40146\cckuailong\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40146\cckuailong\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40146\cckuailong\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40146\cckuailong\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40317\izdiwho
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40317\izdiwho\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40317\izdiwho\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40317\izdiwho\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40317\izdiwho\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40317\izdiwho\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40317\izdiwho\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40471\RashidKhanPathan
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40471\RashidKhanPathan\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40471\RashidKhanPathan\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40471\RashidKhanPathan\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40471\RashidKhanPathan\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40471\RashidKhanPathan\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40471\RashidKhanPathan\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40674\nidhi7598
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40674\nidhi7598\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40674\nidhi7598\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40674\nidhi7598\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40674\nidhi7598\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40674\nidhi7598\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\gustavorobertux
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\gustavorobertux\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\gustavorobertux\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\gustavorobertux\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\gustavorobertux\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\gustavorobertux\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\gustavorobertux\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\hughink
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\hughink\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\hughink\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\hughink\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\hughink\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\hughink\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\hughink\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\TaroballzChen
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\TaroballzChen\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\TaroballzChen\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\TaroballzChen\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\TaroballzChen\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\TaroballzChen\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40684\TaroballzChen\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40687\williamkhepri
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40687\williamkhepri\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40687\williamkhepri\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40687\williamkhepri\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40687\williamkhepri\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40687\williamkhepri\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-40687\williamkhepri\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\ITPATJIDR
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\ITPATJIDR\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\ITPATJIDR\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\ITPATJIDR\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\ITPATJIDR\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\ITPATJIDR\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\ITPATJIDR\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\TaroballzChen
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\TaroballzChen\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\TaroballzChen\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\TaroballzChen\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\TaroballzChen\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\TaroballzChen\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\TaroballzChen\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\trhacknon
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\trhacknon\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\trhacknon\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\trhacknon\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\trhacknon\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\trhacknon\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41040\trhacknon\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\notareaperbutDR34P3r
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\notareaperbutDR34P3r\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\notareaperbutDR34P3r\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\notareaperbutDR34P3r\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\notareaperbutDR34P3r\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\notareaperbutDR34P3r\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\notareaperbutDR34P3r\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\trhacknon
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\trhacknon\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\trhacknon\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\trhacknon\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\trhacknon\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\trhacknon\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\trhacknon\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\west-wind
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\west-wind\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\west-wind\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\west-wind\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\west-wind\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\west-wind\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41082\west-wind\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41218\V4bel
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41218\V4bel\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41218\V4bel\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41218\V4bel\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41218\V4bel\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41218\V4bel\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41218\V4bel\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41358\thecasual
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41358\thecasual\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41358\thecasual\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41358\thecasual\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41358\thecasual\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41358\thecasual\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41358\thecasual\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41852\Warxim
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41852\Warxim\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41852\Warxim\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41852\Warxim\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41852\Warxim\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41852\Warxim\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-41852\Warxim\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42176\soy-oreocato
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42176\soy-oreocato\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42176\soy-oreocato\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42176\soy-oreocato\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42176\soy-oreocato\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42176\soy-oreocato\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42176\soy-oreocato\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\adarshpv9746
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\adarshpv9746\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\adarshpv9746\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\adarshpv9746\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\adarshpv9746\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\adarshpv9746\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\adarshpv9746\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\cryxnet
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\cryxnet\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\cryxnet\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\cryxnet\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\cryxnet\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\cryxnet\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\cryxnet\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\karthikuj
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\karthikuj\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\karthikuj\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\karthikuj\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\karthikuj\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\karthikuj\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42889\karthikuj\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42899\iamsanjay
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42899\iamsanjay\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42899\iamsanjay\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42899\iamsanjay\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42899\iamsanjay\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42899\iamsanjay\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-42899\iamsanjay\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43144\mudassiruddin
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43144\mudassiruddin\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43144\mudassiruddin\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43144\mudassiruddin\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43144\mudassiruddin\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43144\mudassiruddin\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43144\mudassiruddin\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43332\maikroservice
+
+11/21/2022  09:33 AM    <DIR>          .git
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43332\maikroservice\.git
+
+11/21/2022  09:33 AM    <DIR>          .
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43332\maikroservice\.git\hooks
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43332\maikroservice\.git\info
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43332\maikroservice\.git\logs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43332\maikroservice\.git\objects
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of F:\GitHub\Vaultiris\Vulnerabilities\2022\CVE-2022-43332\maikroservice\.git\refs
+
+11/21/2022  09:33 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+     Total Files Listed:
+               0 File(s)              0 bytes
+             362 Dir(s)  1,713,339,269,120 bytes free
