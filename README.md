@@ -3,6 +3,8 @@
 
 > Automated CVE Monitoring - Used for POC Identification and CVE Details
 
+:warning: The proof-of-concepts listed in this repository have not been reviewed. Even if approved by Exploit-DB or another POC Database, always review the source-code before running on your system or someone else's. 
+
 ## Website: 
 
 Visit [Vaultiris](https://vaultiris.com/Home)
