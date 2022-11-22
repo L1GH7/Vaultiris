@@ -19,7 +19,7 @@ Visit [Vaultiris](https://vaultiris.com/Home)
 | ✅ | ~~Organize CWE by OWASP Category~~  
 | ✅ | ~~Extract CVEs~~  
 | ✅ | ~~Extract POCs~~  
-| 🟢 | Add additional languages (java, C, bash) to readable file list for file browser
+| 🟢 | Add additional languages (java, C, bash, PHP) to readable file list for file browser
 | 🟢 | Improve results by ignoring empty repositories
 | 🟢 | Introduce Pagination to Main Search Page
 | 🟢 | Introduce Additional metrics pertaining to the CVE such as CVSS breakdown
