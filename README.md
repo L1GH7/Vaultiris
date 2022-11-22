@@ -5,15 +5,15 @@
 
 ## Website: 
 
-Visit [Vaultiris](http://vaultiris.com/Home)
+Visit [Vaultiris](https://vaultiris.com/Home)
 
 ## Roadmap
 
 | Status | Task | 
 |---|---|
-| 🛠 | Upgrade application to HTTPS
 | 🛠 | Improve Database by identifying and archiving additional POCs
 | 🛠 | Improve Application stability
+| ✅ | ~~Upgrade application to HTTPS~~  
 | ✅ | ~~Organize CWE by OWASP Category~~  
 | ✅ | ~~Extract CVEs~~  
 | ✅ | ~~Extract POCs~~  
