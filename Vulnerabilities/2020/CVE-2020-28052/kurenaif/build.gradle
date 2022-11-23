@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    compile 'org.bouncycastle:bcprov-jdk15on:1.65'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+apply plugin: 'application'
+mainClassName = 'org.example.Main' // プロジェクトに合わせて変更する
+
+task(runMain, dependsOn: 'classes', type: JavaExec) {
+    main = 'org.example.Main'
+    classpath = sourceSets.main.runtimeClasspath
+}

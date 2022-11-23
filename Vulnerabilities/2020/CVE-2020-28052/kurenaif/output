@@ -1,0 +1,893 @@
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+
+> Task :run
+pre calculated PoC :) start ---
+false
+true
+true
+true
+pre calculated PoC :) end ---
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+-----
+prob: 2.1191045836933676E-14
+hash: $2a$10$1KwoSopnmovUMSNIr2tNvejE8wEkTB93BHYkP9aL61Pa/BgagX7I.
+salt: dcccaa52aae9a2ac563943cab78bcfc6
+plaintext: -1751607794
+-----
+prob: 1.164122194351964E-12
+hash: $2a$10$nXjZLYgl1OUCVXIiOQaTluJnbj3z4iaQAVPrzM6/Ch9eK9Z6CtqK.
+salt: a5995b35a8a7dd05845d92a44127159f
+plaintext: -1789409626
+-----
+prob: 7.629805037702867E-11
+hash: $2a$10$wc2GdP6ttLNSrW10kmEEmeQyYSf5AvvOxas63a2z8/XMy/sLo69Yy
+salt: c9ee087d1f2fbcd3d4b58df69a8186a2
+plaintext: -287241077
+-----
+prob: 7.773914779671516E-11
+hash: $2a$10$hOroOr4ou4FCktUbGP1JNe8pOGnjlspKkFmbG6flPh6339.YMII9q
+salt: 8d0b6a42deaac3a1c49af59d211dcb3e
+plaintext: 1569673790
+-----
+prob: 9.531724833585421E-11
+hash: $2a$10$vcU1FeLZwY88iUXXVZJVeegNeWeY7C4SP3QJanrlc06lFRMV9heqq
+salt: c5e5b71e035bc9afbe9166595db2d782
+plaintext: -1339268215
+-----
+prob: 1.1493502574407994E-10
+hash: $2a$10$dNlOKzKadCcyC7dAEFqou.UdXJKWZr6PSL8td/asxFSVA.5jd3cY2
+salt: 7cf9d033531c7c47b413d7c2187b2ac0
+plaintext: 523600586
+-----
+prob: 1.454085627053235E-10
+hash: $2a$10$NRNxjXzm5h1iQq1uKdlbOuBZEI7o/6JJ30C3yuLz59gLYHarQ5quq
+salt: 3d33f3959d68ee3de44acdf031f9dd43
+plaintext: -1031873112
+-----
+prob: 1.5344863806143706E-10
+hash: $2a$10$goG8I17TYQntoa11HG7iMub3bKevdiUW4o6REkI33.EACG4y7/XXa
+salt: 8aa23e2b7f55692a6fa9cdf7248f643b
+plaintext: -580770971
+-----
+prob: 3.598499388282622E-10
+hash: $2a$10$qIhxDF6RdRYf9pS8fNXkUu0WvsQ5.43iK8AhVqt7ebhriZ2Jr0bp2
+salt: b0a8f3147f137d36a1feb53e84f6665b
+plaintext: 1007944953
+-----
+prob: 2.840271496038781E-9
+hash: $2a$10$2jdCNDBaLHNnAHj0ushSKO7EZVYtR3K3BtOedmB2KlOYF/1.Qri22
+salt: e257c43c50dc3493e9089976c2e8d431
+plaintext: 743527736
+-----
+prob: 2.996084323101826E-9
+hash: $2a$10$ystgikhyOBsmFVSD0FaStO6NE4lF00eytzKWYiwLadbjIC89bkHyS
+salt: d2ebe29268f4403ba81d7505d87714bd
+plaintext: 30268974
+-----
+prob: 3.1284145326790606E-9
+hash: $2a$10$hICqeZ5WrvsxtU2hijpqXOO5oufSS1SEKdb.LKIRHc9/6kOojSbE.
+salt: 8ca12c81bed8b71bb3bd6e23925aec65
+plaintext: -1365638957
+-----
+prob: 3.9971495002572025E-9
+hash: $2a$10$pCxsjc6lICKRTCRfmhi6AO1jmjx4UzAhOisOV0235nFR7beJdSGIm
+salt: ac4cee95ef272843135444e1a2393c09
+plaintext: -213606712
+-----
+prob: 4.089110426770033E-9
+hash: $2a$10$UpLcR7QTpZ9sOlU7St9u0uJYsB2xPPVpMj3iuHb9k78M2HM9/0vd6
+salt: 5ab35e4fd495adbfee4275bd52fff0db
+plaintext: 347228800
+-----
+prob: 5.9423542838985455E-9
+hash: $2a$10$R1N11kedK3ocHNLXvkmbdudx7BWIY5Awfiz8zIn/h77sJztCWBMfO
+salt: 4f73f7de681f339a9e24f359c66a1d7f
+plaintext: -1956759601
+-----
+prob: 6.363020086415998E-9
+hash: $2a$10$LZLrAFvCVGwugbJ/pCRdIeh/5xP8XtUvZfN3U6XmOYZJD88HprKlG
+salt: 35b36d087c445c8cb089d2c1ac44df2a
+plaintext: 1394029695
+-----
+prob: 7.28632283553655E-9
+hash: $2a$10$0SG2ZJx54c0OInNE6qJlNOByUgOfZDENxTou3z8f36K73eC1t3vS.
+salt: d942386cbcfbe9ed902a93c6f2c2e73d
+plaintext: -239430765
+-----
+prob: 8.355790850722795E-9
+hash: $2a$10$ylUHKxI9Q2SG9/JfGLOyIebev3MI4ik.IgxASiiYprBwNvwPa288a
+salt: d275893332bf4b8508fc12e120d4342a
+plaintext: 335225398
+-----
+prob: 1.108891155809578E-8
+hash: $2a$10$KqSQ1cxJyEa.pDvb8fqiG.dG3C7KNYh5EaHe4sMrQJehdiOBmmFq2
+salt: 32c512ddeccbd06700ac5c5dfa1b2420
+plaintext: 1979077294
+-----
+prob: 1.2058943517592835E-8
+hash: $2a$10$2nMo0jnmgkeUJB95Zc8iseN0T.v7zNIiVpx9VlFq3dTNvIV6Ojia.
+salt: e293aada5a688a68162c3ffb6defa4ba
+plaintext: 1515580041
+-----
+prob: 1.628316325435571E-8
+hash: $2a$10$A9XAlZBw/gdaJcC9UgxCp.817VZ5NUHFFsijKb7cnkqkmBzP4clA2
+salt: 0bf6429db0f20627dc2de13f5a2cc4ac
+plaintext: -358172164
+-----
+prob: 1.7535652070368606E-8
+hash: $2a$10$T5IiATrfwktqJz94fbg6xeX5i1/n6kciPDdFw38qJd.PY9Oj/clD2
+salt: 57b2a4095b61ca6bec2f5ffa85d8bcce
+plaintext: -1321157374
+-----
+prob: 7.983999000867643E-8
+hash: $2a$10$CpReYWdWDoilmBNfRsVtUOZkXcxAavH2d/UrrnLDVdjoMQ0c3Ma8u
+salt: 12b4e06987d816a927a033e14ee5ef59
+plaintext: -754332700
+-----
+prob: 1.8606682891055653E-7
+hash: $2a$10$W602t6FmYGDpuwaXmibXYuAJxh/xVmpM/LFZrqjde5Swd33kJouMy
+salt: 63cdb8bfc1e868816bc32719a247596b
+plaintext: 1218168538
+-----
+prob: 2.2869672183504893E-7
+hash: $2a$10$002esi1/JVcFUfJRTTVpVebXpT1zH8F4vKIDfepL.MFhe024YlMam
+salt: db6e20ba4dc12d77875a12d35555eb5e
+plaintext: -1966995
+-----
+prob: 2.547037985567874E-7
+hash: $2a$10$KUNA5vIZpjhZ2dWd1hRNV.FeMs7lOG7JysQKWymmcmUqn6PyqAC3.
+salt: 3163c2ef129bae58dbe1f61fde34cf5c
+plaintext: -733537469
+-----
+prob: 2.5788370812556425E-7
+hash: $2a$10$.KeDlPJRngjf.mSiB9Xwq.2IytKYYnTRrka4W92ozB/l5xB/ri9N2
+salt: 00c8059d12d3a629610285240ff672b0
+plaintext: -1753495321
+-----
+prob: 2.638733902016366E-7
+hash: $2a$10$aDX4eP0EmkLkQh0.japnleh882wjWfrKhAmCYqzqCekX49VoJAE26
+salt: 70567a811d86a263664a3d8095cae99e
+plaintext: 632147703
+-----
+prob: 2.723348729584153E-7
+hash: $2a$10$SUKBgHYFkSb3lUkzdl/LnOcNpua.MzOYTwTCf3MBDewF6OP5XcGFi
+salt: 5163038896879947799d69b57e704da5
+plaintext: -1553878104
+-----
+prob: 2.811428322882688E-7
+hash: $2a$10$Xgvgk9BIxWGj3jRjsjoNCeXEsPDojSGUF4LLFt.T2JiOo7JKP3HOu
+salt: 662c629bf0cacd8225e654e5ba5a8f12
+plaintext: 895413936
+-----
+prob: 2.9568484947467713E-7
+hash: $2a$10$YA8XwigklD/pTisV/lzYyOjFliEjvOqZ5xtyQoTH6.btwSPkevRNS
+salt: 682f99ca48a69c506b564b97067d5ad1
+plaintext: -988407698
+-----
+prob: 3.3982070381478237E-7
+hash: $2a$10$0TamSwOPab7oS75CfeORjunZz9u7nMDJ0hBjLe8BrC47XWJIW2MI2
+salt: d9572853241171df6a53dec486041397
+plaintext: 82390596
+-----
+prob: 3.456796814667614E-7
+hash: $2a$10$sVfGGRXop9uMhjCF.zXS0uurT7ZJHrErHYXDe82BDE6ADIU81SyOy
+salt: b9784821366aaffc0e8e5107035654db
+plaintext: 685395746
+-----
+prob: 3.70253391430221E-7
+hash: $2a$10$9cnuXEjjnXTuS2igTZn9l.WO5GZZgiQkrD4dSKNcuY6TwG5sG5QPK
+salt: fdea70646965a5957053892255ba7f9c
+plaintext: -1159660878
+-----
+prob: 3.7642446785531993E-7
+hash: $2a$10$z/.PeDr1RGCbznHZOnAxMeE4PHL2WsD/bfqsZ7o9NqGLYtvxUreUu
+salt: d41011805b774c811dd6925b4290b33a
+plaintext: 1988454512
+-----
+prob: 3.841304865803059E-7
+hash: $2a$10$YX/sVgGyYnDV3Eu/vSvOpu.dGoY4Rvy0cpzkAL3iitX3LTL/i5wrG
+salt: 69906e5e22346a9157e46c01c54c50af
+plaintext: 1058292137
+-----
+prob: 3.9771902970805476E-7
+hash: $2a$10$n8cFXShX8x/WR/cSayRw.O9LZT.SvUZ/SiZJOhuDRwfLHSOOO1776
+salt: a7e7876548d9fb30584c17947344f201
+plaintext: 438195209
+-----
+prob: 4.168345547938078E-7
+hash: $2a$10$HWoHnhISFQ2d/z030JxSAuAmu6Jlz8e/tdfeCUw763IAZkx/8Ola2
+salt: 258a89a632941d2e1f075db9d8bcd40b
+plaintext: 1571331418
+-----
+prob: 4.77674103311001E-7
+hash: $2a$10$J4sq4tCFGwhB9acVIcCr3OjoA/VpLXoyxmFC/lc.hSQrcySOv8RHu
+salt: 2fabaceaf1072328c3fdc79729e12de5
+plaintext: 250011727
+-----
+prob: 5.022275224360668E-7
+hash: $2a$10$C8k8sTv0oWq1YlRXoyqa4.QlkBU60pKvL/V6wQtoWiWq0cnNxL3QK
+salt: 13e9beb95c76a98b376a74d9ab4b1ce8
+plaintext: -1832216951
+-----
+prob: 5.925414733149178E-7
+hash: $2a$10$x6Iiwbu5q3lsX1UzA2B/eueBmvftEtqXLuArf1f97eJCswgAH8dVy
+salt: cfc2a4c9dc3bb399ee6775b50b80c183
+plaintext: 327050486
+-----
+prob: 6.42205337921176E-7
+hash: $2a$10$ELbaqstKF6a4MD98QANGyueaKSqgLdylGsrKNNkv7356TPb9UijGi
+salt: 18d75cb2ebcc1fc73a385ffe4823c8d3
+plaintext: -466733557
+-----
+prob: 7.589053351839947E-7
+hash: $2a$10$ldQuANRh3tus5Q2208fln.UpTQfYiVXai7yHrRH9L/TeUS5a0ZYXG
+salt: 9df4b008f4e3e6fc2eed2e38dbe867a4
+plaintext: -19422884
+-----
+prob: 8.531883033158187E-7
+hash: $2a$10$rnGTLj4NC7zsboZ/3Jh7ZeZ7hZI6DMzdnhx4s6d.9PPQsQnn3ENDG
+salt: b69215365e8f13dd6e76a6c1e4b8fd6e
+plaintext: 2070306728
+-----
+prob: 8.564357955694163E-7
+hash: $2a$10$c5Miy8d/LEYuyldum0G62Op7ctnDG05Ec9supsrhKo2WhDjzdQ36S
+salt: 7bb3a4d3e7c13466b0d277f0a3623ce1
+plaintext: 1110369152
+-----
+prob: 1.1115116496722387E-6
+hash: $2a$10$9cZQWrfs/.peISE4bw4X1e4S5hQTK8JeGrCyF6JtjKAqhOddiMf5i
+salt: fde6d262d86e040ae02941ba772e99de
+plaintext: -545641898
+-----
+prob: 1.2238705720226192E-6
+hash: $2a$10$EukxW83u9WtATtquvpmY4.tHjmpQWq5iqqOV0/k.mPrP16ZYqfjpu
+salt: 1b09b363ee70fd8bc256fb30c6ba1ae8
+plaintext: -1602489779
+-----
+prob: 1.2870263525153882E-6
+hash: $2a$10$3EvHq5a15FCvWRDEY/jwd.Lt6Bwm87DfISz1ZpQCzYeivTPudk3VK
+salt: e46c49b3b737ec71316131466819727c
+plaintext: 1449579055
+-----
+prob: 4.160086230683079E-6
+hash: $2a$10$QzblMuHsvVzhadBdKvzuBueO1iA2vStDQIYNDy6cquwOqNq7oASlu
+salt: 4b57673b026ec57d6371f0df331d700f
+plaintext: -311360935
+-----
+prob: 9.093619766765714E-6
+hash: $2a$10$Vg8SaUfbinDYYNByB1xGEunT5dNwVHjN2Yosi8BdEYpECn3VqJj3y
+salt: 5e2f9471685d92915a68f0f40f7cc81b
+plaintext: 1392534616
+-----
+prob: 9.224716354049496E-6
+hash: $2a$10$tRe0rvjbvyNiRNDwikn.oecJGdAyEi.zNs64T6Smqn0FmVfgcCLTW
+salt: bd3836b7195dc743e44cf172926a40aa
+plaintext: 379753501
+-----
+prob: 1.1986497537735495E-5
+hash: $2a$10$eSm5h6bRj1gcWFt5BwNIiOaTEOjS5QAAY5Ql1x0g4Eb8UKA6RkBeC
+salt: 814a3b8fc75397789e607bfb0f23ca91
+plaintext: 55144990
+-----
+prob: 1.2229466640130644E-5
+hash: $2a$10$3ySWMYSK.ibCAcMQPFdT3OtyCGXilV9waFlufTOEnh.uH11nVYRe6
+salt: e7451839a50c02474409e3924477d5e5
+plaintext: 572038049
+-----
+prob: 1.3293023374547516E-5
+hash: $2a$10$irZkBkm8.j.HwvwEqyIez.P0UgdWULX0uLRoO9B04z1VjvKbEWJWC
+salt: 92d6e60e6a3e025009cb1c86b342a0d4
+plaintext: 2061862743
+-----
+prob: 1.6392635513073788E-5
+hash: $2a$10$a1ZzbhEE0zGL90NyuzKBs.7EKxrVwmbqVPEBhDJOLri3UHoNzyvla
+salt: 7376f5763186db520dff63f4c35303b8
+plaintext: -900987907
+-----
+prob: 1.722447993268681E-5
+hash: $2a$10$FGHZejS2h6v5o5FvuGkkteERrJPu/5mhMF7dNcuZRxImReC5go5iq
+salt: 1c825b8255388fcc7babb1f1c089a6be
+plaintext: 351097103
+-----
+prob: 1.782461659074314E-5
+hash: $2a$10$rmcQFIrD/.qzmSaKH1Qz3unT1ZoiBe.fmxWxhNln.Id6jo4PiZ0VC
+salt: b687921cab45040b35a1470c2774b5e7
+plaintext: 2033876524
+-----
+prob: 1.8789352206953218E-5
+hash: $2a$10$xaibyif60X04TmSpMTJJoOJ5xeHXQOKlEE9ldS1NyVAIPFo0Ss9ZO
+salt: cdc91dd2487cd99dba56852b3952cba9
+plaintext: -2020528293
+-----
+prob: 1.978394889062437E-5
+hash: $2a$10$diwLWKfcH5w8lMUQXCYvVe.kdqkVvudc3xirRGvk3PoZTZseX.zSS
+salt: 7e4c8d60c85e27bcbe9ce5926446b15e
+plaintext: 2031003701
+-----
+prob: 2.4184076519198415E-5
+hash: $2a$10$W/qvmksVKp.ua3WtiI.kpeiy3OcjLwBkes5EX7UKpYpgLelwpzjNO
+salt: 601b31a26b9732b03073962f90a026ae
+plaintext: -435133092
+-----
+prob: 2.419102596647404E-5
+hash: $2a$10$cL09sD/z72h7ZmQEy0vYNugAeANxYnpTS8GxbL4Ww0bK0OgKyj09y
+salt: 78ddbfb85075f788fd6e8486d36c5a3f
+plaintext: -1138420938
+-----
+prob: 2.4664739923111205E-5
+hash: $2a$10$cBh./nQnitOFw0e7YnBReeMu5ajBXgX1djtrNmRuCAe5aO6ebZeTS
+salt: 7838c00694a992f407cb683d6a90d382
+plaintext: -926747113
+-----
+prob: 2.503958364051928E-5
+hash: $2a$10$BhVhPlGYS5r229BFYOzGr.peztKJGP3mtXDyFgN8soP1DokeSpoRa
+salt: 0e35e346721a53bb78e3f0c7690d48b4
+plaintext: 604054717
+-----
+prob: 2.679622506119781E-5
+hash: $2a$10$p5oScXeCRftKuLNU84UuEudvo4hl6nAQ4X2tv9RD2Uo90rBUlvj0C
+salt: afba947998044e1bccc0d3d6fba5b01b
+plaintext: -70069221
+-----
+prob: 2.775210889490263E-5
+hash: $2a$10$hZEleh.twv1UKhh5.fH9feH8o0lUHGS9hkRKT8ZY/rsPoCOJGtuoG
+salt: 8db1a782302fcb1dd63238fb02127f86
+plaintext: 1213263654
+-----
+prob: 2.9187285561323066E-5
+hash: $2a$10$3LvYSd3lD4GKaWIVriL.Q.Z/GUeMUCnJy3ueU7yOmrlVxPgX.4QOe
+salt: e4dc5a51fe6717a20c718297b6434048
+plaintext: -251512082
+-----
+prob: 2.9656412096883634E-5
+hash: $2a$10$37uFcF5Gn3UqIUorZ1NptOGWuv40wjLeQ/aAjz0AlUAEhLUKOcL0S
+salt: e7dc07787ec8a795ac296aad6f73ebbd
+plaintext: 78257745
+-----
+prob: 3.396343716072644E-5
+hash: $2a$10$mf5Ihefpv/PYkRmaO7ZZ9eKV17qy87ioXudFxIvmFvJ0chJ8dRLt.
+salt: a21eca8e086bc4145a993a1c43d6dbfe
+plaintext: 741840668
+-----
+prob: 3.451990292050334E-5
+hash: $2a$10$Net/xp6KU05vvHfDATjRY.f6P26EI7zG7bg16Bj6CWqz7vY5yH8EG
+salt: 3e0bc1cebf0c5b6ef1c4984509595368
+plaintext: 1943674145
+-----
+prob: 3.747323448117161E-5
+hash: $2a$10$UsWLUjUpb134d/nN3Yhhs.EoFv.I22q5IQ3eTiBIN2z7HLKLZOoUK
+salt: 5ae60d5a55ab777e7a7c1a4fe5a8e3b8
+plaintext: 1544585512
+-----
+prob: 3.878659187589162E-5
+hash: $2a$10$7p6klvHEQ05itASlrKUwu.i5168uwCU1wY0COFooyx2E6S/.ytzRm
+salt: f6bf269f12464b6ee4bc2527b4c5b2c0
+plaintext: 226002703
+-----
+prob: 4.007911614385213E-5
+hash: $2a$10$peH3wGBpvGiv58GEkMALG.Cptk366BmxqmlWKSURWcl4QaLDCPiMW
+salt: ae0279c880ebc48931efe20698e08d20
+plaintext: -1882889864
+-----
+prob: 4.423319756114856E-5
+hash: $2a$10$VwQd6g9ezLoCX7cohoy4pOzSdJmYl8ThOsG5bWYEkUbCMbR5jbqLG
+salt: 5f249ff22fe0d4da8467d7aa8ead3aad
+plaintext: -1646254680
+-----
+prob: 1.138878619201492E-4
+hash: $2a$10$G/v8afdhEOpp8dS34bz9Y.VZC8jYZ7B9Ne75imm1KQr3qfXjpVYnK
+salt: 201c7e7217e3190aebf9f539e9dd7f68
+plaintext: -1097833902
+-----
+prob: 4.274237753291E-4
+hash: $2a$10$9WBBkEl9dofirFslhrOaZOYSmqnMt4MqdplpXCkXYWtu1YudAvTJe
+salt: fd80c39869ff7ea864b47ba78ed41c6d
+plaintext: 492209626
+-----
+prob: 5.370136241921692E-4
+hash: $2a$10$DfuIINOsDRiCHjYoXu87LuEzSLxYZZGKGSHGGeAHMKLSFG4a2hnDW
+salt: 161c0a28f42e1539042656aa670fbd37
+plaintext: -1757879838
+-----
+prob: 5.757021555905676E-4
+hash: $2a$10$QK50kM1DZ5UwUe5Kgew17Ozkeflr7xQBpLtjTzzqcp8v0MDkqkWNC
+salt: 48cef698edc56fb5b25a0ecc8a0cb7f5
+plaintext: -1653327177
+-----
+prob: 6.17177957915316E-4
+hash: $2a$10$psaTPCeoh57nQ05VZobBNOPrvjvEMZXZjjVfrK8XDtZCYctWflZFy
+salt: aee71544482a8fbf694b6ed76ea7433d
+plaintext: 1326582783
+-----
+prob: 0.0010180587675454882
+hash: $2a$10$lz66vWxgTUIOxhnlE//xF.wwdi6uPHRvwHwJyUp8ypSPw0IyALERy
+salt: 9f5f3cc58ce2556290ce3a671810731c
+plaintext: 779962346
+-----
+prob: 0.0010356115049169623
+hash: $2a$10$rm3U.xoCPC7m1dx1a.qroecSqNvOH3BT1bcu0A9zHsEibphgrcxrK
+salt: b68e56033a84444f68ddfcf7700b2daa
+plaintext: 644913439
+-----
+prob: 0.001249859125305347
+hash: $2a$10$yasd/Zsd3bR9bMyQBzYWhuUpdjf.KwT/BVSFqcfPYmk1bfmZeQjee
+salt: d1cb9f05bb9fe5d4ff74ed120f56988f
+plaintext: -1725011688
+-----
+prob: 0.0013844599424137386
+hash: $2a$10$k5Del50lW1.26K3C2hlsrOxyRwFkrIizlyHMCeO2iVGf5lLSSFw/S
+salt: 9bb1609fbda7637038f0ce44e239eeb5
+plaintext: 1814172533
+-----
+prob: 0.001583705060461362
+hash: $2a$10$f/GsDQQT9gII3/V7J1WuiOK3rONDwFfDYwvivCLAO9Q6i1UOAea3q
+salt: 84122e152495fe228ae415fd2f763091
+plaintext: 752886054
+-----
+prob: 0.0016656050183302773
+hash: $2a$10$0.Vs185jc75vRlfbaRmc2Oq8ETf.Oh.7qm70wEet/WWMZQyKOWcVu
+salt: d805eedfeee57bdef14e785d713a1ee1
+plaintext: 1399686661
+-----
+prob: 0.0019376046557313424
+hash: $2a$10$7cJZ4/ngbw9D9wiKHdn2KO7P1BMRMvJ321aBzjrvIrbjCVOAYck2K
+salt: f5e2dbe81a62772fc5ff290c25fa7831
+plaintext: -1905126411
+-----
+prob: 0.0022540228689244502
+hash: $2a$10$GMvHb7WP5Aou6eYyKvMNr.8HeDdXAnmI17oVZWSK2I0cXhedusszu
+salt: 20ec4977d611ec2ab0f206b433138fb4
+plaintext: 337234860
+-----
+prob: 0.0023686128000525025
+hash: $2a$10$8IGV/154Ev/3pghsgkguQODdybWDHZB2sJ2ILUrZQrIo8yuxz9QkG
+salt: f8a217077efa1b1079ae28ee8a68b049
+plaintext: 2065949884
+-----
+prob: 0.0025726872549197482
+hash: $2a$10$1ICGIC63zafHqVZAK9058OhZsotraTU0Z9oFhr9SMd6t4L9v3BywG
+salt: dca108284f39d5c849b176c233fdbbf9
+plaintext: 661857475
+-----
+prob: 0.0037009724891911007
+hash: $2a$10$9fEA.p5y/16xDovcV2M/fu7.l52P.zfC1XRUIsXrHGtcZrL2OMJBa
+salt: fe118202bef4077f3316ac5e5f838187
+plaintext: -704097050
+-----
+prob: 0.01593124232878073
+hash: $2a$10$Vnjs7GfRhZzxyHquODxZ1e7p2K0YLJzZ2iDIdulK7RDxaujRMcSmq
+salt: 5e996ef488538dbd73d09b30405cdbde
+plaintext: 574992883
+-----
+prob: 0.04728121268483329
+hash: $2a$10$3FEc5KOVSHaUdokdpjB99uVxwPZBdRYQtCqOyKDRBINC2l1whtngG
+salt: e4719eecc4175097167ea99fae50ffff
+plaintext: -1237240182
+-----
+prob: 0.0803217509923704
+hash: $2a$10$7eKzDjh7n/1LILd3R7wdP.HnMcvU7lCcGzInKBLKR7RRK/wkmuXbe
+salt: f603351658fda41dcd28d7f94fdc9f44
+plaintext: -367249714
+-----
+prob: 0.13524137213546703
+hash: $2a$10$GeMJ3fvmawQ1bV/33ZX59.DWWbMTqVqpn0RhDSloBSCnHZvUER.RK
+salt: 22038be61c687324b7757079e5b67bfc
+plaintext: -1459372693
+-----
+prob: 0.22575932184065714
+hash: $2a$10$603j/YReRMYwmT7T9mUI5uioFPV3Hv/NAom0eoBNtWeX6mVLrrGHe
+salt: f36e6505a4e04ce6b2a15f55fe858aef
+plaintext: -378494392
+====================
+targethash: $2a$10$603j/YReRMYwmT7T9mUI5uioFPV3Hv/NAom0eoBNtWeX6mVLrrGHe
+targetPlain: -378494392
+0
+challenge: 14230535
+result: false
+1
+challenge: -1019906702
+result: false
+2
+challenge: -1010885978
+result: false
+3
+challenge: -1913638162
+result: true
+4
+challenge: -677332257
+result: false
+5
+challenge: -1838379288
+result: false
+6
+challenge: -1675265949
+result: false
+7
+challenge: 1284095296
+result: false
+8
+challenge: -206981538
+result: false
+9
+challenge: 1206443706
+result: false
+10
+challenge: 2015118739
+result: false
+11
+challenge: -1248210590
+result: false
+12
+challenge: -262125889
+result: true
+13
+challenge: 764168698
+result: true
+14
+challenge: 1464273142
+result: false
+15
+challenge: 977123597
+result: false
+16
+challenge: 2014816207
+result: true
+17
+challenge: -164965025
+result: false
+18
+challenge: -250031206
+result: false
+19
+challenge: -1596592433
+result: false
+20
+challenge: -1761485323
+result: false
+21
+challenge: 1552398319
+result: false
+22
+challenge: 458420093
+result: true
+23
+challenge: -1324494377
+result: false
+24
+challenge: -2055749775
+result: false
+25
+challenge: 2130994426
+result: false
+26
+challenge: -613591945
+result: false
+27
+challenge: -259374321
+result: true
+28
+challenge: 98684392
+result: false
+29
+challenge: 216121674
+result: true
+30
+challenge: 1696008022
+result: false
+31
+challenge: 1111261040
+result: false
+32
+challenge: -929651681
+result: true
+33
+challenge: -884803689
+result: false
+34
+challenge: -1170553014
+result: false
+35
+challenge: -866661488
+result: false
+36
+challenge: -1844708345
+result: true
+37
+challenge: -417030080
+result: false
+38
+challenge: 1356246403
+result: true
+39
+challenge: -1312963457
+result: false
+40
+challenge: -637300487
+result: false
+41
+challenge: -1653460936
+result: false
+42
+challenge: -960781544
+result: false
+43
+challenge: 77490644
+result: false
+44
+challenge: -2060623295
+result: false
+45
+challenge: -695278786
+result: false
+46
+challenge: 489935146
+result: false
+47
+challenge: 1313223938
+result: true
+48
+challenge: 978131424
+result: false
+49
+challenge: -1236888240
+result: false
+50
+challenge: 1960669001
+result: false
+51
+challenge: 484823535
+result: false
+52
+challenge: -1333224563
+result: true
+53
+challenge: -680640671
+result: false
+54
+challenge: -1359375339
+result: false
+55
+challenge: 281300167
+result: true
+56
+challenge: 2053242877
+result: false
+57
+challenge: -356316343
+result: false
+58
+challenge: 2068114472
+result: false
+59
+challenge: -939144948
+result: false
+60
+challenge: 272597092
+result: true
+61
+challenge: -435014916
+result: false
+62
+challenge: 443185971
+result: false
+63
+challenge: 138286577
+result: false
+64
+challenge: -897051078
+result: false
+65
+challenge: 2057510654
+result: false
+66
+challenge: -880882841
+result: true
+67
+challenge: 1890038760
+result: false
+68
+challenge: -1367092414
+result: true
+69
+challenge: 2072016918
+result: true
+70
+challenge: 1760833301
+result: true
+71
+challenge: 2085429113
+result: true
+72
+challenge: 1184576967
+result: false
+73
+challenge: 2094276673
+result: false
+74
+challenge: -44107624
+result: false
+75
+challenge: 1643869525
+result: true
+76
+challenge: -1769931480
+result: true
+77
+challenge: -1068153111
+result: false
+78
+challenge: 208325746
+result: false
+79
+challenge: 2108867499
+result: false
+80
+challenge: -1165606249
+result: false
+81
+challenge: 1728515158
+result: true
+82
+challenge: 1322283444
+result: true
+83
+challenge: 96050361
+result: false
+84
+challenge: 252762653
+result: false
+85
+challenge: -2122749852
+result: false
+86
+challenge: -1288846173
+result: false
+87
+challenge: 1371455141
+result: true
+88
+challenge: 1177042912
+result: false
+89
+challenge: -1935325066
+result: false
+90
+challenge: 2140647320
+result: false
+91
+challenge: 1976362124
+result: false
+92
+challenge: -2054318680
+result: false
+93
+challenge: -40363862
+result: true
+94
+challenge: 2060996135
+result: false
+95
+challenge: 1115821275
+result: false
+96
+challenge: 1008170143
+result: false
+97
+challenge: -256758706
+result: true
+98
+challenge: 2127142531
+result: false
+99
+challenge: 1362952414
+result: true
+success: 27
+challenge: 100
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.7/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 11s
+2 actionable tasks: 2 executed
