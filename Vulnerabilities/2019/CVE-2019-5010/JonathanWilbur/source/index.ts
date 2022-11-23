@@ -1,0 +1,7 @@
+import generateCertificate from "./generateCertificate";
+import * as fs from "fs";
+import * as pem from "pem-ts";
+
+fs.writeFileSync("./dist/cve-2019-5010-cert.pem",
+    (new pem.PEMObject("CERTIFICATE", generateCertificate())).encoded,
+);

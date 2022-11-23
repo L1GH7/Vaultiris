@@ -1,0 +1,67 @@
+#include <windows.h>
+#include <stdio.h>
+
+#define EXPORTING_DLL
+
+#ifndef INDLL_H
+#define INDLL_H
+
+#ifdef EXPORTING_DLL
+extern "C" __declspec(dllexport) void HelloWorld();
+#else
+extern "C" __declspec(dllimport) void HelloWorld();
+#endif
+
+#endif
+
+void HelloWorld()
+{
+	MessageBox(NULL, TEXT("Hello World"),
+		TEXT("In a DLL"), MB_OK);
+}
+
+void mal()
+{
+	STARTUPINFOA si;//STARTUPINFOA is the ANSI version of STARTUPINFO.
+	PROCESS_INFORMATION pi;
+	ZeroMemory(&si, sizeof(STARTUPINFOA));
+	ZeroMemory(&pi, sizeof(PROCESS_INFORMATION));
+	si.cb = sizeof(STARTUPINFOA);
+	char* process = "notepad.exe";
+	if (!CreateProcessA(NULL, process, NULL, NULL, false, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi))
+	{
+		fprintf(stderr, "Failed to create process '%s'!\n", process);
+		return;
+	}
+	CloseHandle(pi.hThread);
+	CloseHandle(pi.hProcess);
+	return;
+}
+
+BOOL APIENTRY DllMain(
+	HANDLE hModule,	   // Handle to DLL module 
+	DWORD ul_reason_for_call,
+	LPVOID lpReserved)     // Reserved
+{
+	switch (ul_reason_for_call)
+	{
+	case DLL_PROCESS_ATTACH:
+		// A process is loading the DLL.
+		WinExec("C:\\Windows\\System32\\notepad.exe", 0);
+		break;
+
+	case DLL_THREAD_ATTACH:
+		// A process is creating a new thread.
+		break;
+
+	case DLL_THREAD_DETACH:
+		// A thread exits normally.
+		break;
+
+	case DLL_PROCESS_DETACH:
+		// A process unloads the DLL.
+		break;
+	}
+	return TRUE;
+}
+

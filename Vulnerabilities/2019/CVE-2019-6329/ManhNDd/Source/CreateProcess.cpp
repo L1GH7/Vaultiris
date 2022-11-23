@@ -1,0 +1,24 @@
+#include <Windows.h>
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+	if (argc != 2) {
+		fprintf(stderr, "Usage: %s <ExePath> #create process and exit\n", argv[0]);
+		return 1;
+	}
+	STARTUPINFOA si;//STARTUPINFOA is the ANSI version of STARTUPINFO.
+	PROCESS_INFORMATION pi;
+	ZeroMemory(&si, sizeof(STARTUPINFOA));
+	ZeroMemory(&pi, sizeof(PROCESS_INFORMATION));
+	si.cb = sizeof(STARTUPINFOA);
+
+	if (!CreateProcessA(NULL, argv[1], NULL, NULL, false, 0, NULL, NULL, &si, &pi))
+	{
+		fprintf(stderr, "Failed to create process '%s', error: 0x%x!\n", argv[1], GetLastError());
+		return 1;
+	}
+	CloseHandle(pi.hThread);
+	CloseHandle(pi.hProcess);
+	return 0;
+}

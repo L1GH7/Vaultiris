@@ -1,0 +1,17 @@
+#!/usr/bin/python
+import ssl
+import traceback
+import sys
+
+# BAD_CERT = "/srv/dist/cve-2019-5010-cert.pem"
+# GOOD_CERT = "/srv/valid-cert.pem"
+BAD_CERT = ".\\dist\\cve-2019-5010-cert.pem"
+GOOD_CERT = ".\\valid-cert.pem"
+
+print("Starting the program.")
+try:
+    ssl._ssl._test_decode_cert(BAD_CERT)
+except Exception:
+    print(traceback.format_exc())
+    print(sys.exc_info()[0])
+print("Exiting the program.")

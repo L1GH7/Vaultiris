@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+
+  demo:
+    command: [ "python", "/srv/source/demo.py" ]
+    container_name: 'demo'
+    hostname: 'demo'
+    image: 'python:3.5.2-alpine'
+    volumes:
+      - '.:/srv:ro'
+
+  antidemo:
+    command: [ "python", "/srv/source/demo.py" ]
+    container_name: 'antidemo'
+    hostname: 'antidemo'
+    image: 'python:3.6.7-alpine'
+    volumes:
+      - '.:/srv:ro'

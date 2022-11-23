@@ -1,0 +1,5 @@
+FROM python:3.5.9-alpine
+LABEL author "Jonathan M. Wilbur <jonathan@wilbur.space>"
+COPY . /srv
+WORKDIR /srv
+CMD [ "python", "/srv/source/demo.py" ]

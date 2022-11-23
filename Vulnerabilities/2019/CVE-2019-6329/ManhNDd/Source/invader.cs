@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using HP.SupportFramework.ServiceManager.Interfaces;
+
+namespace Invader
+{
+    public class Invader
+    {
+        static int Main(string[] args) {
+            /*AppDomain.CurrentDomain.SetData("dummy", "Data set from Invader.Invader.Invader()!");
+            Console.WriteLine("data = "+ AppDomain.CurrentDomain.GetData("dummy"));
+            Console.Write("new data = ");
+            AppDomain.CurrentDomain.SetData("dummy", Console.ReadLine());
+            Console.WriteLine("data = " + AppDomain.CurrentDomain.GetData("dummy"));
+            return 0x12345678;*/
+            Console.WriteLine("got here");
+            try
+            {
+                ServiceInterface.Instance.RunAnalysis("en-US", true);
+                Console.WriteLine("got here2");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return 0;
+        }
+    }
+}

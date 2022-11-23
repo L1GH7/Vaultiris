@@ -1,0 +1,6 @@
+---
+# handlers file for update-apt-package
+- name: restart service
+  service:
+    name: servico
+    state: restarted
