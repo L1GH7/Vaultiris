@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Hello World!</title>
+    <script>
+      function change() {
+        var frame = document.getElementById('frame')
+        var select = document.getElementById('select')
+
+        if(select.selectedIndex === 1){
+          frame.innerHTML = `<h3>NISF exploit</h3>
+    <iframe src=http://localhost:3001/NISF_exploit.html></iframe>`
+        }else if(select.selectedIndex === 0) {
+          frame.innerHTML = `<h3>CISO exploit</h3>
+    <iframe src=http://localhost:3001/CISO_exploit.html></iframe>`
+        }else if(select.selectedIndex === 2) {
+          frame.innerHTML = `<h3>Sending from within an iframe</h3>
+    <iframe src=http://localhost:3001/frame.html></iframe>`
+        }else if(select.selectedIndex === 3) {
+          frame.innerHTML = `<h3>Sending from within an iframe</h3>
+    <iframe src=http://localhost:3001/link.html></iframe>`
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>CVE-2022-29247</h1>
+    <div id="main">
+      <select id="select" onchange="change()">
+        <option >CISO</option>
+        <option >NISF</option>
+        <option>frame</option>
+        <option>link</option>
+      </select>
+    </div>
+    <div id="frame">
+      <h3>CISO exploit</h3>
+      <iframe src=http://localhost:3001/CISO_exploit.html></iframe>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

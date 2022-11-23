@@ -1,0 +1,10 @@
+[package]
+name = "CVE-2022-24713-POC-Ubuntu"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies.regex]
+version = "1.5.4"
+path = "/usr/share/cargo/registry/regex-1.5.4"

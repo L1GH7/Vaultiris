@@ -1,0 +1,9 @@
+panic(cpu 4 caller 0xfffffe002173b4f0): [flow_divert_pcb]: element modified after free (off:88, val:0xffffffff00000000, sz:216, ptr:0xfffffe1ffe7b01b0)
+   88: 0xffffffff00000000
+Debugger message: panic
+Memory ID: 0x6
+OS release type: User
+OS version: 21E230
+Kernel version: Darwin Kernel Version 21.4.0: Mon Feb 21 20:35:58 PST 2022; root:xnu-8020.101.4~2/RELEASE_ARM64_T6000
+iBoot version: iBoot-7459.101.2
+secure boot?: YES

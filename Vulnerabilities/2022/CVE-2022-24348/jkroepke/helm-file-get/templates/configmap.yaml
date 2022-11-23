@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: etc-hosts
+data:
+  hosts: |-
+    {{ .Files.Get .Values.file | nindent 4 }}

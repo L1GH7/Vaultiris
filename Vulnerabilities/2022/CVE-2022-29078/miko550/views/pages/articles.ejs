@@ -1,0 +1,20 @@
+<%- include('../partials/head', {title :'kdkdk'}) %>
+<%- include('../partials/header') %>
+
+<body>
+    <ul>
+        <% articles.forEach((article)=> { %>
+            <li>
+                <h2>
+                    <%= article.title %>
+                </h2>
+                <p>
+                    <%= article.body %>
+                </p>
+            </li>
+            <hr />
+        <% }) %>
+    </ul>
+</body>
+
+<%- include('../partials/footer') %>

