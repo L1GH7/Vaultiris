@@ -1,0 +1,12 @@
+---
+openapi: 3.0.1
+info:
+  title: Afine Api
+  version: '1.0'
+paths:
+  "/path/malformed/by/afine":
+    post:
+      tags:
+      - afine
+      parameters:
+      - name: afine

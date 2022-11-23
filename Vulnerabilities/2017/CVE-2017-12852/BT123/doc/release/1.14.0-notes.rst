@@ -1,0 +1,157 @@
+==========================
+NumPy 1.14.0 Release Notes
+==========================
+
+This release supports Python 2.7 and 3.4 - 3.6.
+
+
+Highlights
+==========
+
+* The `np.einsum` function will use BLAS when possible
+
+
+New functions
+=============
+
+* ``parametrize``: decorator added to numpy.testing
+* ``chebinterpolate``: Interpolate function at Chebyshev points.
+
+
+Deprecations
+============
+
+
+Future Changes
+==============
+
+``np.issubdtype`` will stop downcasting dtype-like arguments
+------------------------------------------------------------
+It would be expected that ``issubdtype(np.float32, 'float64')`` and
+``issubdtype(np.float32, np.float64)`` mean the same thing - however, there
+was an undocumented special case that translated the former into
+``issubdtype(np.float32, np.floating)``, giving the surprising result of True.
+
+This translation now gives a warning explaining what translation is occuring.
+In future, the translation will be disabled, and the first example will be made
+equivalent to the second.
+
+
+Build System Changes
+====================
+
+
+Compatibility notes
+===================
+
+``np.tensordot`` now returns zero array when contracting over 0-length dimension
+--------------------------------------------------------------------------------
+Previously ``np.tensordot`` raised a ValueError when contracting over 0-length
+dimension. Now it returns a zero array, which is consistent with the behaviour
+of ``np.dot`` and ``np.einsum``.
+
+``np.ma`` functions producing ``fill_value``s have changed
+----------------------------------------------------------
+Previously, ``np.ma.default_fill_value`` would return a 0d array, but
+``np.ma.minimum_fill_value`` and ``np.ma.maximum_fill_value`` would return a
+tuple of the fields. Instead, all three methods return a structured ``np.void``
+object, which is what you would already find in the ``.fill_value`` attribute.
+
+Additionally, the dtype guessing now matches that of ``np.array`` - so when
+passing a python scalar ``x``, ``maximum_fill_value(x)`` is always the same as
+``maximum_fill_value(np.array(x))``. Previously ``x = long(1)`` on Python 2
+violated this assumption.
+
+``numpy.testing`` reorganized
+-----------------------------
+This is not expected to cause problems, but possibly something has been left
+out. If you experience an unexpected import problem using ``numpy.testing``
+let us know.
+
+``np.asfarray`` no longer accepts non-dtypes through the ``dtype`` argument
+---------------------------------------------------------------------------
+This previously would accept ``dtype=some_array``, with the implied semantics
+of ``dtype=some_array.dtype``. This was undocumented, unique across the numpy
+functions, and if used would likely correspond to a typo.
+
+1D ``np.linalg.norm`` preserves float input types, even for arbitrary orders
+----------------------------------------------------------------------------
+Previously, this would promote to ``float64`` when arbitrary orders were
+passed, despite not doing so under the simple cases::
+
+    >>> f32 = np.float32([1, 2])
+    >>> np.linalg.norm(f32, 2.0).dtype
+    dtype('float32')
+    >>> np.linalg.norm(f32, 2.0001).dtype
+    dtype('float64')  # numpy 1.13
+    dtype('float32')  # numpy 1.14
+
+This change affects only ``float32`` and ``float16`` arrays.
+
+
+C API changes
+=============
+
+
+New Features
+============
+
+External ``nose`` plugins are usable by ``numpy.testing.Tester``
+----------------------------------------------------------------
+``numpy.testing.Tester`` is now aware of ``nose`` plugins that are outside the
+``nose`` built-in ones.  This allows using, for example, ``nose-timer`` like
+so:  ``np.test(extra_argv=['--with-timer', '--timer-top-n', '20'])`` to
+obtain the runtime of the 20 slowest tests.  An extra keyword ``timer`` was
+also added to ``Tester.test``, so ``np.test(timer=20)`` will also report the 20
+slowest tests.
+
+``parametrize`` decorator added to ``numpy.testing``
+----------------------------------------------------
+A basic ``parametrize`` decorator is now available in ``numpy.testing``. It is
+intended to allow rewriting yield based tests that have been deprecated in
+pytest so as to facilitate the transition to pytest in the future. The nose
+testing framework has not been supported for several years and looks like
+abandonware.
+
+The new ``parametrize`` decorator does not have the full functionality of the
+one in pytest. It doesn't work for classes, doesn't support nesting, and does
+not substitute variable names. Even so, it should be adequate to rewrite the
+NumPy tests.
+
+``chebinterpolate`` function added to ``numpy.polynomial.chebyshev``
+--------------------------------------------------------------------
+The new ``chebinterpolate`` function interpolates a given function at the
+Chebyshev points of the first kind. A new ``Chebyshev.interpolate`` class
+method adds support for interpolation over arbitrary intervals using the scaled
+and shifted Chebyshev points of the first kind.
+
+Improvements
+============
+
+The GIL is released for all ``np.einsum`` variations
+----------------------------------------------------
+Some specific loop structures which have an accelerated loop version
+did not release the GIL prior to NumPy 1.14.0.  This oversight has been
+fixed.
+
+The `np.einsum` function will use BLAS when possible and optimize by default
+----------------------------------------------------------------------------
+The ``np.einsum`` function will now call ``np.tensordot`` when appropriate.
+Because ``np.tensordot`` uses BLAS when possible, that will speed up execution.
+By default, ``np.einsum`` will also attempt optimization as the overhead is
+small relative to the potential improvement in speed.
+
+
+Changes
+=======
+
+0d arrays now print their elements like other arrays
+----------------------------------------------------
+0d arrays now use the array2string formatters to print their elements, like
+other arrays. The ``style`` argument of ``array2string`` is now non-functional.
+
+Integer scalars are now unaffected by ``np.set_string_function``
+----------------------------------------------------------------
+Previously the str/repr of integer scalars could be controlled by
+``np.set_string_function``, unlike most other numpy scalars. This is no longer
+the case.

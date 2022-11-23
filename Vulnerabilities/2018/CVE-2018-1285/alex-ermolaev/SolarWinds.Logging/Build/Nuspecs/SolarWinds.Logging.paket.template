@@ -1,0 +1,14 @@
+type file
+id SolarWinds.Logging
+version 1.0.0.0
+authors SolarWinds
+description
+    SolarWinds.Logging library.
+dependencies
+	log4net == 1.2.10
+files
+    ../../paket.lock ==> content
+    ../../Src/Logging/bin/Release/SolarWinds.Logging.dll ==> lib/net40
+	../../Src/Logging/bin/Release/SolarWinds.Logging.pdb ==> lib/net40
+	../../Src/Logging/bin/Release/SolarWinds.Logging.xml ==> lib/net40
+	../../Src/Logging/bin/Release/SolarWinds.Logging.ExternalAnnotations.xml ==> lib/net40

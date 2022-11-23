@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+    <module name="org.netbeans.modules.java.hints/1" spec="1.91.0.17.25.12.1.1.32.5.1.13"/>
+    <instanceof class="java.awt.Component"/>
+    <instanceof class="java.awt.Container"/>
+    <instanceof class="java.awt.MenuContainer"/>
+    <instanceof class="java.awt.image.ImageObserver"/>
+    <instanceof class="java.io.Externalizable"/>
+    <instanceof class="java.io.Serializable"/>
+    <instanceof class="java.lang.Object"/>
+    <instanceof class="java.util.EventListener"/>
+    <instanceof class="javax.accessibility.Accessible"/>
+    <instanceof class="javax.swing.JComponent"/>
+    <instanceof class="javax.swing.TransferHandler$HasGetTransferHandler"/>
+    <instanceof class="javax.swing.event.ChangeListener"/>
+    <instanceof class="org.netbeans.modules.java.hints.analyzer.ui.AnalyzerTopComponent"/>
+    <instanceof class="org.openide.explorer.ExplorerManager$Provider"/>
+    <instanceof class="org.openide.util.HelpCtx$Provider"/>
+    <instanceof class="org.openide.util.Lookup$Provider"/>
+    <instanceof class="org.openide.windows.TopComponent"/>
+    <serialdata class="org.netbeans.modules.java.hints.analyzer.ui.AnalyzerTopComponent">
+        ACED0005737200516F72672E6E65746265616E732E6D6F64756C65732E6A6176612E68696E74732E616E616C797A65722E75
+        692E416E616C797A6572546F70436F6D706F6E656E74245265736F6C7661626C6548656C7065720000000000000001020000
+        7870
+    </serialdata>
+</settings>

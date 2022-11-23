@@ -1,0 +1,19 @@
+A partir d’une faille ou d’une vulnérabilité soit proposée par l’enseignant, soit choisie par vos soins (qui doit être en rapport avec le thème proposé):
+
+    Indiquer quel est le service ou le programme compromis, quel est le type de compromission
+    Expliquer la vulnérabilité, décrire le mécanisme permettant de l'exploiter
+    Cette faille concerne-t-elle des machines clientes ou des machines serveurs ?
+    Décrire une architecture typique du système d’information qui pourrait être impliquée dans l’exploitation de ces failles. Cela peut prendre la forme d’un schéma où sont décrits :
+        les services mis en oeuvre,
+        les machines concernées (clients et serveurs),
+        les équipements réseaux,
+        les réseaux d’interconnexion.
+    Cette description étant faite, et en tant qu’administrateur système sur un réseau contenant des machines pouvant être affectées que préconiseriez-vous au niveau du rapport pour :
+        limiter l’impact de l’exploitation de ces failles ?
+        empêcher qu’elles ne puissent être exploitées ?
+    Pour cette faille proposer une expérimentation permettant de mettre en évidence la vulnérabilité et son exploitation :
+        En mettant en place une machine virtuelle (peut être une image docker) avec le service vulnérable, le rapport indiquera comment cette machine a été créée
+        En décrivant une procédure d’exploitation de la faille en expliquant son mécanisme. Cette exploitation peut utiliser le framework metasploit ou utiliser des exploits disponibles sur le Web(en citant vos sources)
+    Joindre au devoir un glossaire des termes utilisés
+    Joindre au devoir l'ensemble des références utilisées
+    Ce travail est à faire 2 fois, une fois avant fin décembre et une fois en janvier, et une évaluation par les pairs est organisée afin de vous enrichir les uns du travail des autres. La note prend en compte le travail fait (par groupe de 3), ainsi que les évaluations faites par chacun (fait individuellement) 

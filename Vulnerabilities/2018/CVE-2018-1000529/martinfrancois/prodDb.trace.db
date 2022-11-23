@@ -1,0 +1,12 @@
+2018-05-20 13:17:55 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TEST" not found; SQL statement:
+insert into test (id, version, name) values (null, ?, ?) [42102-197]
+2018-05-20 13:18:49 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TEST" not found; SQL statement:
+insert into test (id, version, name) values (null, ?, ?) [42102-197]
+2018-05-20 13:19:00 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TEST" not found; SQL statement:
+insert into test (id, version, name) values (null, ?, ?) [42102-197]
+2018-05-20 13:20:06 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "TEST" not found; SQL statement:
+insert into test (id, version, name) values (null, ?, ?) [42102-197]

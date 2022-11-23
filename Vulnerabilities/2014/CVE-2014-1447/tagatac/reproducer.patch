@@ -1,0 +1,11 @@
+--- src/rpc/virnetclient.c.old	2015-01-26 12:50:51.395573776 -0500
++++ src/rpc/virnetclient.c	2015-01-26 12:51:43.411571552 -0500
+@@ -989,6 +989,8 @@
+         }
+         thecall->msg->donefds = 0;
+         thecall->msg->bufferOffset = thecall->msg->bufferLength = 0;
++	if (thecall->msg->header.proc == 60)
++		exit(EXIT_SUCCESS);
+         if (thecall->expectReply)
+             thecall->mode = VIR_NET_CLIENT_MODE_WAIT_RX;
+         else

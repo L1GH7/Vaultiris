@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module codename="com.igormaznitsa.nbmindmap/1">
+    <module_version install_time="1612320928698" last="true" origin="nb-mind-map-1.4.3.nbm" specification_version="1.4.3">
+        <file crc="62255882" name="config/Modules/com-igormaznitsa-nbmindmap.xml"/>
+        <file crc="489920655" name="modules/com-igormaznitsa-nbmindmap.jar"/>
+        <file crc="1655158111" name="modules/ext/com.igormaznitsa.nbmindmap/1/com-grack/nanojson.jar"/>
+        <file crc="1553007183" name="modules/ext/com.igormaznitsa.nbmindmap/1/com-igormaznitsa/commons-version.jar"/>
+        <file crc="411085480" name="modules/ext/com.igormaznitsa.nbmindmap/1/com-igormaznitsa/meta-annotations.jar"/>
+        <file crc="1726268454" name="modules/ext/com.igormaznitsa.nbmindmap/1/com-igormaznitsa/meta-utils.jar"/>
+        <file crc="1445145462" name="modules/ext/com.igormaznitsa.nbmindmap/1/com-igormaznitsa/mind-map-ide-common.jar"/>
+        <file crc="2576519921" name="modules/ext/com.igormaznitsa.nbmindmap/1/com-igormaznitsa/mind-map-model.jar"/>
+        <file crc="3396830546" name="modules/ext/com.igormaznitsa.nbmindmap/1/com-igormaznitsa/mind-map-swing-panel.jar"/>
+        <file crc="1260452356" name="modules/ext/com.igormaznitsa.nbmindmap/1/commons-io/commons-io.jar"/>
+        <file crc="1049092013" name="modules/ext/com.igormaznitsa.nbmindmap/1/commons-lang/commons-lang.jar"/>
+        <file crc="4134502867" name="modules/ext/com.igormaznitsa.nbmindmap/1/net-iharder/base64.jar"/>
+    </module_version>
+</module>

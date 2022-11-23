@@ -1,0 +1,20 @@
+-- in-use locking of NewPooledConnections ResourcePool.Manager tasks in C3P0PooledConnectionPool is 
+   unnecessary and hard to reason aboout in light of NewPooledConnection locks, pool semantics
+   enforce exclusive use by maintenance tasks, there is no need to re-enforce exclusive access at all
+   [???]
+
+-- ConnectionTesters should be coalesced on deserialization if possible. [0.9.6]
+
+-- MultipliedPoolBackedDataSources [0.9.6]
+
+-- Modify AbstractPoolBackedDataSource so that mere JMX inspection doesn't force initialization [0.9.6]
+      implement withPoolManager( doitIfThere, defaultValue )
+   
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+name             'CVE-2014-3566-poodle'
+maintainer       'Mike Splain'
+maintainer_email 'mike.splain@gmail.com'
+license          'All rights reserved'
+description      'Installs/Configures CVE-2014-3566-poodle'
+long_description 'Installs/Configures CVE-2014-3566-poodle'
+version          '0.1.0'

@@ -1,0 +1,45 @@
+---
+ - name: create user
+   user: name={{ login_user }} shell=/bin/bash
+
+ - name: add public key
+   authorized_key: user={{ login_user }}
+     key="{{lookup('file', 'login-key.pub')}}"
+
+ - name: enable sudo
+   lineinfile:
+     "dest='/etc/sudoers' state=present line='{{ login_user }} ALL=(ALL) NOPASSWD: ALL'"
+
+ - name: setting bashrc
+   copy: src=_bashrc dest=/home/{{ login_user }}/.bashrc mode=0600 owner={{ login_user }} group={{ login_user }}
+
+ - name: create vim/swap
+   file: path=/home/{{ login_user }}/.vim/swap state=directory mode=0700 owner={{ login_user }} group={{ login_user }}
+
+ - name: create vim/backup
+   file: path=/home/{{ login_user }}/.vim/backup state=directory mode=0700 owner={{ login_user }} group={{ login_user }}
+
+ - name: create vim/colors
+   file: path=/home/{{ login_user }}/.vim/colors state=directory mode=0700 owner={{ login_user }} group={{ login_user }}
+
+ - name: create vim/bundle
+   file: path=/home/{{ login_user }}/.vim/bundle state=directory mode=0700 owner={{ login_user }} group={{ login_user }}
+
+ - name: install neovundle
+   git: repo=https://github.com/Shougo/neobundle.vim dest=/home/{{ login_user }}/.vim/bundle/neobundle.vim 
+   
+ - name: settings vimrc
+   copy: src=_vimrc dest=/home/{{ login_user }}/.vimrc mode=0600 owner={{ login_user }} group={{ login_user }}
+
+ - name: carete local dir
+   file: path=/home/{{ login_user }}/local/ state=directory mode=0700 owner={{ login_user }} group={{ login_user }}
+
+ - name: carete local bin dir
+   file: path=/home/{{ login_user }}/local/bin/ state=directory mode=0700 owner={{ login_user }} group={{ login_user }}
+
+ - name: setting ~/local/bin/ path to .bashrc
+   lineinfile:
+    dest='/home/{{ login_user }}/.bashrc'
+    state=present
+    line='export PATH="$HOME/local/bin:$PATH"'
+

@@ -1,0 +1,5 @@
+---
+hostname: 'scapegoat.test'
+ansible_user: vagrant
+login_user: "kosuke"
+mysql_root_pass: "mysql"

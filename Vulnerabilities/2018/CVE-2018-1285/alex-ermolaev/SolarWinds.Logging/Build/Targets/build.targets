@@ -1,0 +1,76 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Define the DEFAULT settings -->
+  <PropertyGroup>
+      <Flavor Condition="'$(Flavor)'==''">Debug</Flavor>
+      <Trial Condition="'$(Trial)'==''">0</Trial>
+      <VolumeLicense Condition="'$(VolumeLicense)'==''">0</VolumeLicense>
+  </PropertyGroup>
+  
+  <!-- Define the DEBUG settings -->
+  <PropertyGroup Condition="'$(Flavor)'=='DEBUG'">
+    <DotNetConfiguration Condition="'$(Trial)'=='0' And '$(VolumeLicense)'=='0'">Debug</DotNetConfiguration>
+    <DotNetConfiguration Condition="'$(Trial)'=='1' And '$(VolumeLicense)'=='0'">Debug-Eval</DotNetConfiguration>
+    <DotNetConfiguration Condition="'$(VolumeLicense)'=='1'">Debug-Volume</DotNetConfiguration>
+    <Configuration>Win32 Debug</Configuration>
+    <ConfigurationMinDependency>$(Configuration)</ConfigurationMinDependency>
+    <OutputPath>..\Bin\Debug</OutputPath>
+    <Trial>0</Trial>
+  </PropertyGroup>
+
+  <!-- Define the RELEASE settings -->
+  <PropertyGroup Condition="'$(Flavor)'=='RELEASE'">
+    <DotNetConfiguration Condition="'$(Trial)'=='0' And '$(VolumeLicense)'=='0'">Release</DotNetConfiguration>
+    <DotNetConfiguration Condition="'$(Trial)'=='1' And '$(VolumeLicense)'=='0'">Release-Eval</DotNetConfiguration>
+    <DotNetConfiguration Condition="'$(VolumeLicense)'=='1'">Release-Volume</DotNetConfiguration>
+    <Configuration>Win32 Release</Configuration>
+    <ConfigurationMinDependency>$(Configuration) MinDependency</ConfigurationMinDependency>
+    <OutputPath>..\Bin\Release</OutputPath>
+  </PropertyGroup>
+  <!-- Define the RELEASE-FREE settings -->
+  <PropertyGroup Condition="'$(Flavor)'=='RELEASE-FREE'">
+	<DotNetConfiguration>Release-Free</DotNetConfiguration>
+    <Configuration>Win32 Release</Configuration>
+    <ConfigurationMinDependency>$(Configuration) MinDependency</ConfigurationMinDependency>
+    <OutputPath>..\Bin\Release</OutputPath>
+  </PropertyGroup>
+
+  <Target Name="Build" DependsOnTargets="$(BuildDependsOn)">
+    <CallTarget Targets="CopyFiles;BeforeBuild" />	
+    <ProjectBuilder Projects="@(Project)" OutputDirectory="$(OutputPath)" Rebuild="$(Rebuild)" />
+    <CallTarget Targets="AfterBuild" />
+  </Target>
+  
+  <Target Name="BeforeBuild" />
+  
+  <Target Name="AfterBuild" />
+
+  <Target Name="GetAdditionalFilesToDeploy" />
+
+  <Target Name="BuildComplete" />
+
+  <Target Name="CopyFiles">
+    <Message Text="@(FilesToCopy)" />
+    <SWCopy SourceFiles="@(FilesToCopy)"
+          DestinationFiles="@(FilesToCopy->'$(OutputPath)\%(RecursiveDir)%(Filename)%(Extension)')"
+          ContinueOnError="false"
+          Condition="'%(FilesToCopy.Destination)'=='' AND '%(FilesToCopy.Rename)'==''"
+    />
+     
+    <SWCopy SourceFiles="@(FilesToCopy)"
+          DestinationFolder="%(FilesToCopy.Destination)"
+          ContinueOnError="false"
+          Condition="'%(FilesToCopy.Destination)'!=''"
+    />
+    
+    <SWCopy SourceFiles="@(FilesToCopy)"
+          DestinationFiles="@(FilesToCopy->'$(OutputPath)\%(Rename)')"
+          ContinueOnError="false"
+          Condition="'%(FilesToCopy.Rename)'!=''"
+    />	
+	<Message Text="All files have been successfully copied" />
+  </Target>
+  
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.ProjectBuilder" AssemblyFile="..\Tasks\SolarWinds.MSBuild.Tasks.dll" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.SWCopy" AssemblyFile="..\Tasks\SolarWinds.MSBuild.Tasks.dll" />
+
+</Project>

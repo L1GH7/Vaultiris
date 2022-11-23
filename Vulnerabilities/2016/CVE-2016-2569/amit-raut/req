@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import requests, os
+
+proxy = {'http': '192.168.56.103:3128'}
+headers = {'If-Modified-Since': 'Wed, 24 Jan 2018 13:58:1 GMT', 'Accept': '*', 'max-age': '20000', 'cache-control': 'public', 'connetction': 'keep-alive', 'user-agent': 'requests2'}
+
+if len(os.sys.argv) != 2:
+    print "Usage: req [URI]"
+    os.sys.exit()
+
+print '\nhttp://192.168.56.103:8080/{}'.format(os.sys.argv[1])
+
+r = requests.get('http://192.168.56.103:8080/{}'.format(os.sys.argv[1]), proxies=proxy, headers=headers)
+
+print "\nHTTP Stat Code --> ", r.status_code
+
+print
+
+print "HTTP Response Headers \n",
+for h in r.headers:
+    if h != 'Vary':
+        print h, ": ", r.headers[h]
+print
+
+#if 'Vary' in r.headers:
+#    print "Vary: ", r.headers['Vary'], "\n"

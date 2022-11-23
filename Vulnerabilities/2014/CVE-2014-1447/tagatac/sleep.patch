@@ -1,0 +1,18 @@
+--- src/rpc/virnetserverclient.c.old	2014-05-27 13:47:35.201428164 -0400
++++ src/rpc/virnetserverclient.c	2014-05-27 13:48:37.185426204 -0400
+@@ -22,6 +22,7 @@
+  */
+ 
+ #include <config.h>
++#include <unistd.h>
+ 
+ #if HAVE_SASL
+ # include <sasl/sasl.h>
+@@ -1211,6 +1212,7 @@
+ virNetServerClientStartKeepAlive(virNetServerClientPtr client)
+ {
+     int ret;
++	usleep(10);
+     virNetServerClientLock(client);
+     ret = virKeepAliveStart(client->keepalive, 0, 0);
+     virNetServerClientUnlock(client);

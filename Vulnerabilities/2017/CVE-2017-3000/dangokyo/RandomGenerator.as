@@ -1,0 +1,88 @@
+package 
+{
+	/**
+	 * ...
+	 * @author dango
+	 */
+	public class RandomGenerator 
+	{
+		private var uValue:uint;
+		private var uSequenceLength:uint;
+		private var uXorMask:uint;
+		
+		private var predicateLength:uint;
+		public function RandomGenerator(value:uint = 0 ):void
+		{
+			uValue = value;
+			uSequenceLength = 0x7fffffff;
+			uXorMask = 0x48000000;
+		}
+		
+		public function RandomFastNext():uint
+		{
+			if (uValue & 1)
+			{
+				uValue = (uValue >> 1) ^ uXorMask;
+			}
+			else
+			{
+				uValue = uValue >> 1;
+			}
+			return uValue;
+		}
+		
+		public function RandomPureHash(seed:uint):uint
+		{
+			var ans:uint;
+			seed = ((seed << 13) ^ seed) - (seed >> 21);
+			ans = seed * seed ; //( seed * (seed * seed * 0x3d73 + 0xc0ae5));// - 0x2df722f3 );// & 0x7fffffff;
+			ans = ans * 0x3d73
+			ans = (ans + 0xc0ae5);
+			ans = (seed * ans);
+			ans = ans - 0x2df722f3;
+			ans = ans & 0x7fffffff;
+			ans += seed;
+			ans = ((ans << 13) ^ ans ) - (ans >> 21);
+			return (ans & 0x7fffffff);
+		}
+		
+		public function GenerateRandomNumber():uint
+		{
+			var aNum:uint = RandomFastNext();
+			aNum = RandomPureHash(aNum * 71);
+			return aNum & 0x7fffffff;
+		}
+		
+		public function matchTarget(time:uint, check_target:uint):Boolean
+		{
+			var nextValue:uint;
+			var i:uint;
+			for ( i = 0; i < time; i++ )
+			{
+				nextValue = GenerateRandomNumber();
+			}
+			if (nextValue == check_target)
+			{
+				return true;
+			}
+			
+			return false;
+		}
+		
+		public function predicate():void
+		{
+			var nextValue:uint;
+			var i:uint;
+			var ve: Vector.<uint>;
+			predicateLength = 0x30;
+			ve = new Vector.<uint>(predicateLength);
+			//uValue = target;
+			for (i = 0; i < predicateLength; i++ ){
+				nextValue = GenerateRandomNumber();
+				ve[i] = nextValue;
+				Logger.log("Constant:" + nextValue.toString(16) + "  "+ "uValue:"+ uValue.toString(16) );
+			}
+		}
+	}
+
+}

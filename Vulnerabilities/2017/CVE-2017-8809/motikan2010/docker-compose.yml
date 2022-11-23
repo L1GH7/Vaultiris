@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  mediawiki:
+    image: mediawiki:1.29.1
+    #image: mediawiki:1.29.2 # Fix Version
+    restart: always
+    ports:
+      - 8080:80
+    links:
+      - database
+    volumes:
+      - ./mediawiki/LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./mediawiki/poc.html:/var/www/html/poc.html
+      - ./mediawiki/sample.php:/var/www/html/sample.php
+
+  database:
+    image: mariadb:10.1
+    restart: always
+    environment:
+      MYSQL_DATABASE: my_wiki
+      MYSQL_USER: wikiuser
+      MYSQL_PASSWORD: example
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+    volumes:
+      # Create MediaWiki DB
+      - ./mysql/init:/docker-entrypoint-initdb.d

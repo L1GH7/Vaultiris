@@ -1,0 +1,15 @@
+service opentftp
+{
+        disable = no
+        type = UNLISTED
+        wait = no
+        server = /home/opentftp/start.py
+        socket_type = stream
+        protocol = tcp
+        user = opentftp
+        port = 56746
+        flags = REUSE
+        per_source = 5
+        rlimit_cpu = 3
+        nice = 18
+}

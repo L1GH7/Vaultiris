@@ -1,0 +1,11 @@
+package com.raid2017.bogus.a1admin2rulethemall;
+
+/**
+ * Created by timmy on 2/5/2017.
+ */
+
+import android.app.admin.DeviceAdminReceiver;
+
+public class AdminReceiver extends DeviceAdminReceiver {
+
+}

@@ -1,0 +1,10 @@
+Voici les instruction pour construire le docker et lance le hack CVE-2016-1494 dedans :
+
+* Se placer dans le répertoire du Dockerfile
+* Build docker : 
+    $ sudo docker build -t python_rsa .
+* Lancer le script avec la la version fixed de rsa :
+    $ sudo docker run python_rsa python3 src/rsa_hack.py
+* Lancer le script avec la version hackable de rsa :
+    $ sudo docker run python_rsa python3 src/rsa_hack.py rsa_old
+

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net45</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\thirdparty\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="SolarWinds.Net.SNMP">
+      <HintPath>..\thirdparty\SolarWinds.Net.SNMP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

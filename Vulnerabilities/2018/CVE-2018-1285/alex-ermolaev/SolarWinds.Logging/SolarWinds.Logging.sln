@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solarwinds.Logging", "Src\Logging\Solarwinds.Logging.csproj", "{D6A25E78-F75D-4368-8244-BB33AAAA4AB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solarwinds.Logging.UnitTest", "Src\Tests\Solarwinds.Logging.UnitTest\Solarwinds.Logging.UnitTest.csproj", "{288EDEDA-68B3-431D-B29A-966922E068EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug-Eval|Any CPU = Debug-Eval|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Release-Eval|Any CPU = Release-Eval|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6A25E78-F75D-4368-8244-BB33AAAA4AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6A25E78-F75D-4368-8244-BB33AAAA4AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6A25E78-F75D-4368-8244-BB33AAAA4AB2}.Debug-Eval|Any CPU.ActiveCfg = Debug-Eval|Any CPU
+		{D6A25E78-F75D-4368-8244-BB33AAAA4AB2}.Debug-Eval|Any CPU.Build.0 = Debug-Eval|Any CPU
+		{D6A25E78-F75D-4368-8244-BB33AAAA4AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6A25E78-F75D-4368-8244-BB33AAAA4AB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6A25E78-F75D-4368-8244-BB33AAAA4AB2}.Release-Eval|Any CPU.ActiveCfg = Release-Eval|Any CPU
+		{D6A25E78-F75D-4368-8244-BB33AAAA4AB2}.Release-Eval|Any CPU.Build.0 = Release-Eval|Any CPU
+		{288EDEDA-68B3-431D-B29A-966922E068EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{288EDEDA-68B3-431D-B29A-966922E068EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{288EDEDA-68B3-431D-B29A-966922E068EF}.Debug-Eval|Any CPU.ActiveCfg = Debug|Any CPU
+		{288EDEDA-68B3-431D-B29A-966922E068EF}.Debug-Eval|Any CPU.Build.0 = Debug|Any CPU
+		{288EDEDA-68B3-431D-B29A-966922E068EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{288EDEDA-68B3-431D-B29A-966922E068EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{288EDEDA-68B3-431D-B29A-966922E068EF}.Release-Eval|Any CPU.ActiveCfg = Release|Any CPU
+		{288EDEDA-68B3-431D-B29A-966922E068EF}.Release-Eval|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

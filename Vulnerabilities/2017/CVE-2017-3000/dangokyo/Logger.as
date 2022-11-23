@@ -1,0 +1,45 @@
+package 
+{
+	/**
+	 * ...
+	 * @author dango
+	 */
+	import flash.external.ExternalInterface
+	 
+	public class Logger 
+	{		
+		private static const DEBUG:uint = 1;
+		
+		public static function alert(msg:String):void{
+			var str:String = "";
+			if (DEBUG == 1)
+				str += msg;
+			
+			if (ExternalInterface.available){
+				ExternalInterface.call("alert", str);
+			}
+		}
+		
+		public static function log(msg:String):void{
+			//return;
+			var str:String = "";
+			if (DEBUG == 1)
+				str += msg;
+			
+			if (ExternalInterface.available){
+				ExternalInterface.call("console.log", str);
+			}
+			else
+			{
+				trace("[DANGOLOG]" + str);
+			}
+		}
+		
+		public static function logtime():void{
+			return;
+			var date:Date;
+			date = new Date();
+			trace("[DANGOLOG]" + date.getHours().toString(10) + ":" + date.getMinutes().toString(10) + ":" + date.getSeconds().toString() + ":" + date.getMilliseconds().toString());
+		}
+	}
+}

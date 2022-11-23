@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+
+    <title>NPM Audit Report</title>
+    <meta name="description" content="9 known vulnerabilities found.">
+
+    <style>
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md text-center">
+                <h1>NPM Audit Report</h1>
+
+                <h2>9 known vulnerabilities | 321 dependencies |
+                    November 27th 2018, 1:38:02 pm</h2>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            Remote Code Execution
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/pg">pg</a>
+                                    </li>
+                                    <li>Published: August 13th 2017 </li>
+                                    <li>Reported by: Sehrope Sarkuni</li>
+                                    <li>CWE-94</li>
+                                    <li>CVE-2017-16082</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt; 2.11.2 || &gt;&#x3D; 3.0.0 &lt; 3.6.4 ||  &gt;&#x3D; 4.0.0 &lt; 4.5.7 || &gt;&#x3D; 5.0.0 &lt; 5.2.1 || &gt;&#x3D; 6.0.0 &lt; 6.0.5 || &gt;&#x3D; 6.1.0 &lt; 6.1.6 || &gt;&#x3D; 6.2.0 &lt; 6.2.5 || &gt;&#x3D; 6.3.0 &lt; 6.3.3 || &gt;&#x3D; 6.4.0 &lt; 6.4.2 || &gt;&#x3D; 7.0.0 &lt; 7.0.2 || &gt;&#x3D; 7.1.0 &lt; 7.1.2</li>
+                                    <li>Patched: &gt;&#x3D; 2.11.2 &lt; 3.0.0|| &gt;&#x3D; 3.6.4 &lt; 4.0.0 ||  &gt;&#x3D; 4.5.7 &lt; 5.0.0 || &gt;&#x3D; 5.2.1 &lt; 6.0.0 || &gt;&#x3D; 6.0.5  &lt; 6.1.0 || &gt;&#x3D; 6.1.6 &lt; 6.2.0 || &gt;&#x3D; 6.2.5 &lt; 6.3.0 || &gt;&#x3D; 6.3.3 &lt; 6.4.0 || &gt;&#x3D; 6.4.2 &lt; 7.0.0 || &gt;&#x3D; 7.0.2 &lt; 7.1.0 || &gt;&#x3D; 7.1.2</li>
+                                    <li>CVSS: 5</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <p class="card-text"><p>Affected versions of <code>pg</code> contain a remote code execution vulnerability that occurs when the remote database or query specifies a crafted column name. </p>
+<p>There are two specific scenarios in which it is likely for an application to be vulnerable:</p>
+<ol>
+<li>The application executes unsafe, user-supplied sql which contains malicious column names.</li>
+<li>The application connects to an untrusted database and executes a query returning results which contain a malicious column name.</li>
+</ol>
+<h2 id="proof-of-concept">Proof of Concept</h2>
+<pre><code>const { Client } = require(&#39;pg&#39;)
+const client = new Client()
+client.connect()
+
+const sql = `SELECT 1 AS &quot;\\&#39;/*&quot;, 2 AS &quot;\\&#39;*/\n + console.log(process.env)] = null;\n//&quot;`
+
+client.query(sql, (err, res) =&gt; {
+  client.end()
+})</code></pre></p>
+
+                        <h3>Remediation</h3>
+                        <p class="card-text"><ul>
+<li>Version 2.x.x: Update to version 2.11.2 or later.</li>
+<li>Version 3.x.x: Update to version 3.6.4 or later.</li>
+<li>Version 4.x.x: Update to version 4.5.7 or later.</li>
+<li>Version 5.x.x: Update to version 5.2.1 or later.</li>
+<li>Version 6.x.x: Update to version 6.4.2 or later. ( Note that versions 6.1.6, 6.2.5, and 6.3.3 are also patched. )</li>
+<li>Version 7.x.x: Update to version 7.1.2 or later. ( Note that version 7.0.2 is also patched. )</li>
+</ul>
+</p>
+                         
+                        <h3>References</h3>
+                        <p class="card-text"><p><a href="https://node-postgres.com/announcements#2017-08-12-code-execution-vulnerability">Node Postgres: Code Execution Vulnerability Announcement</a></p>
+</p>
+                         
+                        <a href="https://npmjs.com/advisories/521" class="btn btn-primary">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-primary">low</span>
+                            Prototype Pollution
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/lodash">lodash</a>
+                                    </li>
+                                    <li>Published: April 24th 2018 </li>
+                                    <li>Reported by: Olivier Arteau (HoLyVieR)</li>
+                                    <li>CWE-471</li>
+                                    <li>CVE-2018-3721</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt;4.17.5</li>
+                                    <li>Patched: &gt;&#x3D;4.17.5</li>
+                                    <li>CVSS: 1</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <p class="card-text"><p>Versions of <code>lodash</code> before 4.17.5 are vulnerable to prototype pollution. </p>
+<p>The vulnerable functions are &#39;defaultsDeep&#39;, &#39;merge&#39;, and &#39;mergeWith&#39; which allow a malicious user to modify the prototype of <code>Object</code> via <code>__proto__</code> causing the addition or modification of an existing property that will exist on all objects.</p>
+</p>
+
+                        <h3>Remediation</h3>
+                        <p class="card-text"><p>Update to version 4.17.5 or later.</p>
+</p>
+                         
+                        <h3>References</h3>
+                        <p class="card-text"><ul>
+<li><a href="https://hackerone.com/reports/310443">HackerOne Report</a></li>
+</ul>
+</p>
+                         
+                        <a href="https://npmjs.com/advisories/577" class="btn btn-primary">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

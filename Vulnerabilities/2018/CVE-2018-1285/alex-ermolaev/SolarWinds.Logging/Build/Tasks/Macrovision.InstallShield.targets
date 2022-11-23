@@ -1,0 +1,17 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<UsingTask TaskName="Macrovision.InstallShield.Tasks.InstallShield" AssemblyFile="Macrovision.InstallShield.Tasks.dll"></UsingTask>
+  <PropertyGroup>
+    <InstallShieldProPath>C:\Program Files\Macrovision\IS 2008\System</InstallShieldProPath>
+    <InstallShieldStandalonePath>C:\Program Files\Macrovision\IS 2008 StandaloneBuild</InstallShieldStandalonePath>
+  </PropertyGroup>
+  <Choose >
+    <When Condition=" '$(InstallShieldPath)' == '' ">
+      <PropertyGroup Condition="Exists('$(InstallShieldProPath)')">
+        <InstallShieldPath>$(InstallShieldProPath)</InstallShieldPath>
+      </PropertyGroup>
+      <PropertyGroup Condition="Exists('$(InstallShieldStandalonePath)')">
+        <InstallShieldPath>$(InstallShieldStandalonePath)</InstallShieldPath>
+      </PropertyGroup>
+    </When>
+  </Choose>
+</Project>

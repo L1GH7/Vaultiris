@@ -1,0 +1,73 @@
+# NOTE: This is not a completely stand alone policy, you will need the
+# cfengine-yum policy to be included as well as the standard library. Run the
+# policy with `"$(this.bundle)_use_version_specific"` defined to configure an
+# old centos 6.5 repostiory and then install samba. This should give you an old
+# samba version to expiriment with.
+bundle common badlock_demo_settings
+{
+  classes:
+      "samba_host" or => {
+                           "hub",
+                           "host001",
+                         };
+
+  # NOTE: I will control this with the augments file (def.json)
+
+  #    "public_distro_repo_definitions_use_version_specific"
+  #      comment => "When this class is defined, client repositories get configured
+  #                  to point at repositories with packages at the time of the
+  #                  major minor release.",
+  #      or => {
+  #              "any",
+  #            };
+
+  #    "public_distro_repo_definitions_use_latest"
+  #      comment => "When this class is defined, client repositories get
+  #                 configured to point at the most recent packages for their
+  #                 major version.",
+  #      or => {
+  #               "!any",
+  #            };
+
+  reports:
+     "Using latest distros"
+      if => "public_distro_repo_definitions_use_latest";
+
+}
+
+# cf-agent -KIf ./extras.cf --define "$(this.bundle)_use_version_specific"
+body file control
+{
+  inputs => { "$(sys.libdir)/stdlib.cf",  };
+}
+
+bundle agent manage_yum_client_config
+{
+  meta:
+      "tags" slist => { "autorun" };
+
+  methods:
+    # Figure out what repos we should use.
+    "yum_repo_definitions"
+      usebundle => public_distro_repo_definitions;
+
+    # Note how the data is passed
+    "yum_repos_d"
+      usebundle => yum_repos_d("purge", @(public_distro_repo_definitions.data));
+
+    # Install Samba
+      # This installs the old version if we are looking at the old repos, see the public_distro_repo_definitions bundle for more details.
+
+    samba_host.public_distro_repo_definitions_use_version_specific::
+    "install samba"
+      usebundle => install_samba;
+}
+
+bundle agent install_samba
+{
+  packages:
+
+      "samba"
+        package_policy => "add",
+        package_method => yum;
+}

@@ -1,0 +1,6 @@
+[tcp/8080]
+
+"GET /hello", "GET /hi" -> "HTTP/1.1 200 OK\r\nServer: metanet\r\nVary:\r\nConnection: keep-alive\r\n\r\n<html><body>wut?</body></html>",close()
+               "GET / " -> "HTTP/1.1 200 OK\r\n\r\n<html><body style=\"background-color: #000000; color: #FFFFFF\">YOU HAS <a href=key>Key?</a></html>\n",close()
+             "GET /key" -> "HTTP/1.1 200 OK\r\n\r\n<html><body style=\"background-color: #000000; color: #FFFFFF\">The key is banana</html>\n",close()
+                      * -> "HTTP/1.1 200 OK\r\nServer: metanet\r\nmax-age: 0\r\nDate: Thu, 26 Jan 2018 16:25:22 GMT\r\nLast-Modified: Thu, 25 Jan 2018 13:58:11 GMT\r\nVary:User-Agent\r\nConnection:keep-alive\r\n\r\n<html><body>Wut????</body></html>",close()

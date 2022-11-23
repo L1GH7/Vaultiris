@@ -1,0 +1,970 @@
+#
+# Fatal error in ..\..\src\hydrogen-instructions.cc, line 641
+# CHECK(cur == other_operand) failed
+#
+
+
+==== Stack trace ============================================
+
+    2: arguments adaptor frame: 2->3
+Security context: 00000000DDB57281 <JS Object>#0#
+    3: writeUInt32LE [c:\node\node_modules\tedious\lib\tracking-buffer\writ
+able-tracking-buffer.js:~109] (this=00000000B8EA09C1 <a WritableTrackingBuffer>#
+1#,value=7980)
+    4: createFixedData [c:\node\node_modules\tedious\lib\login7-payload.js:
+147] (this=00000000B8EA08B1 <a Login7Payload>#2#)
+    5: new constructor(aka Login7Payload) [c:\node\node_modules\tedious\lib
+\login7-payload.js:110] (this=00000000B8EA08B1 <a Login7Payload>#2#,loginData=00
+000000B8EA0859 <an Object>#3#)
+    7: sendLogin7Packet [c:\node\node_modules\tedious\lib\connection.js:745
+] (this=00000000B8FC92B1 <a Connection>#4#)
+    8: /* anonymous */ [c:\node\node_modules\tedious\lib\connection.js:105]
+ (this=00000000B8FC92B1 <a Connection>#4#)
+   10: dispatchEvent [c:\node\node_modules\tedious\lib\connection.js:672] (
+this=00000000B8FC92B1 <a Connection>#4#)
+   11: arguments adaptor frame: 1->0
+   12: processPreLoginResponse [c:\node\node_modules\tedious\lib\connection
+.js:729] (this=00000000B8FC92B1 <a Connection>#4#)
+   13: /* anonymous */ [c:\node\node_modules\tedious\lib\connection.js:102]
+ (this=00000000B8FC92B1 <a Connection>#4#)
+   15: dispatchEvent [c:\node\node_modules\tedious\lib\connection.js:672] (
+this=00000000B8FC92B1 <a Connection>#4#)
+   16: arguments adaptor frame: 1->0
+   17: /* anonymous */ [c:\node\node_modules\tedious\lib\connection.js:609]
+ (this=00000000B8FCC429 <a MessageIO>#5#)
+   18: emit [events.js:92] (this=00000000B8FCC429 <a MessageIO>#5#,type=00000000
+96B0F9F9 <String[7]: message>)
+   19: eventData [c:\node\node_modules\tedious\lib\message-io.js:58] (this=
+00000000B8FCC429 <a MessageIO>#5#,data=00000000B8E9FE41 <a Buffer>#6#)
+   21: /* anonymous */ [c:\node\node_modules\tedious\lib\message-io.js:3] (
+this=00000000B8FCB499 <a Socket>#7#)
+   22: arguments adaptor frame: 1->0
+   23: emit [events.js:95] (this=00000000B8FCB499 <a Socket>#7#,type=0000000096B
+15319 <String[4]: data>)
+   24: arguments adaptor frame: 2->1
+   25: /* anonymous */ [_stream_readable.js:764] (this=00000000B8FCB499 <a Socke
+t>#7#)
+   26: emit [events.js:92] (this=00000000B8FCB499 <a Socket>#7#,type=0000000096B
+17B21 <String[8]: readable>)
+   27: emitReadable_ [_stream_readable.js:426] (this=00000000DDB573A1 <JS Global
+ Object>#8#,stream=00000000B8FCB499 <a Socket>#7#)
+   28: emitReadable [_stream_readable.js:422] (this=00000000DDB573A1 <JS Global
+Object>#8#,stream=00000000B8FCB499 <a Socket>#7#)
+   29: readableAddChunk [_stream_readable.js:165] (this=00000000DDB573A1 <JS Glo
+bal Object>#8#,stream=00000000B8FCB499 <a Socket>#7#,state=00000000B8FCB549 <a R
+eadableState>#9#,chunk=00000000B8E9FE41 <a Buffer>#6#,encoding=00000000DDB04121
+<undefined>,addToFront=00000000DDB04181 <false>)
+   30: push [_stream_readable.js:127] (this=00000000B8FCB499 <a Socket>#7#,chunk
+=00000000B8E9FE41 <a Buffer>#6#,encoding=00000000DDB04121 <undefined>)
+   31: arguments adaptor frame: 1->2
+   32: onread [net.js:528] (this=00000000B8FCBA09 <a TCP>#10#,buffer=00000000B8E
+50D51 <a SlowBuffer>#11#,offset=768,length=43)
+
+==== Details ================================================
+
+[2]: arguments adaptor frame: 2->3 {
+  // actual arguments
+  [00] : 7980
+  [01] : 12
+}
+
+[3]: writeUInt32LE [c:\node\node_modules\tedious\lib\tracking-buffer\writab
+le-tracking-buffer.js:~109] (this=00000000B8EA09C1 <a WritableTrackingBuffer>#1#
+,value=7980) {
+// optimized frame
+}
+[4]: createFixedData [c:\node\node_modules\tedious\lib\login7-payload.js:14
+7] (this=00000000B8EA08B1 <a Login7Payload>#2#) {
+  // stack-allocated locals
+  var buffer = 00000000B8EA09C1 <a WritableTrackingBuffer>#1#
+  // expression stack (top to bottom)
+  [02] : 7980
+  [01] : 00000000B8EA09C1 <a WritableTrackingBuffer>#1#
+--------- s o u r c e   c o d e ---------
+function () {?    var buffer;?    this.tdsVersion = versions[this.loginData.tdsV
+ersion];?    this.packetSize = this.loginData.packetSize;?    this.clientProgVer
+ = 0;?    this.clientPid = process.pid;?    this.connectionId = 0;?    this.clie
+ntTimeZone = new Date().getTimezoneOffset();?    this.clientLcid = 0x...
+
+-----------------------------------------
+}
+
+[5]: new constructor(aka Login7Payload) [c:\node\node_modules\tedious\lib\l
+ogin7-payload.js:110] (this=00000000B8EA08B1 <a Login7Payload>#2#,loginData=0000
+0000B8EA0859 <an Object>#3#) {
+  // stack-allocated locals
+  var data = 00000000DDB04121 <undefined>
+  var fixed = 00000000DDB04121 <undefined>
+  var length = 00000000DDB04121 <undefined>
+  var lengthLength = 4
+  var variable = 00000000DDB04121 <undefined>
+  // expression stack (top to bottom)
+  [05] : 00000000B8EA08B1 <a Login7Payload>#2#
+--------- s o u r c e   c o d e ---------
+function Login7Payload(loginData) {?    var data, fixed, length, lengthLength, v
+ariable;?    this.loginData = loginData;?    lengthLength = 4;?    fixed = this.
+createFixedData();?    variable = this.createVariableData(lengthLength + fixed.l
+ength);?    length = lengthLength + fixed.length + variable.length;?    data = n
+ew...
+
+-----------------------------------------
+}
+
+[7]: sendLogin7Packet [c:\node\node_modules\tedious\lib\connection.js:745]
+(this=00000000B8FC92B1 <a Connection>#4#) {
+  // stack-allocated locals
+  var loginData = 00000000B8EA0859 <an Object>#3#
+  // heap-allocated locals
+  var payload = 00000000DDB04121 <undefined>
+  // expression stack (top to bottom)
+  [02] : 00000000B8EA0859 <an Object>#3#
+  [01] : 00000000814D9989 <JS Function Login7Payload>#12#
+--------- s o u r c e   c o d e ---------
+function () {?    var loginData, payload;?    loginData = {?      domain: this.c
+onfig.domain,?      userName: this.config.userName,?      password: this.config.
+password,?      database: this.config.options.database,?      appName: this.conf
+ig.options.appName,?      packetSize: this.config.options.packetSize,...
+
+-----------------------------------------
+}
+
+[8]: /* anonymous */ [c:\node\node_modules\tedious\lib\connection.js:105] (
+this=00000000B8FC92B1 <a Connection>#4#) {
+  // expression stack (top to bottom)
+  [00] : 00000000B8FC92B1 <a Connection>#4#
+--------- s o u r c e   c o d e ---------
+function () {?          this.sendLogin7Packet();?          if (this.config.domai
+n) {?            return this.transitionTo(this.STATE.SENT_LOGIN7_WITH_NTLM);?
+       } else {?            return this.transitionTo(this.STATE.SENT_LOGIN7_WITH
+_STANDARD_LOGIN);?          }?        }
+-----------------------------------------
+}
+
+[10]: dispatchEvent [c:\node\node_modules\tedious\lib\connection.js:672] (t
+his=00000000B8FC92B1 <a Connection>#4#) {
+  // stack-allocated locals
+  var arguments = 00000000B8EA07C1 <an Arguments>#13#
+  var args = 00000000B8EA0801 <JS Array[0]>#14#
+  var eventFunction = 00000000DDB04121 <undefined>
+  var eventName = 00000000E2B1D849 <String[5]: noTls>
+  var _ref1 = 00000000B8F69F61 <an Object>#15#
+  // expression stack (top to bottom)
+  [07] : 00000000B8EA0801 <JS Array[0]>#14#
+  [06] : 00000000B8FC92B1 <a Connection>#4#
+  [05] : 00000000B8F6A549 <JS Function>#16#
+--------- s o u r c e   c o d e ---------
+function () {?    var args, eventFunction, eventName, _ref1;?    eventName = arg
+uments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];?    i
+f ((_ref1 = this.state) != null ? _ref1.events[eventName] : void 0) {?      retu
+rn eventFunction = this.state.events[eventName].apply(this, args);?  ...
+
+-----------------------------------------
+}
+
+[11]: arguments adaptor frame: 1->0 {
+  // actual arguments
+  [00] : 00000000E2B1D849 <String[5]: noTls>  // not passed to callee
+}
+
+[12]: processPreLoginResponse [c:\node\node_modules\tedious\lib\connection.
+js:729] (this=00000000B8FC92B1 <a Connection>#4#) {
+  // heap-allocated locals
+  var preloginPayload = 00000000B8EA05E9 <a PreloginPayload>#17#
+  // expression stack (top to bottom)
+  [01] : 00000000E2B1D849 <String[5]: noTls>
+  [00] : 00000000B8FC92B1 <a Connection>#4#
+--------- s o u r c e   c o d e ---------
+function () {?    var preloginPayload;?    preloginPayload = new PreloginPayload
+(this.messageBuffer);?    this.debug.payload(function() {?      return preloginP
+ayload.toString('  ');?    });?    if (preloginPayload.encryptionString === 'ON'
+) {?      return this.dispatchEvent('tls');?    } else {?      return...
+
+-----------------------------------------
+}
+
+[13]: /* anonymous */ [c:\node\node_modules\tedious\lib\connection.js:102]
+(this=00000000B8FC92B1 <a Connection>#4#) {
+  // expression stack (top to bottom)
+  [00] : 00000000B8FC92B1 <a Connection>#4#
+--------- s o u r c e   c o d e ---------
+function () {?          return this.processPreLoginResponse();?        }
+-----------------------------------------
+}
+
+[15]: dispatchEvent [c:\node\node_modules\tedious\lib\connection.js:672] (t
+his=00000000B8FC92B1 <a Connection>#4#) {
+  // stack-allocated locals
+  var arguments = 00000000B8EA0551 <an Arguments>#18#
+  var args = 00000000B8EA0591 <JS Array[0]>#19#
+  var eventFunction = 00000000DDB04121 <undefined>
+  var eventName = 0000000096B0F9F9 <String[7]: message>
+  var _ref1 = 00000000B8F69F61 <an Object>#15#
+  // expression stack (top to bottom)
+  [07] : 00000000B8EA0591 <JS Array[0]>#19#
+  [06] : 00000000B8FC92B1 <a Connection>#4#
+  [05] : 00000000B8F6A501 <JS Function>#20#
+--------- s o u r c e   c o d e ---------
+function () {?    var args, eventFunction, eventName, _ref1;?    eventName = arg
+uments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];?    i
+f ((_ref1 = this.state) != null ? _ref1.events[eventName] : void 0) {?      retu
+rn eventFunction = this.state.events[eventName].apply(this, args);?  ...
+
+-----------------------------------------
+}
+
+[16]: arguments adaptor frame: 1->0 {
+  // actual arguments
+  [00] : 0000000096B0F9F9 <String[7]: message>  // not passed to callee
+}
+
+[17]: /* anonymous */ [c:\node\node_modules\tedious\lib\connection.js:609]
+(this=00000000B8FCC429 <a MessageIO>#5#) {
+  // expression stack (top to bottom)
+  [01] : 0000000096B0F9F9 <String[7]: message>
+  [00] : 00000000B8FC92B1 <a Connection>#4#
+--------- s o u r c e   c o d e ---------
+function () {?        return _this.dispatchEvent('message');?      }
+-----------------------------------------
+}
+
+[18]: emit [events.js:92] (this=00000000B8FCC429 <a MessageIO>#5#,type=000000009
+6B0F9F9 <String[7]: message>) {
+  // stack-allocated locals
+  var arguments = 00000000B8EA04E9 <an Arguments>#21#
+  var er = 00000000DDB04121 <undefined>
+  var handler = 00000000B8FCCB31 <JS Function>#22#
+  var len = 00000000DDB04121 <undefined>
+  var args = 00000000DDB04121 <undefined>
+  var i = 00000000DDB04121 <undefined>
+  var listeners = 00000000DDB04121 <undefined>
+  // heap-allocated locals
+  var type = 0000000096B0F9F9 <String[7]: message>
+  // expression stack (top to bottom)
+  [08] : 00000000B8FCC429 <a MessageIO>#5#
+  [07] : 00000000DDB61899 <JS Function emit>#23#
+--------- s o u r c e   c o d e ---------
+function emit(type) {?  var er, handler, len, args, i, listeners;??  if (!this._
+events)?    this._events = {};??  // If there is no 'error' event listener then
+throw.?  if (type === 'error') {?    if (!this._events.error ||?        (typeof
+this._events.error === 'object' &&?         !this._events.error.length)) ...
+
+-----------------------------------------
+}
+
+[19]: eventData [c:\node\node_modules\tedious\lib\message-io.js:58] (this=0
+0000000B8FCC429 <a MessageIO>#5#,data=00000000B8E9FE41 <a Buffer>#6#) {
+  // stack-allocated locals
+  var endOfMessage = 00000000DDB04161 <true>
+  var length = 43
+  var packet = 00000000B8EA0149 <a Packet>#24#
+  var packetsData = 00000000B8EA00E1 <JS Array[1]>#25#
+  // expression stack (top to bottom)
+  [05] : 0000000096B0F9F9 <String[7]: message>
+  [04] : 00000000B8FCC429 <a MessageIO>#5#
+--------- s o u r c e   c o d e ---------
+function (data) {?    var endOfMessage, length, packet, packetsData;?    if (thi
+s.packetBuffer.length > 0) {?      this.packetBuffer = Buffer.concat([this.packe
+tBuffer, data]);?    } else {?      this.packetBuffer = data;?    }?    packetsD
+ata = [];?    endOfMessage = false;?    while (isPacketComplete(this....
+
+-----------------------------------------
+}
+
+[21]: /* anonymous */ [c:\node\node_modules\tedious\lib\message-io.js:3] (t
+his=00000000B8FCB499 <a Socket>#7#) {
+  // stack-allocated locals
+  var arguments = 00000000B8EA00A1 <an Arguments>#26#
+  // expression stack (top to bottom)
+  [03] : 00000000B8EA00A1 <an Arguments>#26#
+  [02] : 00000000B8FCC429 <a MessageIO>#5#
+  [01] : 00000000814AC6D9 <JS Function>#27#
+--------- s o u r c e   c o d e ---------
+function (){ return fn.apply(me, arguments); }
+-----------------------------------------
+}
+
+[22]: arguments adaptor frame: 1->0 {
+  // actual arguments
+  [00] : 00000000B8E9FE41 <a Buffer>#6#  // not passed to callee
+}
+
+[23]: emit [events.js:95] (this=00000000B8FCB499 <a Socket>#7#,type=0000000096B1
+5319 <String[4]: data>) {
+  // stack-allocated locals
+  var arguments = 00000000B8EA0031 <an Arguments>#28#
+  var er = 00000000DDB04121 <undefined>
+  var handler = 00000000B8FCC551 <JS Function>#29#
+  var len = 00000000DDB04121 <undefined>
+  var args = 00000000DDB04121 <undefined>
+  var i = 00000000DDB04121 <undefined>
+  var listeners = 00000000DDB04121 <undefined>
+  // heap-allocated locals
+  var type = 0000000096B15319 <String[4]: data>
+  // expression stack (top to bottom)
+  [09] : 00000000B8E9FE41 <a Buffer>#6#
+  [08] : 00000000B8FCB499 <a Socket>#7#
+  [07] : 00000000DDB61899 <JS Function emit>#23#
+--------- s o u r c e   c o d e ---------
+function emit(type) {?  var er, handler, len, args, i, listeners;??  if (!this._
+events)?    this._events = {};??  // If there is no 'error' event listener then
+throw.?  if (type === 'error') {?    if (!this._events.error ||?        (typeof
+this._events.error === 'object' &&?         !this._events.error.length)) ...
+
+-----------------------------------------
+}
+
+[24]: arguments adaptor frame: 2->1 {
+  // actual arguments
+  [00] : 0000000096B15319 <String[4]: data>
+  [01] : 00000000B8E9FE41 <a Buffer>#6#  // not passed to callee
+}
+
+[25]: /* anonymous */ [_stream_readable.js:764] (this=00000000B8FCB499 <a Socket
+>#7#) {
+  // stack-allocated locals
+  var c = 00000000B8E9FE41 <a Buffer>#6#
+  // expression stack (top to bottom)
+  [03] : 00000000B8E9FE41 <a Buffer>#6#
+  [02] : 0000000096B15319 <String[4]: data>
+  [01] : 00000000B8FCB499 <a Socket>#7#
+--------- s o u r c e   c o d e ---------
+function () {?    readable = true;??    var c;?    while (!paused && (null !== (
+c = stream.read())))?      stream.emit('data', c);??    if (c === null) {?
+readable = false;?      stream._readableState.needReadable = true;?    }?  }
+-----------------------------------------
+}
+
+[26]: emit [events.js:92] (this=00000000B8FCB499 <a Socket>#7#,type=0000000096B1
+7B21 <String[8]: readable>) {
+  // stack-allocated locals
+  var arguments = 00000000B8E9FF91 <an Arguments>#30#
+  var er = 00000000DDB04121 <undefined>
+  var handler = 00000000B8FCC5E1 <JS Function>#31#
+  var len = 00000000DDB04121 <undefined>
+  var args = 00000000DDB04121 <undefined>
+  var i = 00000000DDB04121 <undefined>
+  var listeners = 00000000DDB04121 <undefined>
+  // heap-allocated locals
+  var type = 0000000096B17B21 <String[8]: readable>
+  // expression stack (top to bottom)
+  [08] : 00000000B8FCB499 <a Socket>#7#
+  [07] : 00000000DDB61899 <JS Function emit>#23#
+--------- s o u r c e   c o d e ---------
+function emit(type) {?  var er, handler, len, args, i, listeners;??  if (!this._
+events)?    this._events = {};??  // If there is no 'error' event listener then
+throw.?  if (type === 'error') {?    if (!this._events.error ||?        (typeof
+this._events.error === 'object' &&?         !this._events.error.length)) ...
+
+-----------------------------------------
+}
+
+[27]: emitReadable_ [_stream_readable.js:426] (this=00000000DDB573A1 <JS Global
+Object>#8#,stream=00000000B8FCB499 <a Socket>#7#) {
+  // expression stack (top to bottom)
+  [01] : 0000000096B17B21 <String[8]: readable>
+  [00] : 00000000B8FCB499 <a Socket>#7#
+--------- s o u r c e   c o d e ---------
+function emitReadable_(stream) {?  stream.emit('readable');?}
+-----------------------------------------
+}
+
+[28]: emitReadable [_stream_readable.js:422] (this=00000000DDB573A1 <JS Global O
+bject>#8#,stream=00000000B8FCB499 <a Socket>#7#) {
+  // stack-allocated locals
+  var state = 00000000B8FCB549 <a ReadableState>#9#
+  // heap-allocated locals
+  var stream = 00000000B8FCB499 <a Socket>#7#
+  // expression stack (top to bottom)
+  [03] : 00000000B8FCB499 <a Socket>#7#
+  [02] : 00000000DDB573A1 <JS Global Object>#8#
+  [01] : 0000000081441571 <JS Function emitReadable_>#32#
+--------- s o u r c e   c o d e ---------
+function emitReadable(stream) {?  var state = stream._readableState;?  state.nee
+dReadable = false;?  if (state.emittedReadable)?    return;??  state.emittedRead
+able = true;?  if (state.sync)?    process.nextTick(function() {?      emitReada
+ble_(stream);?    });?  else?    emitReadable_(stream);?}
+-----------------------------------------
+}
+
+[29]: readableAddChunk [_stream_readable.js:165] (this=00000000DDB573A1 <JS Glob
+al Object>#8#,stream=00000000B8FCB499 <a Socket>#7#,state=00000000B8FCB549 <a Re
+adableState>#9#,chunk=00000000B8E9FE41 <a Buffer>#6#,encoding=00000000DDB04121 <
+undefined>,addToFront=00000000DDB04181 <false>) {
+  // stack-allocated locals
+  var er = 00000000DDB04101 <null>
+  var e = 00000000DDB04121 <undefined>
+  // expression stack (top to bottom)
+  [04] : 00000000B8FCB499 <a Socket>#7#
+  [03] : 00000000DDB573A1 <JS Global Object>#8#
+  [02] : 0000000081441529 <JS Function emitReadable>#33#
+--------- s o u r c e   c o d e ---------
+function readableAddChunk(stream, state, chunk, encoding, addToFront) {?  var er
+ = chunkInvalid(state, chunk);?  if (er) {?    stream.emit('error', er);?  } els
+e if (chunk === null || chunk === undefined) {?    state.reading = false;?    if
+ (!state.ended)?      onEofChunk(stream, state);?  } else if (state.objectMode |
+| chu...
+
+-----------------------------------------
+}
+
+[30]: push [_stream_readable.js:127] (this=00000000B8FCB499 <a Socket>#7#,chunk=
+00000000B8E9FE41 <a Buffer>#6#,encoding=00000000DDB04121 <undefined>) {
+  // stack-allocated locals
+  var state = 00000000B8FCB549 <a ReadableState>#9#
+  // expression stack (top to bottom)
+  [07] : 00000000DDB04181 <false>
+  [06] : 00000000DDB04121 <undefined>
+  [05] : 00000000B8E9FE41 <a Buffer>#6#
+  [04] : 00000000B8FCB549 <a ReadableState>#9#
+  [03] : 00000000B8FCB499 <a Socket>#7#
+  [02] : 00000000DDB573A1 <JS Global Object>#8#
+  [01] : 0000000081441379 <JS Function readableAddChunk>#34#
+--------- s o u r c e   c o d e ---------
+function (chunk, encoding) {?  var state = this._readableState;??  if (typeof ch
+unk === 'string' && !state.objectMode) {?    encoding = encoding || state.defaul
+tEncoding;?    if (encoding !== state.encoding) {?      chunk = new Buffer(chunk
+, encoding);?      encoding = '';?    }?  }??  return readableAddChun...
+
+-----------------------------------------
+}
+
+[31]: arguments adaptor frame: 1->2 {
+  // actual arguments
+  [00] : 00000000B8E9FE41 <a Buffer>#6#
+}
+
+[32]: onread [net.js:528] (this=00000000B8FCBA09 <a TCP>#10#,buffer=00000000B8E5
+0D51 <a SlowBuffer>#11#,offset=768,length=43) {
+  // stack-allocated locals
+  var handle = 00000000B8FCBA09 <a TCP>#10#
+  var self = 00000000B8FCB499 <a Socket>#7#
+  var end = 811
+  var ret = 00000000DDB04161 <true>
+  var r = 00000000DDB04121 <undefined>
+  // expression stack (top to bottom)
+  [06] : 00000000B8E9FE41 <a Buffer>#6#
+  [05] : 00000000B8FCB499 <a Socket>#7#
+--------- s o u r c e   c o d e ---------
+function onread(buffer, offset, length) {?  var handle = this;?  var self = hand
+le.owner;?  assert(handle === self._handle, 'handle != self._handle');??  timers
+._unrefActive(self);??  var end = offset + length;?  debug('onread', process._er
+rno, offset, length, end);??  if (buffer) {?    debug('got data');??    // ...
+
+-----------------------------------------
+}
+
+==== Key         ============================================
+
+ #0# 00000000DDB57281: 00000000DDB57281 <JS Object>
+ #1# 00000000B8EA09C1: 00000000B8EA09C1 <a WritableTrackingBuffer>
+       initialSize: 100
+          encoding: 0000000096B1ADA1 <String[4]: ucs2>
+  doubleSizeGrowth: 00000000DDB04181 <false>
+            buffer: 00000000B8EA0A09 <a Buffer>#35#
+          position: 12
+ #2# 00000000B8EA08B1: 00000000B8EA08B1 <a Login7Payload>
+         loginData: 00000000B8EA0859 <an Object>#3#
+        tdsVersion: 1946157060
+        packetSize: 4096
+     clientProgVer: 0
+         clientPid: 7980
+      connectionId: 0
+    clientTimeZone: -480
+        clientLcid: 1033
+            flags1: 224
+            flags2: 0
+            flags3: 8
+         typeFlags: 0
+ #3# 00000000B8EA0859: 00000000B8EA0859 <an Object>
+            domain: 00000000DDB04121 <undefined>
+          userName: 0000000096B2BB51 <String[2]: sa>
+          password: 0000000096B2BB71 <String[8]: password>
+          database: 0000000096B2BBD1 <String[5]: SQLDB>
+           appName: 00000000DDB04121 <undefined>
+        packetSize: 4096
+        tdsVersion: 00000000E2B1D5E1 <String[3]: 7_4>
+       initDbFatal: 00000000DDB04161 <true>
+ #4# 00000000B8FC92B1: 00000000B8FC92B1 <a Connection>
+            config: 000000008143B8E1 <an Object>#36#
+             reset: 00000000B8FC9389 <JS Function>#37#
+       socketClose: 00000000B8FC9411 <JS Function>#38#
+     socketConnect: 00000000B8FC9499 <JS Function>#39#
+       socketError: 00000000B8FC9521 <JS Function>#40#
+    requestTimeout: 00000000B8FC95A9 <JS Function>#41#
+    connectTimeout: 00000000B8FC9631 <JS Function>#42#
+             debug: 00000000B8FC9679 <a Debug>#43#
+ tokenStreamParser: 00000000B8FC9831 <a Parser>#44#
+      transactions: 00000000B8FCB1E1 <JS Array[0]>#45#
+transactionDescriptors: 00000000B8FCB201 <JS Array[1]>#46#
+           _events: 00000000B8FCB469 <an Object>#47#
+             state: 00000000B8F69F61 <an Object>#15#
+            socket: 00000000B8FCB499 <a Socket>#7#
+         messageIo: 00000000B8FCC429 <a MessageIO>#5#
+      connectTimer: 00000000B8FCCC89 <JS Object>#48#
+     messageBuffer: 00000000B8EA0469 <a Buffer>#49#
+ #5# 00000000B8FCC429: 00000000B8FCC429 <a MessageIO>
+            socket: 00000000B8FCB499 <a Socket>#7#
+       _packetSize: 4096
+             debug: 00000000B8FC9679 <a Debug>#43#
+        sendPacket: 00000000B8FCC4C9 <JS Function>#50#
+         eventData: 00000000B8FCC551 <JS Function>#29#
+    packetDataSize: 4088
+      packetBuffer: 00000000B8EA02B9 <a Buffer>#51#
+     payloadBuffer: 00000000B8FCC961 <a Buffer>#52#
+           _events: 00000000B8FCCA71 <an Object>#53#
+ #6# 00000000B8E9FE41: 00000000B8E9FE41 <a Buffer>
+            length: 43
+            parent: 00000000B8E50D51 <a SlowBuffer>#11#
+            offset: 768
+ #7# 00000000B8FCB499: 00000000B8FCB499 <a Socket>
+       _connecting: 00000000DDB04181 <false>
+           _handle: 00000000B8FCBA09 <a TCP>#10#
+    _readableState: 00000000B8FCB549 <a ReadableState>#9#
+          readable: 00000000DDB04161 <true>
+            domain: 00000000DDB04101 <null>
+           _events: 00000000B8FCB629 <an Object>#54#
+     _maxListeners: 10
+    _writableState: 00000000B8FCB641 <a WritableState>#55#
+          writable: 00000000DDB04161 <true>
+     allowHalfOpen: 00000000DDB04181 <false>
+             onend: 00000000DDB04101 <null>
+         destroyed: 00000000DDB04181 <false>
+         bytesRead: 43
+  _bytesDispatched: 47
+      _pendingData: 00000000DDB04101 <null>
+  _pendingEncoding: 0000000096B09A39 <String[0]: >
+             pause: 00000000814F7B49 <JS Function>#56#
+            resume: 00000000814F7B91 <JS Function>#57#
+        _consuming: 00000000DDB04161 <true>
+ #8# 00000000DDB573A1: 00000000DDB573A1 <JS Global Object>
+ #9# 00000000B8FCB549: 00000000B8FCB549 <a ReadableState>
+     highWaterMark: 16384
+            buffer: 00000000B8FCB609 <JS Array[0]>#58#
+            length: 0
+             pipes: 00000000DDB04101 <null>
+        pipesCount: 0
+           flowing: 00000000DDB04181 <false>
+             ended: 00000000DDB04181 <false>
+        endEmitted: 00000000DDB04181 <false>
+           reading: 00000000DDB04161 <true>
+        calledRead: 00000000DDB04161 <true>
+              sync: 00000000DDB04181 <false>
+      needReadable: 00000000DDB04161 <true>
+   emittedReadable: 00000000DDB04181 <false>
+ readableListening: 00000000DDB04181 <false>
+        objectMode: 00000000DDB04181 <false>
+   defaultEncoding: 0000000096B16AE1 <String[4]: utf8>
+            ranOut: 00000000DDB04181 <false>
+        awaitDrain: 0
+       readingMore: 00000000DDB04181 <false>
+           decoder: 00000000DDB04101 <null>
+          encoding: 00000000DDB04101 <null>
+ #10# 00000000B8FCBA09: 00000000B8FCBA09 <a TCP>
+    writeQueueSize: 0
+             owner: 00000000B8FCB499 <a Socket>#7#
+           reading: 00000000DDB04161 <true>
+                  : 00000000B8E9FD99 <FixedArray[11]>#59#
+ #11# 00000000B8E50D51: 00000000B8E50D51 <a SlowBuffer>
+            length: 1048576
+ #12# 00000000814D9989: 00000000814D9989 <JS Function Login7Payload>
+ #13# 00000000B8EA07C1: 00000000B8EA07C1 <an Arguments>
+            length: 1
+            callee: 00000000814EAB69 <JS Function>#60#
+ #14# 00000000B8EA0801: 00000000B8EA0801 <JS Array[0]>
+ #15# 00000000B8F69F61: 00000000B8F69F61 <an Object>
+              name: 00000000E2B1D791 <String[12]: SentPrelogin>
+             enter: 00000000B8F69F91 <JS Function>#61#
+            events: 00000000B8F6A341 <an Object>#62#
+ #16# 00000000B8F6A549: 00000000B8F6A549 <JS Function>
+ #17# 00000000B8EA05E9: 00000000B8EA05E9 <a PreloginPayload>
+              data: 00000000B8EA0469 <a Buffer>#49#
+           version: 00000000B8EA0669 <an Object>#63#
+        encryption: 2
+  encryptionString: 00000000E2B234A9 <String[7]: NOT_SUP>
+          instance: 0
+              mars: 0
+        marsString: 00000000E2B23489 <String[3]: OFF>
+ #18# 00000000B8EA0551: 00000000B8EA0551 <an Arguments>
+            length: 1
+            callee: 00000000814EAB69 <JS Function>#60#
+ #19# 00000000B8EA0591: 00000000B8EA0591 <JS Array[0]>
+ #20# 00000000B8F6A501: 00000000B8F6A501 <JS Function>
+ #21# 00000000B8EA04E9: 00000000B8EA04E9 <an Arguments>
+            length: 1
+            callee: 00000000DDB61899 <JS Function emit>#23#
+ #22# 00000000B8FCCB31: 00000000B8FCCB31 <JS Function>
+ #23# 00000000DDB61899: 00000000DDB61899 <JS Function emit>
+ #24# 00000000B8EA0149: 00000000B8EA0149 <a Packet>
+            buffer: 00000000B8EA0101 <a Buffer>#64#
+ #25# 00000000B8EA00E1: 00000000B8EA00E1 <JS Array[1]>
+                 0: 00000000B8EA01D9 <a Buffer>#65#
+ #26# 00000000B8EA00A1: 00000000B8EA00A1 <an Arguments>
+            length: 1
+            callee: 00000000B8FCC551 <JS Function>#29#
+ #27# 00000000814AC6D9: 00000000814AC6D9 <JS Function>
+ #28# 00000000B8EA0031: 00000000B8EA0031 <an Arguments>
+            length: 2
+            callee: 00000000DDB61899 <JS Function emit>#23#
+ #29# 00000000B8FCC551: 00000000B8FCC551 <JS Function>
+ #30# 00000000B8E9FF91: 00000000B8E9FF91 <an Arguments>
+            length: 1
+            callee: 00000000DDB61899 <JS Function emit>#23#
+ #31# 00000000B8FCC5E1: 00000000B8FCC5E1 <JS Function>
+ #32# 0000000081441571: 0000000081441571 <JS Function emitReadable_>
+ #33# 0000000081441529: 0000000081441529 <JS Function emitReadable>
+ #34# 0000000081441379: 0000000081441379 <JS Function readableAddChunk>
+ #35# 00000000B8EA0A09: 00000000B8EA0A09 <a Buffer>
+            length: 100
+            parent: 00000000B8E95A19 <a SlowBuffer>#66#
+            offset: 4792
+ #36# 000000008143B8E1: 000000008143B8E1 <an Object>
+            server: 0000000096B2BB09 <String[9]: 127.0.0.1>
+          userName: 0000000096B2BB51 <String[2]: sa>
+          password: 0000000096B2BB71 <String[8]: password>
+           options: 0000000081447291 <an Object>#67#
+ #37# 00000000B8FC9389: 00000000B8FC9389 <JS Function>
+ #38# 00000000B8FC9411: 00000000B8FC9411 <JS Function>
+ #39# 00000000B8FC9499: 00000000B8FC9499 <JS Function>
+ #40# 00000000B8FC9521: 00000000B8FC9521 <JS Function>
+ #41# 00000000B8FC95A9: 00000000B8FC95A9 <JS Function>
+ #42# 00000000B8FC9631: 00000000B8FC9631 <JS Function>
+ #43# 00000000B8FC9679: 00000000B8FC9679 <a Debug>
+           options: 00000000B8FC96A9 <an Object>#68#
+            indent: 0000000096B1D3C9 <String[2]:   >
+           _events: 00000000B8FC97F1 <an Object>#69#
+ #44# 00000000B8FC9831: 00000000B8FC9831 <a Parser>
+             debug: 00000000B8FC9679 <a Debug>#43#
+       colMetadata: 00000000DDB04121 <undefined>
+           options: 0000000081447291 <an Object>#67#
+            buffer: 00000000B8FC98C1 <a ReadableTrackingBuffer>#70#
+          position: 0
+           _events: 00000000B8FC99B9 <an Object>#71#
+ #45# 00000000B8FCB1E1: 00000000B8FCB1E1 <JS Array[0]>
+ #46# 00000000B8FCB201: 00000000B8FCB201 <JS Array[1]>
+                 0: 00000000B8FCB259 <a Buffer>#72#
+ #47# 00000000B8FCB469: 00000000B8FCB469 <an Object>
+           connect: 00000000B8FCCD39 <JS Function>#73#
+ #48# 00000000B8FCCC89: 00000000B8FCCC89 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FD0361 <JS Object>#74#
+         _idleNext: 00000000B8FC90C9 <JS Object>#75#
+        _idleStart: 00000000B8FCCCD9 <Number: 1410160693419>
+_monotonicStartTime: 20442246
+        _onTimeout: 00000000B8FC9631 <JS Function>#42#
+           _repeat: 00000000DDB04181 <false>
+ #49# 00000000B8EA0469: 00000000B8EA0469 <a Buffer>
+            length: 35
+            parent: 00000000B8E95A19 <a SlowBuffer>#66#
+            offset: 4752
+ #50# 00000000B8FCC4C9: 00000000B8FCC4C9 <JS Function>
+ #51# 00000000B8EA02B9: 00000000B8EA02B9 <a Buffer>
+            length: 0
+            parent: 00000000B8E50D51 <a SlowBuffer>#11#
+            offset: 811
+ #52# 00000000B8FCC961: 00000000B8FCC961 <a Buffer>
+            length: 0
+            parent: 000000008143FED9 <a SlowBuffer>#76#
+            offset: 0
+ #53# 00000000B8FCCA71: 00000000B8FCCA71 <an Object>
+              data: 00000000B8FCCA29 <JS Function>#77#
+           message: 00000000B8FCCB31 <JS Function>#22#
+ #54# 00000000B8FCB629: 00000000B8FCB629 <an Object>
+               end: 00000000B8FCC3E9 <JS Array[2]>#78#
+             error: 00000000B8FC9521 <JS Function>#40#
+           connect: 00000000B8FCC8D9 <JS Array[1]>#79#
+             close: 00000000B8FC9411 <JS Function>#38#
+              data: 00000000B8FCC551 <JS Function>#29#
+          readable: 00000000B8FCC5E1 <JS Function>#31#
+ #55# 00000000B8FCB641: 00000000B8FCB641 <a WritableState>
+     highWaterMark: 16384
+        objectMode: 00000000DDB04181 <false>
+         needDrain: 00000000DDB04181 <false>
+            ending: 00000000DDB04181 <false>
+             ended: 00000000DDB04181 <false>
+          finished: 00000000DDB04181 <false>
+     decodeStrings: 00000000DDB04181 <false>
+   defaultEncoding: 0000000096B16AE1 <String[4]: utf8>
+            length: 0
+           writing: 00000000DDB04181 <false>
+              sync: 00000000DDB04181 <false>
+  bufferProcessing: 00000000DDB04181 <false>
+           onwrite: 00000000814F6FB1 <JS Function>#80#
+           writecb: 00000000DDB04101 <null>
+          writelen: 0
+            buffer: 00000000B8FCB719 <JS Array[0]>#81#
+      errorEmitted: 00000000DDB04181 <false>
+ #56# 00000000814F7B49: 00000000814F7B49 <JS Function>
+ #57# 00000000814F7B91: 00000000814F7B91 <JS Function>
+ #58# 00000000B8FCB609: 00000000B8FCB609 <JS Array[0]>
+ #59# 00000000B8E9FD99: 00000000B8E9FD99 <FixedArray[11]>
+                 0: 1
+                 1: 0
+                 2: 4
+                 3: 00000000DDB04121 <undefined>
+                 4: 00000000DDB04121 <undefined>
+                 5: 00000000DDB04121 <undefined>
+                 6: 00000000DDB04121 <undefined>
+                 7: 00000000E2BC78F1 <String[21]: slab_0000000000858C50>
+                 8: 00000000DDB04101 <null>
+                 9: 00000000DDB04121 <undefined>
+                  ...
+ #60# 00000000814EAB69: 00000000814EAB69 <JS Function>
+ #61# 00000000B8F69F91: 00000000B8F69F91 <JS Function>
+ #62# 00000000B8F6A341: 00000000B8F6A341 <an Object>
+       socketError: 00000000B8F6A389 <JS Function>#82#
+    connectTimeout: 00000000B8F6A3F1 <JS Function>#83#
+              data: 00000000B8F6A469 <JS Function>#84#
+           message: 00000000B8F6A501 <JS Function>#20#
+             noTls: 00000000B8F6A549 <JS Function>#16#
+               tls: 00000000B8F6A611 <JS Function>#85#
+ #63# 00000000B8EA0669: 00000000B8EA0669 <an Object>
+             major: 9
+             minor: 0
+             patch: 15
+           trivial: 195
+          subbuild: 0
+ #64# 00000000B8EA0101: 00000000B8EA0101 <a Buffer>
+            length: 43
+            parent: 00000000B8E50D51 <a SlowBuffer>#11#
+            offset: 768
+ #65# 00000000B8EA01D9: 00000000B8EA01D9 <a Buffer>
+            length: 35
+            parent: 00000000B8E50D51 <a SlowBuffer>#11#
+            offset: 776
+ #66# 00000000B8E95A19: 00000000B8E95A19 <a SlowBuffer>
+            length: 8192
+              used: 4896
+ #67# 0000000081447291: 0000000081447291 <an Object>
+              port: 49894
+          database: 0000000096B2BBD1 <String[5]: SQLDB>
+          textsize: 00000000E2B1D5B9 <String[10]: 2147483647>
+    connectTimeout: 15000
+    requestTimeout: 15000
+     cancelTimeout: 5000
+        packetSize: 4096
+        tdsVersion: 00000000E2B1D5E1 <String[3]: 7_4>
+    isolationLevel: 2
+           encrypt: 00000000DDB04181 <false>
+cryptoCredentialsDetails: 00000000B8F77279 <an Object>#86#
+            useUTC: 00000000DDB04161 <true>
+    useColumnNames: 00000000DDB04181 <false>
+connectionIsolationLevel: 2
+ #68# 00000000B8FC96A9: 00000000B8FC96A9 <an Object>
+              data: 00000000DDB04181 <false>
+           payload: 00000000DDB04181 <false>
+            packet: 00000000DDB04181 <false>
+             token: 00000000DDB04181 <false>
+ #69# 00000000B8FC97F1: 00000000B8FC97F1 <an Object>
+             debug: 00000000B8FC97A9 <JS Function>#87#
+ #70# 00000000B8FC98C1: 00000000B8FC98C1 <a ReadableTrackingBuffer>
+            buffer: 00000000B8FC9879 <a Buffer>#88#
+          encoding: 0000000096B1ADA1 <String[4]: ucs2>
+          position: 0
+ #71# 00000000B8FC99B9: 00000000B8FC99B9 <an Object>
+ #72# 00000000B8FCB259: 00000000B8FCB259 <a Buffer>
+            length: 8
+            parent: 00000000B8F0F689 <a SlowBuffer>#89#
+            offset: 6816
+ #73# 00000000B8FCCD39: 00000000B8FCCD39 <JS Function>
+ #74# 00000000B8FD0361: 00000000B8FD0361 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FD4641 <JS Object>#90#
+         _idleNext: 00000000B8FCCC89 <JS Object>#48#
+        _idleStart: 00000000B8FD03B1 <Number: 1410160693426>
+_monotonicStartTime: 20442246
+        _onTimeout: 00000000B8FCD1F1 <JS Function>#91#
+           _repeat: 00000000DDB04181 <false>
+ #75# 00000000B8FC90C9: 00000000B8FC90C9 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FCCC89 <JS Object>#48#
+         _idleNext: 00000000B8FC5C59 <JS Object>#92#
+        _idleStart: 00000000B8FC9119 <Number: 1410160693410>
+_monotonicStartTime: 20442230
+        _onTimeout: 00000000B8FC61C1 <JS Function>#93#
+           _repeat: 00000000DDB04181 <false>
+ #76# 000000008143FED9: 000000008143FED9 <a SlowBuffer>
+            length: 0
+ #77# 00000000B8FCCA29: 00000000B8FCCA29 <JS Function>
+ #78# 00000000B8FCC3E9: 00000000B8FCC3E9 <JS Array[2]>
+                 0: 00000000B8FCB789 <JS Function g>#94#
+                 1: 00000000B8FC9411 <JS Function>#38#
+ #79# 00000000B8FCC8D9: 00000000B8FCC8D9 <JS Array[1]>
+                 0: 00000000B8FC9499 <JS Function>#39#
+ #80# 00000000814F6FB1: 00000000814F6FB1 <JS Function>
+ #81# 00000000B8FCB719: 00000000B8FCB719 <JS Array[0]>
+ #82# 00000000B8F6A389: 00000000B8F6A389 <JS Function>
+ #83# 00000000B8F6A3F1: 00000000B8F6A3F1 <JS Function>
+ #84# 00000000B8F6A469: 00000000B8F6A469 <JS Function>
+ #85# 00000000B8F6A611: 00000000B8F6A611 <JS Function>
+ #86# 00000000B8F77279: 00000000B8F77279 <an Object>
+ #87# 00000000B8FC97A9: 00000000B8FC97A9 <JS Function>
+ #88# 00000000B8FC9879: 00000000B8FC9879 <a Buffer>
+            length: 0
+            parent: 000000008143FED9 <a SlowBuffer>#76#
+            offset: 0
+ #89# 00000000B8F0F689: 00000000B8F0F689 <a SlowBuffer>
+            length: 8192
+              used: 8192
+ #90# 00000000B8FD4641: 00000000B8FD4641 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FD7BD1 <JS Object>#95#
+         _idleNext: 00000000B8FD0361 <JS Object>#74#
+        _idleStart: 00000000B8FD4691 <Number: 1410160693494>
+_monotonicStartTime: 20442308
+        _onTimeout: 00000000B8FD08E9 <JS Function>#96#
+           _repeat: 00000000DDB04181 <false>
+ #91# 00000000B8FCD1F1: 00000000B8FCD1F1 <JS Function>
+ #92# 00000000B8FC5C59: 00000000B8FC5C59 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FC90C9 <JS Object>#75#
+         _idleNext: 00000000B8FC27D9 <JS Object>#97#
+        _idleStart: 00000000B8FC5CA9 <Number: 1410160693407>
+_monotonicStartTime: 20442230
+        _onTimeout: 00000000B8FC2D41 <JS Function>#98#
+           _repeat: 00000000DDB04181 <false>
+ #93# 00000000B8FC61C1: 00000000B8FC61C1 <JS Function>
+ #94# 00000000B8FCB789: 00000000B8FCB789 <JS Function g>
+          listener: 000000008144DB39 <JS Function onend>#99#
+ #95# 00000000B8FD7BD1: 00000000B8FD7BD1 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8F890E9 <a Timer>#100#
+         _idleNext: 00000000B8FD4641 <JS Object>#90#
+        _idleStart: 00000000B8FD7C21 <Number: 1410160693497>
+_monotonicStartTime: 20442324
+        _onTimeout: 00000000B8FD4BA9 <JS Function>#101#
+           _repeat: 00000000DDB04181 <false>
+ #96# 00000000B8FD08E9: 00000000B8FD08E9 <JS Function>
+ #97# 00000000B8FC27D9: 00000000B8FC27D9 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FC5C59 <JS Object>#92#
+         _idleNext: 00000000B8FBF0A1 <JS Object>#102#
+        _idleStart: 00000000B8FC2829 <Number: 1410160693403>
+_monotonicStartTime: 20442230
+        _onTimeout: 00000000B8FBF609 <JS Function>#103#
+           _repeat: 00000000DDB04181 <false>
+ #98# 00000000B8FC2D41: 00000000B8FC2D41 <JS Function>
+ #99# 000000008144DB39: 000000008144DB39 <JS Function onend>
+ #100# 00000000B8F890E9: 00000000B8F890E9 <a Timer>
+         _idleNext: 00000000B8FD7BD1 <JS Object>#95#
+         _idlePrev: 00000000B8F88E49 <JS Object>#104#
+             msecs: 15000
+ #101# 00000000B8FD4BA9: 00000000B8FD4BA9 <JS Function>
+ #102# 00000000B8FBF0A1: 00000000B8FBF0A1 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FC27D9 <JS Object>#97#
+         _idleNext: 00000000B8FBB9F9 <JS Object>#105#
+        _idleStart: 00000000B8FBF0F1 <Number: 1410160693400>
+_monotonicStartTime: 20442215
+        _onTimeout: 00000000B8FBBF61 <JS Function>#106#
+           _repeat: 00000000DDB04181 <false>
+ #103# 00000000B8FBF609: 00000000B8FBF609 <JS Function>
+ #104# 00000000B8F88E49: 00000000B8F88E49 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8F91841 <JS Object>#107#
+         _idleNext: 00000000B8F890E9 <a Timer>#100#
+        _idleStart: 00000000B8F890B9 <Number: 1410160693256>
+_monotonicStartTime: 20442074
+        _onTimeout: 00000000B8F76B59 <JS Function>#108#
+           _repeat: 00000000DDB04181 <false>
+ #105# 00000000B8FBB9F9: 00000000B8FBB9F9 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FBF0A1 <JS Object>#102#
+         _idleNext: 00000000B8FB83A1 <JS Object>#109#
+        _idleStart: 00000000B8FBBA49 <Number: 1410160693396>
+_monotonicStartTime: 20442215
+        _onTimeout: 00000000B8FB8909 <JS Function>#110#
+           _repeat: 00000000DDB04181 <false>
+ #106# 00000000B8FBBF61: 00000000B8FBBF61 <JS Function>
+ #107# 00000000B8F91841: 00000000B8F91841 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8F97241 <JS Object>#111#
+         _idleNext: 00000000B8F88E49 <JS Object>#104#
+        _idleStart: 00000000B8F91921 <Number: 1410160693302>
+_monotonicStartTime: 20442121
+        _onTimeout: 00000000B8F8A269 <JS Function>#112#
+           _repeat: 00000000DDB04181 <false>
+ #108# 00000000B8F76B59: 00000000B8F76B59 <JS Function>
+ #109# 00000000B8FB83A1: 00000000B8FB83A1 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FBB9F9 <JS Object>#105#
+         _idleNext: 00000000B8FB4C79 <JS Object>#113#
+        _idleStart: 00000000B8FB83F1 <Number: 1410160693392>
+_monotonicStartTime: 20442215
+        _onTimeout: 00000000B8FB5261 <JS Function>#114#
+           _repeat: 00000000DDB04181 <false>
+ #110# 00000000B8FB8909: 00000000B8FB8909 <JS Function>
+ #111# 00000000B8F97241: 00000000B8F97241 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8F9C189 <JS Object>#115#
+         _idleNext: 00000000B8F91841 <JS Object>#107#
+        _idleStart: 00000000B8F972D1 <Number: 1410160693322>
+_monotonicStartTime: 20442137
+        _onTimeout: 00000000B8F92211 <JS Function>#116#
+           _repeat: 00000000DDB04181 <false>
+ #112# 00000000B8F8A269: 00000000B8F8A269 <JS Function>
+ #113# 00000000B8FB4C79: 00000000B8FB4C79 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FB83A1 <JS Object>#109#
+         _idleNext: 00000000B8FB13F1 <JS Object>#117#
+        _idleStart: 00000000B8FB4CC9 <Number: 1410160693388>
+_monotonicStartTime: 20442215
+        _onTimeout: 00000000B8FB1959 <JS Function>#118#
+           _repeat: 00000000DDB04181 <false>
+ #114# 00000000B8FB5261: 00000000B8FB5261 <JS Function>
+ #115# 00000000B8F9C189: 00000000B8F9C189 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FA0BB1 <JS Object>#119#
+         _idleNext: 00000000B8F97241 <JS Object>#111#
+        _idleStart: 00000000B8F9C219 <Number: 1410160693334>
+_monotonicStartTime: 20442152
+        _onTimeout: 00000000B8F97A31 <JS Function>#120#
+           _repeat: 00000000DDB04181 <false>
+ #116# 00000000B8F92211: 00000000B8F92211 <JS Function>
+ #117# 00000000B8FB13F1: 00000000B8FB13F1 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FB4C79 <JS Object>#113#
+         _idleNext: 00000000B8FAD9C9 <JS Object>#121#
+        _idleStart: 00000000B8FB1441 <Number: 1410160693382>
+_monotonicStartTime: 20442199
+        _onTimeout: 00000000B8FADFB1 <JS Function>#122#
+           _repeat: 00000000DDB04181 <false>
+ #118# 00000000B8FB1959: 00000000B8FB1959 <JS Function>
+ #119# 00000000B8FA0BB1: 00000000B8FA0BB1 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FA5669 <JS Object>#123#
+         _idleNext: 00000000B8F9C189 <JS Object>#115#
+        _idleStart: 00000000B8FA0C41 <Number: 1410160693347>
+_monotonicStartTime: 20442168
+        _onTimeout: 00000000B8F9C999 <JS Function>#124#
+           _repeat: 00000000DDB04181 <false>
+ #120# 00000000B8F97A31: 00000000B8F97A31 <JS Function>
+ #121# 00000000B8FAD9C9: 00000000B8FAD9C9 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FB13F1 <JS Object>#117#
+         _idleNext: 00000000B8FA9D31 <JS Object>#125#
+        _idleStart: 00000000B8FADA19 <Number: 1410160693373>
+_monotonicStartTime: 20442199
+        _onTimeout: 00000000B8FAA581 <JS Function>#126#
+           _repeat: 00000000DDB04181 <false>
+ #122# 00000000B8FADFB1: 00000000B8FADFB1 <JS Function>
+ #123# 00000000B8FA5669: 00000000B8FA5669 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FA9D31 <JS Object>#125#
+         _idleNext: 00000000B8FA0BB1 <JS Object>#119#
+        _idleStart: 00000000B8FA56F9 <Number: 1410160693358>
+_monotonicStartTime: 20442183
+        _onTimeout: 00000000B8FA1501 <JS Function>#127#
+           _repeat: 00000000DDB04181 <false>
+ #124# 00000000B8F9C999: 00000000B8F9C999 <JS Function>
+ #125# 00000000B8FA9D31: 00000000B8FA9D31 <JS Object>
+      _idleTimeout: 15000
+         _idlePrev: 00000000B8FAD9C9 <JS Object>#121#
+         _idleNext: 00000000B8FA5669 <JS Object>#123#
+        _idleStart: 00000000B8FA9DC1 <Number: 1410160693366>
+_monotonicStartTime: 20442183
+        _onTimeout: 00000000B8FA5CB9 <JS Function>#128#
+           _repeat: 00000000DDB04181 <false>
+ #126# 00000000B8FAA581: 00000000B8FAA581 <JS Function>
+ #127# 00000000B8FA1501: 00000000B8FA1501 <JS Function>
+ #128# 00000000B8FA5CB9: 00000000B8FA5CB9 <JS Function>
+=====================

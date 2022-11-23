@@ -1,0 +1,3 @@
+CydiaSubstrate-based fix for CVE-2014-4377
+
+See github.com/feliam/cve-2014-4377 and http://blog.binamuse.com/2014/09/coregraphics-memory-corruption.html

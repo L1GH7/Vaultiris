@@ -1,0 +1,4 @@
+http://www.openwall.com/lists/oss-security/2016/07/31/6
+
+gcc doublefetch.c  -pthread  -o df
+./df 7 65534 1000000 0

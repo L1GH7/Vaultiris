@@ -1,0 +1,12 @@
+source http://dev-artifactory.dev.local/artifactory/api/nuget/nuget-3rdParty/
+source http://dev-artifactory.dev.local/artifactory/api/nuget/nuget-OrionPlatform-develop/
+source http://dev-artifactory.dev.local/artifactory/api/nuget/nuget-OrionPlatform-acceptance/
+source http://dev-artifactory.dev.local/artifactory/api/nuget/nuget-OrionPlatform-stable/
+source http://dev-artifactory.dev.local/artifactory/api/nuget/nuget-OrionPlatform-release/
+
+nuget log4net == 1.2.10
+nuget NUnit @~> 2.6.3
+
+nuget SolarWinds.Logging ~> 10000.2.0
+nuget SolarWinds.Copyright ~> 1.1.0
+

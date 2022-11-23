@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module codename="org.netbeans.modules.nbjavac.api">
+    <module_version install_time="1612320977459" last="true" origin="Third Party Libraries" specification_version="2.1">
+        <file crc="3913461708" name="config/Modules/org-netbeans-modules-nbjavac-api.xml"/>
+        <file crc="520567768" name="modules/ext/nb-javac-13-api.jar"/>
+        <file crc="2307757967" name="modules/org-netbeans-modules-nbjavac-api.jar"/>
+    </module_version>
+</module>

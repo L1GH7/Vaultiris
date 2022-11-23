@@ -1,0 +1,296 @@
+### UPDATE FULL PATHS/FILES:
+
+#### #> ls -la /home/httpd/
+```
+drwxr-xr-x    1 root     root            0 May 16 07:28 .
+drwxr-xr-x    1 root     root            0 Aug 23  2010 ..
+-r--r--r--    1 root     root        17960 Aug 23  2010 CSVGraph.jar
+-rw-r--r--    1 root     root         6407 Aug 23  2010 advanced.html
+-rw-r--r--    1 root     root         5705 Aug 23  2010 ajax_core.js
+-rw-r--r--    1 root     root         1865 Aug 23  2010 ajax_core.js.gz
+-rw-r--r--    1 root     root        16923 Aug 23  2010 alarm_edit.js
+-rw-r--r--    1 root     root         4376 Aug 23  2010 alarm_edit.js.gz
+-r--r--r--    1 root     root          153 Aug 23  2010 appstatus.html
+-rw-r--r--    1 root     root          483 Aug 23  2010 branding.js
+-rw-r--r--    1 root     root          259 Aug 23  2010 branding.js.gz
+drwxr-xr-x    1 root     root            0 May 16 07:27 cgi-bin
+-r--r--r--    1 root     root           18 Aug 23  2010 challenge
+-rw-r--r--    1 root     root          201 Aug 23  2010 clickfix.js
+lrwxrwxrwx    1 root     root           11 Aug 23  2010 config -> /etc/config
+lrwxrwxrwx    1 root     root           33 Aug 23  2010 controllers -> /etc/config/templates/controllers
+drwxr-xr-x    1 root     root            0 Aug 23  2010 css
+drwxr-xr-x    1 root     root            0 Aug 23  2010 custom
+-rw-r--r--    1 root     root         8576 Aug 23  2010 debug.html
+-rw-r--r--    1 root     root         1344 Aug 23  2010 debug.html.gz
+-rw-r--r--    1 root     root         3041 Aug 23  2010 dynwsdata.js
+-r--r--r--    1 root     root          894 Aug 23  2010 favicon.ico
+-rw-r--r--    1 root     root         1330 Aug 23  2010 framelog.html
+drwxr-xr-x    1 root     root            0 Aug 23  2010 help
+drwxr-xr-x    1 root     root            0 Aug 23  2010 images
+drwxr-xr-x    1 root     root            0 Aug 23  2010 include
+-rw-r--r--    1 root     root          115 Aug 23  2010 index.html
+-rw-r--r--    1 root     root        11433 Aug 23  2010 login.html
+-r--r--r--    1 root     root          154 Aug 23  2010 loginkey.js
+-rw-r--r--    1 root     root         5316 Aug 23  2010 md5.js
+-rw-r--r--    1 root     root         1846 Aug 23  2010 md5.js.gz
+-rw-r--r--    1 root     root        15486 Aug 23  2010 menu.js
+-rw-r--r--    1 root     root         2262 Aug 23  2010 menu.js.gz
+-rw-r--r--    1 root     root         7302 Aug 23  2010 netbiter.js
+-rw-r--r--    1 root     root         2041 Aug 23  2010 netbiter.js.gz
+drwxr-xr-x    1 root     root            0 May 16 06:37 pageimages
+-r--r--r--    1 root     root          212 Aug 23  2010 read_alarm_state.js
+-r--r--r--    1 root     root          181 Aug 23  2010 read_groups.js
+-r--r--r--    1 root     root          657 Aug 23  2010 read_points_alarm.js
+-r--r--r--    1 root     root          195 Aug 23  2010 read_points_binding.js
+-r--r--r--    1 root     root          195 Aug 23  2010 read_points_log.js
+-r--r--r--    1 root     root          564 Aug 23  2010 read_points_page.js
+-r--r--r--    1 root     root          195 Aug 23  2010 read_points_time.js
+-rw-r--r--    1 root     root          337 Aug 23  2010 redirect_encoded.html
+lrwxrwxrwx    1 root     root            9 Aug 23  2010 status -> /var/http
+-rw-r--r--    1 root     root        12505 Aug 23  2010 template_browse.js
+-rw-r--r--    1 root     root         3258 Aug 23  2010 template_browse.js.gz
+-rw-r--r--    1 root     root        18467 Aug 23  2010 template_edit.js
+drwxr-xr-x    1 root     root            0 Aug 23  2010 templates
+-rw-r--r--    1 root     root         5930 Aug 23  2010 vendor.js
+-rw-r--r--    1 root     root         2002 Aug 23  2010 vendor.js.gz
+-rw-r--r--    1 root     root         9935 Aug 23  2010 webscada.js
+-rw-r--r--    1 root     root         2716 Aug 23  2010 webscada.js.gz
+```
+### #> ls -la /home/httpd/cgi-bin
+```
+drwxr-xr-x    1 root     root            0 May 16 06:47 .
+drwxr-xr-x    1 root     root            0 Aug 23  2010 ..
+-rwxr-xr-x    1 root     root          266 Aug 23  2010 ackalarm.cgi
+-rwxr-xr-x    1 root     root          274 Aug 23  2010 autodetect.cgi
+-rwxr-xr-x    1 root     root          270 Aug 23  2010 backup.cgi
+-rwxr-xr-x    1 root     root          419 Aug 23  2010 backup.nbb
+-rwxr-xr-x    1 root     root          106 Aug 23  2010 backupstatus.cgi
+-rwxr-xr-x    1 root     root        64852 Aug 23  2010 bdcomm.cgi
+lrwxrwxrwx    1 root     root           10 Aug 23  2010 bdcommr.cgi -> bdcomm.cgi
+-rwxr-xr-x    1 root     root          182 Aug 23  2010 clearlog.cgi
+-rwxr-xr-x    1 root     root        66544 Aug 23  2010 comm.cgi
+-rwxr-xr-x    1 root     root       125592 Aug 23  2010 fileupload.cgi
+-rwxr-xr-x    1 root     root          549 Aug 23  2010 ftp_telnet.cgi
+-rwxr-xr-x    1 root     root          808 Aug 23  2010 ftplog.cgi
+-rwxr-xr-x    1 root     root          668 Aug 23  2010 ftptest.cgi
+-rwxr-xr-x    1 root     root          175 Aug 23  2010 getlog.log
+-rwxr-xr-x    1 root     root          648 Aug 23  2010 gsmcommand.cgi
+-rwxr-xr-x    1 root     root         1105 Aug 23  2010 gsminfo.cgi
+-rwxr-xr-x    1 root     root          101 Aug 23  2010 gsminfo.chat
+-rwxr-xr-x    1 root     root          307 Aug 23  2010 log.csv
+-rwxr-xr-x    1 root     root          865 Aug 23  2010 log.tar
+-rw-r--r--    1 root     root            0 May 16 06:47 path.txt
+-rwxr-xr-x    1 root     root       140912 Aug 23  2010 read.cgi
+-rwxr-xr-x    1 root     root          376 Aug 23  2010 readtemplate.xml
+-rwxr-xr-x    1 root     root          213 Aug 23  2010 reboot.cgi
+-rwxr-xr-x    1 root     root          433 Aug 23  2010 reset.cgi
+-rwxr-xr-x    1 root     root          244 Aug 23  2010 signal.cgi
+-rwxr-xr-x    1 root     root          141 Aug 23  2010 syslog.log
+-rwxr-xr-x    1 root     root          349 Aug 23  2010 systeminfo.cgi
+-rwxr-xr-x    1 root     root          223 Aug 23  2010 template.xml
+-rwxr-xr-x    1 root     root          568 Aug 23  2010 testmail.cgi
+-rwxr-xr-x    1 root     root          559 Aug 23  2010 testsms.cgi
+-rwxr-xr-x    1 root     root          131 Aug 23  2010 updates.cgi
+-rwxr-xr-x    1 root     root          106 Aug 23  2010 updatestatus.cgi
+lrwxrwxrwx    1 root     root           14 Aug 23  2010 write.cgi -> fileupload.cgi
+```
+### #> ls -la /bin/ 
+```
+drwxr-xr-x    1 root     root           32 Jan  1  1970 .
+drwxr-xr-x    1 root     root           32 Jan  1  1970 ..
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 [ -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 awk -> busybox
+-rwxr-xr-x    1 root     root        90528 Jan  1  1970 boa
+-rwxr-xr-x    1 root     root       275328 Jan  1  1970 busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 cat -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 chmod -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 cmp -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 cp -> busybox
+-rwxr-xr-x    1 root     root        43668 Jan  1  1970 cron
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 date -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 dd -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 df -> busybox
+-rwxr-xr-x    1 root     root        78612 Jan  1  1970 dhcpcd
+-rwxr-xr-x    1 root     root          972 Jan  1  1970 discard
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 echo -> busybox
+-rwxr-xr-x    1 root     root        22332 Jan  1  1970 erase
+-rwxr-xr-x    1 root     root        20944 Jan  1  1970 expand
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 false -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 free -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 ftpget -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 ftpput -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 grep -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 gunzip -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 gzip -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 hexdump -> busybox
+-rwxr-xr-x    1 root     root       102832 Jan  1  1970 hicpd
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 hostname -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 ifconfig -> busybox
+-rwxr-xr-x    1 root     root        29864 Jan  1  1970 inetd
+-rwxr-xr-x    1 root     root        27412 Jan  1  1970 init
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 kill -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 ln -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 logger -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 login -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 ls -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 mkdir -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 mount -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 mv -> busybox
+-rwxr-xr-x    1 root     root         2532 Jan  1  1970 nbio
+lrwxrwxrwx    1 root     root            5 Jan  1  1970 nbu -> hicpd
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 nc -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 passwd -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 pidof -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 ping -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 printf -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 ps -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 reboot -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 rm -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 rmdir -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 route -> busybox
+-rwxr-xr-x    1 root     root        29968 Jan  1  1970 rtc
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 sed -> busybox
+-rwxr-xr-x    1 root     root        65996 Jan  1  1970 sftpd
+-rwxr-xr-x    1 root     root        38500 Jan  1  1970 sh
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 sleep -> busybox
+lrwxrwxrwx    1 root     root            5 Jan  1  1970 syncconf -> hicpd
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 syslogd -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 tail -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 tar -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 tee -> busybox
+-rwxr-xr-x    1 root     root        41448 Jan  1  1970 telnetd
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 test -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 touch -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 true -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 umount -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 uptime -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 usleep -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 vi -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 wget -> busybox
+lrwxrwxrwx    1 root     root            7 Jan  1  1970 zcat -> busybox
+```
+### #> ls -la/etc/ 
+```
+drwxr-xr-x    1 root     root           32 Jan  1  1970 .
+drwxr-xr-x    1 root     root           32 Jan  1  1970 ..
+lrwxrwxrwx    1 root     root           12 Jan  1  1970 config -> /home/config
+-rw-r--r--    1 root     root           41 Jan  1  1970 fstab
+lrwxrwxrwx    1 root     root           18 Jan  1  1970 group -> /home/config/group
+lrwxrwxrwx    1 root     root           18 Jan  1  1970 hosts -> /home/config/hosts
+lrwxrwxrwx    1 root     root           23 Jan  1  1970 inetd.conf -> /home/config/inetd.conf
+lrwxrwxrwx    1 root     root           20 Jan  1  1970 inittab -> /home/config/inittab
+lrwxrwxrwx    1 root     root           19 Jan  1  1970 passwd -> /home/config/passwd
+-rw-r--r--    1 root     root         2483 Jan  1  1970 ramfs.img
+-rw-r--r--    1 root     root         2728 Jan  1  1970 rc
+drwxr-xr-x    1 root     root           32 Jan  1  1970 recover
+lrwxrwxrwx    1 root     root           24 Jan  1  1970 resolv.conf -> /home/config/resolv.conf
+lrwxrwxrwx    1 root     root           21 Jan  1  1970 services -> /home/config/services
+lrwxrwxrwx    1 root     root           12 Jan  1  1970 snmp -> /home/config
+lrwxrwxrwx    1 root     root           25 Jan  1  1970 syslogd.conf -> /home/config/syslogd.conf
+-rw-r--r--    1 root     root           66 Jan  1  1970 version
+```
+### #> ls -la /etc/config/ 
+```
+drwxr-xr-x    1 root     root            0 Jun 14  2014 .
+drwxr-xr-x    1 root     root            0 Aug 23  2010 ..
+-rw-r--r--    1 root     root           27 May 10  2012 TZ
+-rw-r--r--    1 root     root         3945 Aug 23  2010 access.xml
+-rw-r--r--    1 root     root          487 Aug 23  2010 application-notify.conf
+-rw-r--r--    1 root     root         2157 Aug 23  2010 awhttpd.conf
+-rw-r--r--    1 root     root          683 Aug 23  2010 boa.conf
+-rw-r--r--    1 root     root          881 Feb 11  2008 commgr.xml
+-rw-r--r--    1 root     root         2035 May 16 06:21 controllers.xml
+-rw-r--r--    1 root     root          834 Aug 23  2010 crontab
+drwxrwxrwx    1 root     root            0 Aug 23  2010 default
+-rw-r--r--    1 root     root           19 Aug 23  2010 dscopy.xml
+-rw-r--r--    1 root     root          139 Jan  1  2000 ethernet.conf
+-rw-r--r--    1 root     root         4349 Sep 25  2013 eventmgr.xml
+drwxrwxrwx    1 root     root            0 Apr 24  2012 events
+-rw-r--r--    1 root     root        17717 May 13 20:51 events.xml
+-rw-r--r--    1 root     root          324 May 16 06:34 general.conf
+-rw-r--r--    1 root     root           25 Aug 23  2010 group
+-rw-r--r--    1 root     root          101 Jan  1  2000 hicpd.conf
+-rw-r--r--    1 root     root           20 Aug 23  2010 hosts
+-rw-r--r--    1 root     root            0 Aug 23  2010 inetd.conf
+drwxrwxrwx    1 root     root            0 Aug 23  2010 init.d
+-rw-r--r--    1 root     root          119 May 16 06:22 inittab
+-rw-r--r--    1 root     root          119 Aug 23  2010 inittab.orig
+-rw-r--r--    1 root     root          321 Aug 23  2010 interfaces.xml
+drwxrwxrwx    1 root     root            0 Aug 23  2010 lang
+-rw-r--r--    1 root     root        31743 Aug 23  2010 lang.csv
+-rw-r--r--    1 root     root         2737 Aug 23  2010 mime.types
+-rw-r--r--    1 root     root         1693 Aug 23  2010 nbnet.xml
+-rw-r--r--    1 root     root          159 Aug 23  2010 nbnetstat.conf
+-rw-r--r--    1 root     root          674 May 16 07:24 nbnetstat.stat
+drwxrwxrwx    1 root     root            0 May 16 06:42 pages
+-rw-r--r--    1 root     root          655 May 16 07:28 pages.xml
+-rw-r--r--    1 root     root           78 Aug 23  2010 passwd
+drwxrwxrwx    1 root     root            0 Aug 23  2010 ppp
+-rw-r--r--    1 root     root         1613 Aug 23  2010 rc.ip
+-rw-r--r--    1 root     root          111 Aug 23  2010 rc.local
+-rw-r--r--    1 root     root           67 Feb 23 16:10 resolv.conf
+-rw-r--r--    1 root     root          370 Aug 23  2010 rtu_mast.conf
+-rw-r--r--    1 root     root         8189 Aug 23  2010 services
+-rw-r--r--    1 root     root         3239 Aug 23  2010 sync.xml
+-rw-r--r--    1 root     root          121 Aug 23  2010 system.conf
+drwxrwxrwx    1 root     root            0 Aug 23  2010 templates
+-rw-r--r--    1 root     root           65 Aug 23  2010 timeschedule.xml
+-rw-r--r--    1 root     root         3185 Aug 23  2010 timezones
+-rw-r--r--    1 root     root         5493 Apr 24  2012 tsmgr.xml
+drwxrwxrwx    1 root     root            0 Aug 23  2010 updates
+-rw-r--r--    1 root     root          811 Sep 25  2013 users.cfg
+-rw-r--r--    1 root     root           20 Aug 23  2010 vendorpages.xml
+-rw-r--r--    1 root     root          278 Aug 23  2010 wda.conf
+```
+ 
+### #> ls -la /var/
+```
+drwxr-xr-x    8 root     root         1024 May 16 06:34 .
+drwxr-xr-x    1 root     root           32 Jan  1  1970 ..
+-rw-r--r--    1 root     root          638 May 16 06:22 alarmstatus.xml
+srwxr-xr-x    1 root     root            0 May 16 06:34 data_server
+drwxr-xr-x    2 root     root         1024 May 16 06:22 http
+drwxr-xr-x    2 root     root         1024 Mar 14 23:52 lock
+drwxr-xr-x    2 root     root         1024 May 16 06:00 log
+drwxr-xr-x    7 root     root         1024 Feb 23 16:10 ports
+drwxr-xr-x    2 root     root         1024 May 16 06:22 run
+-rw-r--r--    1 root     root          115 May 16 07:28 sessions.conf
+-rw-r--r--    1 root     root           44 Feb 23 16:10 start_ntp
+drwxr-xr-x    2 root     root         1024 May 16 07:27 tmp
+srwxr-xr-x    1 root     root            0 Feb 23 16:10 wda
+```
+ 
+### #> ls -la /home/
+```
+drwxr-xr-x    1 root     root            0 Aug 23  2010 .
+drwxr-xr-x    1 root     root           32 Jan  1  1970 ..
+drwxr-xr-x    1 root     root            0 Aug 23  2010 bin
+drwxr-xr-x    1 root     root            0 Jun 14  2014 config
+drwxr-xr-x    1 root     root            0 Aug 23  2010 events
+drwxr-xr-x    1 root     root            0 May 16 07:28 httpd
+drwxr-xr-x    1 root     root            0 May  1 09:30 log
+drwxr-xr-x    1 root     root            0 May 13 20:28 outmess
+drwxr-xr-x    1 root     root            0 Aug 23  2010 ppp
+```
+### #> ls -la / 
+```
+drwxr-xr-x    1 root     root           32 Jan  1  1970 .
+drwxr-xr-x    1 root     root           32 Jan  1  1970 ..
+drwxr-xr-x    1 root     root           32 Jan  1  1970 bin
+drwxr-xr-x    1 root     root           32 Jan  1  1970 dev
+drwxr-xr-x    1 root     root           32 Jan  1  1970 etc
+drwxr-xr-x    1 root     root            0 Aug 23  2010 home
+drwxr-xr-x    1 root     root           32 Jan  1  1970 lib
+drwxr-xr-x    1 root     root           32 Jan  1  1970 mnt
+dr-xr-xr-x   40 root     root            0 Feb 23 16:09 proc
+lrwxrwxrwx    1 root     root            8 Jan  1  1970 tmp -> /var/tmp
+drwxr-xr-x    1 root     root           32 Jan  1  1970 usr
+drwxr-xr-x    8 root     root         1024 May 16 06:34 var
+```
+
+
+
+***
+cool LFI.
+
+***

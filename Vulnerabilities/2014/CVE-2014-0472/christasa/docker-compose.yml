@@ -1,0 +1,13 @@
+version: '3.2'
+services:
+
+ web:
+   build: .
+   image: cve-2014-0472
+   restart: always
+   ports:
+     - "8083:8000"
+   command: bash run.sh
+
+
+

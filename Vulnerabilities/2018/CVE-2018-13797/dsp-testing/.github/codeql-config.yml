@@ -1,0 +1,4 @@
+- disable-default-queries: true
+- qlpack: codeql-javascript
+- include:
+    id: js/shell-command-constructed-from-input

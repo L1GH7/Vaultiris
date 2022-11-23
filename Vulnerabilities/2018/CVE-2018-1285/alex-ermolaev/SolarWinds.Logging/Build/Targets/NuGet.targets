@@ -1,0 +1,36 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import Project=".\..\.nuget\NuGet.targets"/>
+  
+  <PropertyGroup>
+    <NuGetExePath>.nuget\NuGet.exe</NuGetExePath>
+    <NuGetPackagesFolder>$(MSBuildProjectDirectory)\..\bin\Packages</NuGetPackagesFolder>
+    <NuGetFeed>http://dev-artifactory.dev.local/artifactory/api/nuget/nuget-OrionPlatform-develop</NuGetFeed>
+  </PropertyGroup>
+  
+  <Target Name="CleanPackagesFolder">
+    
+    <Message Text="Cleaning $(NuGetPackagesFolder)" />
+    <RemoveDir Directories="$(NuGetPackagesFolder)" />
+    <MakeDir Directories="$(NuGetPackagesFolder)"/>
+  </Target>
+
+  <Target Name="Publish" DependsOnTargets="CleanPackagesFolder;CheckPrerequisites" Condition="'$(StopPublishing)' != 'true'">
+  
+    <PropertyGroup>
+      <NuGetPackageFile>$(NuGetPackagesFolder)\SolarWinds.Logging.$(ProductVersion).$(BuildNumber).nupkg</NuGetPackageFile>
+
+      <NuSpecPath>$(ProjectDir)Logging.nuspec</NuSpecPath>
+      <CreatePackage>$(NuGetExePath) pack "$(NuSpecPath)" -Prop Configuration=Release;Version=$(ProductVersion).$(BuildNumber) -OutputDirectory "$(NuGetPackagesFolder)" -Verbosity detailed</CreatePackage>
+      <PublishPackage>$(NuGetExePath) push "$(NuGetPackageFile)" -source $(NuGetFeed)/Platform/SolarWinds.Logging -ApiKey teamcity:teamcity -Verbosity detailed</PublishPackage>
+    </PropertyGroup>
+  
+    <Message Text="Publishing NuGet package" />
+    
+    
+    <Exec Command="$(CreatePackage)"/>
+    <Exec Command="$(PublishPackage)"/>
+    
+  </Target>
+  
+</Project>

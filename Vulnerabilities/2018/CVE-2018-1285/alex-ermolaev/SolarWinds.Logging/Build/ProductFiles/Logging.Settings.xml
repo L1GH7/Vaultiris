@@ -1,0 +1,45 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\Targets\NuGet.targets" />
+  <!-- Import Project="..\.nuget\NuGet.targets" / -->
+  <!-- All of these properties need to be fleshed out for your own project -->
+  <PropertyGroup>
+    <!-- The path to your project source directory -->
+    <ProjectSrcDir>Dev\Main\Platform\Logging</ProjectSrcDir>
+    <!-- The name of the project. It's only used internally for logging -->
+    <ProductName>SolarWinds.Logging</ProductName>
+    <!-- Part of the name, which distinguishes the packages among themselves -->
+    <ShortProductName>Logging</ShortProductName>
+    <!-- The path to your sample MSBuild file from the root of the checkout directory -->
+    <BuildFile>$(ProjectSrcDir)\Build\Logging.msbuild</BuildFile>
+    <!-- The name you want to deploy your bits to under build directory on the build file server(defined in masterTC.msbuild) -->
+    <ProductDeployDir>$(DeployRoot)\Platform\Logging</ProductDeployDir>
+    <!-- The path to a file to be modified with build number information as part of the automated build process.  This file must exist-->
+    <AssemblyInfoFile>$(ProjectSrcDir)\Src\CommonAssemblyInfo.cs</AssemblyInfoFile>
+    <!-- The path to the nUnit exe you want to run for your unit tests.  This is relative to your build folder -->
+    <NUnitPath>..\Common\3rdParty\NUnit\nunit-console-x86.exe</NUnitPath>
+    
+    <BuildTimeStampFile>$(ProjectSrcDir)\Src\BuildInfo.cs</BuildTimeStampFile>
+    
+    <!-- If this is set, then we hard code the build time, otherwise we use the actual build time. -->
+    <!--BuildTime>2009-08-04T00:00:00</BuildTime--> <!-- The GA date for this release. -->
+
+  </PropertyGroup>
+
+  <!-- Customization of these properties affects the default behavior of the Dependency Analysis process -->
+  <PropertyGroup>
+    <!-- If 'True' then the Dependency Analysis is enabled, otherwise it is skipped. -->
+    <DepAnalysisEnabled>False</DepAnalysisEnabled>
+    <!-- Component name used for managing relationships among other components in system of product dependencies. -->
+    <DepAnalysisComponentName>Orion-Logging</DepAnalysisComponentName>
+	<!-- The project main website directory. If empty, website processing is skipped. Most typically, the value is '$(ProjectSrcDir)\Src\Web'. -->
+    <WebsiteDir></WebsiteDir>
+	<!-- The path to the directory where the dependency analysis results are located. Default is '$(ProjectSrcDir)\Bin\DepAnalysis'. -->
+    <DepAnalysisOutputDir></DepAnalysisOutputDir>
+	<!-- The path to the directory where the precompiled version of the website is located. Default is '$(ProjectSrcDir)\Bin\PrecompiledWeb'. -->
+    <DepAnalysisPrecompiledWebsiteDir></DepAnalysisPrecompiledWebsiteDir>
+	<!-- Additional directories to search in for assemblies referenced by the project output assemblies,
+         in addition to directories where the project output assemblies are located. Default is ''. -->
+    <DepAnalysisSearchPaths></DepAnalysisSearchPaths>
+  </PropertyGroup>
+
+</Project>

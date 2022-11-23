@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <MSBuildTasksLib>MSBuild.Community.Tasks.dll</MSBuildTasksLib>
+    <SWBuildTasksLib>SolarWinds.MSBuild.Tasks.dll</SWBuildTasksLib>
+    <NCoverExplorerTasksLib>NCoverExplorer.MSBuildTasks.dll</NCoverExplorerTasksLib>
+  </PropertyGroup>
+
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.AssemblyInfoCpp" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.CreateSelfExtractor" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Diff" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.ExecuteSqlFile" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Tag" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Add" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Base" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Change" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Client" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Delete" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Edit" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Info" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Label" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Labelsync" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Print" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Reopen" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Revert" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Set" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Submit" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Perforce.P4Sync" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.ProjectBuilder" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.SetEmailInfo" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.SWDelete" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.SWCopy" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.VB6" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.VC6" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.Version" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.VersionTC" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="SolarWinds.MSBuild.Tasks.WIX.SetupBld" AssemblyFile="$(SWBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Math.Add" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.AssemblyInfo" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Attrib" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Math.Divide" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.SqlServer.ExecuteDDL" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.FileUpdate" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.FtpUpload" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.FxCop" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.GacUtil" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.GetSolutionProjects" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.ILMerge" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.JavaScript.JSCompress" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Mail" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Math.MathBase" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Math.Modulo" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Move" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Math.Multiple" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.NDoc" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.NUnit" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.RegexBase" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.RegexMatch" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.RegexReplace" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.RegistryRead" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.RegistryWrite" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Script" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.SqlExecute" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Math.Subtract" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Schema.TaskSchema" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.TemplateFile" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Time" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Install.UninstallAssembly" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Unzip" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Version" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.WebDownload" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Xml.XmlMassUpdate" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Xml.XmlQuery" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.XmlRead" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.XmlUpdate" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="MSBuild.Community.Tasks.Zip" AssemblyFile="$(MSBuildTasksLib)" />
+  <UsingTask TaskName="NCoverExplorer.MSBuildTasks.NCover" AssemblyFile="$(NCoverExplorerTasksLib)" />
+  <UsingTask TaskName="NCoverExplorer.MSBuildTasks.NUnitProject" AssemblyFile="$(NCoverExplorerTasksLib)" />
+  <UsingTask TaskName="NCoverExplorer.MSBuildTasks.NCoverExplorer" AssemblyFile="$(NCoverExplorerTasksLib)" />
+</Project>

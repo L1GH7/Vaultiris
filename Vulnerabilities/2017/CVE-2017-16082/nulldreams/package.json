@@ -1,0 +1,18 @@
+{
+  "name": "pg-rce",
+  "version": "0.0.1",
+  "description": "rce (remote code execution) on pg module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nulldreams",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^1.13.0",
+    "koa": "^2.3.0",
+    "pg": "^7.1.0",
+    "sails-postgresql": "^0.12.0",
+    "waterline": "^0.12.2"
+  }
+}

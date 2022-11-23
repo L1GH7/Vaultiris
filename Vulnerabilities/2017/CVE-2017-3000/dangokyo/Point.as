@@ -1,0 +1,74 @@
+package 
+{
+	/**
+	 * ...
+	 * @author dango
+	 */
+	public class Point 
+	{
+		private var x:uint;
+		private var y:uint;
+		
+		public function Point() 
+		{
+			x = 10;
+			y = 5;
+		}
+		
+		public function ReleasePattern1():void
+		{
+			x = 1;
+			y = 1;
+			x = 0x31313131;
+			y = 0x13131313;
+		}
+		
+		public function ReleasePattern2():void
+		{
+			x = 2;
+			y = 2;
+			x = 0x32323232;
+			y = 0x23232323;
+		}
+		
+		public function ReleasePattern3():void
+		{
+			x = 3;
+			y = 3;
+			x = 0x33333333;
+			y = 0x33333333;
+		}
+		
+		public function ReleasePattern4():void
+		{
+			x = 4;
+			y = 4;
+			x = 0x34343434;
+			y = 0x43434343;
+		}
+		
+		public function ReleasePattern5():void
+		{
+			x = 5;
+			y = 5;
+			x = 0x35353535;
+			y = 0x53535353;
+		}
+		
+		public function ReleasePattern6():void
+		{
+			x = 6;
+			y = 6;
+			x = 0x36363636;
+			y = 0x63636363;
+		}
+		
+		public function ReleasePattern7():void
+		{
+			x = 7;
+			y = 7;
+			x = 0x37373737;
+			y = 0x73737373;
+		}
+	}
+}

@@ -1,0 +1,5 @@
+---
+hostname: 'attacker.test'
+ansible_user: vagrant
+login_user: "kosuke"
+

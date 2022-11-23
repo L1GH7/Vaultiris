@@ -1,0 +1,3 @@
+[submodule "pupnp"]
+	path = pupnp
+	url = https://github.com/pupnp/pupnp.git

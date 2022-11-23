@@ -1,0 +1,40 @@
+---
+ - name: install base sotfware
+   apt: name={{ item }} state=present
+   with_items:
+      - libbz2-dev
+      - zlib1g-dev
+      - libssl-dev
+      - libreadline-dev 
+      - libsqlite3-dev
+
+ - name: install pyenv
+   git: repo=https://github.com/yyuu/pyenv.git dest=/home/{{ login_user }}/.pyenv
+
+ - name: chown pyenv
+   file: path=/home/{{ login_user }}/.pyenv owner={{ login_user }} group={{ login_user }} mode=0700
+
+ - name: setting pyenv path to .bashrc
+   lineinfile:
+    dest='/home/{{ login_user }}/.bashrc'
+    state=present
+    line='export PATH="$HOME/.pyenv/bin:$PATH"'
+
+ - name: setting pyenv init to .bashrc
+   lineinfile:
+    dest='/home/{{ login_user }}/.bashrc'
+    state=present
+    line='eval "$(pyenv init -)"'
+
+ - name: install virtualenv
+   git: repo=https://github.com/yyuu/pyenv-virtualenv.git dest=/home/{{ login_user }}/.pyenv/plugins/pyenv-virtualenv
+ 
+ - name: chown virtualenv
+   file: path=/home/{{ login_user }}/.pyenv/plugins/pyenv-virtualenv owner={{ login_user }} group={{ login_user }} mode=0700
+
+ - name: setting virtualen path to .bashrc
+   lineinfile:
+    dest='/home/{{ login_user }}/.bashrc'
+    state=present
+    line='eval "$(pyenv virtualenv-init -)"'
+

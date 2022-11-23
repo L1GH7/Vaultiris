@@ -1,0 +1,4 @@
+source http://dev-artifactory.dev.local/artifactory/api/nuget/nuget-stable
+source http://dev-artifactory.dev.local/artifactory/api/nuget/nuget-release
+
+nuget SolarWinds.Build.Orion.Core ~> 1.1

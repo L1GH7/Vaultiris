@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+    <module name="org.netbeans.modules.web.inspect" spec="0.38"/>
+    <instanceof class="java.awt.Component"/>
+    <instanceof class="java.awt.Container"/>
+    <instanceof class="java.awt.MenuContainer"/>
+    <instanceof class="java.awt.image.ImageObserver"/>
+    <instanceof class="java.io.Externalizable"/>
+    <instanceof class="java.io.Serializable"/>
+    <instanceof class="java.lang.Object"/>
+    <instanceof class="javax.accessibility.Accessible"/>
+    <instanceof class="javax.swing.JComponent"/>
+    <instanceof class="javax.swing.TransferHandler$HasGetTransferHandler"/>
+    <instanceof class="org.netbeans.modules.web.inspect.webkit.knockout.KnockoutTC"/>
+    <instanceof class="org.openide.util.HelpCtx$Provider"/>
+    <instanceof class="org.openide.util.Lookup$Provider"/>
+    <instanceof class="org.openide.windows.TopComponent"/>
+    <serialdata class="org.netbeans.modules.web.inspect.webkit.knockout.KnockoutTC">
+        ACED0005737200296F72672E6F70656E6964652E77696E646F77732E546F70436F6D706F6E656E74245265706C6163657284
+        874494BDDF6D64030000787074003B6F72672E6E65746265616E732E6D6F64756C65732E7765622E696E73706563742E7765
+        626B69742E6B6E6F636B6F75742E4B6E6F636B6F757454437372000F6A6176612E6C616E672E53686F7274684D37133460DA
+        5202000153000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B02000078700001770400
+        0000017400084B6E6F636B6F7574740068E38193E381AEE382A6E382A3E383B3E38389E382A6E381ABE381AFE38081E981B8
+        E68A9EE38197E3819FE3838EE383BCE38389E381AE4B6E6F636B6F7574E382B3E383B3E38386E382ADE382B9E38388E3818C
+        E8A1A8E7A4BAE38195E3828CE381BEE38199E380827078
+    </serialdata>
+</settings>

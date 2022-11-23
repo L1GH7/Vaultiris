@@ -1,0 +1,17 @@
+cffi==1.13.2
+chardet==3.0.4
+Click==7.0
+cryptography==2.8
+Flask==1.1.1
+huepy==1.2.1
+idna==2.8
+itsdangerous==1.1.0
+Jinja2==2.10.3
+MarkupSafe==1.1.1
+pycparser==2.19
+PyJWT==1.5.0
+certifi==2019.11.28
+requests==2.22.0
+six==1.13.0
+urllib3==1.25.7
+Werkzeug==0.16.0

@@ -1,0 +1,5 @@
+export OS_USERNAME=admin
+export OS_PASSWORD=6b000a589c700b077ef9729513e5d6fc
+export OS_TENANT_NAME=admin
+export OS_AUTH_URL=http://192.168.1.1:5000/v2.0/
+export OS_NO_CACHE=1

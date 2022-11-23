@@ -1,0 +1,8 @@
+# ignore ALL .log files
+*.log
+# ignore Pycharm files
+.idea/
+# ignore Build directory
+build/
+# ignore Python egg folder
+src/dns_zone_transfer_test.egg-info/

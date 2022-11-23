@@ -1,0 +1,54 @@
+---
+ - name: aptitude package manager sotfware
+   apt: name={{ item }} state=present
+   with_items:
+      - aptitude
+
+ - name: apt-get update && apt-get upgrade
+   apt: update_cache=yes upgrade=yes
+
+ - name: apt-file package manager sotfware
+   apt: name={{ item }} state=present
+   with_items:
+      - apt-file
+
+ - name: install base sotfware
+   apt: name={{ item }} state=present
+   with_items:
+      - tree
+      - figlet
+      - toilet
+      - boxes
+      - sudo
+      - ntp
+      - vim
+      - git
+      - unzip
+      - ctags
+      - htop
+      - apg
+      - w3m
+      - iftop
+      - dnsutils
+
+ - name: change hostname using sysctl
+   command: sh -c "sysctl kernel.hostname={{hostname}}"
+
+ - name: change hostname using /etc/hostname
+   command: sh -c "echo {{hostname}} > /etc/hostname"
+
+ - name: add host infomation to /etc/hosts
+   lineinfile:
+     dest='/etc/hosts'
+     state=present
+     line="127.0.0.1\t{{hostname}}"
+
+ - name: setting locale
+   command: localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
+
+ - name: setting timezone
+   command: cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
+ - name: edit /etc/motd
+   command: sh -c "toilet -f ivrit '{{hostname}}' -w 100 | boxes -d sunset -a hc -p h8 > /etc/motd"
+

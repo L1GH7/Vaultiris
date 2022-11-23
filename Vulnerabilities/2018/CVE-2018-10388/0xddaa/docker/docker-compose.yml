@@ -1,0 +1,12 @@
+opentftpd:
+    build: ./
+    volumes:
+        - ./share:/home/opentftp:ro
+        - ./xinetd:/etc/xinetd.d/opentftp:ro
+        - ./tmp:/tmp:ro
+    ports:
+        - "5566:56746"
+        - "60000-60100:60000-60100/udp"
+    expose:
+        - "56746"
+        - "60000-60100/udp"

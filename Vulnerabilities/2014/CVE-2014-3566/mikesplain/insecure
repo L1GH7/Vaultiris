@@ -1,0 +1,48 @@
+CONNECTED(00000003)
+depth=0 C = AU, ST = Some-State, O = Internet Widgits Pty Ltd
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 C = AU, ST = Some-State, O = Internet Widgits Pty Ltd
+verify return:1
+---
+Certificate chain
+ 0 s:/C=AU/ST=Some-State/O=Internet Widgits Pty Ltd
+   i:/C=AU/ST=Some-State/O=Internet Widgits Pty Ltd
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIBfDCCASYCCQDsOU1OGvahYjANBgkqhkiG9w0BAQUFADBFMQswCQYDVQQGEwJB
+VTETMBEGA1UECAwKU29tZS1TdGF0ZTEhMB8GA1UECgwYSW50ZXJuZXQgV2lkZ2l0
+cyBQdHkgTHRkMB4XDTE0MTAxNjAyMDYyMFoXDTE1MTAxNjAyMDYyMFowRTELMAkG
+A1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoMGEludGVybmV0
+IFdpZGdpdHMgUHR5IEx0ZDBcMA0GCSqGSIb3DQEBAQUAA0sAMEgCQQCnM3tWJxR3
+ah0wAurJLWZCacjCCKtfzfay7irxQsx50HE8siHNV8xov8WpRteFHYTPj+mNO1Fk
+MvGh117deKQNAgMBAAEwDQYJKoZIhvcNAQEFBQADQQBe1mfKBxvz6PhGrq+Q5ClU
+ibdQIaq1E5W0Mjx9SdsaCRLYZA0+rPBAczdZAq0OpEG0ke4WX3tajmUQLWa7wxek
+-----END CERTIFICATE-----
+subject=/C=AU/ST=Some-State/O=Internet Widgits Pty Ltd
+issuer=/C=AU/ST=Some-State/O=Internet Widgits Pty Ltd
+---
+No client certificate CA names sent
+---
+SSL handshake has read 713 bytes and written 288 bytes
+---
+New, TLSv1/SSLv3, Cipher is ECDHE-RSA-AES256-SHA
+Server public key is 512 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+SSL-Session:
+    Protocol  : SSLv3
+    Cipher    : ECDHE-RSA-AES256-SHA
+    Session-ID: 74A89D5744370C3B5DD71CB55429ADCAFD8D0C742531BD4C9BA4DEA1C3B282A4
+    Session-ID-ctx:
+    Master-Key: 74548A5EAF9CABF62D2F3E4245526406730605D5288043AE7385EEA4DCE2E09A24213FFAD17D5A9B8D83CB497C6F6582
+    Key-Arg   : None
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    Start Time: 1413426848
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self signed certificate)
+---

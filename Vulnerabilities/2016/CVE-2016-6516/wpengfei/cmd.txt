@@ -1,0 +1,37 @@
+(1) install libs 
+
+	sudo apt-get install libncurses-dev
+
+	sudo apt-get install libssl-dev
+
+(2) copy kernel 
+
+	cd /usr/src
+
+	sudo rm -rf linux-4.6.1/
+
+	sudo cp -r ~/Desktop/linux-4.6.1/ /usr/src/
+
+(3) compile and install new kernel
+
+	cd linux-4.6.1/
+
+	make mrproper
+
+	sudo make menuconfig
+
+	time sudo make -j2
+
+	sudo make modules_install
+
+	sudo make install
+
+	uname -a
+
+(4) run exploit
+
+	gcc exploit.c -lpthread -o ex
+
+	./ex
+
+

@@ -1,0 +1,3 @@
+[submodule "lighttpd-files/lighttpd1.4"]
+	path = lighttpd-files/lighttpd1.4
+	url = https://github.com/lighttpd/lighttpd1.4.git

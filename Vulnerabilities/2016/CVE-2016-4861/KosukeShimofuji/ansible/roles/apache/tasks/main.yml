@@ -1,0 +1,22 @@
+---
+ - name: install apache and openssl package
+   apt: name={{ item }} state=present
+   with_items:
+     - apache2
+     - openssl
+
+ - name: apache runnning and enabled
+   service: name=apache2 state=running enabled=yes
+
+ - name: disable 000-default
+   command: a2dissite 000-default
+
+ - name: enable ssl apache module
+   command: a2enmod ssl
+
+ - name: enable auth_digest apache module
+   command: a2enmod auth_digest
+
+ - name: only listen port 443
+   command: echo "Listen 0.0.0.0:443" > /etc/apache2/ports.conf
+

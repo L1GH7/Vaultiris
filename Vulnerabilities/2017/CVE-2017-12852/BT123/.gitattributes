@@ -1,0 +1,5 @@
+# Numerical data files
+numpy/lib/tests/data/*.npy binary
+
+# Release notes, reduce number of conflicts.
+doc/release/*.rst merge=union

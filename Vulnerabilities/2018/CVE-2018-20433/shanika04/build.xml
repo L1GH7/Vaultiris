@@ -1,0 +1,935 @@
+<project name="c3p0" default="dist">
+
+  <!-- ignore the CLASSPATH environment variable. force builds to specify classpaths -->
+  <property name="build.sysclasspath" value="ignore" />
+
+  <property file="../settings/build-c3p0.properties" />
+  <property file="build.properties" />
+
+  <property name="c3p0.version" value="0.9.5.3" />
+
+  <property name="c3p0.copyright.year" value="2019" />
+
+  <property name="c3p0.name"    value="c3p0-${c3p0.version}" />
+
+  <!-- feel free to preempt these parameters in build properties -->
+  <property name="c3p0.debug"   value="true" />
+  <property name="c3p0.trace"   value="10" />
+
+  <property name="bindist.name"                      value="${c3p0.name}.bin" />
+  <property name="srcdist.name"                      value="${c3p0.name}.src" />
+  <property name="src.dir"                           value="src" />
+  <property name="java.src.dir"                      value="${src.dir}/java" />
+  <property name="rsrc.src.dir"                      value="${src.dir}/resources" />
+  <property name="codegen.src.dir"                   value="${src.dir}/codegen" />
+  <property name="doc.src.dir"                       value="${src.dir}/doc" />
+  <property name="docwebapp.src.dir"                 value="${src.dir}/docweb/docwebapp" />
+  <property name="docwebear.src.dir"                 value="${src.dir}/docweb/docwebear" />
+  <property name="static.dist.src"                   value="${src.dir}/dist-static" />
+  <property name="test.props.src.dir"                value="${src.dir}/test-properties" />
+  <property name="build.dir"                         value="build" />
+  <property name="build.codegen.dir"                 value="${build.dir}/codegen" />
+  <property name="build.classes.dir"                 value="${build.dir}/classes" />
+  <property name="build.apidocs.dir"                 value="${build.dir}/apidocs" />
+  <property name="build.docwebapp.dir"               value="${build.dir}/docweb/docwebapp" />
+  <property name="build.docwebear.dir"               value="${build.dir}/docweb/docwebear" />
+  <property name="build.test.props.dir"              value="${build.dir}/test-properties" />
+  <property name="build.testresults.dir"             value="${build.dir}/testresults" />
+  <property name="build.srcdist.dir"                 value="${build.dir}/srcdist" />
+  <property name="build.jar.file"                    value="${build.dir}/${c3p0.name}.jar" />
+  <property name="build.javadoc.jar.file"            value="${build.dir}/${c3p0.name}-javadoc.jar" />
+  <property name="build.sources.jar.file"            value="${build.dir}/${c3p0.name}-sources.jar" />
+  <property name="dbms.dir"                          value="dbms" />
+  <property name="dbms.oracle.thin.antproj.dir"      value="${dbms.dir}/oracle-thin" />
+  <property name="dbms.oracle.thin.antproj.dist.dir" value="${dbms.oracle.thin.antproj.dir}/dist" />
+  <property name="test.logging.props.file"           location="${build.test.props.dir}/logging.properties" />
+  <property name="test.classes.dir"                  value="${build.dir}/testclasses" />
+  <property name="dist.dir"                          value="dist" />
+  <property name="open.dist"                         value="${dist.dir}/${bindist.name}" />
+  <property name="open.dist.doc.dir"                 value="${open.dist}/doc" />
+  <property name="open.dist.lib.dir"                 value="${open.dist}/lib" />
+  <property name="open.dist.src.dir"                 value="${open.dist}/src" />
+  <property name="docwebapp.war.file.name"           value="docweb.war" />
+  <property name="docwebapp.war.file"                value="${build.docwebear.dir}/${docwebapp.war.file.name}" />
+  <property name="docwebear.file"                    value="${build.dir}/c3p0-docweb.ear" />
+
+  <!-- these properties can be preempted in build.properties -->
+  <property name="c3p0-build.debug" value="false" />
+  <property name="c3p0-build.trace" value="5" />
+
+  <!-- these properties should be set externally if desired  -->
+  <!-- we set them here only to keep classpaths valid        -->
+  <!-- when users do not set the path                        -->
+  <property name="j2ee.jar.base.dir" value="." />
+  <property name="j2ee.jar.dir"      value="." />
+
+  <path id="codegen-classpath">
+    <pathelement location="${mchange-commons-java.jar.file}" />
+    <pathelement location="${build.classes.dir}" />
+    <pathelement path="${j2ee.classpath}" />
+    <fileset dir="${j2ee.jar.base.dir}" includes="**/*.jar" />
+    <fileset dir="${j2ee.jar.dir}" includes="*.jar" />
+  </path>
+
+  <property name="codegen.classpath" refid="codegen-classpath" />
+
+  <path id="build-classpath">
+    <pathelement location="${mchange-commons-java.jar.file}" />
+    <pathelement location="${build.classes.dir}" />
+    <pathelement path="${j2ee.classpath}" />
+    <fileset dir="${j2ee.jar.base.dir}" includes="**/*.jar" />
+    <fileset dir="${j2ee.jar.dir}" includes="*.jar" />
+  </path>
+
+  <patternset id="common-excludes">
+    <exclude name="**/old/**" />	
+    <exclude name="**/bad/**" />	
+    <exclude name="**/off/**" />	
+    <exclude name="**/private/**" />	
+  </patternset>
+
+  <patternset id="init-codegen-classes">
+    <include name="com/mchange/v2/c3p0/codegen/**/*.java" />
+    <patternset refid="common-excludes" />
+  </patternset>
+
+  <patternset id="test-only-classes">
+    <include name="com/mchange/v2/c3p0/test/**" />
+    <include name="**/junit/**" />
+    <include name="**/*JUnitTestCase.class" />
+  </patternset>
+  
+  <patternset id="exclude-mgmt">
+    <exclude name="com/mchange/v2/c3p0/management/**" />
+  </patternset>
+  
+  <patternset id="include-mgmt">
+    <include name="com/mchange/v2/c3p0/management/**" />
+  </patternset>
+  
+  <path id="test-classpath">
+    <pathelement location="${build.test.props.dir}" />
+    <pathelement location="${mchange-commons-java.jar.file}" />
+    <pathelement location="${build.jar.file}" />
+    <pathelement location="${test.classes.dir}" />
+    <pathelement path="${j2ee.classpath}" />
+    <fileset dir="${j2ee.jar.base.dir}" includes="**/*.jar" />
+    <fileset dir="${j2ee.jar.dir}" includes="*.jar" />
+    <pathelement location="${test.jdbc.driver.jar.file}" />
+    <pathelement location="${log4j.jar.file}" />
+    <pathelement location="${junit.jar.file}" />
+    <pathelement path="${extra.test.classpath}" />
+  </path>
+  
+  <target name="init">
+    <tstamp>
+      <format property="c3p0.timestamp" pattern="dd-MMMM-yyyy HH:mm:ss Z"/>
+
+      <!-- jdk 1.3 compatible -->
+      <!-- <format property="c3p0.timestamp" pattern="dd-MMMM-yyyy HH:mm:ss"/> -->
+    </tstamp>
+
+    <mkdir dir="${build.dir}" />
+    <mkdir dir="${build.codegen.dir}" />
+    <mkdir dir="${build.classes.dir}" />
+    <mkdir dir="${build.apidocs.dir}" />
+    <mkdir dir="${dist.dir}" />
+
+    <uptodate property="up-to-date-debugs" 
+              srcfile="build.properties"
+              targetfile="${build.codegen.dir}/com/mchange/Debug.java" />
+
+  </target>
+
+  <target name="clean" depends="dbms-oracle-thin-clean">
+    <delete dir="${build.dir}" />
+    <delete dir="${dist.dir}" />
+  </target>
+
+  <target name="debuggen" depends="init" unless="up-to-date-debugs">
+    <java classname="com.mchange.v2.debug.DebugGen" 
+	  classpathref="codegen-classpath"
+	  fork="true" 
+	  dir=".">
+      <sysproperty key="com.mchange.v2.log.MLog" value="com.mchange.v2.log.FallbackMLog" />
+      <arg value="--packages=com.mchange" />
+      <arg value="--codebase=${java.src.dir}" />
+      <arg value="--outputbase=${build.codegen.dir}" />
+      <arg value="--recursive" />
+      <arg value="--debug=${c3p0-build.debug}" />
+      <arg value="--trace=${c3p0-build.trace}" />
+    </java>
+  </target>
+
+  <target name="subst">
+    <copy todir="${build.codegen.dir}">
+      <fileset dir="${java.src.dir}">
+	<include name="**/subst/**" />
+      </fileset>
+      <filterchain>
+	<replacetokens>
+	  <token key="c3p0.version"   value="${c3p0.version}"/>
+	  <token key="c3p0.debug"     value="${c3p0-build.debug}"/>
+	  <token key="c3p0.trace"     value="${c3p0-build.trace}"/>
+	  <token key="c3p0.timestamp" value="${c3p0.timestamp}"/>
+	</replacetokens>
+      </filterchain>
+    </copy>
+  </target>
+
+  <target name="init-codegen" depends="debuggen,subst">
+    <javac destdir="${build.classes.dir}" 
+           classpathref="codegen-classpath"
+	   source="${jvm.target.version}"
+	   target="${jvm.target.version}"
+           debug="true">
+      <src>
+	<pathelement location="${build.codegen.dir}" />
+	<pathelement location="${java.src.dir}" />
+      </src>
+      <patternset refid="init-codegen-classes" />
+    </javac>
+
+    <uptodate property="up-to-date-proxies" 
+              srcfile="${java.src.dir}/com/mchange/v2/c3p0/codegen/JdbcProxyGenerator.java"
+              targetfile="${build.codegen.dir}/com/mchange/v2/c3p0/impl/NewProxyConnection.java" />
+  </target>
+
+  <target name="beangen" depends="init-codegen">
+    <echo message="Some warnings are expected here. Don't worry about them." />
+    <apply executable="java" dest="${build.codegen.dir}">
+      <arg value="-Dcom.mchange.v2.log.MLog=com.mchange.v2.log.FallbackMLog" />
+      <arg value="-classpath" />
+      <arg path="${codegen.classpath}" />
+      <arg value="com.mchange.v2.c3p0.codegen.BeangenDataSourceGenerator" />
+      <srcfile />
+      <targetfile />
+      <fileset dir="${codegen.src.dir}" includes="**/*.beangen-xml">
+	<patternset refid="common-excludes" />
+      </fileset>
+      <mapper type="glob" from="*.beangen-xml" to="*.java" />
+    </apply>
+  </target>
+
+  <target name="newproxygen" depends="init-codegen" unless="up-to-date-proxies">
+    <java classname="com.mchange.v2.c3p0.codegen.JdbcProxyGenerator" fork="true" dir=".">
+      <sysproperty key="com.mchange.v2.log.MLog" value="com.mchange.v2.log.FallbackMLog" />
+      <classpath refid="codegen-classpath" />
+      <arg value="${build.codegen.dir}" />
+    </java>
+  </target>
+
+  <target name="codegen" depends="beangen,newproxygen" />
+
+  <target name="compile-common" depends="codegen">
+    <javac destdir="${build.classes.dir}" 
+           classpathref="build-classpath" 
+	   source="${jvm.target.version}"
+	   target="${jvm.target.version}"
+           debug="on">
+      <sourcepath>
+	<pathelement location="${build.codegen.dir}" />
+	<pathelement location="${java.src.dir}" />
+      </sourcepath>
+      <src>
+	<pathelement location="${build.codegen.dir}" />
+	<pathelement location="${java.src.dir}" />
+      </src>
+      <exclude name="**/junit/**" />
+      <exclude name="**/*JUnitTestCase.*" />
+      <exclude name="**/subst/**" />
+      <patternset refid="exclude-mgmt" />
+      <patternset refid="common-excludes" />
+    </javac>
+  </target>
+
+  <target name="compile-subst" depends="codegen">
+    <javac destdir="${build.classes.dir}" 
+           classpathref="build-classpath" 
+	   source="${jvm.target.version}"
+	   target="${jvm.target.version}"
+           debug="on">
+      <sourcepath>
+	<pathelement location="${build.codegen.dir}" />
+      </sourcepath>
+      <src>
+	<pathelement location="${build.codegen.dir}" />
+      </src>
+      <include name="**/subst/**" />
+    </javac>
+  </target>
+
+  <target name="compile-mgmt" depends="codegen" unless="no-mgmt">
+    <javac destdir="${build.classes.dir}" 
+           classpathref="build-classpath" 
+	   source="${jvm.target.version}"
+	   target="${jvm.target.version}"
+           debug="on">
+      <sourcepath>
+	<pathelement location="${java.src.dir}" />
+      </sourcepath>
+      <src>
+	<pathelement location="${java.src.dir}" />
+      </src>
+      <patternset refid="include-mgmt" />
+    </javac>
+  </target>
+
+  <target name="compile" depends="codegen,compile-common,compile-subst,compile-mgmt" />
+
+  <target name="jar" depends="compile">
+    <jar destfile="${build.jar.file}">
+      <manifest>
+	<attribute name="Extension-Name" value="com.mchange.v2.c3p0" />
+	<attribute name="Specification-Vendor" value="Machinery For Change, Inc." />
+	<attribute name="Specification-Version" value="1.0" />
+	<attribute name="Implementation-Vendor-Id" value="com.mchange" />
+	<attribute name="Implementation-Vendor" value="Machinery For Change, Inc." />
+	<attribute name="Implementation-Version" value="${c3p0.version}" />
+	<attribute name="Class-Path" value="${mchange-commons-java.jar.file.name}" />
+      </manifest>
+      <fileset dir="${build.classes.dir}" />
+      <fileset dir="${rsrc.src.dir}" />
+    </jar>
+  </target>
+
+  <target name="dbms-oracle-thin-ant">
+    <ant dir="${dbms.oracle.thin.antproj.dir}" target="${subproject.target}" inheritAll="false">
+      <property name="c3p0.version" value="${c3p0.version}" />
+      <property name="c3p0.jar.file" location="${build.jar.file}" />
+      <property name="mchange-commons-java.jar.file" location="${mchange-commons-java.jar.file}" />
+      <property name="oracle-thin.jdbc.jar.file" value="${oracle-thin.jdbc.jar.file}" />
+    </ant>
+  </target>
+
+  <target name="dbms-oracle-thin-clean">
+    <antcall target="dbms-oracle-thin-ant">
+      <param name="subproject.target" value="clean" />
+    </antcall>
+  </target>
+
+  <target name="dbms-oracle-thin" depends="jar" if="oracle-thin.jdbc.jar.file">
+    <echo message="oracle-thin.jdbc.jar.file: ${oracle-thin.jdbc.jar.file}" />
+    <antcall target="dbms-oracle-thin-ant">
+      <param name="subproject.target" value="dist" />
+    </antcall>
+  </target>
+
+  <target name="compile-junit" depends="compile">
+    <javac destdir="${test.classes.dir}" 
+           classpathref="test-classpath" 
+	   source="${jvm.target.version}"
+	   target="${jvm.target.version}"
+           debug="on">
+      <sourcepath>
+	<pathelement location="${java.src.dir}" />
+      </sourcepath>
+      <src>
+	<pathelement location="${java.src.dir}" />
+      </src>
+      <include name="**/junit/**" />
+      <include name="**/*JUnitTestCase.*" />
+      <patternset refid="common-excludes" />
+    </javac>
+  </target>
+
+  <target name="test-init" depends="jar">
+    <mkdir dir="${build.test.props.dir}" />
+    <copy toDir="${build.test.props.dir}">
+      <fileset dir="${test.props.src.dir}" />
+      <filterchain>
+	<replacetokens>
+	  <token key="c3p0.jdbcUrl"     value="${test.jdbc.url}"/>
+	  <token key="c3p0.driverClass" value="${test.jdbc.driver}"/>
+	  <token key="c3p0.user"        value="${test.jdbc.user}"/>
+	  <token key="c3p0.password"    value="${test.jdbc.password}"/>
+	</replacetokens>
+      </filterchain>
+    </copy>
+    <mkdir dir="${test.classes.dir}" />
+    <copy toDir="${test.classes.dir}">
+      <fileset dir="${build.classes.dir}">
+	<patternset refid="test-only-classes"/>
+      </fileset>
+    </copy>
+    <property name="testcp" refid="test-classpath" />
+    <echo message="test-classpath: ${testcp}" />
+  </target>
+
+  <target name="stats-test" depends="test-init">
+    <java 
+       classname="com.mchange.v2.c3p0.test.StatsTest" 
+       classpathref="test-classpath" 
+       fork="true">
+      <sysproperty key="jdbc.drivers" value="${test.jdbc.driver}" />
+      <sysproperty key="java.util.logging.config.file" value="${test.logging.props.file}" />
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+
+      <!--
+          <jvmarg value="-ea" />
+	  <sysproperty key="com.sun.management.jmxremote.port" value="38383" />
+	  <sysproperty key="com.sun.management.jmxremote.authenticate" value="false" />
+	  <sysproperty key="com.sun.management.jmxremote.ssl" value="false" />
+	  -->
+
+      <!-- <jvmarg value="-Xrunhprof:file=/tmp/java.hprof,doe=y,format=b" /> -->
+      <!-- <jvmarg value="-verbose:class" /> -->
+      <arg value="${test.jdbc.url}" />
+      <arg value="${test.jdbc.user}" />
+      <arg value="${test.jdbc.password}" />
+    </java>
+  </target>
+
+  <target name="proxywrapper-test" depends="test-init">
+    <java 
+       classname="com.mchange.v2.c3p0.test.ProxyWrappersTest" 
+       classpathref="test-classpath" 
+       fork="true">
+      <sysproperty key="jdbc.drivers" value="${test.jdbc.driver}" />
+      <sysproperty key="java.util.logging.config.file" value="${test.logging.props.file}" />
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+      <!-- <jvmarg value="-Xrunhprof:file=/tmp/java.hprof,doe=y,format=b" /> -->
+      <!-- <jvmarg value="-verbose:class" /> -->
+      <arg value="${test.jdbc.url}" />
+      <arg value="${test.jdbc.user}" />
+      <arg value="${test.jdbc.password}" />
+    </java>
+  </target>
+
+  <target name="benchmark-test" depends="test-init">
+    <java 
+       classname="com.mchange.v2.c3p0.test.C3P0BenchmarkApp" 
+       classpathref="test-classpath" 
+       fork="true">
+      <!-- <jvmarg value="-Xrunhprof:cpu=times,file=/tmp/java.hprof,doe=y,format=a" /> -->
+      <!-- <jvmarg value="-server" /> -->
+      <!-- <jvmarg value="-Xprof" /> -->
+      <!-- <jvmarg value="-verbose:class" /> -->
+
+      <sysproperty key="java.util.logging.config.file" value="${test.logging.props.file}" />
+
+<!--
+      <sysproperty key="com.sun.management.jmxremote.port" value="38383" />
+      <sysproperty key="com.sun.management.jmxremote.authenticate" value="false" />
+      <sysproperty key="com.sun.management.jmxremote.ssl" value="false" />
+-->
+
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+
+      <assertions>
+	<enable/>
+      </assertions>
+
+    </java>
+  </target>
+
+  <target name="rco-test" depends="test-init">
+    <java 
+       classname="com.mchange.v2.c3p0.test.RawConnectionOpTest" 
+       classpathref="test-classpath" 
+       fork="true">
+      <!-- <jvmarg value="-Xrunhprof:cpu=times,file=/tmp/java.hprof,doe=y,format=a" /> -->
+      <!-- <jvmarg value="-Xprof" /> -->
+      <sysproperty key="jdbc.drivers" value="${test.jdbc.driver}" />
+      <sysproperty key="java.util.logging.config.file" value="${test.logging.props.file}" />
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+
+      <!--
+          <jvmarg value="-ea" />
+	  <sysproperty key="com.sun.management.jmxremote.port" value="38383" />
+	  <sysproperty key="com.sun.management.jmxremote.authenticate" value="false" />
+	  <sysproperty key="com.sun.management.jmxremote.ssl" value="false" />
+	  -->
+
+      <arg value="${test.jdbc.url}" />
+      <arg value="${test.jdbc.user}" />
+      <arg value="${test.jdbc.password}" />
+    </java>
+  </target>
+
+  <target name="load-test" depends="test-init">
+    <java 
+       classname="com.mchange.v2.c3p0.test.LoadPoolBackedDataSource" 
+       classpathref="test-classpath" 
+       fork="true">
+      <sysproperty key="java.util.logging.config.file" value="${test.logging.props.file}" />
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+
+      <!-- <jvmarg value="-ea" /> -->
+      <sysproperty key="com.sun.management.jmxremote.port" value="38383" />
+      <sysproperty key="com.sun.management.jmxremote.authenticate" value="false" />
+      <sysproperty key="com.sun.management.jmxremote.ssl" value="false" />
+
+      <assertions>
+	<enable/>
+      </assertions>
+    </java>
+  </target>
+
+  <target name="psload-test" depends="test-init">
+    <java 
+       classname="com.mchange.v2.c3p0.test.PSLoadPoolBackedDataSource" 
+       classpathref="test-classpath" 
+       fork="true">
+      <sysproperty key="java.util.logging.config.file" value="${test.logging.props.file}" />
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+
+      <!-- <jvmarg value="-ea" /> -->
+      <sysproperty key="com.sun.management.jmxremote.port" value="38383" />
+      <sysproperty key="com.sun.management.jmxremote.authenticate" value="false" />
+      <sysproperty key="com.sun.management.jmxremote.ssl" value="false" />
+
+      <assertions>
+	<enable/>
+      </assertions>
+    </java>
+  </target>
+
+  <target name="interrupted-batch-test" depends="test-init">
+    <java 
+       classname="com.mchange.v2.c3p0.test.InterruptedBatchTest" 
+       classpathref="test-classpath" 
+       fork="true">
+      <sysproperty key="java.util.logging.config.file" value="${test.logging.props.file}" />
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+    </java>
+  </target>
+
+  <target name="dispersion-test" depends="test-init">
+    <java 
+       classname="com.mchange.v2.c3p0.test.ConnectionDispersionTest" 
+       classpathref="test-classpath" 
+       fork="true">
+      <sysproperty key="jdbc.drivers" value="${test.jdbc.driver}" />
+      <sysproperty key="java.util.logging.config.file" value="${test.logging.props.file}" />
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+      <arg value="${test.jdbc.url}" />
+      <arg value="${test.jdbc.user}" />
+      <arg value="${test.jdbc.password}" />
+    </java>
+  </target>
+
+  <target name="onethreadrepeat-test" depends="test-init">
+    <java 
+       classname="com.mchange.v2.c3p0.test.OneThreadRepeatedInsertOrQueryTest" 
+       classpathref="test-classpath" 
+       fork="true">
+      <sysproperty key="jdbc.drivers" value="${test.jdbc.driver}" />
+      <sysproperty key="java.util.logging.config.file" value="${test.logging.props.file}" />
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+      <arg value="${test.jdbc.url}" />
+      <arg value="${test.jdbc.user}" />
+      <arg value="${test.jdbc.password}" />
+    </java>
+  </target>
+
+  <target name="refser-test" depends="test-init">
+    <java 
+       classname="com.mchange.v2.c3p0.test.TestRefSerStuff" 
+       classpathref="test-classpath" 
+       fork="true">
+      <sysproperty key="java.util.logging.config.file" value="${test.logging.props.file}" />
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+      <jvmarg value="-ea" />
+    </java>
+  </target>
+
+  <target name="javabeanref-test" depends="test-init">
+    <java 
+       classname="com.mchange.v2.c3p0.test.JavaBeanRefTest" 
+       classpathref="test-classpath" 
+       fork="true">
+      <sysproperty key="java.util.logging.config.file" value="${test.logging.props.file}" />
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+      <jvmarg value="-ea" />
+    </java>
+  </target>
+
+  <target name="junit-tests" depends="test-init,compile-junit" if="junit.jar.file">
+    <mkdir dir="${build.testresults.dir}" />
+    <junit printsummary="true" showoutput="true" haltonfailure="true"> 
+      <classpath refid="test-classpath" />
+      <formatter type="plain"/>
+      <syspropertyset>
+	<propertyref builtin="commandline" />
+      </syspropertyset>
+      <batchtest fork="yes" toDir="${build.testresults.dir}">
+	<fileset dir="${test.classes.dir}">
+	  <include name="**/*JUnitTestCase.class"/>
+	</fileset>
+      </batchtest>
+    </junit>
+
+    <!--
+	<junit printsummary="withOutAndErr" >
+	  <test name="com.mchange.v2.c3p0.test.junit.MiscellaneousTopLevelJUnitTestCase"/>
+	  <classpath refid="test-classpath" />
+	  <formatter type="plain"/>
+	</junit>
+	-->
+  </target>
+
+  <target name="javadoc" depends="init">
+    <javadoc packagenames="com.mchange.v2.c3p0"
+             destdir="${build.apidocs.dir}" 
+             classpathref="build-classpath" 
+             windowtitle="${c3p0.name} API Documentation"
+	     >
+      <fileset dir="${java.src.dir}" />
+      <fileset dir="${build.codegen.dir}" />
+     </javadoc>
+  </target>
+
+   <target name="javadoc-jar" depends="javadoc">
+     <jar jarfile="${build.javadoc.jar.file}">
+       <fileset dir="${build.apidocs.dir}" />
+     </jar>
+   </target>
+
+   <target name="sources-jar" depends="init">
+     <jar jarfile="${build.sources.jar.file}">
+       <fileset dir="${java.src.dir}" includes="**/*.java" />
+       <fileset dir="${build.codegen.dir}" includes="**/*.java" />
+     </jar>
+   </target>
+
+
+  <target name="basic-open-dist" depends="jar, javadoc, sources-jar">
+    <copy toDir="${open.dist}">
+      <fileset dir="${static.dist.src}">
+	<exclude name="*~" />
+	<exclude name="examples/*.class" />
+	<patternset refid="common-excludes" />
+      </fileset>
+    </copy>
+    <mkdir dir="${open.dist.doc.dir}/apidocs" />
+    <copy toDir="${open.dist.doc.dir}">
+      <fileset dir="${doc.src.dir}" excludes="*.png"/>
+      <filterchain>
+	<replacetokens>
+	  <token key="c3p0.version" value="${c3p0.version}"/>
+	  <token key="mchange-commons-java.version" value="${mchange-commons-java.version}"/>
+	  <token key="c3p0.copyright.year"     value="${c3p0.copyright.year}" />
+	</replacetokens>
+      </filterchain>
+    </copy>
+    <copy toDir="${open.dist.doc.dir}">
+      <fileset dir="${doc.src.dir}" includes="*.png"/>
+    </copy>
+    <copy toDir="${open.dist.doc.dir}/apidocs">
+      <fileset dir="${build.apidocs.dir}" />
+    </copy>
+    <copy toDir="${open.dist.src.dir}" file="${build.sources.jar.file}" />
+    <copy toDir="${open.dist.src.dir}" file="${mchange-commons-java.sources.jar.file}" />
+    <copy file="${mchange-commons-java.jar.file}" toDir="${open.dist.lib.dir}" />
+    <copy file="${build.jar.file}" toDir="${open.dist.lib.dir}" />
+  </target>
+
+  <target name="docwebapp" depends="basic-open-dist">
+    <mkdir dir="${build.docwebapp.dir}" />
+    <copy toDir="${build.docwebapp.dir}">
+      <fileset dir="${docwebapp.src.dir}"/>
+      <filterchain>
+	<replacetokens>
+	  <token key="virtual.host" value="${docwebapp.virtual.host}"/>
+	</replacetokens>
+      </filterchain>
+    </copy>
+  </target>
+
+  <target name="docwebear" depends="docwebapp">
+    <mkdir dir="${build.docwebear.dir}" />
+    <copy toDir="${build.docwebear.dir}">
+      <fileset dir="${docwebear.src.dir}"/>
+      <filterchain>
+	<replacetokens>
+	  <token key="web.uri" value="${docwebapp.war.file.name}"/>
+	  <token key="context.root" value="${docwebapp.context.root}"/>
+	</replacetokens>
+      </filterchain>
+    </copy>
+    <jar destfile="${docwebapp.war.file}">
+      <zipfileset dir="${build.docwebapp.dir}" />
+      <zipfileset dir="${open.dist.doc.dir}" />
+    </jar>
+    <jar destfile="${docwebear.file}">
+      <zipfileset dir="${build.docwebear.dir}" />
+    </jar>
+  </target>
+
+  <target name="docwebear-deploy" depends="docwebear">
+    <exec executable="scp">
+      <arg line="${docwebear.file} ${docwebear.deploy.user}@${docwebear.deploy.host}:${docwebear.deploy.path}" />
+    </exec>
+  </target>
+
+  <target name="oracle-thin-open-dist" depends="basic-open-dist, dbms-oracle-thin"  if="oracle-thin.jdbc.jar.file">
+    <copy toDir="${open.dist}">
+      <fileset dir="${dbms.oracle.thin.antproj.dist.dir}" />
+    </copy>
+  </target>
+
+  <target name="open-dist" depends="basic-open-dist, oracle-thin-open-dist" />
+
+  <target name="zip-dist" depends="open-dist">
+    <zip destfile="${dist.dir}/${bindist.name}.zip">
+      <zipfileset dir="${open.dist}" prefix="${c3p0.name}"/>
+    </zip>
+  </target>
+
+  <target name="tar-dist" depends="open-dist">
+    <tar destfile="${dist.dir}/${bindist.name}.tar">
+      <tarfileset dir="${open.dist}" prefix="${c3p0.name}"/>
+    </tar>
+  </target>
+
+  <target name="tgz-dist" depends="tar-dist">
+    <gzip zipfile="${dist.dir}/${bindist.name}.tgz" src="${dist.dir}/${bindist.name}.tar" />
+  </target>
+
+  <target name="bindist" depends="tgz-dist, zip-dist" />
+
+  <target name="dist" depends="bindist" />
+
+  <target name="srcdist" depends="init">
+    <mkdir dir="${build.srcdist.dir}" />
+    <copy todir="${build.srcdist.dir}">
+      <fileset dir=".">
+	<include name="src/**" />
+	<include name="dbms/**" />
+	<include name="build.xml" />
+	<include name="build.properties" />
+	<include name="README-SRC" />
+	<patternset refid="common-excludes" />
+      </fileset>
+<!--
+      <filterchain>
+	<replacetokens>
+	  <token key="c3p0.version"   value="${c3p0.version}"/>
+	</replacetokens>
+      </filterchain>
+-->
+    </copy>
+    <mkdir dir="${build.srcdist.dir}/lib" />
+    <copy todir="${build.srcdist.dir}/lib" file="${mchange-commons-java.jar.file}" />
+
+    <zip destfile="${dist.dir}/${srcdist.name}.zip">
+      <zipfileset dir="${build.srcdist.dir}" prefix="${srcdist.name}" />
+    </zip>
+    <tar destfile="${dist.dir}/${srcdist.name}.tar">
+      <tarfileset dir="${build.srcdist.dir}" prefix="${srcdist.name}" />
+    </tar>
+    <gzip zipfile="${dist.dir}/${srcdist.name}.tgz" src="${dist.dir}/${srcdist.name}.tar" />
+  </target>
+
+  <target name="all" depends="dist,srcdist" />
+
+ <!-- Misc Utilities -->
+
+  <target name="update-source-headers-in-place">
+    <replaceregexp flags="m">
+      <regexp pattern="^ \* Distributed as part of c3p0 v\..*$" />
+      <substitution expression=" * Distributed as part of c3p0 v.${c3p0.version}" />
+      <fileset dir="${java.src.dir}">
+	<include name="**/*.java" />
+      </fileset>
+    </replaceregexp>
+    <replaceregexp flags="m">
+      <regexp pattern="^ \* Copyright \(C\) (\d{4}) Machinery For Change, Inc\.\s*$" />
+      <substitution expression=" * Copyright (C) ${c3p0.copyright.year} Machinery For Change, Inc." />
+      <fileset dir="${java.src.dir}">
+	<include name="**/*.java" />
+      </fileset>
+    </replaceregexp>
+  </target>
+
+   <!-- publishing to maven || see https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide -->
+   <property name="maven.snapshots.repository.id"  value="sonatype-nexus-snapshots" />
+   <property name="maven.snapshots.repository.url" value="https://oss.sonatype.org/content/repositories/snapshots" />
+   <property name="maven.staging.repository.id"    value="sonatype-nexus-staging" />
+   <property name="maven.staging.repository.url"   value="https://oss.sonatype.org/service/local/staging/deploy/maven2" />
+
+   <property name="maven.src.dir"                  value="${src.dir}/maven" />
+   <property name="build.maven-snapshot.dir"       value="${build.dir}/maven-snapshot" />
+   <property name="maven.snapshot.version"         value="${c3p0.version}-SNAPSHOT" />
+   <property name="maven.snapshot.jar.file"        value="${build.maven-snapshot.dir}/c3p0-${maven.snapshot.version}.jar" />
+
+   <property name="build.maven-release.dir"        value="${build.dir}/maven-release" />
+   <property name="maven.release.version"          value="${c3p0.version}" />
+   <property name="maven.release.jar.file"         value="${build.maven-release.dir}/c3p0-${maven.release.version}.jar" />
+   <property name="maven.release.javadoc.jar.file" value="${build.maven-release.dir}/c3p0-${maven.release.version}-javadoc.jar" />
+   <property name="maven.release.sources.jar.file" value="${build.maven-release.dir}/c3p0-${maven.release.version}-sources.jar" />
+
+   <!--
+      deploy-maven-snapshot seems to work if plaintext passwords are entered into settings.xml, but fails
+      to work when encrypted passwords are set. To workaround, run the taks and let the task fail, then cd into
+      build/maven-snapshot and type the following command:
+
+      mvn -Durl=https://oss.sonatype.org/content/repositories/snapshots -DrepositoryId=sonatype-nexus-snapshots -DpomFile=pom.xml -Dfile=c3p0-0.9.2_pre2-SNAPSHOT.jar deploy:deploy-file
+
+      Better yet, let's just use the exec task to do the same...
+    -->
+   <target name="deploy-maven-snapshot" depends="jar">
+     <mkdir dir="${build.maven-snapshot.dir}" />
+     <copy todir="${build.maven-snapshot.dir}" file="${maven.src.dir}/pom.xml">
+       <filterchain>
+	 <replacetokens>
+	   <token key="c3p0.version.maven"                   value="${maven.snapshot.version}"/>
+	   <token key="mchange-commons-java.version.maven"   value="${mchange-commons-java.version}"/>
+	 </replacetokens>
+       </filterchain>
+     </copy>
+     <copy tofile="${maven.snapshot.jar.file}" file="${build.jar.file}" />
+
+     <!--
+     <artifact:mvn>
+       <arg value="org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy-file" />
+       <arg value="-Durl=${maven.snapshots.repository.url}" />
+       <arg value="-DrepositoryId=${maven.snapshots.repository.id}" />
+       <arg value="-DpomFile=${build.maven-snapshot.dir}/pom.xml" />
+       <arg value="-Dfile=${maven.snapshot.jar.file}" />
+     </artifact:mvn>
+     -->
+     <exec executable="mvn" resolveexecutable="false">
+       <arg value="org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy-file" />
+       <arg value="-Durl=${maven.snapshots.repository.url}" />
+       <arg value="-DrepositoryId=${maven.snapshots.repository.id}" />
+       <arg value="-DpomFile=${build.maven-snapshot.dir}/pom.xml" />
+
+       <!-- work around Maven 2.2.1 corrupt multithreading bug -->
+       <!-- see http://jira.codehaus.org/browse/MNG-4742 http://jira.codehaus.org/browse/MNG-4301 -->
+       <arg value="-Dmaven.artifact.threads=1" /> 
+
+       <arg value="-Dfile=${maven.snapshot.jar.file}" />
+     </exec>
+   </target>
+
+   <!--
+      artifact:mvn + plugin doesn't handle encrypted passwords and gpg passphrases properly.
+      we just "exec" Maven with appropriate arguments.
+
+      note that gpg.passphrase should be set as a system property!
+    -->
+   <target name="stage-maven-release" depends="jar,javadoc-jar,sources-jar">
+     <mkdir dir="${build.maven-release.dir}" />
+     <copy todir="${build.maven-release.dir}" file="${maven.src.dir}/pom.xml">
+       <filterchain>
+	 <replacetokens>
+	   <token key="c3p0.version.maven"                   value="${maven.release.version}"/>
+	   <token key="mchange-commons-java.version.maven"   value="${mchange-commons-java.version}"/>
+	 </replacetokens>
+       </filterchain>
+     </copy>
+     <copy tofile="${maven.release.jar.file}"         file="${build.jar.file}" />
+     <copy tofile="${maven.release.javadoc.jar.file}" file="${build.javadoc.jar.file}" />
+     <copy tofile="${maven.release.sources.jar.file}" file="${build.sources.jar.file}" />
+ 
+     <!-- sign and deploy the main artifact -->
+     <!--
+     <artifact:mvn>
+       <arg value="org.apache.maven.plugins:maven-gpg-plugin:1.4:sign-and-deploy-file" />
+       <arg value="-Durl=${maven.staging.repository.url}" />
+       <arg value="-DrepositoryId=${maven.staging.repository.id}" />
+       <arg value="-DpomFile=${build.maven-release.dir}/pom.xml" />
+       <arg value="-Dfile=${maven.release.jar.file}" />
+       <arg value="-Pgpg" />
+     </artifact:mvn>
+     -->
+     <exec executable="mvn" resolveexecutable="false">
+       <arg value="-Durl=${maven.staging.repository.url}" />
+       <arg value="-DrepositoryId=${maven.staging.repository.id}" />
+       <arg value="-DpomFile=${build.maven-release.dir}/pom.xml" />
+       <arg value="-Dfile=${maven.release.jar.file}" />
+       <arg value="-Dgpg.passphrase=${gpg.passphrase}" />
+
+       <!-- work around Maven 2.2.1 corrupt multithreading bug -->
+       <!-- see http://jira.codehaus.org/browse/MNG-4742 http://jira.codehaus.org/browse/MNG-4301 -->
+       <arg value="-Dmaven.artifact.threads=1" /> 
+
+       <arg value="-Pgpg" />
+       <arg value="gpg:sign-and-deploy-file" />
+     </exec>
+	
+
+     <!-- sign and deploy the javadoc artifact -->
+     <!--
+     <artifact:mvn>
+       <arg value="org.apache.maven.plugins:maven-gpg-plugin:1.4:sign-and-deploy-file" />
+       <arg value="-Durl=${maven.staging.repository.url}" />
+       <arg value="-DrepositoryId=${maven.staging.repository.id}" />
+       <arg value="-DpomFile=${build.maven-release.dir}/pom.xml" />
+       <arg value="-Dfile=${maven.release.javadoc.jar.file}" />
+       <arg value="-Dclassifier=javadoc" />
+       <arg value="-Pgpg" />
+     </artifact:mvn>
+     -->
+     <exec executable="mvn" resolveexecutable="false">
+       <arg value="-Durl=${maven.staging.repository.url}" />
+       <arg value="-DrepositoryId=${maven.staging.repository.id}" />
+       <arg value="-DpomFile=${build.maven-release.dir}/pom.xml" />
+       <arg value="-Dfile=${maven.release.javadoc.jar.file}" />
+       <arg value="-Dgpg.passphrase=${gpg.passphrase}" />
+       <arg value="-Dclassifier=javadoc" />
+
+       <!-- work around Maven 2.2.1 corrupt multithreading bug -->
+       <!-- see http://jira.codehaus.org/browse/MNG-4742 http://jira.codehaus.org/browse/MNG-4301 -->
+       <arg value="-Dmaven.artifact.threads=1" /> 
+
+       <arg value="-Pgpg" />
+       <arg value="gpg:sign-and-deploy-file" />
+     </exec>
+
+     <!-- sign and deploy the sources artifact -->
+     <!--
+     <artifact:mvn>
+       <arg value="org.apache.maven.plugins:maven-gpg-plugin:1.4:sign-and-deploy-file" />
+       <arg value="-Durl=${maven.staging.repository.url}" />
+       <arg value="-DrepositoryId=${maven.staging.repository.id}" />
+       <arg value="-DpomFile=${build.maven-release.dir}/pom.xml" />
+       <arg value="-Dfile=${maven.release.sources.jar.file}" />
+       <arg value="-Dclassifier=sources" />
+       <arg value="-Pgpg" />
+     </artifact:mvn>
+     -->
+     <exec executable="mvn" resolveexecutable="false">
+       <arg value="-Durl=${maven.staging.repository.url}" />
+       <arg value="-DrepositoryId=${maven.staging.repository.id}" />
+       <arg value="-DpomFile=${build.maven-release.dir}/pom.xml" />
+       <arg value="-Dfile=${maven.release.sources.jar.file}" />
+       <arg value="-Dgpg.passphrase=${gpg.passphrase}" />
+       <arg value="-Dclassifier=sources" />
+
+       <!-- work around Maven 2.2.1 corrupt multithreading bug -->
+       <!-- see http://jira.codehaus.org/browse/MNG-4742 http://jira.codehaus.org/browse/MNG-4301 -->
+       <arg value="-Dmaven.artifact.threads=1" /> 
+
+       <arg value="-Pgpg" />
+       <arg value="gpg:sign-and-deploy-file" />
+     </exec>
+
+   </target>
+
+</project>
+

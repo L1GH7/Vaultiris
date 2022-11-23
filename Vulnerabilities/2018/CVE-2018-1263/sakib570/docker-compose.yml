@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+ web:
+   image: vulhub/phpmyadmin:4.8.1
+   ports:
+    - "8080:80"  # host port to reach phpmyadmin is 8080
+   volumes:
+    - ./config.inc.php:/var/www/html/config.inc.php  # copying the php my admin configuration from host to container
+   depends_on:
+    - mysql
+ mysql:
+   image: mysql:latest
+   command: --default-authentication-plugin=mysql_native_password # This line needed for mysql versions above 5.7.9 since newer versions do not allow native password authentication by default
+   environment: 
+    - MYSQL_RANDOM_ROOT_PASSWORD=yes
+    - MYSQL_DATABASE=db
+    - MYSQL_USER=phpmyadmin
+    - MYSQL_PASSWORD=hello
+ 
