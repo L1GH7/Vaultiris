@@ -1,0 +1,21 @@
+---
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sExternalIPs
+metadata:
+  name: external-ips
+spec:
+  enforcementAction: deny
+  match:
+    kinds:
+    - apiGroups:
+      - ""
+      kinds:
+      - Service
+    labelSelector:
+      matchExpressions: []
+    namespaceSelector:
+      labelSelector: []
+  parameters:
+    forbiddenCIDRs:
+    - 10.43.0.0/16
+    - 10.33.0.0/16

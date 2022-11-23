@@ -1,0 +1,33 @@
+/**
+* 2017 PSBlog
+*
+* NOTICE OF LICENSE
+*
+* READ ATTACHED LICENSE.TXT
+*
+*  @author    PSBlog
+*  @copyright 2017 PSBlog
+*  @license   http://www.apache.org/licenses/LICENSE-2.0.txt Apache License 2.0
+*/
+
+#result, #mod_result {
+    background-color: #000;
+    border: 1px solid #000;
+    color: #FFF;
+    padding: 8px;
+    font-family: courier new;
+}
+
+#buttons-admin-group {
+	background-color: #CCCCCC; 
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+div#buttons-admin-group a.btn-default {
+	margin-bottom: 10px;
+}
+
+.btns15 {
+	margin-bottom: 10px;
+}

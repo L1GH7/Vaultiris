@@ -1,0 +1,13 @@
+<section class="mat-typography" style="height: 100%">
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px" style="height: 100%;">
+  <mat-toolbar color="primary">
+    <span>COVIDSafe Exploit</span>
+  </mat-toolbar>
+
+  <div fxLayout="row" fxLayoutAlign="center center" style="height: 100%;">
+    <mat-card fxFlex="30" fxFlexAlign="center">
+      <div class="mat-headline"><mat-slide-toggle color="primary" [checked]="checked" (toggleChange)="exploitToggle()" #toggle>Disable COVIDSafe</mat-slide-toggle></div>
+    </mat-card>
+  </div>
+</div>
+</section>

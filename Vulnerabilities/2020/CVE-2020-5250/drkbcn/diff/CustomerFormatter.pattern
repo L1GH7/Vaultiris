@@ -1,0 +1,4 @@
+/classes/form/
+$format['id_customer'] = (new FormField())
+	->setName('id_customer')
+	->setType('hidden');

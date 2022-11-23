@@ -1,0 +1,34 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8sexternalips
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sExternalIPs
+      validation:
+        openAPIV3Schema:
+          properties:
+            forbiddenCIDRs:
+              items:
+                type: string
+              type: array
+  targets:
+  - rego: |
+      package k8sexternalips
+
+      violation[{"msg": msg}] {
+        input.review.kind.kind == "Service"
+        input.review.kind.group == ""
+
+        # turns list into a SET
+        forbiddenCIDRs := {ip | ip := input.parameters.forbiddenCIDRs[_]}
+        externalIPs := {ip | ip := input.review.object.spec.externalIPs[_]}
+        # check if ip contains in forbidden cidr range
+        forbiddenIPs := net.cidr_contains_matches(forbiddenCIDRs, externalIPs)
+        count(forbiddenIPs) > 0
+        msg := sprintf("Service has forbidden external IPs: %v in forbidden CIDR range: %v", [forbiddenIPs[_][1], forbiddenCIDRs])
+      }
+    target: admission.k8s.gatekeeper.sh
+

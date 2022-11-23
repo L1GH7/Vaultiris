@@ -1,0 +1,7 @@
+/classes/form/
+'id_address' => (new FormField())
+	->setName('id_address')
+	->setType('hidden'),
+'id_customer' => (new FormField())
+	->setName('id_customer')
+	->setType('hidden'),
