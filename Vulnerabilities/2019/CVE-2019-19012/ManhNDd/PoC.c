@@ -1,0 +1,86 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "oniguruma.h"
+
+static int
+search(regex_t* reg, unsigned char* str, unsigned char* end)
+{
+  int r;
+  unsigned char *start, *range;
+  OnigRegion *region;
+
+  region = onig_region_new();
+
+  start = str;
+  range = end;
+  r = onig_search(reg, str, end, start, range, region, ONIG_OPTION_NONE);
+  if (r >= 0 ) {
+    int i;
+
+    fprintf(stdout, "match at %d  (%s)\n", r,
+            ONIGENC_NAME(onig_get_encoding(reg)));
+    for (i = 0; i < region->num_regs; i++) {
+      fprintf(stdout, "%d: (%d-%d)\n", i, region->beg[i], region->end[i]);
+    }
+  }
+  else if (r == ONIG_MISMATCH) {
+    fprintf(stdout, "search fail (%s)\n",
+            ONIGENC_NAME(onig_get_encoding(reg)));
+  }
+  else { /* error */
+    char s[ONIG_MAX_ERROR_MESSAGE_LEN];
+    onig_error_code_to_str((UChar* )s, r);
+    fprintf(stdout, "ERROR: %s\n", s);
+    fprintf(stdout, "  (%s)\n", ONIGENC_NAME(onig_get_encoding(reg)));
+    
+    onig_region_free(region, 1 /* 1:free self, 0:free contents only */);
+    return -1;
+  }
+
+  onig_region_free(region, 1 /* 1:free self, 0:free contents only */);
+  return 0;
+}
+
+int main(int argc, char* argv[])
+{
+  int r;
+  regex_t* reg;
+  OnigErrorInfo einfo;
+
+  char *pattern = argv[1];
+  char *pattern_end = pattern + strlen(pattern);
+  OnigEncodingType *enc = ONIG_ENCODING_ASCII;
+
+  char* str = argv[2];
+  char* str_end = str+strlen(str);
+
+  onig_initialize(&enc, 1);
+  r = onig_new(&reg, (unsigned char *)pattern, (unsigned char *)pattern_end,
+               ONIG_OPTION_IGNORECASE, enc, ONIG_SYNTAX_DEFAULT, &einfo);
+  if (r != ONIG_NORMAL) {
+    char s[ONIG_MAX_ERROR_MESSAGE_LEN];
+    onig_error_code_to_str((UChar* )s, r, &einfo);
+    fprintf(stdout, "ERROR: %s\n", s);
+    onig_end();
+
+    if (r == ONIGERR_PARSER_BUG ||
+        r == ONIGERR_STACK_BUG  ||
+        r == ONIGERR_UNDEFINED_BYTECODE ||
+        r == ONIGERR_UNEXPECTED_BYTECODE) {
+      return -2;
+    }
+    else
+      return -1;
+  }
+
+  //if (onigenc_is_valid_mbc_string(enc, str, str_end) != 0) {
+    r = search(reg, str, str_end);
+  //} else {
+    //fprintf(stdout, "Invalid string\n");
+  //}
+
+  onig_free(reg);
+  onig_end();
+  return 0;
+}

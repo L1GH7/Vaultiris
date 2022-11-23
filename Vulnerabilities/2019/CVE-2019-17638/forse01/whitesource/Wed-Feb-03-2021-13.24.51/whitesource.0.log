@@ -1,0 +1,423 @@
+[INFO] [2021-02-03 13:24:51,094 +0900] - UnifiedAgent version (pluginVersion) : 21.1.1
+[INFO] [2021-02-03 13:24:51,396 +0900[ - 
+------------------------------------------------------------------------
+-------------------- Start: Fetch Configuration ------------------------
+------------------------------------------------------------------------
+[INFO] [2021-02-03 13:24:51,397 +0900[ - 
+------------------------------------------------------------------------
+-------------------- End: Fetch Configuration --------------------------
+------------------------------------------------------------------------
+[INFO] [2021-02-03 13:24:51,427 +0900[ - 
+##### general #####
+wss.url=https://app-eu.whitesourcesoftware.com/agent
+projectTag=
+projectName=Jetty
+includes=**/*.jar,**/*.java
+forceUpdate.failBuildOnPolicyViolation=false
+forceUpdate=false
+forceCheckAllDependencies=false
+excludes=**/*sources.jar,**/*javadoc.jar
+configFilePath=wss-unified-agent.config
+checkPolicies=false
+apiKey=******
+#whiteSourceFolderPath=.
+#userKey=
+#updateType=OVERRIDE
+#updateInventory=true
+#updateEmptyProject=true
+#scanReportTimeoutMinutes=10
+#scanReportFilenameFormat=project_with_timestamp
+#scanPackageManager=false
+#scanComment=
+#resolveAllDependencies=true
+#requireKnownSha1=true
+#requesterEmail=
+#recommendationDetector=false
+#projectVersion=
+#projectToken=
+#projectPerFolderIncludes=*
+#projectPerFolderExcludes=
+#projectPerFolder=false
+#productVersion=
+#productToken=
+#productName=
+#offline.zip=false
+#offline.prettyJson=true
+#offline=false
+#log.level=info
+#ignoreSourceFiles=false
+#iaLanguage=
+#generateScanReport=false
+#generateProjectDetailsJson=false
+#failErrorLevel=DEFAULT
+#excludeDependenciesFromNodes=
+#euaVul=euaVul.json
+#euaRes=euaRes.json
+#euaOffline=
+#euaDep=euaDep.json
+#enableImpactAnalysis=false
+#appPath=
+#analyzeMultiModule=
+#analyzeFrameworksReference=analyzeFrameworks.txt
+#analyzeFrameworks=false
+
+#####  #####
+#ignoreEuaNotices=informational
+
+##### ANT #####
+#ant.resolveDependencies=true
+#ant.pathIdIncludes=
+#ant.external.parameters=
+
+##### archive #####
+#archiveIncludes=
+#archiveExtractionDepth=0
+#archiveExcludes=
+
+##### artifactory #####
+#artifactory.userPassword=
+#artifactory.userName=
+#artifactory.url=
+#artifactory.repoKeys=
+#artifactory.includes=.*.*
+#artifactory.excludes=
+#artifactory.enableScan=false
+#artifactory.accessToken=
+
+##### bazel #####
+#bazel.runPreStep=false
+#bazel.resolveDependencies=true
+
+##### bower #####
+#bower.runPreStep=false
+#bower.resolveDependencies=true
+#bower.ignoreSourceFiles=false
+
+##### cabal #####
+#haskell.runPreStep=false
+#haskell.resolveDependencies=true
+#haskell.ignoreSourceFiles=true
+#haskell.ignorePreStepErrors=false
+
+##### cargo #####
+#cargo.runPreStep=false
+#cargo.resolveDependencies=true
+#cargo.ignoreSourceFiles=true
+
+##### cocoapods #####
+#cocoapods.runPreStep=false
+#cocoapods.resolveDependencies=true
+#cocoapods.ignoreSourceFiles=true
+
+##### docker #####
+#docker.scanTarFiles=false
+#docker.scanImages=false
+#docker.scanContainers=false
+#docker.scan.maxImages=0
+#docker.pull.tags=
+#docker.pull.maxImages=10
+#docker.pull.images=
+#docker.pull.force=false
+#docker.pull.enable=false
+#docker.pull.digest=
+#docker.projectNameFormat=default
+#docker.login.sudo=true
+#docker.layers=false
+#docker.includes=.*.*
+#docker.includeSingleScan=
+#docker.excludes=
+#docker.delete.force=false
+#docker.containerIncludes=.*.*
+#docker.containerExcludes=
+
+##### docker artifactory #####
+#docker.artifactory.userPassword=
+#docker.artifactory.userName=
+#docker.artifactory.url=
+#docker.artifactory.repositoriesNames=
+#docker.artifactory.pullUrl=
+#docker.artifactory.enable=false
+#docker.artifactory.dockerAccessMethod= 
+
+##### docker aws #####
+#docker.aws.registryIds=
+#docker.aws.region=east
+#docker.aws.enable=false
+
+##### docker azure #####
+#docker.azure.userPassword=
+#docker.azure.userName=
+#docker.azure.registryNames=
+#docker.azure.registryAuthenticationParameters=
+#docker.azure.enable=false
+#docker.azure.authenticationType=UserAccount
+
+##### docker google containers #####
+#docker.gcr.repositories=
+#docker.gcr.enable=false
+#docker.gcr.account=
+
+##### docker hub #####
+#docker.hub.userPassword=
+#docker.hub.userName=
+#docker.hub.organizationsNames=
+#docker.hub.enabled=false
+#docker.hub.accessToken=
+
+##### environment #####
+followSymbolicLinks=true
+case.sensitive.glob=false
+
+##### go #####
+#go.resolveDependencies=true
+#go.ignoreSourceFiles=false
+#go.gogradle.enableTaskAlias=false
+#go.glide.ignoreTestPackages=true
+#go.dependencyManager=
+#go.collectDependenciesAtRuntime=false
+
+##### gradle #####
+#gradle.wrapperPath=
+#gradle.runPreStep=false
+#gradle.runAssembleCommand=true
+#gradle.resolveDependencies=true
+#gradle.preferredEnvironment=gradle
+#gradle.multiModule.applyProjectVersion=false
+#gradle.localRepositoryPath=
+#gradle.includedScopes=
+#gradle.includedConfigurations=
+#gradle.includeModules=
+#gradle.ignoredScopes=
+#gradle.ignoredConfigurations=
+#gradle.ignoreSourceFiles=false
+#gradle.excludeModules=
+#gradle.downloadMissingDependencies=true
+#gradle.aggregateModules=false
+#gradle.additionalArguments=
+
+##### hex #####
+#hex.runPreStep=false
+#hex.resolveDependencies=true
+#hex.ignoreSourceFiles=true
+#hex.aggregateModules=false
+
+##### html #####
+#html.resolveDependencies=true
+
+##### maven #####
+#maven.runPreStep=false
+#maven.resolveDependencies=true
+#maven.projectNameFromDependencyFile=false
+#maven.multiModule.applyProjectVersion=false
+#maven.maxCacheFolderSize=
+#maven.m2RepositoryPath=
+#maven.ignoredScopes=provided,test
+#maven.ignoreSourceFiles=false
+#maven.ignorePomModules=true
+#maven.ignoreMvnTreeErrors=false
+#maven.environmentPath=
+#maven.downloadMissingDependencies=true
+#maven.aggregateModules=false
+#maven.additionalArguments=
+
+##### npm #####
+#npm.yarnProject=false
+#npm.yarn.frozenLockfile=false
+#npm.timeoutDependenciesCollectorInSeconds=60
+#npm.runPreStep=false
+#npm.resolveMainPackageJsonOnly=false
+#npm.resolveLockFile=true
+#npm.resolveGlobalPackages=false
+#npm.resolveDependencies=true
+#npm.resolveAdditionalDependencies=false
+#npm.removeDuplicateDependencies=true
+#npm.projectNameFromDependencyFile=false
+#npm.includeDevDependencies=false
+#npm.ignoreSourceFiles=true
+#npm.ignoreScripts=false
+#npm.ignoreNpmLsErrors=false
+#npm.ignoreJavaScriptFiles=true
+#npm.ignoreDirectoryPatterns=example,examples,.ws_bower,test
+#npm.identifyByNameAndVersion=false
+#npm.failOnNpmLsErrors=
+#npm.accessToken=
+
+##### nuget #####
+#nuget.runPreStep=false
+#nuget.restoreDependencies=false
+#nuget.resolvePackagesConfigFiles=true
+#nuget.resolveNuspecFiles=true
+#nuget.resolveDependencies=true
+#nuget.resolveCsProjFiles=true
+#nuget.resolveAssetsFiles=true
+#nuget.preferredEnvironment=
+#nuget.packagesDirectory=
+#nuget.ignoreSourceFiles=true
+
+##### ocaml #####
+#ocaml.switchName=
+#ocaml.runPreStep=false
+#ocaml.resolveDependencies=true
+#ocaml.ignoredScopes=with-test,with-doc
+#ocaml.ignoreSourceFiles=false
+#ocaml.aggregateModules=false
+
+##### paket #####
+#paket.runPreStep=false
+#paket.resolveDependencies=true
+#paket.ignoredGroups=
+#paket.ignoreSourceFiles=true
+#paket.exePath=
+
+##### php #####
+#php.runPreStep=false
+#php.resolveDependencies=true
+#php.removeDuplicateDependencies=false
+#php.includeDevDependencies=false
+#php.ignoreSourceFiles=true
+
+##### python #####
+#python.runPoetryPreStep=false
+#python.runPipenvPreStep=false
+#python.resolveSetupPyFiles=false
+#python.resolvePipEditablePackages=false
+#python.resolveHierarchyTree=true
+#python.resolveGlobalPackages=false
+#python.resolveDependencies=true
+#python.requirementsFileIncludes=
+#python.pipenvDevDependencies=false
+#python.pipPath=pip
+#python.path=python
+#python.localPackagePathsToInstall=
+#python.isEmptyEnvironment=false
+#python.installVirtualenv=false
+#python.indexUrl=
+#python.includePoetryDevDependencies=false
+#python.ignoreSourceFiles=true
+#python.ignorePipInstallErrors=false
+#python.IgnorePipenvInstallErrors=false
+
+##### r_language #####
+#r.runPreStep=false
+#r.resolveDependencies=true
+#r.packageManager=packrat
+#r.ignoreSourceFiles=true
+#r.cranMirrorUrl=
+
+##### ruby #####
+#ruby.runBundleInstall=false
+#ruby.resolveDependencies=true
+#ruby.overwriteGemFile=false
+#ruby.installMissingGems=false
+#ruby.ignoreSourceFiles=true
+
+##### sbt #####
+#sbt.runPreStep=false
+#sbt.resolveDependencies=true
+#sbt.includedScopes=compile,runtime
+#sbt.ignoreSourceFiles=false
+#sbt.aggregateModules=false
+
+##### scm #####
+#scm.user=
+#scm.url=
+#scm.tag=
+#scm.repositoriesFile=
+#scm.ppk=
+#scm.pass=
+#scm.branch=
+
+##### serverless #####
+#serverless.scanFunctions=false
+#serverless.region=
+#serverless.provider=aws-lambda
+#serverless.maxFunctions=10
+#serverless.includes=
+#serverless.excludes=
+
+[WARN] [2021-02-03 13:24:51,462 +0900[ - 
+------------------------------------------------------------------------
+-------------- START - File System Permissions Validations -------------
+------------------------------------------------------------------------
+[WARN] [2021-02-03 13:24:51,463 +0900[ - Files to scan - File or Directory does not exists: /opt/jetty/9.4.27/source/sample-software
+[WARN] [2021-02-03 13:24:51,463 +0900[ - 
+------------------------------------------------------------------------
+-------------- END - File System Permissions Validations ---------------
+------------------------------------------------------------------------
+[WARN] [2021-02-03 13:24:52,774 +0900[ - Ivy cache '/root/.ivy2/cache' not found
+[DEBUG] [2021-02-03 13:24:52,827 +0900[ - Available processors (cores): 	1
+Free memory (Mb): 	103
+Max memory (Mb): 	237
+Total memory (Mb): 	237
+Used memory (Mb): 	134
+
+[INFO] [2021-02-03 13:24:52,851 +0900[ - Starting analysis
+[INFO] [2021-02-03 13:24:52,851 +0900[ - Scanning directories [/opt/jetty/9.4.27/source/sample-software] for package dependencies (may take a few minutes)
+[INFO] [2021-02-03 13:24:52,851 +0900[ - Included file types: **/*.jar,**/*.java
+[INFO] [2021-02-03 13:24:52,851 +0900[ - Excluded file types: **/*sources.jar,**/*javadoc.jar
+[INFO] [2021-02-03 13:24:52,858 +0900[ - 
+------------------------------------------------------------------------
+-------------------- Start: Scan Files Matching Includes Pattern -------
+------------------------------------------------------------------------
+[DEBUG] [2021-02-03 13:24:52,858 +0900[ - Scanning /opt/jetty/9.4.27/source/sample-software
+[INFO] [2021-02-03 13:24:52,858 +0900[ - File /opt/jetty/9.4.27/source/sample-software doesn't exist
+[INFO] [2021-02-03 13:24:52,880 +0900[ - Scanning directories [/opt/jetty/9.4.27/source/sample-software] for matching source/binary file types (may take a few minutes)
+[DEBUG] [2021-02-03 13:24:52,880 +0900[ - Scanning /opt/jetty/9.4.27/source/sample-software
+[INFO] [2021-02-03 13:24:52,880 +0900[ - File /opt/jetty/9.4.27/source/sample-software doesn't exist
+[INFO] [2021-02-03 13:24:52,883 +0900[ - Total files found according to the includes/excludes pattern: 0
+[INFO] [2021-02-03 13:24:52,884 +0900[ - 
+------------------------------------------------------------------------
+-------------------- End: Scan Files Matching Includes Pattern ---------
+------------------------------------------------------------------------
+[INFO] [2021-02-03 13:24:52,884 +0900[ - Finished analyzing Files
+[DEBUG] [2021-02-03 13:24:52,884 +0900[ - Available processors (cores): 	1
+Free memory (Mb): 	103
+Max memory (Mb): 	237
+Total memory (Mb): 	237
+Used memory (Mb): 	134
+
+[INFO] [2021-02-03 13:24:53,105 +0900[ - Initializing WhiteSource Client
+[DEBUG] [2021-02-03 13:24:53,105 +0900[ - Setting project tags
+[INFO] [2021-02-03 13:24:53,107 +0900[ - Service URL is https://app-eu.whitesourcesoftware.com/agent
+[INFO] [2021-02-03 13:24:53,305 +0900[ - UpdateType set to OVERRIDE 
+[INFO] [2021-02-03 13:24:53,306 +0900[ - Sending Update
+[INFO] [2021-02-03 13:24:53,306 +0900[ - 
+------------------------------------------------------------------------
+-------------------- Start: Update Inventory ---------------------------
+------------------------------------------------------------------------
+[INFO] [2021-02-03 13:24:56,829 +0900[ - 
+------------------------------------------------------------------------
+-------------------- End: Update Inventory -----------------------------
+------------------------------------------------------------------------
+[INFO] [2021-02-03 13:24:56,829 +0900[ - Inventory update results for Forse System
+[INFO] [2021-02-03 13:24:56,829 +0900[ - Newly created projects:
+[INFO] [2021-02-03 13:24:56,830 +0900[ - # Jetty
+[INFO] [2021-02-03 13:24:56,830 +0900[ - No projects were updated.
+[INFO] [2021-02-03 13:24:56,830 +0900[ - Project name: Jetty, URL: https://app-eu.whitesourcesoftware.com/Wss/WSS.html#!project;id=472666
+[INFO] [2021-02-03 13:24:56,830 +0900[ - Support Token: 2ab023c813160420eac04fb41eb0767001612326295361
+[DEBUG] [2021-02-03 13:24:56,844 +0900[ - Process finished with exit code SUCCESS (Inventory update results for Forse System
+Newly created projects:
+Jetty
+No projects were updated.
+
+Project name: Jetty, project URL:https://app-eu.whitesourcesoftware.com/Wss/WSS.html#!project;id=472666
+Support Token: 2ab023c813160420eac04fb41eb0767001612326295361)
+[INFO] [2021-02-03 13:24:56,844 +0900[ - Log files are found at: ./whitesource/Wed-Feb-03-2021-13.24.51
+[INFO] [2021-02-03 13:24:56,891 +0900[ - 
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------- WhiteSource Scan Summary: --------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+======================================================================================================================================================
+Scan Origin: Local File System
+======================================================================================================================================================
+Step                                              Completion Status               Elapsed                  Comments
+======================================================================================================================================================
+Fetch Configuration                                  COMPLETED                  00:00:00.283               --------
+Scan Files Matching Includes Pattern                 COMPLETED                  00:00:00.007               0 source/binary files
+Update Inventory                                     COMPLETED                  00:00:03.523               0 updated projects
+
+======================================================================================================================================================
+Elapsed running time:                                                           00:00:03.813
+======================================================================================================================================================
+Process finished with exit code SUCCESS (0)
+

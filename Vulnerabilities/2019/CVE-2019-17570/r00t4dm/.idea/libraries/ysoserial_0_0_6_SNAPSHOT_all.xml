@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="ysoserial-0.0.6-SNAPSHOT-all">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ysoserial/target/ysoserial-0.0.6-SNAPSHOT-all.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../ysoserial/target/ysoserial-0.0.6-SNAPSHOT-all.jar!/" />
+    </SOURCES>
+  </library>
+</component>
