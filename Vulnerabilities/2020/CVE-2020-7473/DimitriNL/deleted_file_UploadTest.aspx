@@ -1,0 +1,106 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SCConfig.Master" AutoEventWireup="true" CodeBehind="UploadTest.aspx.cs" Inherits="StorageCenter.UploadTest" %>
+<%@ MasterType VirtualPath="~/SCConfig.master" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="CustomStyle" runat="server">
+    <style type="text/css">
+        .content-inner {width:800px; margin-left: 0px; }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="InfotipHolder" runat="server">
+    Test raw file upload performance.
+</asp:Content>
+
+<asp:Content ID="Content3" runat="server" ContentPlaceHolderID = "Mainform">
+      <form id="Form1" runat="server" style="border-style: hidden; border-color: inherit; border-width: medium; width: 717px; height: 606px; ">
+        <ajaxToolkit:ToolkitScriptManager ID="ScriptManager1" runat="server" EnablePageMethods ="true"/>
+        <p>
+           <span class="desc">Select test file to upload ( < 200 MB). Only one file can be uploaded at a time</span>
+        </p>
+        <ajaxToolkit:AjaxFileUpload ID="AjaxFileUpload" OnUploadComplete="ProcessUpload" runat="server" OnClientUploadComplete="ProcessUploadCompleteClient" OnClientUploadStart="ProcessUploadStartClient" MaximumNumberOfFiles="1" />
+        <p>
+        </p>
+        <p>
+            <label class="med">
+                <span class="desc text-left" title="Enter proxy username">
+                    <asp:Label ID="TransferTimeLabel" runat="server" Text="Transfer Time (sec):" />
+                </span>
+                <asp:Label ID="TransferTime" runat="server" Text="" />
+            </label>
+            <br /><br/>
+            <label class="med">
+                <span class="desc text-left" title="Enter proxy username">
+                    <asp:Label ID="TransferRateLabel" runat="server" Text="Transfer Rate (MBps):" />
+                </span>
+                <asp:Label ID="TransferRate" runat="server" Text="" />
+            </label>
+            <br /><br/>
+            <label class="med">
+                <span class="desc text-left" title="Enter proxy username">
+                    <asp:Label ID="StorageTimeLabel" runat="server" Text="Storage Time (sec):" />
+                </span>
+                <asp:Label ID="StorageTime" runat="server" Text="" />
+            </label>
+            <br/><br/>
+            <label class="med">
+                <span class="desc text-left" title="Enter proxy username">
+                    <asp:Label ID="StorageRateLabel" runat="server" Text="Storage Rate (MBps)" />
+                </span>
+                <asp:Label ID="StorageRate" runat="server" Text="" />
+            </label>
+        </p>
+    </form>
+    <div id="loader" style="position: fixed; text-align: center; height: 100%; width: 100%; top: -171px; right: 0;left: 0; z-index: 9999999; background-color: #000000; opacity: 0.7; display: none">
+                                <span style="border-width: 0px; position: fixed; padding: 50px; background-color: #FFFFFF; font-size: 36px; left: 40%; top: 40%;">Storing...</span>
+    </div>
+    <script type="text/javascript" src="javascript/jquery-latest.js"></script>
+    <script type="text/javascript">
+        function pageLoad(sender, args) {
+            $(".ajax__fileupload_selectFileButton").css({ "color": "#ffffff" });
+            $(".ajax__fileupload_selectFileButton").css({ "background-color": "#58585B" });
+            $(".ajax__fileupload_uploadbutton").css({ "color": "#ffffff" });
+            $(".ajax__fileupload_uploadbutton").css({ "background-color": "#58585B" });
+            $("#MastheadShareFileNav").hide();
+            $("#ctl00_Mainform_AjaxFileUpload_Html5DropZone").hide();
+       }
+
+        function ProcessUploadStartClient(sender, args) {
+            sessionStorage["uploadStartTime"] = Date.now();
+            $('#<%= TransferTime.ClientID %>').html('');
+                $('#<%= TransferRate.ClientID %>').html('');
+            document.getElementById("<%=StorageTime.ClientID%>").innerText = "";
+            document.getElementById("<%=StorageRate.ClientID%>").innerText = "";
+        }
+
+        function ProcessUploadCompleteClient(sender, args) {
+            var roundTrip = Date.now() - parseFloat(sessionStorage["uploadStartTime"]);
+            var fileSize = args.get_fileSize();
+            sessionStorage.removeItem("uploadStartTime");
+            $('#<%= TransferTime.ClientID %>').html(roundTrip / 1000);
+                $('#<%= TransferRate.ClientID %>').html((fileSize / (roundTrip * 1000)).toFixed(2));
+                SaveFileToStorage(fileSize);
+            }
+
+            function SaveFileToStorage(fileSize) {
+                var maxFileSize = 200000000;
+                if (fileSize > maxFileSize)
+                    alert("Test files should be less than " + (maxFileSize / 1000000) + "MB to test storage time");
+                else {
+                    $('#loader').show();
+                    $.ajax({
+                        type: "POST",
+                        url: 'UploadTest.aspx/StoreData',
+                        data: "{}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (msg) {
+                            $('#loader').hide();
+                            var storageTime = msg.d;
+                            $("#<%= StorageTime.ClientID %>").html(msg.d);
+                                    $("#<%= StorageRate.ClientID %>").html((fileSize / (parseFloat(msg.d) * 1000000)).toFixed(2));
+                                }
+                        });
+                        }
+                    }
+   </script>
+</asp:Content>
+

@@ -1,0 +1,35 @@
+#cloak of magic resistance = object 127
+#
+#(gdb) print &objects[127]
+#$4 = (struct objclass *) 0x9a25d8 <objects+5080>
+#
+#orig:
+#0x9a25d8 <objects+5080>:        0x00000000      0x00000000      0x00000000      0x00000000
+#0x9a25e8 <objects+5096>:        0x05006034      0x0f00030c      0x000a0002      0x0000003c
+#0x9a25f8 <objects+5112>:        0x000a0101      0x00000000
+#
+#target:
+#0x9a25d8 <objects+5080>:        0x00000000      0x00000000      0x00000000      0x00000000
+#0x9a25e8 <objects+5096>:        0x05006034      0x0f00030c      0x000a0002      0x0000003c
+#0x9a25f8 <objects+5112>:        0x000a017f      0x00000000
+#
+# &g.cond_hilites = 0x9a7500
+# 0x9a7500 - 0x9a25f8 = 20232 decimal
+# 20232 / sizeof(g.cond_hilites[0]) = 2529
+# 2^32 - 2529 = 4294964767
+#
+#define BL_MASK_BAREH        0x00000001L
+#define BL_MASK_BLIND        0x00000002L
+#define BL_MASK_BUSY         0x00000004L
+#define BL_MASK_CONF         0x00000008L
+#define BL_MASK_DEAF         0x00000010L
+#define BL_MASK_ELF_IRON     0x00000020L
+#define BL_MASK_FLY          0x00000040L
+
+#hilite:cond/Bare/4294964767 -- optional; bit 0 already set
+hilite:cond/Blind/4294964767
+hilite:cond/Busy/4294964767
+hilite:cond/Conf/4294964767
+hilite:cond/Deaf/4294964767
+hilite:cond/Iron/4294964767
+hilite:cond/Fly/4294964767

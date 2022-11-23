@@ -1,0 +1,2 @@
+# CVE-2020-11113
+CVE-2020-11113:Jackson-databind RCE

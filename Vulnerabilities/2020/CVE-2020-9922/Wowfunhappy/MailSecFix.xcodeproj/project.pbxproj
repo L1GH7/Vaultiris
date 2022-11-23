@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB29B18F26B9CBBD00499661 /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = AB29B18E26B9CBBD00499661 /* ZKSwizzle.m */; };
+		AB29B19226B9CD6400499661 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB29B19126B9CD6400499661 /* main.m */; };
+		AB29B19326B9CF2A00499661 /* MailSecFix.mailbundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = AB29B17F26B9C8E600499661 /* MailSecFix.mailbundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AB29B18926B9C91A00499661 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /Volumes/Jonathan/Library/Mail/Bundles;
+			dstSubfolderSpec = 0;
+			files = (
+				AB29B19326B9CF2A00499661 /* MailSecFix.mailbundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AB29B17F26B9C8E600499661 /* MailSecFix.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailSecFix.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB29B18326B9C8E600499661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB29B18D26B9CBBD00499661 /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKSwizzle.h; sourceTree = "<group>"; };
+		AB29B18E26B9CBBD00499661 /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKSwizzle.m; sourceTree = "<group>"; };
+		AB29B19126B9CD6400499661 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB29B17C26B9C8E600499661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB29B17626B9C8E600499661 = {
+			isa = PBXGroup;
+			children = (
+				AB29B18126B9C8E600499661 /* MailSecFix */,
+				AB29B18026B9C8E600499661 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB29B18026B9C8E600499661 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB29B17F26B9C8E600499661 /* MailSecFix.mailbundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB29B18126B9C8E600499661 /* MailSecFix */ = {
+			isa = PBXGroup;
+			children = (
+				AB29B19126B9CD6400499661 /* main.m */,
+				AB29B18C26B9CBBD00499661 /* ZKSwizzle */,
+				AB29B18226B9C8E600499661 /* Supporting Files */,
+			);
+			path = MailSecFix;
+			sourceTree = "<group>";
+		};
+		AB29B18226B9C8E600499661 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB29B18326B9C8E600499661 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB29B18C26B9CBBD00499661 /* ZKSwizzle */ = {
+			isa = PBXGroup;
+			children = (
+				AB29B18D26B9CBBD00499661 /* ZKSwizzle.h */,
+				AB29B18E26B9CBBD00499661 /* ZKSwizzle.m */,
+			);
+			path = ZKSwizzle;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB29B17E26B9C8E600499661 /* MailSecFix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB29B18626B9C8E600499661 /* Build configuration list for PBXNativeTarget "MailSecFix" */;
+			buildPhases = (
+				AB29B17B26B9C8E600499661 /* Sources */,
+				AB29B17C26B9C8E600499661 /* Frameworks */,
+				AB29B17D26B9C8E600499661 /* Resources */,
+				AB29B18926B9C91A00499661 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MailSecFix;
+			productName = MailSecFix;
+			productReference = AB29B17F26B9C8E600499661 /* MailSecFix.mailbundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB29B17726B9C8E600499661 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				TargetAttributes = {
+					AB29B17E26B9C8E600499661 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = AB29B17A26B9C8E600499661 /* Build configuration list for PBXProject "MailSecFix" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AB29B17626B9C8E600499661;
+			productRefGroup = AB29B18026B9C8E600499661 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB29B17E26B9C8E600499661 /* MailSecFix */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB29B17D26B9C8E600499661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB29B17B26B9C8E600499661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB29B19226B9CD6400499661 /* main.m in Sources */,
+				AB29B18F26B9CBBD00499661 /* ZKSwizzle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AB29B18426B9C8E600499661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AB29B18526B9C8E600499661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AB29B18726B9C8E600499661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MailSecFix/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mailbundle;
+			};
+			name = Debug;
+		};
+		AB29B18826B9C8E600499661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MailSecFix/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mailbundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB29B17A26B9C8E600499661 /* Build configuration list for PBXProject "MailSecFix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB29B18426B9C8E600499661 /* Debug */,
+				AB29B18526B9C8E600499661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB29B18626B9C8E600499661 /* Build configuration list for PBXNativeTarget "MailSecFix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB29B18726B9C8E600499661 /* Debug */,
+				AB29B18826B9C8E600499661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB29B17726B9C8E600499661 /* Project object */;
+}

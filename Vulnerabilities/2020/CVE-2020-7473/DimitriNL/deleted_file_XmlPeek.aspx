@@ -1,0 +1,2 @@
+<%@ Page language="c#" Codebehind="XmlPeek.aspx.cs" AutoEventWireup="True" Inherits="StorageCenter.XmlPeek" %>
+<!-- Not really a page -->

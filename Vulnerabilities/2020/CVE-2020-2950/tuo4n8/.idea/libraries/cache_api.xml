@@ -1,0 +1,28 @@
+<component name="libraryTable">
+  <library name="cache-api">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/cache-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/coherence-discovery.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/coherence-hotcache.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/coherence-jcache.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/coherence-jpa.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/coherence-mock.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/coherence-rest.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/coherence-web.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/coherence-work.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/coherence.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-cli-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-collections-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/je.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jline.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsafeFIPS.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/webInstaller.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/wlcipher.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/wlfullclient.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/wlfullclient.jar!/" />
+    </SOURCES>
+  </library>
+</component>

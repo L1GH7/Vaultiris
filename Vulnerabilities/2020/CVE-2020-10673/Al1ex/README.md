@@ -1,0 +1,2 @@
+# CVE-2020-10673
+CVE-2020-10673:jackson-databind RCE

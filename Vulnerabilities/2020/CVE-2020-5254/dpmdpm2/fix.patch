@@ -1,0 +1,69 @@
+commit a93759b1dd5846c12b51d939d49d385745f8df55
+Author: David Mendenhall <dpmendenhall@gmail.com>
+Date:   Tue Mar 3 08:00:40 2020 -0800
+
+    Fix integer overflow in match_str2clr
+
+diff --git a/include/extern.h b/include/extern.h
+index 231bad776..fe8af0cdb 100644
+--- a/include/extern.h
++++ b/include/extern.h
+@@ -1883,7 +1883,7 @@ E int FDECL(sym_val, (const char *));
+ E int FDECL(query_color, (const char *));
+ E int FDECL(query_attr, (const char *));
+ E const char *FDECL(clr2colorname, (int));
+-E int FDECL(match_str2clr, (char *));
++E unsigned FDECL(match_str2clr, (char *));
+ E int FDECL(match_str2attr, (const char *, BOOLEAN_P));
+ E boolean FDECL(add_menu_coloring, (char *));
+ E boolean FDECL(get_menu_coloring, (const char *, int *, int *));
+diff --git a/src/botl.c b/src/botl.c
+index 4a80ed43b..ac520006e 100644
+--- a/src/botl.c
++++ b/src/botl.c
+@@ -2609,7 +2609,7 @@ boolean from_configfile;
+             else if (a == ATR_NONE)
+                 disp_attrib = HL_NONE;
+             else {
+-                int c = match_str2clr(subfields[i]);
++                unsigned c = match_str2clr(subfields[i]);
+ 
+                 if (c >= CLR_MAX || coloridx != -1)
+                     return FALSE;
+@@ -2889,7 +2889,7 @@ int sidx;
+                 g.cond_hilites[HL_ATTCLR_INVERSE] &= ~conditions_bitmask;
+                 g.cond_hilites[HL_ATTCLR_BOLD] &= ~conditions_bitmask;
+             } else {
+-                int k = match_str2clr(subfields[i]);
++                unsigned k = match_str2clr(subfields[i]);
+ 
+                 if (k >= CLR_MAX)
+                     return FALSE;
+diff --git a/src/options.c b/src/options.c
+index ebc541eeb..1b200c1d5 100644
+--- a/src/options.c
++++ b/src/options.c
+@@ -6560,11 +6560,12 @@ int clr;
+     return (char *) 0;
+ }
+ 
+-int
++unsigned
+ match_str2clr(str)
+ char *str;
+ {
+-    int i, c = CLR_MAX;
++    int i;
++    unsigned c = CLR_MAX;
+ 
+     /* allow "lightblue", "light blue", and "light-blue" to match "light blue"
+        (also junk like "_l i-gh_t---b l u e" but we won't worry about that);
+@@ -6578,7 +6579,7 @@ char *str;
+     if (i == SIZE(colornames) && (*str >= '0' && *str <= '9'))
+         c = atoi(str);
+ 
+-    if (c == CLR_MAX)
++    if (c >= CLR_MAX)
+         config_error_add("Unknown color '%s'", str);
+ 
+     return c;

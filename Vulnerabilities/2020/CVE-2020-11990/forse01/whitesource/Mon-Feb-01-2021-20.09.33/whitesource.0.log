@@ -1,0 +1,1008 @@
+[INFO] [2021-02-01 20:09:33,320 +0900] - UnifiedAgent version (pluginVersion) : 21.1.1
+[INFO] [2021-02-01 20:09:33,548 +0900[ - 
+------------------------------------------------------------------------
+-------------------- Start: Fetch Configuration ------------------------
+------------------------------------------------------------------------
+[INFO] [2021-02-01 20:09:33,548 +0900[ - 
+------------------------------------------------------------------------
+-------------------- End: Fetch Configuration --------------------------
+------------------------------------------------------------------------
+[INFO] [2021-02-01 20:09:33,581 +0900[ - 
+##### general #####
+wss.url=https://app-eu.whitesourcesoftware.com/agent
+projectTag=
+projectName=Cordova-3
+includes=*
+forceUpdate.failBuildOnPolicyViolation=false
+forceUpdate=false
+forceCheckAllDependencies=false
+excludes=**/*sources.jar,**/*javadoc.jar
+configFilePath=wss-unified-agent.config
+checkPolicies=false
+apiKey=******
+#whiteSourceFolderPath=.
+#userKey=
+#updateType=OVERRIDE
+#updateInventory=true
+#updateEmptyProject=true
+#scanReportTimeoutMinutes=10
+#scanReportFilenameFormat=project_with_timestamp
+#scanPackageManager=false
+#scanComment=
+#resolveAllDependencies=true
+#requireKnownSha1=true
+#requesterEmail=
+#recommendationDetector=false
+#projectVersion=
+#projectToken=
+#projectPerFolderIncludes=*
+#projectPerFolderExcludes=
+#projectPerFolder=false
+#productVersion=
+#productToken=
+#productName=
+#offline.zip=false
+#offline.prettyJson=true
+#offline=false
+#log.level=info
+#ignoreSourceFiles=false
+#iaLanguage=
+#generateScanReport=false
+#generateProjectDetailsJson=false
+#failErrorLevel=DEFAULT
+#excludeDependenciesFromNodes=
+#euaVul=euaVul.json
+#euaRes=euaRes.json
+#euaOffline=
+#euaDep=euaDep.json
+#enableImpactAnalysis=false
+#appPath=
+#analyzeMultiModule=
+#analyzeFrameworksReference=analyzeFrameworks.txt
+#analyzeFrameworks=false
+
+#####  #####
+#ignoreEuaNotices=informational
+
+##### ANT #####
+#ant.resolveDependencies=true
+#ant.pathIdIncludes=
+#ant.external.parameters=
+
+##### archive #####
+#archiveIncludes=
+#archiveExtractionDepth=0
+#archiveExcludes=
+
+##### artifactory #####
+#artifactory.userPassword=
+#artifactory.userName=
+#artifactory.url=
+#artifactory.repoKeys=
+#artifactory.includes=.*.*
+#artifactory.excludes=
+#artifactory.enableScan=false
+#artifactory.accessToken=
+
+##### bazel #####
+#bazel.runPreStep=false
+#bazel.resolveDependencies=true
+
+##### bower #####
+#bower.runPreStep=false
+#bower.resolveDependencies=true
+#bower.ignoreSourceFiles=false
+
+##### cabal #####
+#haskell.runPreStep=false
+#haskell.resolveDependencies=true
+#haskell.ignoreSourceFiles=true
+#haskell.ignorePreStepErrors=false
+
+##### cargo #####
+#cargo.runPreStep=false
+#cargo.resolveDependencies=true
+#cargo.ignoreSourceFiles=true
+
+##### cocoapods #####
+#cocoapods.runPreStep=false
+#cocoapods.resolveDependencies=true
+#cocoapods.ignoreSourceFiles=true
+
+##### docker #####
+#docker.scanTarFiles=false
+#docker.scanImages=false
+#docker.scanContainers=false
+#docker.scan.maxImages=0
+#docker.pull.tags=
+#docker.pull.maxImages=10
+#docker.pull.images=
+#docker.pull.force=false
+#docker.pull.enable=false
+#docker.pull.digest=
+#docker.projectNameFormat=default
+#docker.login.sudo=true
+#docker.layers=false
+#docker.includes=.*.*
+#docker.includeSingleScan=
+#docker.excludes=
+#docker.delete.force=false
+#docker.containerIncludes=.*.*
+#docker.containerExcludes=
+
+##### docker artifactory #####
+#docker.artifactory.userPassword=
+#docker.artifactory.userName=
+#docker.artifactory.url=
+#docker.artifactory.repositoriesNames=
+#docker.artifactory.pullUrl=
+#docker.artifactory.enable=false
+#docker.artifactory.dockerAccessMethod= 
+
+##### docker aws #####
+#docker.aws.registryIds=
+#docker.aws.region=east
+#docker.aws.enable=false
+
+##### docker azure #####
+#docker.azure.userPassword=
+#docker.azure.userName=
+#docker.azure.registryNames=
+#docker.azure.registryAuthenticationParameters=
+#docker.azure.enable=false
+#docker.azure.authenticationType=UserAccount
+
+##### docker google containers #####
+#docker.gcr.repositories=
+#docker.gcr.enable=false
+#docker.gcr.account=
+
+##### docker hub #####
+#docker.hub.userPassword=
+#docker.hub.userName=
+#docker.hub.organizationsNames=
+#docker.hub.enabled=false
+#docker.hub.accessToken=
+
+##### environment #####
+followSymbolicLinks=true
+case.sensitive.glob=false
+
+##### go #####
+#go.resolveDependencies=true
+#go.ignoreSourceFiles=false
+#go.gogradle.enableTaskAlias=false
+#go.glide.ignoreTestPackages=true
+#go.dependencyManager=
+#go.collectDependenciesAtRuntime=false
+
+##### gradle #####
+#gradle.wrapperPath=
+#gradle.runPreStep=false
+#gradle.runAssembleCommand=true
+#gradle.resolveDependencies=true
+#gradle.preferredEnvironment=gradle
+#gradle.multiModule.applyProjectVersion=false
+#gradle.localRepositoryPath=
+#gradle.includedScopes=
+#gradle.includedConfigurations=
+#gradle.includeModules=
+#gradle.ignoredScopes=
+#gradle.ignoredConfigurations=
+#gradle.ignoreSourceFiles=false
+#gradle.excludeModules=
+#gradle.downloadMissingDependencies=true
+#gradle.aggregateModules=false
+#gradle.additionalArguments=
+
+##### hex #####
+#hex.runPreStep=false
+#hex.resolveDependencies=true
+#hex.ignoreSourceFiles=true
+#hex.aggregateModules=false
+
+##### html #####
+#html.resolveDependencies=true
+
+##### maven #####
+#maven.runPreStep=false
+#maven.resolveDependencies=true
+#maven.projectNameFromDependencyFile=false
+#maven.multiModule.applyProjectVersion=false
+#maven.maxCacheFolderSize=
+#maven.m2RepositoryPath=
+#maven.ignoredScopes=provided,test
+#maven.ignoreSourceFiles=false
+#maven.ignorePomModules=true
+#maven.ignoreMvnTreeErrors=false
+#maven.environmentPath=
+#maven.downloadMissingDependencies=true
+#maven.aggregateModules=false
+#maven.additionalArguments=
+
+##### npm #####
+#npm.yarnProject=false
+#npm.yarn.frozenLockfile=false
+#npm.timeoutDependenciesCollectorInSeconds=60
+#npm.runPreStep=false
+#npm.resolveMainPackageJsonOnly=false
+#npm.resolveLockFile=true
+#npm.resolveGlobalPackages=false
+#npm.resolveDependencies=true
+#npm.resolveAdditionalDependencies=false
+#npm.removeDuplicateDependencies=true
+#npm.projectNameFromDependencyFile=false
+#npm.includeDevDependencies=false
+#npm.ignoreSourceFiles=true
+#npm.ignoreScripts=false
+#npm.ignoreNpmLsErrors=false
+#npm.ignoreJavaScriptFiles=true
+#npm.ignoreDirectoryPatterns=example,examples,.ws_bower,test
+#npm.identifyByNameAndVersion=false
+#npm.failOnNpmLsErrors=
+#npm.accessToken=
+
+##### nuget #####
+#nuget.runPreStep=false
+#nuget.restoreDependencies=false
+#nuget.resolvePackagesConfigFiles=true
+#nuget.resolveNuspecFiles=true
+#nuget.resolveDependencies=true
+#nuget.resolveCsProjFiles=true
+#nuget.resolveAssetsFiles=true
+#nuget.preferredEnvironment=
+#nuget.packagesDirectory=
+#nuget.ignoreSourceFiles=true
+
+##### ocaml #####
+#ocaml.switchName=
+#ocaml.runPreStep=false
+#ocaml.resolveDependencies=true
+#ocaml.ignoredScopes=with-test,with-doc
+#ocaml.ignoreSourceFiles=false
+#ocaml.aggregateModules=false
+
+##### paket #####
+#paket.runPreStep=false
+#paket.resolveDependencies=true
+#paket.ignoredGroups=
+#paket.ignoreSourceFiles=true
+#paket.exePath=
+
+##### php #####
+#php.runPreStep=false
+#php.resolveDependencies=true
+#php.removeDuplicateDependencies=false
+#php.includeDevDependencies=false
+#php.ignoreSourceFiles=true
+
+##### python #####
+#python.runPoetryPreStep=false
+#python.runPipenvPreStep=false
+#python.resolveSetupPyFiles=false
+#python.resolvePipEditablePackages=false
+#python.resolveHierarchyTree=true
+#python.resolveGlobalPackages=false
+#python.resolveDependencies=true
+#python.requirementsFileIncludes=
+#python.pipenvDevDependencies=false
+#python.pipPath=pip
+#python.path=python
+#python.localPackagePathsToInstall=
+#python.isEmptyEnvironment=false
+#python.installVirtualenv=false
+#python.indexUrl=
+#python.includePoetryDevDependencies=false
+#python.ignoreSourceFiles=true
+#python.ignorePipInstallErrors=false
+#python.IgnorePipenvInstallErrors=false
+
+##### r_language #####
+#r.runPreStep=false
+#r.resolveDependencies=true
+#r.packageManager=packrat
+#r.ignoreSourceFiles=true
+#r.cranMirrorUrl=
+
+##### ruby #####
+#ruby.runBundleInstall=false
+#ruby.resolveDependencies=true
+#ruby.overwriteGemFile=false
+#ruby.installMissingGems=false
+#ruby.ignoreSourceFiles=true
+
+##### sbt #####
+#sbt.runPreStep=false
+#sbt.resolveDependencies=true
+#sbt.includedScopes=compile,runtime
+#sbt.ignoreSourceFiles=false
+#sbt.aggregateModules=false
+
+##### scm #####
+#scm.user=
+#scm.url=
+#scm.tag=
+#scm.repositoriesFile=
+#scm.ppk=
+#scm.pass=
+#scm.branch=
+
+##### serverless #####
+#serverless.scanFunctions=false
+#serverless.region=
+#serverless.provider=aws-lambda
+#serverless.maxFunctions=10
+#serverless.includes=
+#serverless.excludes=
+
+[WARN] [2021-02-01 20:09:34,562 +0900[ - Ivy cache '/home/forse/.ivy2/cache' not found
+[DEBUG] [2021-02-01 20:09:34,587 +0900[ - Available processors (cores): 	1
+Free memory (Mb): 	51
+Max memory (Mb): 	199
+Total memory (Mb): 	199
+Used memory (Mb): 	148
+
+[INFO] [2021-02-01 20:09:34,589 +0900[ - Starting analysis
+[INFO] [2021-02-01 20:09:34,589 +0900[ - Scanning directories [/home/forse/hello] for package dependencies (may take a few minutes)
+[INFO] [2021-02-01 20:09:34,589 +0900[ - Included file types: *
+[INFO] [2021-02-01 20:09:34,589 +0900[ - Excluded file types: **/*sources.jar,**/*javadoc.jar
+[INFO] [2021-02-01 20:09:34,596 +0900[ - 
+------------------------------------------------------------------------
+-------------------- Start: Scan Files Matching Includes Pattern -------
+------------------------------------------------------------------------
+[DEBUG] [2021-02-01 20:09:34,596 +0900[ - Scanning /home/forse/hello
+[DEBUG] [2021-02-01 20:09:34,603 +0900[ - Dependency file found location: /home/forse/hello/package.json
+[DEBUG] [2021-02-01 20:09:34,605 +0900[ - Dependency file found location: /home/forse/hello/www/index.html
+[DEBUG] [2021-02-01 20:09:34,615 +0900[ - Dependency file found location: /home/forse/hello/platforms/android/app/src/main/assets/www/index.html
+[DEBUG] [2021-02-01 20:09:34,651 +0900[ - Dependency file found location: /home/forse/hello/platforms/android/app/build.gradle
+[DEBUG] [2021-02-01 20:09:34,666 +0900[ - Dependency file found location: /home/forse/hello/platforms/android/CordovaLib/build.gradle
+[DEBUG] [2021-02-01 20:09:34,674 +0900[ - Dependency file found location: /home/forse/hello/platforms/android/cordova/lib/plugin-build.gradle
+[DEBUG] [2021-02-01 20:09:34,676 +0900[ - Dependency file found location: /home/forse/hello/platforms/android/build.gradle
+[DEBUG] [2021-02-01 20:09:34,692 +0900[ - Dependency file found location: /home/forse/hello/node_modules/@nodelib/fs.stat/package.json
+[DEBUG] [2021-02-01 20:09:34,709 +0900[ - Dependency file found location: /home/forse/hello/node_modules/@nodelib/fs.scandir/package.json
+[DEBUG] [2021-02-01 20:09:34,756 +0900[ - Dependency file found location: /home/forse/hello/node_modules/@nodelib/fs.walk/package.json
+[DEBUG] [2021-02-01 20:09:34,759 +0900[ - Dependency file found location: /home/forse/hello/node_modules/abbrev/package.json
+[DEBUG] [2021-02-01 20:09:34,759 +0900[ - Dependency file found location: /home/forse/hello/node_modules/ansi/package.json
+[DEBUG] [2021-02-01 20:09:34,760 +0900[ - Dependency file found location: /home/forse/hello/node_modules/assert-plus/package.json
+[DEBUG] [2021-02-01 20:09:34,761 +0900[ - Dependency file found location: /home/forse/hello/node_modules/at-least-node/package.json
+[DEBUG] [2021-02-01 20:09:34,761 +0900[ - Dependency file found location: /home/forse/hello/node_modules/balanced-match/package.json
+[DEBUG] [2021-02-01 20:09:34,762 +0900[ - Dependency file found location: /home/forse/hello/node_modules/base64-js/package.json
+[DEBUG] [2021-02-01 20:09:34,762 +0900[ - Dependency file found location: /home/forse/hello/node_modules/big-integer/package.json
+[DEBUG] [2021-02-01 20:09:34,762 +0900[ - Dependency file found location: /home/forse/hello/node_modules/big-integer/bower.json
+[DEBUG] [2021-02-01 20:09:34,763 +0900[ - Dependency file found location: /home/forse/hello/node_modules/bplist-parser/package.json
+[DEBUG] [2021-02-01 20:09:34,764 +0900[ - Dependency file found location: /home/forse/hello/node_modules/concat-map/package.json
+[DEBUG] [2021-02-01 20:09:34,769 +0900[ - Dependency file found location: /home/forse/hello/node_modules/brace-expansion/package.json
+[DEBUG] [2021-02-01 20:09:34,769 +0900[ - Dependency file found location: /home/forse/hello/node_modules/dedent/package.json
+[DEBUG] [2021-02-01 20:09:34,770 +0900[ - Dependency file found location: /home/forse/hello/node_modules/extsprintf/package.json
+[DEBUG] [2021-02-01 20:09:34,770 +0900[ - Dependency file found location: /home/forse/hello/node_modules/fast-json-parse/package.json
+[DEBUG] [2021-02-01 20:09:34,771 +0900[ - Dependency file found location: /home/forse/hello/node_modules/fs.realpath/package.json
+[DEBUG] [2021-02-01 20:09:34,772 +0900[ - Dependency file found location: /home/forse/hello/node_modules/graceful-fs/package.json
+[DEBUG] [2021-02-01 20:09:34,773 +0900[ - Dependency file found location: /home/forse/hello/node_modules/human-signals/package.json
+[DEBUG] [2021-02-01 20:09:34,773 +0900[ - Dependency file found location: /home/forse/hello/node_modules/inherits/package.json
+[DEBUG] [2021-02-01 20:09:34,773 +0900[ - Dependency file found location: /home/forse/hello/node_modules/is-extglob/package.json
+[DEBUG] [2021-02-01 20:09:34,774 +0900[ - Dependency file found location: /home/forse/hello/node_modules/is-glob/package.json
+[DEBUG] [2021-02-01 20:09:34,774 +0900[ - Dependency file found location: /home/forse/hello/node_modules/glob-parent/package.json
+[DEBUG] [2021-02-01 20:09:34,774 +0900[ - Dependency file found location: /home/forse/hello/node_modules/is-number/package.json
+[DEBUG] [2021-02-01 20:09:34,775 +0900[ - Dependency file found location: /home/forse/hello/node_modules/is-stream/package.json
+[DEBUG] [2021-02-01 20:09:34,775 +0900[ - Dependency file found location: /home/forse/hello/node_modules/isexe/package.json
+[DEBUG] [2021-02-01 20:09:34,776 +0900[ - Dependency file found location: /home/forse/hello/node_modules/jsonfile/package.json
+[DEBUG] [2021-02-01 20:09:34,776 +0900[ - Dependency file found location: /home/forse/hello/node_modules/jsonfile/node_modules/universalify/package.json
+[DEBUG] [2021-02-01 20:09:34,878 +0900[ - Dependency file found location: /home/forse/hello/node_modules/lodash/package.json
+[DEBUG] [2021-02-01 20:09:34,879 +0900[ - Dependency file found location: /home/forse/hello/node_modules/@netflix/nerror/package.json
+[DEBUG] [2021-02-01 20:09:34,879 +0900[ - Dependency file found location: /home/forse/hello/node_modules/merge-stream/package.json
+[DEBUG] [2021-02-01 20:09:34,879 +0900[ - Dependency file found location: /home/forse/hello/node_modules/merge2/package.json
+[DEBUG] [2021-02-01 20:09:34,880 +0900[ - Dependency file found location: /home/forse/hello/node_modules/mimic-fn/package.json
+[DEBUG] [2021-02-01 20:09:34,880 +0900[ - Dependency file found location: /home/forse/hello/node_modules/minimatch/package.json
+[DEBUG] [2021-02-01 20:09:34,880 +0900[ - Dependency file found location: /home/forse/hello/node_modules/objectorarray/package.json
+[DEBUG] [2021-02-01 20:09:34,880 +0900[ - Dependency file found location: /home/forse/hello/node_modules/endent/package.json
+[DEBUG] [2021-02-01 20:09:34,881 +0900[ - Dependency file found location: /home/forse/hello/node_modules/onetime/package.json
+[DEBUG] [2021-02-01 20:09:34,881 +0900[ - Dependency file found location: /home/forse/hello/node_modules/os-homedir/package.json
+[DEBUG] [2021-02-01 20:09:34,881 +0900[ - Dependency file found location: /home/forse/hello/node_modules/os-tmpdir/package.json
+[DEBUG] [2021-02-01 20:09:34,881 +0900[ - Dependency file found location: /home/forse/hello/node_modules/osenv/package.json
+[DEBUG] [2021-02-01 20:09:34,882 +0900[ - Dependency file found location: /home/forse/hello/node_modules/p-finally/package.json
+[DEBUG] [2021-02-01 20:09:34,882 +0900[ - Dependency file found location: /home/forse/hello/node_modules/p-try/package.json
+[DEBUG] [2021-02-01 20:09:34,882 +0900[ - Dependency file found location: /home/forse/hello/node_modules/path-is-absolute/package.json
+[DEBUG] [2021-02-01 20:09:34,882 +0900[ - Dependency file found location: /home/forse/hello/node_modules/path-key/package.json
+[DEBUG] [2021-02-01 20:09:34,883 +0900[ - Dependency file found location: /home/forse/hello/node_modules/npm-run-path/package.json
+[DEBUG] [2021-02-01 20:09:34,883 +0900[ - Dependency file found location: /home/forse/hello/node_modules/picomatch/package.json
+[DEBUG] [2021-02-01 20:09:34,883 +0900[ - Dependency file found location: /home/forse/hello/node_modules/pify/package.json
+[DEBUG] [2021-02-01 20:09:34,884 +0900[ - Dependency file found location: /home/forse/hello/node_modules/q/package.json
+[DEBUG] [2021-02-01 20:09:34,884 +0900[ - Dependency file found location: /home/forse/hello/node_modules/reusify/package.json
+[DEBUG] [2021-02-01 20:09:34,895 +0900[ - Dependency file found location: /home/forse/hello/node_modules/fastq/package.json
+[DEBUG] [2021-02-01 20:09:34,895 +0900[ - Dependency file found location: /home/forse/hello/node_modules/run-parallel/package.json
+[DEBUG] [2021-02-01 20:09:34,895 +0900[ - Dependency file found location: /home/forse/hello/node_modules/sax/package.json
+[DEBUG] [2021-02-01 20:09:34,896 +0900[ - Dependency file found location: /home/forse/hello/node_modules/sax/LICENSE-W3C.html
+[DEBUG] [2021-02-01 20:09:34,896 +0900[ - Dependency file found location: /home/forse/hello/node_modules/elementtree/package.json
+[DEBUG] [2021-02-01 20:09:34,897 +0900[ - Dependency file found location: /home/forse/hello/node_modules/semver/package.json
+[DEBUG] [2021-02-01 20:09:34,897 +0900[ - Dependency file found location: /home/forse/hello/node_modules/shebang-regex/package.json
+[DEBUG] [2021-02-01 20:09:34,898 +0900[ - Dependency file found location: /home/forse/hello/node_modules/shebang-command/package.json
+[DEBUG] [2021-02-01 20:09:34,898 +0900[ - Dependency file found location: /home/forse/hello/node_modules/signal-exit/package.json
+[DEBUG] [2021-02-01 20:09:34,898 +0900[ - Dependency file found location: /home/forse/hello/node_modules/string.prototype.codepointat/package.json
+[DEBUG] [2021-02-01 20:09:34,899 +0900[ - Dependency file found location: /home/forse/hello/node_modules/strip-bom/package.json
+[DEBUG] [2021-02-01 20:09:34,899 +0900[ - Dependency file found location: /home/forse/hello/node_modules/strip-final-newline/package.json
+[DEBUG] [2021-02-01 20:09:34,899 +0900[ - Dependency file found location: /home/forse/hello/node_modules/to-regex-range/package.json
+[DEBUG] [2021-02-01 20:09:34,899 +0900[ - Dependency file found location: /home/forse/hello/node_modules/fill-range/package.json
+[DEBUG] [2021-02-01 20:09:34,900 +0900[ - Dependency file found location: /home/forse/hello/node_modules/braces/package.json
+[DEBUG] [2021-02-01 20:09:34,900 +0900[ - Dependency file found location: /home/forse/hello/node_modules/micromatch/package.json
+[DEBUG] [2021-02-01 20:09:34,903 +0900[ - Dependency file found location: /home/forse/hello/node_modules/fast-glob/package.json
+[DEBUG] [2021-02-01 20:09:34,930 +0900[ - Dependency file found location: /home/forse/hello/node_modules/underscore/package.json
+[DEBUG] [2021-02-01 20:09:34,930 +0900[ - Dependency file found location: /home/forse/hello/node_modules/universalify/package.json
+[DEBUG] [2021-02-01 20:09:34,932 +0900[ - Dependency file found location: /home/forse/hello/node_modules/fs-extra/package.json
+[DEBUG] [2021-02-01 20:09:34,933 +0900[ - Dependency file found location: /home/forse/hello/node_modules/which/package.json
+[DEBUG] [2021-02-01 20:09:34,933 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cross-spawn/package.json
+[DEBUG] [2021-02-01 20:09:34,934 +0900[ - Dependency file found location: /home/forse/hello/node_modules/with-open-file/package.json
+[DEBUG] [2021-02-01 20:09:34,934 +0900[ - Dependency file found location: /home/forse/hello/node_modules/read-chunk/package.json
+[DEBUG] [2021-02-01 20:09:34,934 +0900[ - Dependency file found location: /home/forse/hello/node_modules/wrappy/package.json
+[DEBUG] [2021-02-01 20:09:34,934 +0900[ - Dependency file found location: /home/forse/hello/node_modules/once/package.json
+[DEBUG] [2021-02-01 20:09:34,934 +0900[ - Dependency file found location: /home/forse/hello/node_modules/end-of-stream/package.json
+[DEBUG] [2021-02-01 20:09:34,935 +0900[ - Dependency file found location: /home/forse/hello/node_modules/inflight/package.json
+[DEBUG] [2021-02-01 20:09:34,935 +0900[ - Dependency file found location: /home/forse/hello/node_modules/glob/package.json
+[DEBUG] [2021-02-01 20:09:34,935 +0900[ - Dependency file found location: /home/forse/hello/node_modules/pump/package.json
+[DEBUG] [2021-02-01 20:09:34,936 +0900[ - Dependency file found location: /home/forse/hello/node_modules/get-stream/package.json
+[DEBUG] [2021-02-01 20:09:34,936 +0900[ - Dependency file found location: /home/forse/hello/node_modules/xmlbuilder/package.json
+[DEBUG] [2021-02-01 20:09:34,938 +0900[ - Dependency file found location: /home/forse/hello/node_modules/xmldom/package.json
+[DEBUG] [2021-02-01 20:09:34,938 +0900[ - Dependency file found location: /home/forse/hello/node_modules/plist/package.json
+[DEBUG] [2021-02-01 20:09:34,938 +0900[ - Dependency file found location: /home/forse/hello/node_modules/plist/examples/browser/index.html
+[DEBUG] [2021-02-01 20:09:34,939 +0900[ - Dependency file found location: /home/forse/hello/node_modules/android-versions/package.json
+[DEBUG] [2021-02-01 20:09:34,942 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-common/package.json
+[DEBUG] [2021-02-01 20:09:34,943 +0900[ - Dependency file found location: /home/forse/hello/node_modules/execa/package.json
+[DEBUG] [2021-02-01 20:09:34,943 +0900[ - Dependency file found location: /home/forse/hello/node_modules/nopt/package.json
+[DEBUG] [2021-02-01 20:09:34,943 +0900[ - Dependency file found location: /home/forse/hello/node_modules/properties-parser/package.json
+[DEBUG] [2021-02-01 20:09:34,949 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib/plugin-build.gradle
+[DEBUG] [2021-02-01 20:09:34,953 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-android/bin/templates/project/assets/www/index.html
+[DEBUG] [2021-02-01 20:09:34,953 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-android/bin/templates/project/app/build.gradle
+[DEBUG] [2021-02-01 20:09:34,953 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-android/bin/templates/project/build.gradle
+[DEBUG] [2021-02-01 20:09:34,958 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-android/framework/build.gradle
+[DEBUG] [2021-02-01 20:09:34,963 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-android/framework/build.xml
+[DEBUG] [2021-02-01 20:09:34,964 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-android/package.json
+[DEBUG] [2021-02-01 20:09:34,965 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-plugin-whitelist/package.json
+[DEBUG] [2021-02-01 20:09:34,965 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-plugin-whitelist/tests/package.json
+[DEBUG] [2021-02-01 20:09:34,966 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-plugin-camera/package.json
+[DEBUG] [2021-02-01 20:09:34,970 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-plugin-camera/tests/ios/package.json
+[DEBUG] [2021-02-01 20:09:34,970 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-plugin-camera/tests/package.json
+[DEBUG] [2021-02-01 20:09:34,971 +0900[ - Dependency file found location: /home/forse/hello/plugins/cordova-plugin-whitelist/package.json
+[DEBUG] [2021-02-01 20:09:34,971 +0900[ - Dependency file found location: /home/forse/hello/plugins/cordova-plugin-whitelist/tests/package.json
+[DEBUG] [2021-02-01 20:09:34,973 +0900[ - Dependency file found location: /home/forse/hello/plugins/cordova-plugin-camera/package.json
+[DEBUG] [2021-02-01 20:09:34,980 +0900[ - Dependency file found location: /home/forse/hello/plugins/cordova-plugin-camera/tests/ios/package.json
+[DEBUG] [2021-02-01 20:09:34,981 +0900[ - Dependency file found location: /home/forse/hello/plugins/cordova-plugin-camera/tests/package.json
+[INFO] [2021-02-01 20:09:34,983 +0900[ - Attempting to resolve dependencies
+[INFO] [2021-02-01 20:09:34,983 +0900[ - 
+------------------------------------------------------------------------
+-------------------- Start: Pre-Step And Resolve Dependencies ----------
+------------------------------------------------------------------------
+[DEBUG] [2021-02-01 20:09:35,001 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/package.json
+[DEBUG] [2021-02-01 20:09:35,007 +0900[ - FilesFrom: GradleDependencyResolver, Dependency file found location: /home/forse/hello/platforms/android/app/build.gradle
+[DEBUG] [2021-02-01 20:09:35,008 +0900[ - FilesFrom: GradleDependencyResolver, Dependency file found location: /home/forse/hello/platforms/android/CordovaLib/build.gradle
+[DEBUG] [2021-02-01 20:09:35,024 +0900[ - FilesFrom: GradleDependencyResolver, Dependency file found location: /home/forse/hello/platforms/android/cordova/lib/plugin-build.gradle
+[DEBUG] [2021-02-01 20:09:35,025 +0900[ - FilesFrom: GradleDependencyResolver, Dependency file found location: /home/forse/hello/platforms/android/build.gradle
+[DEBUG] [2021-02-01 20:09:35,027 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/@nodelib/fs.stat/package.json
+[DEBUG] [2021-02-01 20:09:35,031 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/@nodelib/fs.scandir/package.json
+[DEBUG] [2021-02-01 20:09:35,048 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/@nodelib/fs.walk/package.json
+[DEBUG] [2021-02-01 20:09:35,049 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/abbrev/package.json
+[DEBUG] [2021-02-01 20:09:35,050 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/ansi/package.json
+[DEBUG] [2021-02-01 20:09:35,051 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/assert-plus/package.json
+[DEBUG] [2021-02-01 20:09:35,051 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/at-least-node/package.json
+[DEBUG] [2021-02-01 20:09:35,051 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/balanced-match/package.json
+[DEBUG] [2021-02-01 20:09:35,051 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/base64-js/package.json
+[DEBUG] [2021-02-01 20:09:35,052 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/big-integer/package.json
+[DEBUG] [2021-02-01 20:09:35,052 +0900[ - FilesFrom: BowerDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/big-integer/bower.json
+[DEBUG] [2021-02-01 20:09:35,052 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/bplist-parser/package.json
+[DEBUG] [2021-02-01 20:09:35,053 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/concat-map/package.json
+[DEBUG] [2021-02-01 20:09:35,053 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/brace-expansion/package.json
+[DEBUG] [2021-02-01 20:09:35,053 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/dedent/package.json
+[DEBUG] [2021-02-01 20:09:35,053 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/extsprintf/package.json
+[DEBUG] [2021-02-01 20:09:35,054 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/fast-json-parse/package.json
+[DEBUG] [2021-02-01 20:09:35,054 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/fs.realpath/package.json
+[DEBUG] [2021-02-01 20:09:35,068 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/graceful-fs/package.json
+[DEBUG] [2021-02-01 20:09:35,069 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/human-signals/package.json
+[DEBUG] [2021-02-01 20:09:35,069 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/inherits/package.json
+[DEBUG] [2021-02-01 20:09:35,069 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/is-extglob/package.json
+[DEBUG] [2021-02-01 20:09:35,069 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/is-glob/package.json
+[DEBUG] [2021-02-01 20:09:35,069 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/glob-parent/package.json
+[DEBUG] [2021-02-01 20:09:35,070 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/is-number/package.json
+[DEBUG] [2021-02-01 20:09:35,070 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/is-stream/package.json
+[DEBUG] [2021-02-01 20:09:35,070 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/isexe/package.json
+[DEBUG] [2021-02-01 20:09:35,070 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/jsonfile/package.json
+[DEBUG] [2021-02-01 20:09:35,071 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/jsonfile/node_modules/universalify/package.json
+[DEBUG] [2021-02-01 20:09:35,149 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/lodash/package.json
+[DEBUG] [2021-02-01 20:09:35,150 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/@netflix/nerror/package.json
+[DEBUG] [2021-02-01 20:09:35,150 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/merge-stream/package.json
+[DEBUG] [2021-02-01 20:09:35,150 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/merge2/package.json
+[DEBUG] [2021-02-01 20:09:35,150 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/mimic-fn/package.json
+[DEBUG] [2021-02-01 20:09:35,151 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/minimatch/package.json
+[DEBUG] [2021-02-01 20:09:35,151 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/objectorarray/package.json
+[DEBUG] [2021-02-01 20:09:35,151 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/endent/package.json
+[DEBUG] [2021-02-01 20:09:35,151 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/onetime/package.json
+[DEBUG] [2021-02-01 20:09:35,151 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/os-homedir/package.json
+[DEBUG] [2021-02-01 20:09:35,152 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/os-tmpdir/package.json
+[DEBUG] [2021-02-01 20:09:35,152 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/osenv/package.json
+[DEBUG] [2021-02-01 20:09:35,152 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/p-finally/package.json
+[DEBUG] [2021-02-01 20:09:35,152 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/p-try/package.json
+[DEBUG] [2021-02-01 20:09:35,152 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/path-is-absolute/package.json
+[DEBUG] [2021-02-01 20:09:35,153 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/path-key/package.json
+[DEBUG] [2021-02-01 20:09:35,153 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/npm-run-path/package.json
+[DEBUG] [2021-02-01 20:09:35,153 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/picomatch/package.json
+[DEBUG] [2021-02-01 20:09:35,154 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/pify/package.json
+[DEBUG] [2021-02-01 20:09:35,154 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/q/package.json
+[DEBUG] [2021-02-01 20:09:35,154 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/reusify/package.json
+[DEBUG] [2021-02-01 20:09:35,155 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/fastq/package.json
+[DEBUG] [2021-02-01 20:09:35,155 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/run-parallel/package.json
+[DEBUG] [2021-02-01 20:09:35,155 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/sax/package.json
+[DEBUG] [2021-02-01 20:09:35,155 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/elementtree/package.json
+[DEBUG] [2021-02-01 20:09:35,156 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/semver/package.json
+[DEBUG] [2021-02-01 20:09:35,156 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/shebang-regex/package.json
+[DEBUG] [2021-02-01 20:09:35,162 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/shebang-command/package.json
+[DEBUG] [2021-02-01 20:09:35,162 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/signal-exit/package.json
+[DEBUG] [2021-02-01 20:09:35,162 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/string.prototype.codepointat/package.json
+[DEBUG] [2021-02-01 20:09:35,162 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/strip-bom/package.json
+[DEBUG] [2021-02-01 20:09:35,163 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/strip-final-newline/package.json
+[DEBUG] [2021-02-01 20:09:35,163 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/to-regex-range/package.json
+[DEBUG] [2021-02-01 20:09:35,163 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/fill-range/package.json
+[DEBUG] [2021-02-01 20:09:35,163 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/braces/package.json
+[DEBUG] [2021-02-01 20:09:35,164 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/micromatch/package.json
+[DEBUG] [2021-02-01 20:09:35,166 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/fast-glob/package.json
+[DEBUG] [2021-02-01 20:09:35,208 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/underscore/package.json
+[DEBUG] [2021-02-01 20:09:35,208 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/universalify/package.json
+[DEBUG] [2021-02-01 20:09:35,210 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/fs-extra/package.json
+[DEBUG] [2021-02-01 20:09:35,210 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/which/package.json
+[DEBUG] [2021-02-01 20:09:35,210 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cross-spawn/package.json
+[DEBUG] [2021-02-01 20:09:35,211 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/with-open-file/package.json
+[DEBUG] [2021-02-01 20:09:35,211 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/read-chunk/package.json
+[DEBUG] [2021-02-01 20:09:35,211 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/wrappy/package.json
+[DEBUG] [2021-02-01 20:09:35,211 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/once/package.json
+[DEBUG] [2021-02-01 20:09:35,211 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/end-of-stream/package.json
+[DEBUG] [2021-02-01 20:09:35,211 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/inflight/package.json
+[DEBUG] [2021-02-01 20:09:35,212 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/glob/package.json
+[DEBUG] [2021-02-01 20:09:35,212 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/pump/package.json
+[DEBUG] [2021-02-01 20:09:35,212 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/get-stream/package.json
+[DEBUG] [2021-02-01 20:09:35,212 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/xmlbuilder/package.json
+[DEBUG] [2021-02-01 20:09:35,214 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/xmldom/package.json
+[DEBUG] [2021-02-01 20:09:35,214 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/plist/package.json
+[DEBUG] [2021-02-01 20:09:35,215 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/android-versions/package.json
+[DEBUG] [2021-02-01 20:09:35,216 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-common/package.json
+[DEBUG] [2021-02-01 20:09:35,216 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/execa/package.json
+[DEBUG] [2021-02-01 20:09:35,217 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/nopt/package.json
+[DEBUG] [2021-02-01 20:09:35,229 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/properties-parser/package.json
+[DEBUG] [2021-02-01 20:09:35,230 +0900[ - FilesFrom: GradleDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib/plugin-build.gradle
+[DEBUG] [2021-02-01 20:09:35,232 +0900[ - FilesFrom: GradleDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-android/bin/templates/project/app/build.gradle
+[DEBUG] [2021-02-01 20:09:35,233 +0900[ - FilesFrom: GradleDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-android/bin/templates/project/build.gradle
+[DEBUG] [2021-02-01 20:09:35,236 +0900[ - FilesFrom: GradleDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-android/framework/build.gradle
+[DEBUG] [2021-02-01 20:09:35,251 +0900[ - FilesFrom: AntDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-android/framework/build.xml
+[DEBUG] [2021-02-01 20:09:35,251 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-android/package.json
+[DEBUG] [2021-02-01 20:09:35,251 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-plugin-whitelist/package.json
+[DEBUG] [2021-02-01 20:09:35,252 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-plugin-whitelist/tests/package.json
+[DEBUG] [2021-02-01 20:09:35,252 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-plugin-camera/package.json
+[DEBUG] [2021-02-01 20:09:35,255 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-plugin-camera/tests/ios/package.json
+[DEBUG] [2021-02-01 20:09:35,255 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/node_modules/cordova-plugin-camera/tests/package.json
+[DEBUG] [2021-02-01 20:09:35,256 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/plugins/cordova-plugin-whitelist/package.json
+[DEBUG] [2021-02-01 20:09:35,257 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/plugins/cordova-plugin-whitelist/tests/package.json
+[DEBUG] [2021-02-01 20:09:35,258 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/plugins/cordova-plugin-camera/package.json
+[DEBUG] [2021-02-01 20:09:35,274 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/plugins/cordova-plugin-camera/tests/ios/package.json
+[DEBUG] [2021-02-01 20:09:35,274 +0900[ - FilesFrom: NpmDependencyResolver, Dependency file found location: /home/forse/hello/plugins/cordova-plugin-camera/tests/package.json
+[DEBUG] [2021-02-01 20:09:35,276 +0900[ - found folders:
+
+[DEBUG] [2021-02-01 20:09:35,277 +0900[ - /home/forse/hello/platforms/android
+[DEBUG] [2021-02-01 20:09:35,277 +0900[ - /home/forse/hello/platforms/android/cordova
+[DEBUG] [2021-02-01 20:09:35,277 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates
+[DEBUG] [2021-02-01 20:09:35,277 +0900[ - /home/forse/hello/platforms
+[DEBUG] [2021-02-01 20:09:35,277 +0900[ - /home/forse/hello/node_modules/cordova-android
+[DEBUG] [2021-02-01 20:09:35,277 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/project
+[DEBUG] [2021-02-01 20:09:35,277 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/cordova
+[DEBUG] [2021-02-01 20:09:35,277 +0900[ - 
+
+[DEBUG] [2021-02-01 20:09:35,280 +0900[ - /home/forse/hello/platforms/android;/home/forse/hello/platforms/android;true
+[DEBUG] [2021-02-01 20:09:35,280 +0900[ - ---> removed: /home/forse/hello/platforms/android
+[DEBUG] [2021-02-01 20:09:35,280 +0900[ - /home/forse/hello/platforms/android/cordova;/home/forse/hello/platforms/android;true
+[DEBUG] [2021-02-01 20:09:35,280 +0900[ - ---> removed: /home/forse/hello/platforms/android/cordova
+[DEBUG] [2021-02-01 20:09:35,280 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates;/home/forse/hello/platforms/android;false
+[DEBUG] [2021-02-01 20:09:35,280 +0900[ - /home/forse/hello/node_modules/cordova-android;/home/forse/hello/platforms/android;false
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/project;/home/forse/hello/platforms/android;false
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/cordova;/home/forse/hello/platforms/android;false
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates;/home/forse/hello/node_modules/cordova-android/framework;false
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/project;/home/forse/hello/node_modules/cordova-android/framework;false
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/cordova;/home/forse/hello/node_modules/cordova-android/framework;false
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/project;/home/forse/hello/node_modules/cordova-android/bin/templates/project;true
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - ---> removed: /home/forse/hello/node_modules/cordova-android/bin/templates/project
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/cordova;/home/forse/hello/node_modules/cordova-android/bin/templates/project;false
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - 
+
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - found folders:
+
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - /home/forse/hello/node_modules/cordova-android
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - 
+
+[DEBUG] [2021-02-01 20:09:35,281 +0900[ - 
+
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - found folders:
+
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/node_modules/@nodelib
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/plugins/cordova-plugin-whitelist
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/node_modules/@netflix
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/plugins/cordova-plugin-camera
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/node_modules/cordova-plugin-whitelist
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/plugins
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/plugins/cordova-plugin-camera/tests
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/node_modules/jsonfile/node_modules
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/node_modules/cordova-plugin-camera/tests
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/node_modules/cordova-plugin-camera
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/node_modules
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - 
+
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/node_modules/@nodelib;/home/forse/hello;true
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - ---> removed: /home/forse/hello/node_modules/@nodelib
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/plugins/cordova-plugin-whitelist;/home/forse/hello;true
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - ---> removed: /home/forse/hello/plugins/cordova-plugin-whitelist
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/node_modules/@netflix;/home/forse/hello;true
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - ---> removed: /home/forse/hello/node_modules/@netflix
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/plugins/cordova-plugin-camera;/home/forse/hello;true
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - ---> removed: /home/forse/hello/plugins/cordova-plugin-camera
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/node_modules/cordova-plugin-whitelist;/home/forse/hello;true
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - ---> removed: /home/forse/hello/node_modules/cordova-plugin-whitelist
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/plugins;/home/forse/hello;true
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - ---> removed: /home/forse/hello/plugins
+[DEBUG] [2021-02-01 20:09:35,282 +0900[ - /home/forse/hello/plugins/cordova-plugin-camera/tests;/home/forse/hello;true
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - ---> removed: /home/forse/hello/plugins/cordova-plugin-camera/tests
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - /home/forse/hello/node_modules/jsonfile/node_modules;/home/forse/hello;true
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - ---> removed: /home/forse/hello/node_modules/jsonfile/node_modules
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - /home/forse/hello/node_modules/cordova-plugin-camera/tests;/home/forse/hello;true
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - ---> removed: /home/forse/hello/node_modules/cordova-plugin-camera/tests
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - /home/forse/hello/node_modules/cordova-plugin-camera;/home/forse/hello;true
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - ---> removed: /home/forse/hello/node_modules/cordova-plugin-camera
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - /home/forse/hello/node_modules;/home/forse/hello;true
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - ---> removed: /home/forse/hello/node_modules
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - 
+
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - found folders:
+
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - /home/forse/hello/node_modules
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - 
+
+[DEBUG] [2021-02-01 20:09:35,283 +0900[ - 
+
+[DEBUG] [2021-02-01 20:09:35,284 +0900[ - Finishing reduce dependencies
+[INFO] [2021-02-01 20:09:35,284 +0900[ - Trying to resolve ANT dependencies
+[DEBUG] [2021-02-01 20:09:35,284 +0900[ - ANT installation status: true
+[DEBUG] [2021-02-01 20:09:35,284 +0900[ - The command was run under /home/forse/hello/.
+[INFO] [2021-02-01 20:09:35,284 +0900[ - topFolder = /home/forse/hello/node_modules/cordova-android/framework
+[DEBUG] [2021-02-01 20:09:35,284 +0900[ - topFolder = /home/forse/hello/node_modules/cordova-android/framework
+[DEBUG] [2021-02-01 20:09:35,284 +0900[ - Ant Resolver - resolveDependencies - START
+[DEBUG] [2021-02-01 20:09:35,284 +0900[ - Ant-Resolver - scanWhitesourceAntModules - START - /home/forse/hello/node_modules/cordova-android/framework/build.xml
+[DEBUG] [2021-02-01 20:09:35,284 +0900[ - Ant Resolver - createAndInitAntProject - START - baseDir: /home/forse/hello/node_modules/cordova-android/framework
+[DEBUG] [2021-02-01 20:09:35,326 +0900[ - Ant Resolver - createAndInitAntProject - BaseDir: /home/forse/hello/node_modules/cordova-android/framework
+[DEBUG] [2021-02-01 20:09:35,326 +0900[ - Ant Resolver - createAndInitAntProject - END
+[DEBUG] [2021-02-01 20:09:35,326 +0900[ - Ant-Resolver - customConfigureProject - START
+[ERROR] [2021-02-01 20:09:36,273 +0900[ - AntDependencyResolver ran at:/home/forse/hello/node_modules/cordova-android/framework and failed with:You need to create the file 'local.properties' by running 'android update project -p .' here.
+[DEBUG] [2021-02-01 20:09:36,274 +0900[ - error: 
+org.apache.tools.ant.BuildException: You need to create the file 'local.properties' by running 'android update project -p .' here.
+	at org.apache.tools.ant.taskdefs.Exit.execute(Exit.java:162)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:99)
+	at org.apache.tools.ant.Task.perform(Task.java:350)
+	at org.apache.tools.ant.Target.execute(Target.java:449)
+	at org.apache.tools.ant.helper.ProjectHelper2.parse(ProjectHelper2.java:184)
+	at org.apache.tools.ant.ProjectHelper.configureProject(ProjectHelper.java:104)
+	at org.whitesource.agent.dependency.resolver.ant.AntDependencyResolver.customConfigureProject(AntDependencyResolver.java:468)
+	at org.whitesource.agent.dependency.resolver.ant.AntDependencyResolver.scanWhitesourceAntModules(AntDependencyResolver.java:290)
+	at org.whitesource.agent.dependency.resolver.ant.AntDependencyResolver.resolveDependencies(AntDependencyResolver.java:135)
+	at org.whitesource.agent.dependency.resolver.DependencyResolutionService.resolveDependenciesOfResolver(DependencyResolutionService.java:377)
+	at org.whitesource.agent.dependency.resolver.DependencyResolutionService.resolveDependencies(DependencyResolutionService.java:202)
+	at org.whitesource.agent.FileSystemScanner.createProjects(FileSystemScanner.java:413)
+	at org.whitesource.fs.scanOrigins.GeneralScanOrigin.getProjects(GeneralScanOrigin.java:196)
+	at org.whitesource.fs.scanOrigins.GeneralScanOrigin.scan(GeneralScanOrigin.java:101)
+	at org.whitesource.fs.scanOrigins.ScanOrigin.runOriginScan(ScanOrigin.java:36)
+	at org.whitesource.fs.FileSystemAgent.createProjects(FileSystemAgent.java:165)
+	at org.whitesource.fs.Main.scanAndSend(Main.java:152)
+	at org.whitesource.fs.Main.main(Main.java:96)
+[WARN] [2021-02-01 20:09:36,274 +0900[ - ant.resolveDependencies = true, but resolving dependencies failed
+[INFO] [2021-02-01 20:09:36,274 +0900[ - Trying to resolve BOWER dependencies
+[DEBUG] [2021-02-01 20:09:36,275 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'bower -v' in '.'
+[WARN] [2021-02-01 20:09:36,292 +0900[ - CommandLineProcess - executeProcessCommand - Command 'bower -v' run Failed, Exception: Cannot run program "bower" (in directory "."): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,292 +0900[ - BOWER installation status: false
+[DEBUG] [2021-02-01 20:09:36,292 +0900[ - The command was run under /home/forse/hello/.
+[INFO] [2021-02-01 20:09:36,292 +0900[ - topFolder = /home/forse/hello/node_modules/big-integer
+[DEBUG] [2021-02-01 20:09:36,292 +0900[ - topFolder = /home/forse/hello/node_modules/big-integer
+[DEBUG] [2021-02-01 20:09:36,292 +0900[ - No lockfile was found in /home/forse/hello/node_modules/big-integer, using npm resolver
+[DEBUG] [2021-02-01 20:09:36,292 +0900[ - Trying to collect dependencies via bower ls --json
+[DEBUG] [2021-02-01 20:09:36,292 +0900[ - Attempting to parse bower.json files
+[DEBUG] [2021-02-01 20:09:36,296 +0900[ - shasum not found in file /home/forse/hello/node_modules/big-integer/bower.json
+[DEBUG] [2021-02-01 20:09:36,297 +0900[ - ignoring /home/forse/hello/node_modules/big-integer/bower.json
+[DEBUG] [2021-02-01 20:09:36,298 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'bower ls --json' in '/home/forse/hello/node_modules/big-integer'
+[WARN] [2021-02-01 20:09:36,303 +0900[ - CommandLineProcess - executeProcessCommand - Command 'bower ls --json' run Failed, Exception: Cannot run program "bower" (in directory "/home/forse/hello/node_modules/big-integer"): error=2, そのようなファイルやディレクトリはありません
+[WARN] [2021-02-01 20:09:36,303 +0900[ - parseResultsAndCollectDeps - Exception: A JSONObject text must begin with '{' at 1 [character 2 line 1]
+[DEBUG] [2021-02-01 20:09:36,303 +0900[ - parseResultsAndCollectDeps - Exception: 
+org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1]
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:451)
+	at org.json.JSONObject.<init>(JSONObject.java:196)
+	at org.json.JSONObject.<init>(JSONObject.java:320)
+	at org.whitesource.agent.dependency.resolver.bower.BowerLsJsonDependencyCollector.parseResultsAndCollectDeps(BowerLsJsonDependencyCollector.java:170)
+	at org.whitesource.agent.dependency.resolver.npm.NpmLsJsonDependencyCollector.collectDependencies(NpmLsJsonDependencyCollector.java:135)
+	at org.whitesource.agent.dependency.resolver.npm.NpmLsJsonDependencyCollector.collectDependencies(NpmLsJsonDependencyCollector.java:118)
+	at org.whitesource.agent.dependency.resolver.npm.NpmDependencyResolver.resolveNpmDependencies(NpmDependencyResolver.java:1081)
+	at org.whitesource.agent.dependency.resolver.npm.NpmDependencyResolver.resolveDependencies(NpmDependencyResolver.java:475)
+	at org.whitesource.agent.dependency.resolver.DependencyResolutionService.resolveDependenciesOfResolver(DependencyResolutionService.java:377)
+	at org.whitesource.agent.dependency.resolver.DependencyResolutionService.resolveDependencies(DependencyResolutionService.java:202)
+	at org.whitesource.agent.FileSystemScanner.createProjects(FileSystemScanner.java:413)
+	at org.whitesource.fs.scanOrigins.GeneralScanOrigin.getProjects(GeneralScanOrigin.java:196)
+	at org.whitesource.fs.scanOrigins.GeneralScanOrigin.scan(GeneralScanOrigin.java:101)
+	at org.whitesource.fs.scanOrigins.ScanOrigin.runOriginScan(ScanOrigin.java:36)
+	at org.whitesource.fs.FileSystemAgent.createProjects(FileSystemAgent.java:165)
+	at org.whitesource.fs.Main.scanAndSend(Main.java:152)
+	at org.whitesource.fs.Main.main(Main.java:96)
+[DEBUG] [2021-02-01 20:09:36,303 +0900[ - 'bower ls' output is empty
+[DEBUG] [2021-02-01 20:09:36,304 +0900[ - bower ls --json succeeded
+[DEBUG] [2021-02-01 20:09:36,304 +0900[ - Creating excludes for .js files upon finding NPM dependencies
+[INFO] [2021-02-01 20:09:36,306 +0900[ - Trying to resolve NPM dependencies
+[DEBUG] [2021-02-01 20:09:36,306 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'npm -v' in '.'
+[DEBUG] [2021-02-01 20:09:36,321 +0900[ - CommandLineProcess - executeProcessCommand - timeout set to 60s
+[DEBUG] [2021-02-01 20:09:36,457 +0900[ - Command result output lines for 'npm -v':
+[DEBUG] [2021-02-01 20:09:36,457 +0900[ - Read line #1: 6.14.4
+[DEBUG] [2021-02-01 20:09:36,457 +0900[ - NPM installation status: true
+[DEBUG] [2021-02-01 20:09:36,457 +0900[ - The command was run under /home/forse/hello/.
+[INFO] [2021-02-01 20:09:36,457 +0900[ - topFolder = /home/forse/hello
+[DEBUG] [2021-02-01 20:09:36,457 +0900[ - topFolder = /home/forse/hello
+[DEBUG] [2021-02-01 20:09:36,464 +0900[ - resolveLockFile flag was true, but the package-lock.json file at /home/forse/hello/plugins/cordova-plugin-whitelist wasn't found. scanning the package.json file with the use of the node_modules directory
+[DEBUG] [2021-02-01 20:09:36,464 +0900[ - In order to generate the package-lock.json file and for better results, please run pre-step or run 'npm install' manually
+[DEBUG] [2021-02-01 20:09:36,466 +0900[ - Could not find "node_modules" folder.
+[DEBUG] [2021-02-01 20:09:36,466 +0900[ - resolveLockFile flag was true, but the package-lock.json file at /home/forse/hello/plugins/cordova-plugin-camera/tests wasn't found. scanning the package.json file with the use of the node_modules directory
+[DEBUG] [2021-02-01 20:09:36,466 +0900[ - In order to generate the package-lock.json file and for better results, please run pre-step or run 'npm install' manually
+[DEBUG] [2021-02-01 20:09:36,466 +0900[ - shasum not found in file /home/forse/hello/plugins/cordova-plugin-camera/tests/package.json
+[DEBUG] [2021-02-01 20:09:36,466 +0900[ - Could not find "node_modules" folder.
+[DEBUG] [2021-02-01 20:09:36,466 +0900[ - parsing the package-lock.json file, found at /home/forse/hello
+[DEBUG] [2021-02-01 20:09:36,466 +0900[ - shasum not found in file /home/forse/hello/package.json
+[DEBUG] [2021-02-01 20:09:36,503 +0900[ - resolveLockFile flag was true, but the package-lock.json file at /home/forse/hello/plugins/cordova-plugin-camera/tests/ios wasn't found. scanning the package.json file with the use of the node_modules directory
+[DEBUG] [2021-02-01 20:09:36,503 +0900[ - In order to generate the package-lock.json file and for better results, please run pre-step or run 'npm install' manually
+[DEBUG] [2021-02-01 20:09:36,503 +0900[ - shasum not found in file /home/forse/hello/plugins/cordova-plugin-camera/tests/ios/package.json
+[DEBUG] [2021-02-01 20:09:36,503 +0900[ - Could not find "node_modules" folder.
+[DEBUG] [2021-02-01 20:09:36,503 +0900[ - resolveLockFile flag was true, but the package-lock.json file at /home/forse/hello/plugins/cordova-plugin-camera wasn't found. scanning the package.json file with the use of the node_modules directory
+[DEBUG] [2021-02-01 20:09:36,503 +0900[ - In order to generate the package-lock.json file and for better results, please run pre-step or run 'npm install' manually
+[DEBUG] [2021-02-01 20:09:36,504 +0900[ - Could not find "node_modules" folder.
+[DEBUG] [2021-02-01 20:09:36,504 +0900[ - resolveLockFile flag was true, but the package-lock.json file at /home/forse/hello/plugins/cordova-plugin-whitelist/tests wasn't found. scanning the package.json file with the use of the node_modules directory
+[DEBUG] [2021-02-01 20:09:36,504 +0900[ - In order to generate the package-lock.json file and for better results, please run pre-step or run 'npm install' manually
+[DEBUG] [2021-02-01 20:09:36,504 +0900[ - shasum not found in file /home/forse/hello/plugins/cordova-plugin-whitelist/tests/package.json
+[DEBUG] [2021-02-01 20:09:36,504 +0900[ - Could not find "node_modules" folder.
+[DEBUG] [2021-02-01 20:09:36,504 +0900[ - Creating excludes for .js files upon finding NPM dependencies
+[INFO] [2021-02-01 20:09:36,504 +0900[ - Trying to resolve GRADLE dependencies
+[DEBUG] [2021-02-01 20:09:36,504 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle -v' in '.'
+[WARN] [2021-02-01 20:09:36,516 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle -v' run Failed, Exception: Cannot run program "gradle" (in directory "."): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,516 +0900[ - GRADLE installation status: false
+[DEBUG] [2021-02-01 20:09:36,516 +0900[ - The command was run under /home/forse/hello/.
+[INFO] [2021-02-01 20:09:36,516 +0900[ - topFolder = /home/forse/hello/platforms/android
+[DEBUG] [2021-02-01 20:09:36,516 +0900[ - topFolder = /home/forse/hello/platforms/android
+[DEBUG] [2021-02-01 20:09:36,516 +0900[ - gradleAggregateModules=false
+[WARN] [2021-02-01 20:09:36,516 +0900[ - gradle.localRepositoryPath is not set, gradle will not be able to search dependencies in it's local repositories
+[DEBUG] [2021-02-01 20:09:36,517 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle projects --info' in '/home/forse/hello/platforms/android'
+[WARN] [2021-02-01 20:09:36,517 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle projects --info' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/platforms/android"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,519 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/platforms/android/./gradlew projects --info' in '/home/forse/hello/platforms/android'
+[WARN] [2021-02-01 20:09:36,519 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/platforms/android/./gradlew projects --info' run Failed, Exception: Cannot run program "/home/forse/hello/platforms/android/./gradlew" (in directory "/home/forse/hello/platforms/android"): error=2, そのようなファイルやディレクトリはありません
+[INFO] [2021-02-01 20:09:36,520 +0900[ - Handling Includes and Excludes gradle modules
+[WARN] [2021-02-01 20:09:36,520 +0900[ - Command "gradle projects" did not return a list of projects, The UA will assume this is not a Multi Module project; The UA will resolve dependencies by running gradle dependencies
+[DEBUG] [2021-02-01 20:09:36,520 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle dependencies' in '/home/forse/hello/platforms/android/app'
+[WARN] [2021-02-01 20:09:36,525 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle dependencies' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/platforms/android/app"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,525 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/platforms/android/./gradlew dependencies' in '/home/forse/hello/platforms/android/app'
+[WARN] [2021-02-01 20:09:36,525 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/platforms/android/./gradlew dependencies' run Failed, Exception: Cannot run program "/home/forse/hello/platforms/android/./gradlew" (in directory "/home/forse/hello/platforms/android/app"): error=2, そのようなファイルやディレクトリはありません
+[WARN] [2021-02-01 20:09:36,525 +0900[ - gradle.resolveDependencies = true but, [/home/forse/hello/platforms/android/./gradlew  dependencies] command failed to retrieve tree of dependencies
+[DEBUG] [2021-02-01 20:09:36,525 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle dependencies' in '/home/forse/hello/platforms/android/cordova/lib'
+[WARN] [2021-02-01 20:09:36,526 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle dependencies' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/platforms/android/cordova/lib"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,526 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/platforms/android/./gradlew dependencies' in '/home/forse/hello/platforms/android/cordova/lib'
+[WARN] [2021-02-01 20:09:36,526 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/platforms/android/./gradlew dependencies' run Failed, Exception: Cannot run program "/home/forse/hello/platforms/android/./gradlew" (in directory "/home/forse/hello/platforms/android/cordova/lib"): error=2, そのようなファイルやディレクトリはありません
+[WARN] [2021-02-01 20:09:36,526 +0900[ - gradle.resolveDependencies = true but, [/home/forse/hello/platforms/android/./gradlew  dependencies] command failed to retrieve tree of dependencies
+[DEBUG] [2021-02-01 20:09:36,527 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle dependencies' in '/home/forse/hello/platforms/android/CordovaLib'
+[WARN] [2021-02-01 20:09:36,527 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle dependencies' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/platforms/android/CordovaLib"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,527 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/platforms/android/./gradlew dependencies' in '/home/forse/hello/platforms/android/CordovaLib'
+[WARN] [2021-02-01 20:09:36,527 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/platforms/android/./gradlew dependencies' run Failed, Exception: Cannot run program "/home/forse/hello/platforms/android/./gradlew" (in directory "/home/forse/hello/platforms/android/CordovaLib"): error=2, そのようなファイルやディレクトリはありません
+[WARN] [2021-02-01 20:09:36,528 +0900[ - gradle.resolveDependencies = true but, [/home/forse/hello/platforms/android/./gradlew  dependencies] command failed to retrieve tree of dependencies
+[DEBUG] [2021-02-01 20:09:36,528 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle dependencies' in '/home/forse/hello/platforms/android'
+[WARN] [2021-02-01 20:09:36,528 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle dependencies' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/platforms/android"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,528 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/platforms/android/./gradlew dependencies' in '/home/forse/hello/platforms/android'
+[WARN] [2021-02-01 20:09:36,529 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/platforms/android/./gradlew dependencies' run Failed, Exception: Cannot run program "/home/forse/hello/platforms/android/./gradlew" (in directory "/home/forse/hello/platforms/android"): error=2, そのようなファイルやディレクトリはありません
+[WARN] [2021-02-01 20:09:36,529 +0900[ - gradle.resolveDependencies = true but, [/home/forse/hello/platforms/android/./gradlew  dependencies] command failed to retrieve tree of dependencies
+[DEBUG] [2021-02-01 20:09:36,529 +0900[ - total projects = 0
+[INFO] [2021-02-01 20:09:36,529 +0900[ - topFolder = /home/forse/hello/node_modules/cordova-android/bin/templates/project
+[DEBUG] [2021-02-01 20:09:36,529 +0900[ - topFolder = /home/forse/hello/node_modules/cordova-android/bin/templates/project
+[DEBUG] [2021-02-01 20:09:36,529 +0900[ - gradleAggregateModules=false
+[WARN] [2021-02-01 20:09:36,529 +0900[ - gradle.localRepositoryPath is not set, gradle will not be able to search dependencies in it's local repositories
+[DEBUG] [2021-02-01 20:09:36,529 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle projects --info' in '/home/forse/hello/node_modules/cordova-android/bin/templates/project'
+[WARN] [2021-02-01 20:09:36,531 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle projects --info' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/node_modules/cordova-android/bin/templates/project"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,531 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/node_modules/cordova-android/bin/templates/project/./gradlew projects --info' in '/home/forse/hello/node_modules/cordova-android/bin/templates/project'
+[WARN] [2021-02-01 20:09:36,532 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/node_modules/cordova-android/bin/templates/project/./gradlew projects --info' run Failed, Exception: Cannot run program "/home/forse/hello/node_modules/cordova-android/bin/templates/project/./gradlew" (in directory "/home/forse/hello/node_modules/cordova-android/bin/templates/project"): error=2, そのようなファイルやディレクトリはありません
+[INFO] [2021-02-01 20:09:36,532 +0900[ - Handling Includes and Excludes gradle modules
+[WARN] [2021-02-01 20:09:36,532 +0900[ - Command "gradle projects" did not return a list of projects, The UA will assume this is not a Multi Module project; The UA will resolve dependencies by running gradle dependencies
+[DEBUG] [2021-02-01 20:09:36,532 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle dependencies' in '/home/forse/hello/node_modules/cordova-android/bin/templates/project'
+[WARN] [2021-02-01 20:09:36,533 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle dependencies' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/node_modules/cordova-android/bin/templates/project"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,533 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/node_modules/cordova-android/bin/templates/project/./gradlew dependencies' in '/home/forse/hello/node_modules/cordova-android/bin/templates/project'
+[WARN] [2021-02-01 20:09:36,534 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/node_modules/cordova-android/bin/templates/project/./gradlew dependencies' run Failed, Exception: Cannot run program "/home/forse/hello/node_modules/cordova-android/bin/templates/project/./gradlew" (in directory "/home/forse/hello/node_modules/cordova-android/bin/templates/project"): error=2, そのようなファイルやディレクトリはありません
+[WARN] [2021-02-01 20:09:36,534 +0900[ - gradle.resolveDependencies = true but, [/home/forse/hello/node_modules/cordova-android/bin/templates/project/./gradlew  dependencies] command failed to retrieve tree of dependencies
+[DEBUG] [2021-02-01 20:09:36,534 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle dependencies' in '/home/forse/hello/node_modules/cordova-android/bin/templates/project/app'
+[WARN] [2021-02-01 20:09:36,534 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle dependencies' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/node_modules/cordova-android/bin/templates/project/app"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,535 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/node_modules/cordova-android/bin/templates/project/./gradlew dependencies' in '/home/forse/hello/node_modules/cordova-android/bin/templates/project/app'
+[WARN] [2021-02-01 20:09:36,535 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/node_modules/cordova-android/bin/templates/project/./gradlew dependencies' run Failed, Exception: Cannot run program "/home/forse/hello/node_modules/cordova-android/bin/templates/project/./gradlew" (in directory "/home/forse/hello/node_modules/cordova-android/bin/templates/project/app"): error=2, そのようなファイルやディレクトリはありません
+[WARN] [2021-02-01 20:09:36,535 +0900[ - gradle.resolveDependencies = true but, [/home/forse/hello/node_modules/cordova-android/bin/templates/project/./gradlew  dependencies] command failed to retrieve tree of dependencies
+[DEBUG] [2021-02-01 20:09:36,535 +0900[ - total projects = 0
+[INFO] [2021-02-01 20:09:36,535 +0900[ - topFolder = /home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib
+[DEBUG] [2021-02-01 20:09:36,535 +0900[ - topFolder = /home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib
+[DEBUG] [2021-02-01 20:09:36,535 +0900[ - gradleAggregateModules=false
+[WARN] [2021-02-01 20:09:36,535 +0900[ - gradle.localRepositoryPath is not set, gradle will not be able to search dependencies in it's local repositories
+[DEBUG] [2021-02-01 20:09:36,535 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle projects --info' in '/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib'
+[WARN] [2021-02-01 20:09:36,537 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle projects --info' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,537 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib/./gradlew projects --info' in '/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib'
+[WARN] [2021-02-01 20:09:36,537 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib/./gradlew projects --info' run Failed, Exception: Cannot run program "/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib/./gradlew" (in directory "/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib"): error=2, そのようなファイルやディレクトリはありません
+[INFO] [2021-02-01 20:09:36,537 +0900[ - Handling Includes and Excludes gradle modules
+[WARN] [2021-02-01 20:09:36,537 +0900[ - Command "gradle projects" did not return a list of projects, The UA will assume this is not a Multi Module project; The UA will resolve dependencies by running gradle dependencies
+[DEBUG] [2021-02-01 20:09:36,537 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle dependencies' in '/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib'
+[WARN] [2021-02-01 20:09:36,542 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle dependencies' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,542 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib/./gradlew dependencies' in '/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib'
+[WARN] [2021-02-01 20:09:36,543 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib/./gradlew dependencies' run Failed, Exception: Cannot run program "/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib/./gradlew" (in directory "/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib"): error=2, そのようなファイルやディレクトリはありません
+[WARN] [2021-02-01 20:09:36,543 +0900[ - gradle.resolveDependencies = true but, [/home/forse/hello/node_modules/cordova-android/bin/templates/cordova/lib/./gradlew  dependencies] command failed to retrieve tree of dependencies
+[DEBUG] [2021-02-01 20:09:36,543 +0900[ - total projects = 0
+[INFO] [2021-02-01 20:09:36,543 +0900[ - topFolder = /home/forse/hello/node_modules/cordova-android/framework
+[DEBUG] [2021-02-01 20:09:36,543 +0900[ - topFolder = /home/forse/hello/node_modules/cordova-android/framework
+[DEBUG] [2021-02-01 20:09:36,543 +0900[ - gradleAggregateModules=false
+[WARN] [2021-02-01 20:09:36,543 +0900[ - gradle.localRepositoryPath is not set, gradle will not be able to search dependencies in it's local repositories
+[DEBUG] [2021-02-01 20:09:36,544 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle projects --info' in '/home/forse/hello/node_modules/cordova-android/framework'
+[WARN] [2021-02-01 20:09:36,545 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle projects --info' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/node_modules/cordova-android/framework"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,545 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/node_modules/cordova-android/framework/./gradlew projects --info' in '/home/forse/hello/node_modules/cordova-android/framework'
+[WARN] [2021-02-01 20:09:36,546 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/node_modules/cordova-android/framework/./gradlew projects --info' run Failed, Exception: Cannot run program "/home/forse/hello/node_modules/cordova-android/framework/./gradlew" (in directory "/home/forse/hello/node_modules/cordova-android/framework"): error=2, そのようなファイルやディレクトリはありません
+[INFO] [2021-02-01 20:09:36,546 +0900[ - Handling Includes and Excludes gradle modules
+[WARN] [2021-02-01 20:09:36,546 +0900[ - Command "gradle projects" did not return a list of projects, The UA will assume this is not a Multi Module project; The UA will resolve dependencies by running gradle dependencies
+[DEBUG] [2021-02-01 20:09:36,546 +0900[ - CommandLineProcess - executeProcessCommand - start execute command 'gradle dependencies' in '/home/forse/hello/node_modules/cordova-android/framework'
+[WARN] [2021-02-01 20:09:36,547 +0900[ - CommandLineProcess - executeProcessCommand - Command 'gradle dependencies' run Failed, Exception: Cannot run program "gradle" (in directory "/home/forse/hello/node_modules/cordova-android/framework"): error=2, そのようなファイルやディレクトリはありません
+[DEBUG] [2021-02-01 20:09:36,547 +0900[ - CommandLineProcess - executeProcessCommand - start execute command '/home/forse/hello/node_modules/cordova-android/framework/./gradlew dependencies' in '/home/forse/hello/node_modules/cordova-android/framework'
+[WARN] [2021-02-01 20:09:36,550 +0900[ - CommandLineProcess - executeProcessCommand - Command '/home/forse/hello/node_modules/cordova-android/framework/./gradlew dependencies' run Failed, Exception: Cannot run program "/home/forse/hello/node_modules/cordova-android/framework/./gradlew" (in directory "/home/forse/hello/node_modules/cordova-android/framework"): error=2, そのようなファイルやディレクトリはありません
+[WARN] [2021-02-01 20:09:36,550 +0900[ - gradle.resolveDependencies = true but, [/home/forse/hello/node_modules/cordova-android/framework/./gradlew  dependencies] command failed to retrieve tree of dependencies
+[DEBUG] [2021-02-01 20:09:36,550 +0900[ - total projects = 0
+[DEBUG] [2021-02-01 20:09:36,551 +0900[ - Dependency file found location: /home/forse/hello/www/index.html
+[DEBUG] [2021-02-01 20:09:36,551 +0900[ - Dependency file found location: /home/forse/hello/platforms/android/app/src/main/assets/www/index.html
+[DEBUG] [2021-02-01 20:09:36,598 +0900[ - Dependency file found location: /home/forse/hello/node_modules/sax/LICENSE-W3C.html
+[DEBUG] [2021-02-01 20:09:36,607 +0900[ - Dependency file found location: /home/forse/hello/node_modules/plist/examples/browser/index.html
+[DEBUG] [2021-02-01 20:09:36,620 +0900[ - Dependency file found location: /home/forse/hello/node_modules/cordova-android/bin/templates/project/assets/www/index.html
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - found folders:
+
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/node_modules/plist/examples
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/project/assets
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/platforms/android/app/src/main/assets
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/node_modules
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - 
+
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/node_modules/plist/examples;/home/forse/hello/www;false
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/project/assets;/home/forse/hello/www;false
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/platforms/android/app/src/main/assets;/home/forse/hello/www;false
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/node_modules;/home/forse/hello/www;false
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/node_modules/plist/examples;/home/forse/hello/node_modules/sax;false
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/project/assets;/home/forse/hello/node_modules/sax;false
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/platforms/android/app/src/main/assets;/home/forse/hello/node_modules/sax;false
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/project/assets;/home/forse/hello/node_modules/plist/examples/browser;false
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/platforms/android/app/src/main/assets;/home/forse/hello/node_modules/plist/examples/browser;false
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - /home/forse/hello/node_modules/cordova-android/bin/templates/project/assets;/home/forse/hello/platforms/android/app/src/main/assets/www;false
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - 
+
+[INFO] [2021-02-01 20:09:36,627 +0900[ - Trying to resolve HTML dependencies
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - HTML installation status: true
+[DEBUG] [2021-02-01 20:09:36,627 +0900[ - The command was run under /home/forse/hello/.
+[DEBUG] [2021-02-01 20:09:36,628 +0900[ - topFolder = /home/forse/hello/node_modules/sax
+[DEBUG] [2021-02-01 20:09:36,628 +0900[ - HTML Resolver - resolveDependencies - HTML file: /home/forse/hello/node_modules/sax/LICENSE-W3C.html
+[DEBUG] [2021-02-01 20:09:36,707 +0900[ - topFolder = /home/forse/hello/www
+[DEBUG] [2021-02-01 20:09:36,707 +0900[ - HTML Resolver - resolveDependencies - HTML file: /home/forse/hello/www/index.html
+[DEBUG] [2021-02-01 20:09:36,708 +0900[ - HTML Resolver - collectLocalJsFile - START - script: cordova.js
+[DEBUG] [2021-02-01 20:09:36,708 +0900[ - HTML Resolver - collectLocalJsFile - END - status: false
+[DEBUG] [2021-02-01 20:09:36,708 +0900[ - HTML Resolver - collectLocalJsFile - START - script: js/index.js
+[DEBUG] [2021-02-01 20:09:36,708 +0900[ - HTML Resolver - collectLocalJsFile - found local file: /home/forse/hello/www/js/index.js
+[DEBUG] [2021-02-01 20:09:36,796 +0900[ - Ignoring file with size 218 bytes: minimum file size is 512B
+[DEBUG] [2021-02-01 20:09:36,802 +0900[ - HTML Resolver - collectLocalJsFile - END - status: true
+[DEBUG] [2021-02-01 20:09:36,815 +0900[ - topFolder = /home/forse/hello/node_modules/cordova-android/bin/templates/project/assets/www
+[DEBUG] [2021-02-01 20:09:36,815 +0900[ - HTML Resolver - resolveDependencies - HTML file: /home/forse/hello/node_modules/cordova-android/bin/templates/project/assets/www/index.html
+[DEBUG] [2021-02-01 20:09:36,816 +0900[ - HTML Resolver - collectLocalJsFile - START - script: cordova.js
+[DEBUG] [2021-02-01 20:09:36,816 +0900[ - HTML Resolver - collectLocalJsFile - found local file: /home/forse/hello/node_modules/cordova-android/bin/templates/project/assets/www/cordova.js
+[DEBUG] [2021-02-01 20:09:36,957 +0900[ - HTML Resolver - collectLocalJsFile - END - status: true
+[DEBUG] [2021-02-01 20:09:36,957 +0900[ - HTML Resolver - collectLocalJsFile - START - script: js/index.js
+[DEBUG] [2021-02-01 20:09:36,957 +0900[ - HTML Resolver - collectLocalJsFile - found local file: /home/forse/hello/node_modules/cordova-android/bin/templates/project/assets/www/js/index.js
+[DEBUG] [2021-02-01 20:09:36,959 +0900[ - HTML Resolver - collectLocalJsFile - END - status: true
+[DEBUG] [2021-02-01 20:09:36,959 +0900[ - topFolder = /home/forse/hello/node_modules/plist/examples/browser
+[DEBUG] [2021-02-01 20:09:36,959 +0900[ - HTML Resolver - resolveDependencies - HTML file: /home/forse/hello/node_modules/plist/examples/browser/index.html
+[DEBUG] [2021-02-01 20:09:36,959 +0900[ - HTML Resolver - collectLocalJsFile - START - script: ../../dist/plist.js
+[DEBUG] [2021-02-01 20:09:36,959 +0900[ - HTML Resolver - collectLocalJsFile - found local file: /home/forse/hello/node_modules/plist/examples/browser/../../dist/plist.js
+[DEBUG] [2021-02-01 20:09:37,166 +0900[ - HTML Resolver - collectLocalJsFile - END - status: true
+[DEBUG] [2021-02-01 20:09:37,167 +0900[ - topFolder = /home/forse/hello/platforms/android/app/src/main/assets/www
+[DEBUG] [2021-02-01 20:09:37,167 +0900[ - HTML Resolver - resolveDependencies - HTML file: /home/forse/hello/platforms/android/app/src/main/assets/www/index.html
+[DEBUG] [2021-02-01 20:09:37,167 +0900[ - HTML Resolver - collectLocalJsFile - START - script: cordova.js
+[DEBUG] [2021-02-01 20:09:37,167 +0900[ - HTML Resolver - collectLocalJsFile - found local file: /home/forse/hello/platforms/android/app/src/main/assets/www/cordova.js
+[DEBUG] [2021-02-01 20:09:37,225 +0900[ - HTML Resolver - collectLocalJsFile - END - status: true
+[DEBUG] [2021-02-01 20:09:37,225 +0900[ - HTML Resolver - collectLocalJsFile - START - script: js/index.js
+[DEBUG] [2021-02-01 20:09:37,226 +0900[ - HTML Resolver - collectLocalJsFile - found local file: /home/forse/hello/platforms/android/app/src/main/assets/www/js/index.js
+[DEBUG] [2021-02-01 20:09:37,226 +0900[ - Ignoring file with size 218 bytes: minimum file size is 512B
+[DEBUG] [2021-02-01 20:09:37,227 +0900[ - HTML Resolver - collectLocalJsFile - END - status: true
+[INFO] [2021-02-01 20:09:37,228 +0900[ - 
+------------------------------------------------------------------------
+-------------------- End: Pre-Step And Resolve Dependencies ------------
+------------------------------------------------------------------------
+[DEBUG] [2021-02-01 20:09:37,228 +0900[ - total resolved projects =1
+[DEBUG] [2021-02-01 20:09:37,228 +0900[ - total resolved projects =1
+[DEBUG] [2021-02-01 20:09:37,229 +0900[ - total resolved projects =0
+[DEBUG] [2021-02-01 20:09:37,229 +0900[ - total resolved projects =0
+[DEBUG] [2021-02-01 20:09:37,229 +0900[ - total resolved projects =0
+[DEBUG] [2021-02-01 20:09:37,229 +0900[ - total resolved projects =0
+[DEBUG] [2021-02-01 20:09:37,229 +0900[ - total resolved projects =1
+[DEBUG] [2021-02-01 20:09:37,229 +0900[ - total resolved projects =1
+[DEBUG] [2021-02-01 20:09:37,229 +0900[ - total resolved projects =1
+[DEBUG] [2021-02-01 20:09:37,229 +0900[ - total resolved projects =1
+[DEBUG] [2021-02-01 20:09:37,229 +0900[ - total resolved projects =1
+[INFO] [2021-02-01 20:09:37,230 +0900[ - Scanning directories [/home/forse/hello] for matching source/binary file types (may take a few minutes)
+[DEBUG] [2021-02-01 20:09:37,230 +0900[ - Scanning /home/forse/hello
+[DEBUG] [2021-02-01 20:09:37,230 +0900[ - Dependency file found location: /home/forse/hello/config.xml
+[DEBUG] [2021-02-01 20:09:37,230 +0900[ - Dependency file found location: /home/forse/hello/package.json
+[DEBUG] [2021-02-01 20:09:37,230 +0900[ - Dependency file found location: /home/forse/hello/.gitignore
+[DEBUG] [2021-02-01 20:09:37,270 +0900[ - Dependency file found location: /home/forse/hello/package-lock.json
+[DEBUG] [2021-02-01 20:09:37,270 +0900[ - File/Folder Excluded: wss-unified-agent.jar
+[DEBUG] [2021-02-01 20:09:37,270 +0900[ - Dependency file found location: /home/forse/hello/wss-unified-agent.config
+[INFO] [2021-02-01 20:09:37,273 +0900[ - Total files found according to the includes/excludes pattern: 5
+[INFO] [2021-02-01 20:09:37,290 +0900[ - 
+------------------------------------------------------------------------
+-------------------- End: Scan Files Matching Includes Pattern ---------
+------------------------------------------------------------------------
+[INFO] [2021-02-01 20:09:37,290 +0900[ - Finished analyzing Files
+[DEBUG] [2021-02-01 20:09:37,290 +0900[ - Available processors (cores): 	1
+Free memory (Mb): 	56
+Max memory (Mb): 	199
+Total memory (Mb): 	199
+Used memory (Mb): 	142
+
+[INFO] [2021-02-01 20:09:37,322 +0900[ - Initializing WhiteSource Client
+[DEBUG] [2021-02-01 20:09:37,322 +0900[ - Setting project tags
+[INFO] [2021-02-01 20:09:37,323 +0900[ - Service URL is https://app-eu.whitesourcesoftware.com/agent
+[INFO] [2021-02-01 20:09:37,343 +0900[ - UpdateType set to OVERRIDE 
+[INFO] [2021-02-01 20:09:37,363 +0900[ - Sending Update
+[INFO] [2021-02-01 20:09:37,364 +0900[ - 
+------------------------------------------------------------------------
+-------------------- Start: Update Inventory ---------------------------
+------------------------------------------------------------------------
+[INFO] [2021-02-01 20:09:41,912 +0900[ - 
+------------------------------------------------------------------------
+-------------------- End: Update Inventory -----------------------------
+------------------------------------------------------------------------
+[INFO] [2021-02-01 20:09:41,913 +0900[ - Inventory update results for Forse System
+[INFO] [2021-02-01 20:09:41,913 +0900[ - Newly created projects:
+[INFO] [2021-02-01 20:09:41,913 +0900[ - # Cordova-3
+[INFO] [2021-02-01 20:09:41,913 +0900[ - No projects were updated.
+[INFO] [2021-02-01 20:09:41,913 +0900[ - Project name: Cordova-3, URL: https://app-eu.whitesourcesoftware.com/Wss/WSS.html#!project;id=471478
+[INFO] [2021-02-01 20:09:41,913 +0900[ - Support Token: 2f731291a373248dbaf3b3a0dae104e3c1612177788544
+[DEBUG] [2021-02-01 20:09:41,914 +0900[ - Process finished with exit code SUCCESS (Inventory update results for Forse System
+Newly created projects:
+Cordova-3
+No projects were updated.
+
+Project name: Cordova-3, project URL:https://app-eu.whitesourcesoftware.com/Wss/WSS.html#!project;id=471478
+Support Token: 2f731291a373248dbaf3b3a0dae104e3c1612177788544)
+[INFO] [2021-02-01 20:09:41,914 +0900[ - Log files are found at: ./whitesource/Mon-Feb-01-2021-20.09.33
+[INFO] [2021-02-01 20:09:41,917 +0900[ - 
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------- WhiteSource Scan Summary: --------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+======================================================================================================================================================
+Scan Origin: Local File System
+======================================================================================================================================================
+Step                                              Completion Status               Elapsed                  Comments
+======================================================================================================================================================
+Fetch Configuration                                  COMPLETED                  00:00:00.217               --------
+Pre-Step And Resolve Dependencies                    COMPLETED                  00:00:01.866               6 total dependencies (4 unique)
+   ANT                                               COMPLETED                  00:00:00.990               0 dependencies
+   BOWER                                             COMPLETED                  00:00:00.032               0 dependencies
+   NPM                                               COMPLETED                  00:00:00.198               0 dependencies
+   GRADLE                                            COMPLETED                  00:00:00.046               0 dependencies
+   HTML                                              COMPLETED                  00:00:00.600               6 total dependencies (4 unique)
+Scan Files Matching Includes Pattern                 COMPLETED                  00:00:00.447               5 source/binary files
+   xml                                               COMPLETED                    --------                 1 source/binary files
+   gitignore                                         COMPLETED                    --------                 1 source/binary files
+   json                                              COMPLETED                    --------                 2 source/binary files
+   config                                            COMPLETED                    --------                 1 source/binary files
+Update Inventory                                     COMPLETED                  00:00:04.548               0 updated projects
+
+======================================================================================================================================================
+Elapsed running time:                                                           00:00:07.078
+======================================================================================================================================================
+Process finished with exit code SUCCESS (0)
+
