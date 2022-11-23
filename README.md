@@ -22,6 +22,7 @@ Visit [Vaultiris](https://vaultiris.com/Home)
 | 🟢 | Add additional languages (java, C, bash, PHP, JS) to readable file list for file browser
 | 🟢 | Improve results by ignoring empty repositories
 | 🟢 | Introduce Pagination to Main Search Page
+| 🟢 | Add link to GitHub Main repository on HomePage, Add CVE https://nvd.nist.gov/ Link to CVE Details Page. 
 | 🟢 | Introduce Additional metrics pertaining to the CVE such as CVSS breakdown
 
 #### Legend
