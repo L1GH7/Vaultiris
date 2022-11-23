@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: crashtest
+  name: crashtest
+spec:
+  containers:
+  - image: docker.io/fish/cve-2022-0185-crash-poc
+    name: cve-2022-0185-crash-poc

@@ -1,0 +1,6 @@
+index:
+   path: /
+   controller: App\Controller\DefaultController::index
+render:
+   path: /render
+   controller: App\Controller\DefaultController::renderTemplate

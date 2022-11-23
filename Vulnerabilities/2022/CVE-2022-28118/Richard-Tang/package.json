@@ -1,0 +1,102 @@
+{
+  "name": "advertisement",
+  "displayName": "广告插件",
+  "description": "SSCMS 广告插件",
+  "version": "1.1.0",
+  "license": "AGPL-3.0",
+  "publisher": "sscms",
+  "engines": {
+    "sscms": "^7.1.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "广告",
+    "漂浮广告"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siteserver/sscms.advertisement"
+  },
+  "icon": "/ss-admin/advertisement/logo.svg",
+  "output": "",
+  "main": "SSCMS.Advertisement.dll",
+  "applyToSites": true,
+  "applyToChannels": false,
+  "extensions": {
+    "permissions": {
+      "advertisement_add": {
+        "text": "添加广告"
+      },
+      "advertisement_list": {
+        "text": "广告列表"
+      }
+    },
+    "menus": {
+      "advertisement_all": {
+        "text": "广告管理",
+        "iconClass": "fa fa-mouse-pointer",
+        "permissions": [
+          "advertisement_add",
+          "advertisement_list"
+        ],
+        "menus": {
+          "advertisement_add": {
+            "text": "添加广告",
+            "link": "/ss-admin/advertisement/add/",
+            "permissions": ["advertisement_add"],
+            "order": 1
+          },
+          "advertisement_list": {
+            "text": "广告列表",
+            "link": "/ss-admin/advertisement/list/",
+            "permissions": ["advertisement_list"],
+            "order": 2
+          }
+        }
+      }
+    },
+    "tables": {
+      "sscms_advertisement": {
+        "type": "Default",
+        "columns": [
+          {
+            "attributeName": "AdvertisementName",
+            "dataType": "VarChar",
+            "dataLength": 500
+          },
+          {
+            "attributeName": "SiteId",
+            "dataType": "Integer"
+          },
+          {
+            "attributeName": "AdvertisementType",
+            "dataType": "VarChar",
+            "dataLength": 200
+          },
+          {
+            "attributeName": "IsDateLimited",
+            "dataType": "Boolean"
+          },
+          {
+            "attributeName": "StartDate",
+            "dataType": "DateTime"
+          },
+          {
+            "attributeName": "EndDate",
+            "dataType": "DateTime"
+          },
+          {
+            "attributeName": "ChannelIdCollectionToChannel",
+            "dataType": "Text"
+          },
+          {
+            "attributeName": "ChannelIdCollectionToContent",
+            "dataType": "Text"
+          }
+        ]
+      }
+    }
+  }
+}

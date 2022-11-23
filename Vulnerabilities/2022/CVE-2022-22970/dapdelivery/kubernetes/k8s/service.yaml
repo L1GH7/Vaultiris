@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: spring-petclinic
+  name: spring-petclinic
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: spring-petclinic
+  sessionAffinity: None
+  type: LoadBalancer

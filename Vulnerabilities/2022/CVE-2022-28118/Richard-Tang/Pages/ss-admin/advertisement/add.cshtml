@@ -1,0 +1,267 @@
+﻿@page
+@{ Layout = "_Layout"; }
+@section Styles{
+  <style>
+    .avatar-uploader .el-upload {
+      width: 180px;
+      border-radius: 6px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .avatar-uploader .el-upload:hover {
+      border-color: #409EFF;
+    }
+    .avatar-uploader-icon {
+      font-size: 28px;
+      color: #8c939d;
+      width: 178px;
+      height: 178px;
+      line-height: 178px;
+      text-align: center;
+    }
+    .avatar {
+      width: 178px;
+      height: 178px;
+      display: block;
+    }
+  </style>
+}
+
+<div style="height: 10px;"></div>
+
+<el-form v-if="pageType === $typeBase" ref="form" :model="advertisement" size="small" label-width="180px">
+  <el-form-item label="广告名称" prop="advertisementName" name="advertisementName" :rules="{ required: true, message: '请输入广告名称' }">
+    <el-input v-model="advertisement.advertisementName"></el-input>
+  </el-form-item>
+  <el-form-item label="广告类型" prop="advertisementType" :rules="{ required: true, message: '请选择广告类型' }">
+    <el-select v-model="advertisement.advertisementType" placeholder="请选择广告类型">
+      <el-option v-for="advertisementType in advertisementTypes" :key="advertisementType.value" :label="advertisementType.label" :value="advertisementType.value"></el-option>
+    </el-select>
+  </el-form-item>
+  <el-form-item label="显示范围" prop="scopeType" :rules="{ required: true, message: '请选择显示范围' }">
+    <el-select v-model="advertisement.scopeType" placeholder="请选择显示范围">
+      <el-option v-for="scopeType in scopeTypes" :key="scopeType.value" :label="scopeType.label" :value="scopeType.value"></el-option>
+    </el-select>
+  </el-form-item>
+
+  <el-form-item v-if="advertisement.scopeType == 'Channels'" label="栏目范围" prop="channelIds" :rules="{ required: true, message: '请选择栏目范围' }">
+    <el-tree
+      ref="tree"
+      :data="channels"
+      :default-expanded-keys="expandedChannelIds"
+      :default-checked-keys="defaultCheckedIds"
+      node-key="value"
+      show-checkbox
+      check-on-click-node
+      check-strictly
+      highlight-current
+      class="tree"
+      v-on:check-change="handleCheckChange"
+    >
+      <div slot-scope="{ node, data }">
+        <el-link :underline="false" :href="getChannelUrl(data)" v-on:click.stop.native target="_blank"><i class="el-icon-link"></i></el-link>
+        {{ data.label }} ({{data.count}})
+      </div>
+    </el-tree>
+
+    <div style="height: 10px"></div>
+    <el-divider></el-divider>
+    <div style="height: 10px"></div>
+
+    <el-form :inline="true" size="small">
+      <el-form-item label="">
+        <el-checkbox label="栏目页显示" v-model="advertisement.isChannels"></el-checkbox>
+        <el-checkbox label="内容页显示" v-model="advertisement.isContents"></el-checkbox>
+      </el-form-item>
+    </el-form>
+  </el-form-item>
+
+  <el-form-item v-if="advertisement.scopeType == 'Templates'" label="模板范围" prop="templateIds" :rules="{ required: true, message: '请选择模板范围' }">
+    <el-checkbox-group v-model="advertisement.templateIds">
+      <el-checkbox v-for="template in templates" v-key="template.id" :label="template.id">
+        {{ template.templateName + '(' + getTemplateType(template.templateType) + ')' }}
+      </el-checkbox>
+    </el-checkbox-group>
+  </el-form-item>
+
+  
+  <el-form-item label="显示时间限制" prop="isDateLimited" :rules="{ required: true, message: '请选择显示时间限制' }">
+    <el-select v-model="advertisement.isDateLimited" placeholder="请选择显示时间限制">
+      <el-option :value="false" label="不限制"></el-option>
+      <el-option :value="true" label="限制显示时间"></el-option>
+    </el-select>
+  </el-form-item>
+  <el-form-item v-if="advertisement.isDateLimited" label="开始时间" prop="startDate" name="startDate" :rules="{ required: true, message: '请选择开始时间' }">
+    <el-date-picker
+      v-model="advertisement.startDate"
+      type="datetime"
+      placeholder="请选择开始时间">
+    </el-date-picker>
+  </el-form-item>
+  <el-form-item v-if="advertisement.isDateLimited" label="结束时间" prop="endDate" name="endDate" :rules="{ required: true, message: '请选择结束时间' }">
+    <el-date-picker
+      v-model="advertisement.endDate"
+      type="datetime"
+      placeholder="请选择结束时间">
+    </el-date-picker>
+  </el-form-item>
+</el-form>
+
+<el-form v-else-if="pageType === $typeFloatImage" ref="form" :model="advertisement" size="small" label-width="180px">
+  <el-form-item label="广告链接地址" prop="navigationUrl" name="navigationUrl" :rules="{ required: true, message: '请输入广告链接地址' }">
+    <el-input v-model="advertisement.navigationUrl"></el-input>
+  </el-form-item>
+  <el-form-item label="广告图片">
+    <el-radio-group v-model="imageType">
+      <el-radio-button label="upload">上传广告图片</el-radio-button>
+      <el-radio-button label="url">广告图片地址</el-radio-button>
+    </el-radio-group>
+  </el-form-item>
+  <el-form-item v-if="imageType === 'upload'" label="上传广告图片" prop="imageUrl" :rules="{ required: true, message: '请上传广告图片' }">
+    <el-upload
+      class="avatar-uploader"
+      :action="urlUpload"
+      :headers="{Authorization: 'Bearer ' + $token}"
+      :show-file-list="false"
+      :drag="true"
+      :limit="1"
+      :before-upload="uploadBefore"
+      :on-progress="uploadProgress"
+      :on-success="uploadSuccess"
+      :on-error="uploadError"
+      :multiple="false">
+      <img v-if="advertisement.imageUrl" :src="advertisement.imageUrl" class="avatar">
+      <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+    </el-upload>
+  </el-form-item>
+  <el-form-item v-else-if="imageType === 'url'" label="广告图片地址" prop="imageUrl" name="imageUrl" :rules="{ required: true, message: '请输入广告图片地址' }">
+    <el-input v-model="advertisement.imageUrl"></el-input>
+  </el-form-item>
+  <el-form-item label="图片宽度（px）" prop="width" :rules="[
+    { required: true, message: '请输入图片宽度' },
+    { type: 'number', message: '图片宽度必须为数字值'}
+  ]">
+    <el-input v-model.number="advertisement.width" placeholder="请输入图片宽度"></el-input>
+  </el-form-item>
+  <el-form-item label="图片高度（px）" prop="height" :rules="[
+    { required: true, message: '请输入图片高度' },
+    { type: 'number', message: '图片高度必须为数字值'}
+  ]">
+    <el-input v-model.number="advertisement.height" placeholder="请输入图片高度"></el-input>
+  </el-form-item>
+  <el-form-item label="图片漂浮方式" prop="rollingType" :rules="{ required: true, message: '请选择图片漂浮方式' }">
+    <el-select v-model="advertisement.rollingType" placeholder="请选择图片漂浮方式">
+      <el-option v-for="rollingType in rollingTypes" :key="rollingType.value" :label="rollingType.label" :value="rollingType.value"></el-option>
+    </el-select>
+    <div class="tips">此广告图片在页面中的显示方式</div>
+  </el-form-item>
+  <el-form-item label="图片初始位置" prop="positionType" :rules="{ required: true, message: '请选择图片初始位置' }">
+    <el-select v-model="advertisement.positionType" placeholder="请选择图片初始位置">
+      <el-option v-for="positionType in positionTypes" :key="positionType.value" :label="positionType.label" :value="positionType.value"></el-option>
+    </el-select>
+    <div class="tips">此广告图片在页面中的初始位置</div>
+  </el-form-item>
+  <el-form-item label="水平方向距离（px）" prop="positionX" :rules="[
+    { required: true, message: '请输入水平方向距离' },
+    { type: 'number', message: '水平方向距离必须为数字值'}
+  ]">
+    <el-input v-model.number="advertisement.positionX" placeholder="请输入水平方向距离"></el-input>
+  </el-form-item>
+  <el-form-item label="垂直方向距离（px）" prop="positionY" :rules="[
+    { required: true, message: '请输入垂直方向距离' },
+    { type: 'number', message: '垂直方向距离必须为数字值'}
+  ]">
+    <el-input v-model.number="advertisement.positionY" placeholder="请输入垂直方向距离"></el-input>
+  </el-form-item>
+  <el-form-item label="选项">
+    <el-checkbox v-model="advertisement.isCloseable">广告能够被关闭</el-checkbox>
+  </el-form-item>
+</el-form>
+
+<el-form v-else-if="pageType === $typeScreenDown" ref="form" :model="advertisement" size="small" label-width="180px">
+  <el-form-item label="广告链接地址" prop="navigationUrl" name="navigationUrl" :rules="{ required: true, message: '请输入广告链接地址' }">
+    <el-input v-model="advertisement.navigationUrl"></el-input>
+  </el-form-item>
+  <el-form-item label="广告图片" prop="imageUrl" :rules="{ required: true, message: '请上传广告图片' }">
+    <el-upload
+      class="avatar-uploader"
+      :action="urlUpload"
+      :headers="{Authorization: 'Bearer ' + $token}"
+      :show-file-list="false"
+      :drag="true"
+      :limit="1"
+      :before-upload="uploadBefore"
+      :on-progress="uploadProgress"
+      :on-success="uploadSuccess"
+      :on-error="uploadError"
+      :multiple="false">
+      <img v-if="advertisement.imageUrl" :src="advertisement.imageUrl" class="avatar">
+      <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+    </el-upload>
+  </el-form-item>
+  <el-form-item label="图片宽度（px）" prop="width" :rules="[
+    { required: true, message: '请输入图片宽度' },
+    { type: 'number', message: '图片宽度必须为数字值'}
+  ]">
+    <el-input v-model.number="advertisement.width" placeholder="请输入图片宽度"></el-input>
+  </el-form-item>
+  <el-form-item label="图片高度（px）" prop="height" :rules="[
+    { required: true, message: '请输入图片高度' },
+    { type: 'number', message: '图片高度必须为数字值'}
+  ]">
+    <el-input v-model.number="advertisement.height" placeholder="请输入图片高度"></el-input>
+  </el-form-item>
+  <el-form-item label="显示广告时间（秒）" prop="delay" :rules="[
+    { required: true, message: '请输入显示广告时间' },
+    { type: 'number', message: '显示广告时间必须为数字值'}
+  ]">
+    <el-input v-model.number="advertisement.delay" placeholder="请输入显示广告时间"></el-input>
+  </el-form-item>
+</el-form>
+
+<el-form v-else-if="pageType === $typeOpenWindow" ref="form" :model="advertisement" size="small" label-width="180px">
+  <el-form-item label="弹出窗口页面地址" prop="navigationUrl" name="navigationUrl" :rules="{ required: true, message: '请输入弹出窗口页面地址' }">
+    <el-input v-model="advertisement.navigationUrl"></el-input>
+  </el-form-item>
+  <el-form-item label="弹出窗口宽度（px）" prop="width" :rules="[
+    { required: true, message: '请输入弹出窗口宽度' },
+    { type: 'number', message: '弹出窗口宽度必须为数字值'}
+  ]">
+    <el-input v-model.number="advertisement.width" placeholder="请输入弹出窗口宽度"></el-input>
+  </el-form-item>
+  <el-form-item label="弹出窗口高度（px）" prop="height" :rules="[
+    { required: true, message: '请输入弹出窗口高度' },
+    { type: 'number', message: '弹出窗口高度必须为数字值'}
+  ]">
+    <el-input v-model.number="advertisement.height" placeholder="请输入弹出窗口"></el-input>
+  </el-form-item>
+  <el-form-item label="弹出窗口延迟时间（秒）" prop="delay" :rules="[
+    { required: true, message: '请输入弹出窗口延迟时间' },
+    { type: 'number', message: '弹出窗口延迟时间必须为数字值'}
+  ]">
+    <el-input v-model.number="advertisement.delay" placeholder="请输入弹出窗口延迟时间"></el-input>
+  </el-form-item>
+</el-form>
+
+<div v-if="pageType === $typeDone" role="alert" class="el-alert el-alert--success is-light" style="padding: 30px">
+  <div class="el-alert__content">
+    <span class="el-alert__title is-bold" style="font-size: 14px;">完成！</span>
+    <p class="el-alert__description" style="font-size: 14px;">操作成功</p>
+  </div>
+</div>
+<div v-else style="text-align: center;">
+  <el-divider></el-divider>
+  <div style="height: 10px"></div>
+  
+  <el-button :disabled="pageType === $typeBase || pageType === $typeDone" size="small" type="primary" v-on:click="btnPreviousClick">
+    &lt; 上一步
+  </el-button>
+  <el-button :disabled="pageType === $typeDone" size="small" type="primary" v-on:click="btnSubmitClick">
+    下一步 &gt;
+  </el-button>
+</div>
+
+@section Scripts{
+  <script src="index.js" type="text/javascript"></script>
+}
