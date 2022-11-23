@@ -1,0 +1,44 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+/*
+ * Hibernate, Relational Persistence for Idiomatic Java
+ *
+ * License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+ * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+ */
+
+apply from: rootProject.file( 'gradle/published-java-module.gradle' )
+apply plugin: 'hibernate-matrix-testing'
+
+description = 'Integrate support for Spatial/GIS data into Hibernate O/RM'
+
+dependencies {
+    compile( project(':hibernate-core') )
+    compile( libraries.geolatte )
+
+    compile( libraries.postgresql )
+
+    compile(libraries.dom4j) {
+        transitive = false
+    }
+
+    testCompile(libraries.junit)
+    testCompile(project(':hibernate-testing'))
+    testCompile([group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'])
+    testCompile(libraries.validation)
+    testCompile(libraries.jandex)
+    testCompile(libraries.classmate)
+    testCompile(libraries.validator) {
+        // for test runtime
+        transitive = true
+    }
+
+    testRuntime( libraries.expression_language )
+
+    testRuntime('jaxen:jaxen:1.1')
+    testRuntime(libraries.byteBuddy)
+}
+
+sourceSets.test.resources {
+    setSrcDirs(['src/test/java', 'src/test/resources'])
+}
