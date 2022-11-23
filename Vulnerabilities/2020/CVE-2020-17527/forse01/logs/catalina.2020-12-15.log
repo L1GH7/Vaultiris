@@ -1,0 +1,44 @@
+15-Dec-2020 12:26:08.913 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.0.M1
+15-Dec-2020 12:26:08.913 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 12 2015 22:05:52 UTC
+15-Dec-2020 12:26:08.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.0.0
+15-Dec-2020 12:26:08.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+15-Dec-2020 12:26:08.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.18.0-193.el8.x86_64
+15-Dec-2020 12:26:08.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-Dec-2020 12:26:08.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/adoptopenjdk-11-hotspot
+15-Dec-2020 12:26:08.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.9.1+1
+15-Dec-2020 12:26:08.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            AdoptOpenJDK
+15-Dec-2020 12:26:08.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /opt/apache-tomcat-9.0.0.M1
+15-Dec-2020 12:26:08.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /opt/apache-tomcat-9.0.0.M1
+15-Dec-2020 12:26:08.915 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/opt/apache-tomcat/conf/logging.properties
+15-Dec-2020 12:26:08.915 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Dec-2020 12:26:08.915 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/opt/apache-tomcat
+15-Dec-2020 12:26:08.915 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/opt/apache-tomcat
+15-Dec-2020 12:26:08.915 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/opt/apache-tomcat/temp
+15-Dec-2020 12:26:08.916 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+15-Dec-2020 12:26:09.000 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-Dec-2020 12:26:09.010 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+15-Dec-2020 12:26:09.013 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+15-Dec-2020 12:26:09.014 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+15-Dec-2020 12:26:09.023 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 462 ms
+15-Dec-2020 12:26:09.063 INFO [main] org.apache.catalina.core.StandardService.startInternal サービス Catalina を起動します
+15-Dec-2020 12:26:09.063 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.0.M1
+15-Dec-2020 12:26:09.072 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Webアプリケーションディレクトリ /opt/apache-tomcat-9.0.0.M1/webapps/ROOT を配備します
+15-Dec-2020 12:26:09.129 INFO [localhost-startStop-1] org.apache.catalina.loader.WebappLoader.buildClassPath Unknown loader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc class jdk.internal.loader.ClassLoaders$AppClassLoader
+15-Dec-2020 12:26:09.240 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /opt/apache-tomcat-9.0.0.M1/webapps/ROOT has finished in 167 ms
+15-Dec-2020 12:26:09.240 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Webアプリケーションディレクトリ /opt/apache-tomcat-9.0.0.M1/webapps/docs を配備します
+15-Dec-2020 12:26:09.244 INFO [localhost-startStop-1] org.apache.catalina.loader.WebappLoader.buildClassPath Unknown loader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc class jdk.internal.loader.ClassLoaders$AppClassLoader
+15-Dec-2020 12:26:09.250 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /opt/apache-tomcat-9.0.0.M1/webapps/docs has finished in 10 ms
+15-Dec-2020 12:26:09.250 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Webアプリケーションディレクトリ /opt/apache-tomcat-9.0.0.M1/webapps/examples を配備します
+15-Dec-2020 12:26:09.258 INFO [localhost-startStop-1] org.apache.catalina.loader.WebappLoader.buildClassPath Unknown loader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc class jdk.internal.loader.ClassLoaders$AppClassLoader
+15-Dec-2020 12:26:09.404 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /opt/apache-tomcat-9.0.0.M1/webapps/examples has finished in 154 ms
+15-Dec-2020 12:26:09.404 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Webアプリケーションディレクトリ /opt/apache-tomcat-9.0.0.M1/webapps/host-manager を配備します
+15-Dec-2020 12:26:09.408 INFO [localhost-startStop-1] org.apache.catalina.loader.WebappLoader.buildClassPath Unknown loader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc class jdk.internal.loader.ClassLoaders$AppClassLoader
+15-Dec-2020 12:26:09.416 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /opt/apache-tomcat-9.0.0.M1/webapps/host-manager has finished in 12 ms
+15-Dec-2020 12:26:09.416 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Webアプリケーションディレクトリ /opt/apache-tomcat-9.0.0.M1/webapps/manager を配備します
+15-Dec-2020 12:26:09.419 INFO [localhost-startStop-1] org.apache.catalina.loader.WebappLoader.buildClassPath Unknown loader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc class jdk.internal.loader.ClassLoaders$AppClassLoader
+15-Dec-2020 12:26:09.434 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /opt/apache-tomcat-9.0.0.M1/webapps/manager has finished in 18 ms
+15-Dec-2020 12:26:09.441 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [http-nio-8080]
+15-Dec-2020 12:26:09.452 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [ajp-nio-8009]
+15-Dec-2020 12:26:09.453 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 429 ms
+15-Dec-2020 12:34:57.720 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+15-Dec-2020 12:34:57.720 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]

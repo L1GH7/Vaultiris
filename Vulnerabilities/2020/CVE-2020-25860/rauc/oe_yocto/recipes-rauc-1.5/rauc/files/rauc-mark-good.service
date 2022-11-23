@@ -1,0 +1,12 @@
+[Unit]
+Description=Rauc Good-marking Service
+After=boot-complete.target
+Requires=boot-complete.target
+
+[Service]
+Type=oneshot
+ExecStart=@BINDIR@/rauc status mark-good
+
+[Install]
+WantedBy=multi-user.target
+

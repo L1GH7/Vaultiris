@@ -1,0 +1,13 @@
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\obj\Debug\netcoreapp3.1\RVToolDecryptor.csprojAssemblyReference.cache
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\obj\Debug\netcoreapp3.1\RVToolDecryptor.AssemblyInfoInputs.cache
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\obj\Debug\netcoreapp3.1\RVToolDecryptor.AssemblyInfo.cs
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\obj\Debug\netcoreapp3.1\RVToolDecryptor.csproj.CoreCompileInputs.cache
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\obj\Debug\netcoreapp3.1\RVToolDecryptor.dll
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\obj\Debug\netcoreapp3.1\RVToolDecryptor.pdb
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\bin\Debug\netcoreapp3.1\RVToolDecryptor.exe
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\bin\Debug\netcoreapp3.1\RVToolDecryptor.deps.json
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\bin\Debug\netcoreapp3.1\RVToolDecryptor.runtimeconfig.json
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\bin\Debug\netcoreapp3.1\RVToolDecryptor.runtimeconfig.dev.json
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\bin\Debug\netcoreapp3.1\RVToolDecryptor.dll
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\bin\Debug\netcoreapp3.1\RVToolDecryptor.pdb
+C:\Users\bebxadvmmae\source\repos\RVToolDecryptor\RVToolDecryptor\obj\Debug\netcoreapp3.1\RVToolDecryptor.genruntimeconfig.cache

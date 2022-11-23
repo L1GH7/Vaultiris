@@ -1,0 +1,117 @@
+## SECTION=applications
+
+menuconfig RAUC
+	tristate
+	prompt "Rauc Update Tool              "
+	select OPENSSL
+	select GLIB
+	select GLIB_LIBMOUNT
+	select HOST_GLIB
+	select CODE_SIGNING
+	select BUSYBOX_FEATURE_TAR_LONG_OPTIONS	if BUSYBOX_TAR
+	select BUSYBOX_FEATURE_TAR_AUTODETECT	if BUSYBOX_TAR
+	select BUSYBOX_FEATURE_SEAMLESS_GZ	if BUSYBOX_TAR
+	select DBUS				if RAUC_SERVICE
+	select LIBCURL				if RAUC_NETWORK
+	select JSON_GLIB			if RAUC_JSON
+	select SQUASHFS_TOOLS			if RUNTIME
+	select SQUASHFS_TOOLS_UNSQUASHFS	if RUNTIME
+	select DT_UTILS				if RUNTIME && RAUC_BAREBOX
+	select U_BOOT_TOOLS			if RUNTIME && RAUC_U_BOOT
+	#select GRUB2				if RUNTIME && RAUC_GRUB
+	select EFIBOOTMGR			if RUNTIME && RAUC_EFI
+	help
+	  Robust Auto-Update Controller. RAUC controls the update process on embedded linux systems.
+
+if RAUC
+
+config RAUC_SERVICE
+	bool
+	prompt "Enable service (D-Bus) support"
+	default y
+	help
+	  Compiles RAUC to act as a separate daemon and command line interface
+	  that communicate with each other via D-Bus interface.
+	  Only deactivate this if you have a system that does not provide D-Bus!
+
+config RAUC_NETWORK
+	bool
+	prompt "Enable network support"
+	help
+	  Enables network support that allows RAUC to directly fetch bundles
+	  via http/https/ftp/sftp (using libcurl).
+	  Note that network is primarily designed to be used for RAUC'S casync
+	  capabilities, not for fetching full bundles.
+
+config RAUC_JSON
+	bool
+	prompt "JSON support"
+	help
+	  Enables JSON output format for 'rauc info' and 'rauc status'.
+	  Output format can be selected via '--output-format=<json/json-pretty>'
+
+config RAUC_CONFIGURATION
+	bool
+	prompt "Install RAUC configuration in /etc/rauc"
+	default y
+	help
+	  Installs a RAUC system configuration file and a keyring into /etc/rauc.
+	  By default, this will install some dummy files containing some
+	  example and help text.
+	  The default files must be overwritten in your projectroot to match
+	  your project's and platform's need.
+
+if RAUC_CONFIGURATION
+
+config RAUC_COMPATIBLE
+	string
+	prompt "RAUC Compatible"
+	default "${PTXCONF_PROJECT_VENDOR}\ ${PTXCONF_PROJECT}"
+	help
+	  An explicit identification string that RAUC uses to assure an update
+	  bundle matches with the correct root filesystem on the target.
+
+	  Only if the compatible in the targets RAUC system.conf file and those
+	  in the Bundle's manifest match exactly, an update will be performed
+
+config RAUC_BUNDLE_VERSION
+	string
+	prompt "RAUC Bundle Version"
+	default "${PTXDIST_BSP_AUTOVERSION}"
+	help
+	  Overwrite the bundle version if needed.
+
+endif
+
+config RAUC_BAREBOX
+	bool
+	prompt "barebox support"
+	help
+	  To interact with barebox, barebox-state from dt-utils is used.
+	  Auto-select this package for installation on the target.
+
+config RAUC_U_BOOT
+	bool
+	prompt "U-Boot support"
+	help
+	  To interact with U-Boot, fw_printenv and fw_setenv from
+	  u-boot-tools are used.
+	  Auto-select this package for installation on the target.
+
+config RAUC_GRUB
+	bool
+	prompt "GRUB support"
+	# needs grub2
+	depends on BROKEN
+	help
+	  To interact with GRUB2, grub-editenv from grub is used.
+	  Auto-select this package for installation on the target.
+
+config RAUC_EFI
+	bool
+	prompt "EFI support"
+	help
+	  To interact with EFI, efibootmgr from efibootmgr is used.
+	  Auto-select this package for installation on the target.
+
+endif

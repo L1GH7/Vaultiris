@@ -1,0 +1,60 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[italian]{babel}     %usare questo per rendere tutto in                                    Italiano
+
+
+\graphicspath{{images/}}
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    pdftitle={Relazione progetto Internet Security}
+}
+
+
+\title{
+    {\includegraphics[scale=0.4]{UniCT-Logo.jpg}}\\
+    {Breve analisi di Maltego e della vulnerabilità CVE-2020-24656}\\
+    {\large Università degli Studi di Catania}
+}
+
+
+\author{Mattia Maria Scivoletto}
+\date{\today}
+
+\renewcommand*\contentsname{Sommario}
+
+\begin{document}
+\maketitle
+
+
+\tableofcontents
+
+\chapter{Breve introduzione a Maltego e OSINT}
+\input{chapters/chapter01}
+
+\chapter{Breve introduzione alla vulnerabilità CVE-2020-24656}
+\input{chapters/chapter02}
+
+\chapter{Sistema operativo e versione di Maltego utilizzata}
+\input{chapters/chapter03}
+
+\chapter{Esperimento condotto}
+\input{chapters/chapter04}
+
+\chapter{Interpretazioni personali e conclusioni}
+\input{chapters/chapter05}
+
+%\chapter{Conclusioni}
+%\input{chapters/chapter06}
+
+\chapter{Bibliografia}
+\input{chapters/chapter06}
+
+
+\end{document}
