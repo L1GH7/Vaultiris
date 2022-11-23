@@ -1,0 +1,14 @@
+<html>
+  <script>
+        window.WebViewJavascriptBridge.setMessageHandler(function(e) {
+          alert(JSON.stringify(e));
+        })
+  </script>
+
+  <button onclick="window.WebViewJavascriptBridge.sendMessage(JSON.stringify({type:'aboutBridge',data:{}}));">Device Info</button>
+
+  <br><br>
+
+  <button onclick="window.WebViewJavascriptBridge.sendMessage(JSON.stringify({type:'location',data:{}}));">GPS</button><br><br>
+
+</html>

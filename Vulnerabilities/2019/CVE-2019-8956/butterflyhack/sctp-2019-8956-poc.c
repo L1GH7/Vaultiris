@@ -1,0 +1,179 @@
+#define _GNU_SOURE
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
+#include <arpa/inet.h>
+#include <pthread.h>
+#include <error.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/sctp.h>
+#include <netinet/in.h>
+#include <time.h> 
+#include <malloc.h>
+
+#define SERVER_PORT 6666
+
+#define SCTP_GET_ASSOC_ID_LIST	29
+#define SCTP_RESET_ASSOC	120
+#define SCTP_ENABLE_RESET_ASSOC_REQ	0x02
+#define SCTP_ENABLE_STREAM_RESET	118
+
+void* client_func(void* arg)
+{
+	int socket_fd;
+	struct sockaddr_in serverAddr;
+	struct sctp_event_subscribe event_;
+	struct sctp_sndrcvinfo sri;
+	int s;
+
+	char sendline[] = "butterfly";
+
+	if ((socket_fd = socket(AF_INET, SOCK_SEQPACKET, IPPROTO_SCTP))==-1){
+		perror("client socket");
+		pthread_exit(0);
+	}
+	bzero(&serverAddr, sizeof(serverAddr));
+	serverAddr.sin_family = AF_INET;
+	serverAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+	serverAddr.sin_port = htons(SERVER_PORT);
+	inet_pton(AF_INET, "127.0.0.1", &serverAddr.sin_addr);
+
+	bzero(&event_, sizeof(event_));
+	event_.sctp_data_io_event = 1;
+	if(setsockopt(socket_fd,IPPROTO_SCTP,SCTP_EVENTS,&event_,sizeof(event_))==-1){
+		perror("client setsockopt");
+		goto client_out_;
+	}
+
+	sri.sinfo_ppid = 0;
+	sri.sinfo_flags = 0;
+	printf("sctp_sendmsg\n");
+	if(sctp_sendmsg(socket_fd,sendline,sizeof(sendline),
+		(struct sockaddr*)&serverAddr,sizeof(serverAddr),
+		sri.sinfo_ppid,sri.sinfo_flags,sri.sinfo_stream,0,0)==-1){
+		perror("client sctp_sendmsg");
+		goto client_out_;
+	}
+
+client_out_:
+  	//close(socket_fd);
+	pthread_exit(0);
+}
+
+void* send_recv(void* arg)
+{
+	int server_sockfd, msg_flags;
+	server_sockfd = *(int*)arg;
+	socklen_t len = sizeof(struct sockaddr_in);
+	size_t rd_sz;
+	char readbuf[20]="0";
+	struct sctp_sndrcvinfo sri;
+	struct sockaddr_in clientAddr;
+	
+	rd_sz = sctp_recvmsg(server_sockfd,readbuf,sizeof(readbuf),
+	(struct sockaddr*)&clientAddr, &len, &sri, &msg_flags);
+	
+	sri.sinfo_flags = (1 << 6) | (1 << 2);
+	printf("SENDALL.\n");
+	if(sctp_sendmsg(server_sockfd,readbuf,rd_sz,(struct sockaddr*)&clientAddr,
+		len,sri.sinfo_ppid,sri.sinfo_flags,sri.sinfo_stream, 0,0)<0){
+		perror("SENDALL sendmsg");
+	}
+	
+	pthread_exit(0);
+	
+}
+void* abort_func(void* arg)
+{
+	int server_sockfd, msg_flags;
+	server_sockfd = *(int*)arg;
+	socklen_t len = sizeof(struct sockaddr_in);
+	size_t rd_sz;
+	char readbuf[20]="0";
+	struct sctp_sndrcvinfo sri;
+	struct sockaddr_in clientAddr;
+	
+	rd_sz = sctp_recvmsg(server_sockfd,readbuf,sizeof(readbuf),
+	(struct sockaddr*)&clientAddr, &len, &sri, &msg_flags);
+	
+	sri.sinfo_flags = (1 << 2);
+	printf("ABORT.\n");
+	if(sctp_sendmsg(server_sockfd,readbuf,rd_sz,(struct sockaddr*)&clientAddr,
+		len,sri.sinfo_ppid,sri.sinfo_flags,sri.sinfo_stream, 0,0)<0){
+		perror("ABORT sendmsg");
+	}
+	
+	pthread_exit(0);
+}
+int main(int argc, char** argv)
+{
+	int server_sockfd;
+	//int messageFlags_;
+	pthread_t thread_array[2];
+	pthread_t close_thread;
+	pthread_t send_recv_thread;
+	int i;
+	struct sockaddr_in serverAddr;
+	struct sctp_event_subscribe event_;
+
+	//创建服务端SCTP套接字
+	if ((server_sockfd = socket(AF_INET,SOCK_SEQPACKET,IPPROTO_SCTP))==-1){
+		perror("socket");
+		return 0;
+	}
+	bzero(&serverAddr, sizeof(serverAddr));
+	serverAddr.sin_family = AF_INET;
+	serverAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+	serverAddr.sin_port = htons(SERVER_PORT);
+	inet_pton(AF_INET, "127.0.0.1", &serverAddr.sin_addr);
+
+	//地址绑定
+	if(bind(server_sockfd, (struct sockaddr*)&serverAddr,sizeof(serverAddr)) == -1){
+		perror("bind");
+		goto out_;
+	}
+
+	//设置SCTP通知事件
+	bzero(&event_, sizeof(event_));
+	event_.sctp_data_io_event = 1;
+	if(setsockopt(server_sockfd, IPPROTO_SCTP,SCTP_EVENTS,&event_,sizeof(event_)) == -1){
+		perror("setsockopt");
+		goto out_;
+	}
+
+	//开始监听
+	listen(server_sockfd,100);
+	//创建线程，用于客户端链接
+	for(i=0; i<2;i++) {
+		printf("create no.%d\n",i+1);
+		if(pthread_create(&thread_array[i],NULL,client_func,NULL)){
+			perror("pthread_create");
+			goto out_;
+		}
+	}
+	//创建abort线程
+	/*if(pthread_create(&send_recv_thread,NULL,abort_func,(void*)&server_sockfd)){
+			perror("pthread_create");
+			goto out_;
+	}*/
+	//创建接收线程
+	if(pthread_create(&send_recv_thread,NULL,send_recv,(void*)&server_sockfd)){
+			perror("pthread_create");
+			goto out_;
+	}
+	while(1);
+out_:
+	close(server_sockfd);
+	return 0;
+}
+
+
+
+
+
+
+
+
