@@ -1,0 +1,5 @@
+automated_root/files/arm/mtk-su
+automated_root/files/arm64/mtk-su
+automated_root/__pycache__
+devinfo.txt
+automated_root/utils/__pycache__
