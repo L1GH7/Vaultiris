@@ -1,0 +1,3 @@
+# Prevent any bots from loading this site.
+User-agent: *
+Disallow: /

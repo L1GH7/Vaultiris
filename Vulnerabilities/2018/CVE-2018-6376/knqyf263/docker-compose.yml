@@ -1,0 +1,27 @@
+version: "2"
+services:
+  joomla:
+    image: joomla:3.8.2
+    container_name: "joomla"
+    volumes:
+      - "joomla-data:/opt/joomla"
+    ports:
+      - "10080:80"
+    depends_on:
+      - db
+    environment:
+      JOOMLA_DB_HOST: "db:3306"
+      JOOMLA_DB_PASSWORD: joomla
+  db:
+    image: mysql:5.7
+    container_name: "joomla-db"
+    volumes:
+      - "db-data:/var/lib/mysql"
+    environment:
+        MYSQL_DATABASE: joomla
+        MYSQL_ROOT_PASSWORD: joomla
+volumes:
+  db-data:
+    driver: local
+  joomla-data:
+    driver: local

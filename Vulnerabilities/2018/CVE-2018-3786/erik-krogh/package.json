@@ -1,0 +1,65 @@
+{
+  "name": "egg-scripts",
+  "version": "2.8.0",
+  "description": "deploy tool for egg project",
+  "main": "index.js",
+  "bin": {
+    "egg-scripts": "bin/egg-scripts.js",
+    "eggctl": "bin/egg-scripts.js"
+  },
+  "dependencies": {
+    "common-bin": "^2.7.1",
+    "debug": "^3.1.0",
+    "egg-utils": "^2.3.0",
+    "moment": "^2.19.2",
+    "mz": "^2.7.0",
+    "mz-modules": "^2.0.0",
+    "node-homedir": "^1.1.0",
+    "runscript": "^1.3.0",
+    "source-map-support": "^0.5.4",
+    "zlogger": "^1.1.0"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "coffee": "^4.1.0",
+    "egg": "^1.11.0",
+    "egg-bin": "^4.3.5",
+    "egg-ci": "^1.8.0",
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^5.1.1",
+    "mm": "^2.2.0",
+    "typescript": "^2.8.1",
+    "urllib": "^2.25.1",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "pkgfiles": "egg-bin pkgfiles",
+    "test": "npm run lint -- --fix && npm run pkgfiles && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run pkgfiles -- --check && npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "bin"
+  ],
+  "ci": {
+    "version": "6, 8, 9"
+  },
+  "bug": {
+    "url": "https://github.com/eggjs/egg/issues"
+  },
+  "homepage": "https://github.com/eggjs/egg-scripts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:eggjs/egg-scripts.git"
+  },
+  "author": "TZ <atian25@qq.com>",
+  "license": "MIT"
+}

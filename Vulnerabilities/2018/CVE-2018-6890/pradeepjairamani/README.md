@@ -1,0 +1,1 @@
+WolfCMS-v0.8.3.1 Cross Site Scripting(XSS) Assigned CVE Number: CVE-2018-6890

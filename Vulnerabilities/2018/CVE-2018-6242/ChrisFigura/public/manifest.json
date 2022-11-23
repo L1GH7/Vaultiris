@@ -1,0 +1,8 @@
+{
+  "short_name": "Payload Launcher",
+  "name": "Nvidia Tegra X1 RCM Payload Launcher",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
