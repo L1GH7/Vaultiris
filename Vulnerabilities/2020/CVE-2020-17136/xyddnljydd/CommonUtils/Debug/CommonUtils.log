@@ -1,0 +1,12 @@
+﻿  stdafx.cpp
+  CommonUtils.cpp
+  DirectoryObject.cpp
+  FileOpLock.cpp
+  FileSymlink.cpp
+  Hardlink.cpp
+  NativeSymlink.cpp
+  RegistrySymlink.cpp
+  ReparsePoint.cpp
+  ScopedHandle.cpp
+  正在生成代码...
+  CommonUtils.vcxproj -> D:\DemoCode\CVE-2020-17136\Debug\CommonUtils.lib
