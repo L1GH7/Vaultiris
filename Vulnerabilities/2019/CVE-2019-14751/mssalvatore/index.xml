@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="index.xsl" type="text/xsl"?>
+<nltk_data>
+  <packages>
+	  <package checksum="bc0d7eb5356e61f4dbdad0b6e88ccf67" id="zipslip" license="" name="zipslip" size="100266" subdir="misc" unzip="1" unzipped_size="1010101" url="http://localhost/zip-slip.zip" webpage="http://example.com" />
+  </packages>
+  <collections>
+    <collection id="all-nltk" name="All packages available on nltk_data gh-pages branch">
+      <item ref="zipslip" />
+    </collection>
+  </collections>
+</nltk_data>
