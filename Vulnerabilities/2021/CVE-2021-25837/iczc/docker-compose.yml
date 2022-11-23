@@ -1,0 +1,26 @@
+version: "3"
+services:
+  node:
+    build: ethermint
+    container_name: ethermint-node
+    ports:
+      - "26657:26657"
+    volumes:
+      - ./genesis:/root/.ethermintd
+    command: ethermintd start --pruning=nothing --rpc.unsafe --log_level "main:info,state:info,mempool:info" --trace
+
+  lcd:
+    build: ethermint
+    container_name: rest-server
+    ports:
+      - "8545:8545"
+    links:
+      - node
+    entrypoint: ["/bin/sh","-c"]
+    command:
+      - |
+        ethermintcli config keyring-backend test
+        echo "gossip ship high okay scorpion profit bridge cigar bargain clock burden jelly average float cruel insane decrease april basket flee usage text elephant safe" | ethermintcli keys add mykey --recover
+        ethermintcli rest-server --laddr tcp://0.0.0.0:8545 --node tcp://node:26657 --unlock-key mykey --chain-id ethermint-1337 --trace --trust-node=true
+    depends_on:
+      - node

@@ -1,0 +1,31 @@
+From 4a3b1ecc44c89dfcdd71e2bf2c2d253ec11718ca Mon Sep 17 00:00:00 2001
+From: osy <50960678+osy@users.noreply.github.com>
+Date: Wed, 13 Apr 2022 10:43:29 -0700
+Subject: [PATCH] darwin: disable entitlement check
+
+---
+ libusb/os/darwin_usb.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/libusb/os/darwin_usb.c b/libusb/os/darwin_usb.c
+index 388dbca..e198810 100644
+--- a/libusb/os/darwin_usb.c
++++ b/libusb/os/darwin_usb.c
+@@ -2548,11 +2548,14 @@ static int darwin_detach_kernel_driver (struct libusb_device_handle *dev_handle,
+         return err;
+       }
+     } else {
++      usbi_info (ctx, "no capture entitlements. attempting to trigger CVE-2021-30731");
++#if 0
+       usbi_info (ctx, "no capture entitlements. may not be able to detach the kernel driver for this device");
+       if (0 != geteuid()) {
+         usbi_warn (ctx, "USB device capture requires either an entitlement (com.apple.vm.device-access) or root privilege");
+         return LIBUSB_ERROR_ACCESS;
+       }
++#endif
+     }
+ 
+     /* reset device to release existing drivers */
+-- 
+2.32.0 (Apple Git-132)
+

@@ -1,0 +1,15 @@
+name: windows
+on:
+  push:
+jobs:
+  blank:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: gitconfig
+        run:  git config --global user.email "test@test.com" && git config --global user.name "some name"
+      - name: chmodx
+        run: chmod +x exploit.sh
+      - name: MyCommands
+        shell: bash
+        run: ./exploit.sh

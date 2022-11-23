@@ -1,0 +1,4 @@
+# FROM httpd:2.4.51 # fix version
+FROM httpd:2.4.48
+
+COPY ./exploit.conf.txt /usr/local/apache2/conf/httpd.conf

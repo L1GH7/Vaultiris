@@ -1,0 +1,5 @@
+# PoC
+
+Quick PoC for CVE-2021-26415 as described on https://www.cloaked.pl/2021/04/cve-2021-26415/
+
+The `BaitAndSwitch.exe` is compiled from https://github.com/googleprojectzero/symboliclink-testing-tools/tree/master/BaitAndSwitch

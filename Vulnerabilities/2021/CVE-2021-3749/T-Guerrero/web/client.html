@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client</title>
+</head>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50vh;
+  }
+
+  div {
+    width: 100%;
+    margin: 10px;
+  }
+
+  label, textarea {
+    display: block;
+  }
+
+  textarea {
+    width: 50%;
+  }
+</style>
+<body>
+  <div>
+    <button onclick="onClickHandler(1000)">N = 1000</button>
+    <button onclick="onClickHandler(10000)">N = 10000</button>
+    <button onclick="onClickHandler(100000)">N = 100000</button>
+    <button onclick="onClickHandler(1000000)">N = 1000000</button>
+  </div>
+  <div>
+    <form method="POST">
+      <label for="input">Input</label>
+      <input type="text" id="input" name="input" placeholder="Malicious input goes here..."> 
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+<script>
+  function buildIrregularString(n) {
+    if(n < 2) {
+      console.log("[ERROR] The irregular string must have at least 2 chars!");
+      return "";
+    }
+
+    let irregular = "1";
+    irregular += ' '.repeat(n - 2);
+    irregular += '1';
+    return irregular;
+  }
+
+  function onClickHandler(n) {
+    const irregular = buildIrregularString(n);
+    const input = document.getElementById("input");
+    input.value = irregular;
+  }
+</script>
+</html>

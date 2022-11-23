@@ -1,0 +1,122 @@
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <windows.h>
+
+#include "utils.h"
+
+#include "toolbox/common.h"
+#include "toolbox/log.h"
+
+char* GetDesktopPath(uint32_t* Length)
+{
+  char*    DesktopPath       = NULL;
+  int32_t  ExitCode          = EXIT_FAILURE;
+  uint32_t DesktopPathLength = 0;
+
+  DesktopPathLength = GetEnvironmentVariable("USERPROFILE", NULL, 0);
+  if (IS_ZERO(DesktopPathLength))
+  {
+    LOG_ERROR("GetEnvironmentVariable");
+    goto EXIT;
+  }
+
+  DesktopPath = calloc(DesktopPathLength + sizeof("\\" DESKTOP_NAME),
+                       sizeof(char));
+  if (!IS_VALID_POINTER(DesktopPath))
+  {
+    LOG_ERROR("calloc");
+    goto EXIT;
+  }
+
+  DesktopPathLength = GetEnvironmentVariable("USERPROFILE",
+                                             DesktopPath,
+                                             DesktopPathLength);
+  if (IS_ZERO(DesktopPathLength))
+  {
+    LOG_ERROR("GetEnvironmentVariable");
+    goto EXIT;
+  }
+
+  memmove(DesktopPath + DesktopPathLength,
+          "\\" DESKTOP_NAME,
+          sizeof("\\" DESKTOP_NAME));
+
+  DesktopPathLength += sizeof("\\" DESKTOP_NAME) - sizeof(char);
+
+  if (IS_VALID_POINTER(Length))
+  {
+    *Length = DesktopPathLength;
+  }
+
+  LOG_DEBUG("Desktop path [%u|0x%04x]: %s",
+            DesktopPathLength,
+            DesktopPathLength,
+            DesktopPath);
+
+  ExitCode = EXIT_SUCCESS;
+
+EXIT:
+  if (EXIT_FAILED(ExitCode))
+  {
+    free(DesktopPath);
+    DesktopPath = NULL;
+  }
+
+  return DesktopPath;
+}
+
+char* GetDosDesktopPath(uint32_t* Length)
+{
+  char*    DesktopPath          = NULL;
+  char*    DosDesktopPath       = NULL;
+  int32_t  ExitCode             = EXIT_FAILURE;
+  uint32_t DesktopPathLength    = 0;
+  uint32_t DosDesktopPathLength = 0;
+
+  DesktopPath = GetDesktopPath(&DesktopPathLength);
+  if (!IS_VALID_POINTER(DesktopPath))
+  {
+    LOG_WARN("failed");
+    goto EXIT;
+  }
+
+  DosDesktopPath = calloc(DOS_PATH_PREFIX_SIZE +
+                            DesktopPathLength +
+                            sizeof("\\" DESKTOP_NAME),
+                          sizeof(char));
+  if (!IS_VALID_POINTER(DosDesktopPath))
+  {
+    LOG_ERROR("calloc");
+    goto EXIT;
+  }
+
+  memmove(DosDesktopPath, DOS_PATH_PREFIX, DOS_PATH_PREFIX_SIZE);
+  memmove(DosDesktopPath + DOS_PATH_PREFIX_SIZE,
+          DesktopPath,
+          DesktopPathLength);
+
+  DosDesktopPathLength = DOS_PATH_PREFIX_SIZE + DesktopPathLength;
+
+  if (IS_VALID_POINTER(Length))
+  {
+    *Length = DosDesktopPathLength;
+  }
+
+  LOG_DEBUG("DOS Desktop path [%u|0x%04x]: %s",
+            DosDesktopPathLength,
+            DosDesktopPathLength,
+            DosDesktopPath);
+
+  ExitCode = EXIT_SUCCESS;
+
+EXIT:
+  free(DesktopPath);
+  if (EXIT_FAILED(ExitCode))
+  {
+    free(DosDesktopPath);
+    DosDesktopPath = NULL;
+  }
+
+  return DosDesktopPath;
+}

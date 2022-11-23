@@ -1,0 +1,32 @@
+#ifndef __UTILS_H__
+#define __UTILS_H__
+
+#include <stdint.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#define CURRENT_CHARACTER       'A'
+#define CURRENT_SHORT_NAME      CUSTOM_SHORT_NAME(CURRENT_CHARACTER)
+#define CURRENT_SHORT_NAME_SIZE (sizeof(CURRENT_SHORT_NAME) - \
+                                 sizeof(CURRENT_SHORT_NAME[0]))
+#define CUSTOM_SHORT_NAME(c) \
+  (char[]) { c, c, c, c, c, c, '~', '1', 0 }
+
+#define DESKTOP_NAME         "Desktop"
+#define DOS_PATH_PREFIX      "\\\\?\\"
+#define DOS_PATH_PREFIX_SIZE (sizeof(DOS_PATH_PREFIX) - \
+                              sizeof(DOS_PATH_PREFIX[0]))
+
+char* GetDesktopPath(
+  uint32_t* Length);
+
+char* GetDosDesktopPath(
+  uint32_t* Length);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // __UTILS_H__

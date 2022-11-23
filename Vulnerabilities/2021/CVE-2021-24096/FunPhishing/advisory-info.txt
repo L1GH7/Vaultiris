@@ -1,0 +1,48 @@
+Windows: Server Silo Registry Key Symbolic Link EoP
+
+Windows: Server Silo Registry Key Symbolic Link EoP
+Platform: Windows 10 / Server 2004.
+Class: Elevation of Privilege
+Security Boundary: User
+
+Summary:
+ When a process is running in a server silo the checks for trusted hive registry key symbolic links is disabled leading to elevation of privilege.
+
+Description:
+
+It's a long standing behavior that you can't create a registry key symbolic link between an untrusted hive and a trusted hive. This prevents writes to the current user's hive from a privileged context resulting in a key being created in a more trusted hive such as HKLM.
+
+The check for trust is performed in the kernel function CmpOKToFollowLink. If that returns TRUE then the link can be followed if not it causes an error. The problem here is the function first checks if the caller is in a server silo by calling PsIsCurrentThreadInServerSilo, if it is then the function immediately returns TRUE regardless of the trusted state of the hives.
+
+What this means is any process running in a server silo can plant a registry key symbolic link in a user accessible location and use that to create keys in a trusted hive to elevate privileges. It's not especially hard to find kernel code running without access checking writing to the user's hive which can be hijacked.
+
+As the server silo is the basis of Windows Server Containers which is not considered a security boundary it's unclear if you'll consider fixing this, however this bug does not cross the server container boundary, for example it doesn't allow you to access resources outside the server silo. However, if untrusted code was to be run inside a Docker container as a non-privileged user this could be abused to elevate privileges inside the server container, which is IMO still an elevation of privilege. For example, this still works if you use Hyper-V with Docker as the VM runs a Windows Server Container inside the VM. Once you've elevated to administrator you can use existing attacks such as global object manager symlinks to escape the container as well.
+
+It's possible that in the future server silos might be used for another purpose similar to the use of application silos for Desktop Bridge. In this case it'd result in a trivial privilege escalation without requiring a container platform such as Docker. It might be prudent to fix this issue before that inevitably happens.
+
+Proof of Concept:
+
+I've provided a PoC as a C# project. You need to run the PoC inside a Docker container, it doesn't matter if you use process or hyperv isolation, it'll still work. It abuses the setting of a FlickInfo registry key in Win32k which goes to the current user's hive. To fully demonstrate impact you should run the docker prompt as a non-admin user such as ContainerUser. 
+
+1) Compile the C# project. It will need to grab the NtApiDotNet from NuGet to work.
+2) Install docker, create an image (it can be server core or above) and copy the PoC to the image.
+3) Start the docker image and run the PoC.
+
+Expected Result:
+The registry key symbolic link does not get followed.
+
+Observed Result:
+The link is followed and the key HKLM\\SOFTWARE\\ABC is created which is owned by the user.
+
+This bug is subject to a 90 day disclosure deadline. After 90 days elapse,
+the bug report will become visible to the public. The scheduled disclosure
+date is YYYY-MM-DD. Disclosure at an earlier date is also possible if
+agreed upon by all parties.
+
+
+Related CVE Numbers: CVE-2021-24096.
+
+
+
+Found by: forshaw@google.com
+

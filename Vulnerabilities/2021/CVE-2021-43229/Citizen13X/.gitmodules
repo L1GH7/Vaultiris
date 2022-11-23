@@ -1,0 +1,4 @@
+[submodule "thirdparties\\toolbox"]
+	path = thirdparties\\toolbox
+	url = git@github.com:Citizen13X/Toolbox.git
+	branch = master

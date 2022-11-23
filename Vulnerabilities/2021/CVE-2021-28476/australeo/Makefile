@@ -1,0 +1,11 @@
+obj-m += hv_netvsc_custom.o
+
+hv_netvsc_custom-y := netvsc_custom.o netvsc.o rndis_filter.o
+
+KDIR ?= /lib/modules/`uname -r`/build
+
+default:
+	$(MAKE) -C $(KDIR) M=$$PWD
+
+clean:
+	make -C $(KDIR) M=$$PWD clean

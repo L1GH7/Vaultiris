@@ -1,0 +1,3 @@
+[submodule "ethermint"]
+	path = ethermint
+	url = https://github.com/iczc/ethermint.git

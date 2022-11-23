@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+
+  backend:
+    image: python:3.7-alpine
+    restart: always
+    networks:
+      - backnet
+    command: sh -c "chmod +x /usr/src/app/start_server.sh && pip install flask && pip install -U flask-cors && pip install gunicorn && pip install gunicorn[gevent] && exec /usr/src/app/start_server.sh" 
+    volumes:
+      - ./src:/usr/src/app
+
+  haproxy:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - "8000:8000"
+    expose:
+      - 10001
+    depends_on: 
+      - backend
+    networks:
+      - backnet
+  
+networks:
+  backnet:

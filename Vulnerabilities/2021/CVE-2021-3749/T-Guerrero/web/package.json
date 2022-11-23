@@ -1,0 +1,12 @@
+{
+  "name": "redes-ep4",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "git@github.com:T-Guerrero/axios-redos.git",
+  "author": "Thiago Guerrero <tgbalera@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.21.0",
+    "express": "^4.18.1"
+  }
+}

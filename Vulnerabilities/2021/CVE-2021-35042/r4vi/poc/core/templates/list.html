@@ -1,0 +1,10 @@
+<ol>
+  {% for object in object_list %}
+    <li>{{ object.name }}
+      <ol>Tags:
+        {% for tag in object.tags.all %}
+          <li>{{ tag.name }}</li>
+        {% endfor %}</ol>
+    </li>
+  {% endfor %}
+</ol>

@@ -1,0 +1,76 @@
+cmake_minimum_required(VERSION 3.0)
+
+project(CVE-2021-43229)
+
+if(CMAKE_SIZEOF_VOID_P EQUAL 4)
+  set(ARCH x86)
+elseif(CMAKE_SIZEOF_VOID_P EQUAL 8)
+  set(ARCH amd64)
+else()
+  set(ARCH unknown)
+endif()
+
+################################################################################
+# Paths
+################################################################################
+
+set(ROOT_DIR ${CMAKE_SOURCE_DIR})
+set(THIRDPARTIES_DIR ${ROOT_DIR}/thirdparties)
+
+
+################################################################################
+# Set output directories
+################################################################################
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${ROOT_DIR}/bin/${ARCH})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${ROOT_DIR}/bin/${ARCH})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${ROOT_DIR}/bin/${ARCH})
+
+
+################################################################################
+# Global stuff
+################################################################################
+
+include_directories(${ROOT_DIR}/src)
+
+add_compile_options(
+  "/MT"
+  "/W4"
+  "/WX"
+)
+
+add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+
+
+################################################################################
+# Thirdparties
+################################################################################
+
+include_directories(${THIRDPARTIES_DIR})
+
+set(TOOLBOX_DIR ${THIRDPARTIES_DIR}/toolbox)
+
+aux_source_directory(${THIRDPARTIES_DIR}/toolbox TOOLBOX_SRC_FILES)
+
+add_library(
+  libToolbox
+  STATIC
+  ${TOOLBOX_SRC_FILES}
+)
+
+link_libraries(
+  libToolbox
+)
+
+
+################################################################################
+# Binaries
+################################################################################
+
+add_executable(
+  poc
+
+  src/main.c
+  src/cve-2021-43229.c
+  src/utils.c
+)

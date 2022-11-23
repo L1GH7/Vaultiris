@@ -1,0 +1,55 @@
+# CVE-2021-28476: Hyper-V vmswitch.sys arbitrary pointer dereference from guest VM
+## Summary:
+A Hyper-V guest virtual machine can trigger a Denial-of-Service condition on its underlying host due to unsafe parsing of input by the `VmsIfrInfoParams_OID_SWITCH_NIC_REQUEST` function in `vmswitch.sys`. The crash is caused by the function attempting to dereference a guest controlled value as if it were a host virtual address. This bug may be used to obtain RCE under some conditions, namely where the request is passed to an underlying hardware device with a pointer to attacker controlled data, however I am not aware of this technique being demonstrated publicly.
+### Disclosure Date: 
+### Patch Date:
+May 11, 2021
+### Advisory:
+https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28476
+## Vulnerability
+### Bug class:
+Arbitrary Dereference
+### Discovery:
+Reverse Engineering/Code Auditing
+
+This bug was found during my initial reconnaissance of the vmswitch driver. While reviewing the documentation on MSDN it was noted that the `NDIS_SWITCH_NIC_OID_REQUEST` struct contained a pointer, and I recalled seeing a reference to the struct name in a function name. Some reverse engineering was performed to try and understand how the function might operate, given that a guest should not have any knowledge of the host VA but no real safety checks were present. A modified Linux Hyper-V driver was then used to send a fake request to the host, immediately triggering a crash.
+
+### Vulnerability Details:
+The vmswitch.sys driver contains a number of functions to handle RNDIS OID requests, including some specifically to log incoming messages. One of these `VmsIfrInfoParams_OID_SWITCH_NIC_REQUEST`, handles `OID_SWITCH_NIC_REQUEST` type requests. According to MSDN documentation, this request is designed to allow forwarding of OID requests from a guest machine to an underlying physical network adapter via the Hyper-V extensible switch external network adapter.
+
+OID requests use a well defined, generic message structure for their outer layer, which includes an "InformationBuffer" designed to hold data specific to an OID message type. In the case of `OID_SWITCH_NIC_REQUEST`, the InformationBuffer has the following definition (note this differs slightly from the documented structure, but matches what was functionally present in the code):
+
+```
+typedef struct _NDIS_SWITCH_NIC_OID_REQUEST {
+	NDIS_OBJECT_HEADER		Header; 				//u32 sized struct
+	u32 					Flags;
+	NDIS_SWITCH_PORT_ID		SourcePortId; 			//u32 type
+	NDIS_SWITCH_PORT_NIC	SourceNicIndex; 		//u32 type
+	NDIS_SWITCH_PORT_ID		DestinationPortId; 		//u32 type
+	NDIS_SWITCH_PORT_NIC	DestinationNicIndex; 	//u32 type
+	PNDIS_OID_REQUEST		OidRequest;				//**should** be a pointer to a forwarded NDIS_OID_REQUEST structure
+} NDIS_SWITCH_NIC_OID_REQUEST, *PNDIS_SWITCH_NIC_OID_REQUEST;
+```
+
+As part of initial parsing of this object, VmsIfrInfoParams_OID_SWITCH_NIC_REQUEST will attempt to unwrap the forwarded `NDIS_OID_REQUEST` request from the encapsulating `_NDIS_SWITCH_NIC_OID_REQUEST`. However, if a Hyper-V guest supplies an invalid memory location as the `OidRequest` value, the dereference will cause an out-of-bounds read and crash the root partition kernel.
+
+Psuedo-code of the affected function is as follows:
+```
+void VmsIfrInfoParams_OID_SWITCH_NIC_REQUEST(void* unknown1, u64 unknown2, _NDIS_SWITCH_NIC_OID_REQUEST* request, u32 buffer_size) {
+	NDIS_OID_REQUEST* forwarded_request;
+
+	if((unknown1 != 0) && (buffer_size != 0)) {
+		if(buffer_size > 0x20) {
+			forwarded_request = (NDIS_OID_REQUEST*)request->OidRequest; //dereference and crash occurs here
+		}
+
+	}
+
+	...
+
+	//truncated
+	...
+
+	return;
+}
+```

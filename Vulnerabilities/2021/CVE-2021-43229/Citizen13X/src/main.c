@@ -1,0 +1,21 @@
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "cve-2021-43229.h"
+
+#include "toolbox/common.h"
+#include "toolbox/log.h"
+
+int32_t main()
+{
+  LogEnableColor();
+
+  if (EXIT_FAILED(Poc()))
+  {
+    LOG_WARN("failed");
+    return EXIT_FAILURE;
+  }
+
+  return EXIT_SUCCESS;
+}
