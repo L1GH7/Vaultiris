@@ -1,0 +1,60 @@
+        Gap |   Duration | Src | Data (! denotes parity error, ' denotes short bytes)            | CRC | Annotation         |          
+------------|------------|-----|-----------------------------------------------------------------|-----|--------------------|          
+        0.0 |       77.9 | Rdr | 26'                                                             |     | REQA          
+       87.6 |      174.6 | Tag | 44  03                                                          |     |           
+      904.7 |      181.7 | Rdr | 93  20                                                          |     | ANTICOLL          
+       87.6 |      434.2 | Tag | 88  04  3c  5c  ec                                              |     |           
+     1042.8 |      771.7 | Rdr | 93  70  88  04  3c  5c  ec  3d  0f                              |  ok | SELECT_UID          
+       92.3 |      259.6 | Tag | 24  d8  36                                                      |     |           
+      970.8 |      181.7 | Rdr | 95  20                                                          |     | ANTICOLL-2          
+       87.6 |      434.2 | Tag | da  98  63  80  a1                                              |     |           
+     1051.0 |      771.7 | Rdr | 95  70  da  98  63  80  a1  bf  eb                              |  ok | ANTICOLL-2          
+       92.3 |      264.3 | Tag | 20  fc  70                                                      |     |           
+     1184.4 |      346.9 | Rdr | e0  50  bc  a5                                                  |  ok | RATS          
+      290.6 |      684.4 | Tag | 06  75  77  81  02  80  02  f0                                  |  ok |           
+     1235.1 |      346.9 | Rdr | 02  60  16  4e                                                  |  ok | GET VERSION          
+      951.3 |      939.2 | Tag | 02  af  04  01  02  12  00  18  05  28  42                      |  ok |           
+     1140.7 |      346.9 | Rdr | 03  af  35  69                                                  |  ok | AF = Additional Frame
+      753.1 |      939.2 | Tag | 03  af  04  01  01  02  01  18  05  64  8b                      |  ok |           
+     1141.9 |      351.6 | Rdr | 02  af  ed  70                                                  |  ok | AF = Additional Frame
+      786.1 |     1538.6 | Tag | 02  00  04  3c  5c  da  98  63  80  ce  d8  50  59  60  08  19  |     |           
+            |            |     | ab  a7                                                          |  ok |           
+     1655.2 |      601.8 | Rdr | 03  5a  71  17  05  12  41                                      |  ok | (WRONG) SELECT AID 71 17 05          
+      970.2 |      349.3 | Tag | 03  a0  c2  91                                                  |     |           
+     1891.2 |      601.8 | Rdr | 02  5a  71  17  f5  d9  bd                                      |  ok | SELECT AID 71 17 f5          
+      970.2 |      344.5 | Tag | 02  a0  1a  88                                                  |     |           
+     1121.8 |      431.9 | Rdr | 03  aa  01  76  09                                              |  ok | AUTH AES          
+     4330.7 |     1708.6 | Tag | 03  af  e8  26  fc  e2  be  df  ef  37  83  da  f9  df  0d  82  |     |           
+            |            |     | 28  d0  18  f7                                                  |  ok |           
+    14803.2 |     3065.5 | Rdr | 02  af  81  74  fc  dd  94  b7  34  17  b8  a9  a4  15  dc  1b  |     |           
+            |            |     | 80  57  35  20  67  23  7a  4f  e2  96  6b  46  fd  24  2b  34  |     |           
+            |            |     | f4  e5  80  36                                                  |  ok |
+     2177.3 |      349.3 | Tag | 02  ae  64  61                                                  |     | AE = AUTHENTICATION ERROR
+   456419.8 |       77.9 | Rdr | 26'                                                             |     | REQA          
+       87.6 |      174.6 | Tag | 44  03                                                          |     |           
+      904.7 |      181.7 | Rdr | 93  20                                                          |     | ANTICOLL          
+       87.6 |      434.2 | Tag | 88  04  3c  5c  ec                                              |     |           
+     1032.2 |      771.7 | Rdr | 93  70  88  04  3c  5c  ec  3d  0f                              |  ok | SELECT_UID          
+       92.3 |      259.6 | Tag | 24  d8  36                                                      |     |           
+      942.5 |      181.7 | Rdr | 95  20                                                          |     | ANTICOLL-2          
+       87.6 |      434.2 | Tag | da  98  63  80  a1                                              |     |           
+     1022.7 |      771.7 | Rdr | 95  70  da  98  63  80  a1  bf  eb                              |  ok | ANTICOLL-2          
+       93.5 |      264.3 | Tag | 20  fc  70                                                      |     |           
+     1059.3 |      346.9 | Rdr | e0  50  bc  a5                                                  |  ok | RATS          
+      263.4 |      684.4 | Tag | 06  75  77  81  02  80  02  f0                                  |  ok |           
+     1262.2 |      606.5 | Rdr | 02  5a  f0  18  f5  21  68                                      |  ok | SELECT AID f0 18 f5          
+     1174.3 |      344.5 | Tag | 02  00  10  2d                                                  |     |           
+     1092.3 |      431.9 | Rdr | 03  aa  00  ff  18                                              |  ok | AUTH AES          
+     3953.1 |     1703.8 | Tag | 03  af  3f  da  93  3e  29  53  ca  5e  6c  fb  bf  95  d1  b5  |     |           
+            |            |     | 1d  df  95  14                                                  |  ok | tag challenge
+    14940.1 |     3070.2 | Rdr | 02  af  97  fe  4b  5d  e2  41  88  45  8d  10  29  59  b8  88  |     | 
+            |            |     | 93  8c  98  8e  96  fb  98  46  9c  e7  42  6f  50  f1  08  ea  |     |           
+            |            |     | a5  83  8a  32                                                  |  ok | challenge reply 
+     3229.8 |     1708.6 | Tag | 02  00  ed  93  55  f6  10  97  f8  7b  72  e8  37  ed  3f  d4  |     |           
+            |            |     | 8c  4d  40  70                                                  |  ok |           
+    10660.5 |      431.9 | Rdr | 03  f5  00  c0  48                                              |  ok | get file 0x00 info
+     3725.4 |     1618.9 | Tag | 03  00  00  00  00  00  07  00  00  a4  f8  4d  b2  60  b0  2e  |     |           
+            |            |     | 47  cf  14                                                      |  ok | file size is 7 bytes
+    10467.0 |      946.3 | Rdr | 02  bd  00  00  00  00  07  00  00  c4  15                      |  ok | read file contents
+     4051.0 |     1623.6 | Tag | 02  00  04  3c  5c  da  98  63  80  e6  9c  0f  fe  76  25  18  |     |           
+            |            |     | 56  a6  d5                                                      |  ok | file contains 7 byte UID
