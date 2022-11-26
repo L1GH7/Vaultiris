@@ -39,5 +39,5 @@ Visit [Vaultiris](https://vaultiris.com/Home)
 
 👤 **Sean McRae**
 
-* LinkedIn: [Sean McRae](www.linkedin.com/in/mcrae-sean)
+* LinkedIn: [Sean McRae](https://www.linkedin.com/in/mcrae-sean)
 * Github: [@L1GH7](https://github.com/L1GH7/)
