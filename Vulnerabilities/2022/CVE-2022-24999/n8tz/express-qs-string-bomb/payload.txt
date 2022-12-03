@@ -1,0 +1,1 @@
+someString[__proto__]&someString[__proto__]&someString[length]=100000000
