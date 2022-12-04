@@ -15,6 +15,7 @@ Visit [Vaultiris](https://vaultiris.com/Home)
 |---|---|
 | 🛠 | Improve Database by identifying and archiving additional POCs
 | 🛠 | Improve Application stability
+| 🛠 |  Introduce Additional metrics pertaining to the CVE such as CVSS breakdown
 | ✅ | ~~Upgrade application to HTTPS~~  
 | ✅ | ~~Organize CWE by OWASP Category~~  
 | ✅ | ~~Extract CVEs~~  
@@ -23,7 +24,6 @@ Visit [Vaultiris](https://vaultiris.com/Home)
 | 🟢 | Improve results by ignoring empty repositories
 | 🟢 | Introduce Pagination to Main Search Page
 | 🟢 | Add link to GitHub Main repository on HomePage, Add CVE https://nvd.nist.gov/ Link to CVE Details Page. 
-| 🟢 | Introduce Additional metrics pertaining to the CVE such as CVSS breakdown
 
 #### Legend
 
