@@ -20,7 +20,7 @@ Visit [Vaultiris](https://vaultiris.com/Home)
 | ✅ | ~~Extract CVEs~~  
 | ✅ | ~~Extract POCs~~  
 | ✅ | ~~Improve Application stability~~  
-| 🟢 | Add additional languages (java, C, bash, PHP, JS) to readable file list for file browser
+| ✅ | ~~Add additional languages (java, C, bash, PHP, JS) to readable file list for file browser~~
 | 🟢 | Improve results by ignoring empty repositories
 | 🟢 | Introduce Pagination to Main Search Page
 | 🟢 | Add link to GitHub Main repository on HomePage, Add CVE https://nvd.nist.gov/ Link to CVE Details Page. 
