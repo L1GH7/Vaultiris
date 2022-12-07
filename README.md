@@ -20,6 +20,8 @@ Visit [Vaultiris](https://vaultiris.com/Home)
 | ✅ | ~~Extract CVEs~~  
 | ✅ | ~~Extract POCs~~  
 | ✅ | ~~Improve Application stability~~  
+| ✅ | ~~Enable Dynamic Searching~~
+| ✅ | ~~Fix UI Bug in CVE Details Page~~  
 | ✅ | ~~Add additional languages (java, C, bash, PHP, JS) to readable file list for file browser~~
 | 🟢 | Improve results by ignoring empty repositories
 | 🟢 | Introduce Pagination to Main Search Page
