@@ -1,0 +1,25 @@
+cargo-features = ["strip"]
+
+[package]
+name = "cve_2022_21882"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lazy_static = "1.4.0"
+
+[dependencies.windows]
+version = "0.30.0"
+features = [
+    "alloc",
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Memory",
+    "Win32_Graphics_Gdi",
+]
+
+[profile.release]
+strip = "symbols"

@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87C1C1A426DEA14800042F13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C1C1A326DEA14800042F13 /* UIKit.framework */; };
+		87C1C1A626DEA14800042F13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C1C1A526DEA14800042F13 /* Foundation.framework */; };
+		87C1C1A826DEA14800042F13 /* CydiaSubstrate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C1C1A726DEA14800042F13 /* CydiaSubstrate.framework */; };
+		87C1C1B126DEA14800042F13 /* itmsBlock.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87C1C1B026DEA14800042F13 /* itmsBlock.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		87C1C1A026DEA14800042F13 /* itmsBlock.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = itmsBlock.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		87C1C1A326DEA14800042F13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		87C1C1A526DEA14800042F13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		87C1C1A726DEA14800042F13 /* CydiaSubstrate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CydiaSubstrate.framework; path = Library/Frameworks/CydiaSubstrate.framework; sourceTree = DEVELOPER_DIR; };
+		87C1C1AC26DEA14800042F13 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
+		87C1C1AE26DEA14800042F13 /* itmsBlock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "itmsBlock-Prefix.pch"; path = "../itmsBlock-Prefix.pch"; sourceTree = "<group>"; };
+		87C1C1AF26DEA14800042F13 /* itmsBlock.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc.preprocessed; path = itmsBlock.xm; sourceTree = "<group>"; };
+		87C1C1B026DEA14800042F13 /* itmsBlock.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = itmsBlock.mm; sourceTree = "<group>"; };
+		87C1C1B526DEA14800042F13 /* itmsBlock.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = itmsBlock.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87C1C19C26DEA14800042F13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C1C1A426DEA14800042F13 /* UIKit.framework in Frameworks */,
+				87C1C1A626DEA14800042F13 /* Foundation.framework in Frameworks */,
+				87C1C1A826DEA14800042F13 /* CydiaSubstrate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87C1C19526DEA14800042F13 = {
+			isa = PBXGroup;
+			children = (
+				87C1C1A926DEA14800042F13 /* itmsBlock */,
+				87C1C1A226DEA14800042F13 /* Frameworks */,
+				87C1C1A126DEA14800042F13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87C1C1A126DEA14800042F13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87C1C1A026DEA14800042F13 /* itmsBlock.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87C1C1A226DEA14800042F13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87C1C1A326DEA14800042F13 /* UIKit.framework */,
+				87C1C1A526DEA14800042F13 /* Foundation.framework */,
+				87C1C1A726DEA14800042F13 /* CydiaSubstrate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87C1C1A926DEA14800042F13 /* itmsBlock */ = {
+			isa = PBXGroup;
+			children = (
+				87C1C1AF26DEA14800042F13 /* itmsBlock.xm */,
+				87C1C1B026DEA14800042F13 /* itmsBlock.mm */,
+				87C1C1AA26DEA14800042F13 /* Package */,
+				87C1C1AD26DEA14800042F13 /* Supporting Files */,
+			);
+			path = itmsBlock;
+			sourceTree = "<group>";
+		};
+		87C1C1AA26DEA14800042F13 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				87C1C1AB26DEA14800042F13 /* DEBIAN */,
+				87C1C1B226DEA14800042F13 /* Library */,
+			);
+			path = Package;
+			sourceTree = "<group>";
+		};
+		87C1C1AB26DEA14800042F13 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				87C1C1AC26DEA14800042F13 /* control */,
+			);
+			path = DEBIAN;
+			sourceTree = "<group>";
+		};
+		87C1C1AD26DEA14800042F13 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87C1C1AE26DEA14800042F13 /* itmsBlock-Prefix.pch */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87C1C1B226DEA14800042F13 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				87C1C1B326DEA14800042F13 /* MobileSubstrate */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		87C1C1B326DEA14800042F13 /* MobileSubstrate */ = {
+			isa = PBXGroup;
+			children = (
+				87C1C1B426DEA14800042F13 /* DynamicLibraries */,
+			);
+			path = MobileSubstrate;
+			sourceTree = "<group>";
+		};
+		87C1C1B426DEA14800042F13 /* DynamicLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				87C1C1B526DEA14800042F13 /* itmsBlock.plist */,
+			);
+			path = DynamicLibraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		87C1C19D26DEA14800042F13 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		87C1C19F26DEA14800042F13 /* itmsBlock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87C1C1B826DEA14800042F13 /* Build configuration list for PBXNativeTarget "itmsBlock" */;
+			buildPhases = (
+				87C1C19A26DEA14800042F13 /* ShellScript */,
+				87C1C19B26DEA14800042F13 /* Sources */,
+				87C1C19C26DEA14800042F13 /* Frameworks */,
+				87C1C19D26DEA14800042F13 /* Headers */,
+				87C1C19E26DEA14800042F13 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = itmsBlock;
+			productName = itmsBlock;
+			productReference = 87C1C1A026DEA14800042F13 /* itmsBlock.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87C1C19626DEA14800042F13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					87C1C19F26DEA14800042F13 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 87C1C19926DEA14800042F13 /* Build configuration list for PBXProject "itmsBlock" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 87C1C19526DEA14800042F13;
+			productRefGroup = 87C1C1A126DEA14800042F13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87C1C19F26DEA14800042F13 /* itmsBlock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87C1C19A26DEA14800042F13 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos";
+		};
+		87C1C19E26DEA14800042F13 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87C1C19B26DEA14800042F13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C1C1B126DEA14800042F13 /* itmsBlock.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		87C1C1B626DEA14800042F13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(MonkeyDevPath)/frameworks/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/lib/**";
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = "-DTHEOS_INSTANCE_NAME=\"\\\"itmsBlock\\\"\"";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87C1C1B726DEA14800042F13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(MonkeyDevPath)/frameworks/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/lib/**";
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-DTHEOS_INSTANCE_NAME=\"\\\"itmsBlock\\\"\"";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		87C1C1B926DEA14800042F13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					arm64e,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "itmsBlock/itmsBlock-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MonkeyDevBuildPackageOnAnyBuild = NO;
+				MonkeyDevClearUiCacheOnInstall = NO;
+				MonkeyDevCopyOnBuild = NO;
+				MonkeyDevDeviceIP = "";
+				MonkeyDevDevicePassword = "";
+				MonkeyDevDevicePort = 3333;
+				MonkeyDevInstallOnAnyBuild = YES;
+				MonkeyDevInstallOnProfiling = YES;
+				MonkeyDevkillProcessOnInstall = MobileStore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		87C1C1BA26DEA14800042F13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					arm64e,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "itmsBlock/itmsBlock-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MonkeyDevBuildPackageOnAnyBuild = NO;
+				MonkeyDevClearUiCacheOnInstall = NO;
+				MonkeyDevCopyOnBuild = NO;
+				MonkeyDevDeviceIP = "";
+				MonkeyDevDevicePassword = "";
+				MonkeyDevDevicePort = 3333;
+				MonkeyDevInstallOnAnyBuild = YES;
+				MonkeyDevInstallOnProfiling = YES;
+				MonkeyDevkillProcessOnInstall = MobileStore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87C1C19926DEA14800042F13 /* Build configuration list for PBXProject "itmsBlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C1C1B626DEA14800042F13 /* Release */,
+				87C1C1B726DEA14800042F13 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87C1C1B826DEA14800042F13 /* Build configuration list for PBXNativeTarget "itmsBlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C1C1B926DEA14800042F13 /* Release */,
+				87C1C1BA26DEA14800042F13 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 87C1C19626DEA14800042F13 /* Project object */;
+}

@@ -1,0 +1,18 @@
+Package: net.tihmstar.itmsBlock
+Name: itmsBlock
+Version: 0.1-1
+Description: Block "itms scheme" / fix CVE-2021-1748
+    Block "itms scheme" / fix CVE-2021-1748
+Section: System
+Depends: firmware (>= 3.0), mobilesubstrate
+Conflicts: 
+Replaces: 
+Priority: optional
+Architecture: iphoneos-arm
+Author: tihmstar
+dev: tihmstar
+Homepage: 
+Depiction: 
+Maintainer: 
+Icon: 
+
