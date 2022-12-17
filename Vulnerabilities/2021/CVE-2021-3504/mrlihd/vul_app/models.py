@@ -1,0 +1,12 @@
+from django.db import models
+from django.db.models.base import Model
+
+# Create your models here.
+
+class User(models.Model):
+    name = models.CharField('Username',max_length=50)
+    age = models.IntegerField('Age')
+    role = models.CharField('Role',max_length=50)
+
+    def _str__(self):
+        return self.name

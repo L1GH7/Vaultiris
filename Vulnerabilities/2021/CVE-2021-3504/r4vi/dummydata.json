@@ -1,0 +1,35 @@
+[
+{
+  "model": "core.tag",
+  "pk": 1,
+  "fields": {
+    "name": "tag 1"
+  }
+},
+{
+  "model": "core.things",
+  "pk": 1,
+  "fields": {
+    "name": "thing 1",
+    "tags": [
+      1
+    ]
+  }
+},
+{
+  "model": "core.things",
+  "pk": 2,
+  "fields": {
+    "name": "thing 2",
+    "tags": []
+  }
+},
+{
+  "model": "core.things",
+  "pk": 3,
+  "fields": {
+    "name": "thing 3",
+    "tags": []
+  }
+}
+]

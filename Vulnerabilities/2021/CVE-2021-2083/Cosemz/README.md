@@ -1,0 +1,2 @@
+# CVE-2021-20837
+ MovableType XMLRPC  - RCE

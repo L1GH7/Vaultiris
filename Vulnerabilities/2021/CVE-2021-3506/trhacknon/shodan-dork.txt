@@ -1,0 +1,1 @@
+shodan  search 'http.html:"Welcome to VIA Collaboration Hub"' --fields=ip_str,port --separator ":" --limit 1000 | grep ''

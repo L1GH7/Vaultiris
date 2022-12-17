@@ -1,0 +1,9 @@
+%PROGRAMFILES%\Microsoft\Exchange Server\V15\FrontEnd\HttpProxy\owa\auth\
+C:\Exchange\FrontEnd\HttpProxy\owa\auth\
+C:\inetpub\wwwroot\aspnet_client\
+C:\inetpub\wwwroot\aspnet_client\system_web\
+\inetpub\wwwroot\aspnet_client\ (any .aspx file under this folder or sub folders)
+\<exchange install path>\FrontEnd\HttpProxy\ecp\auth\ (any file besides TimeoutLogoff.aspx)
+\<exchange install path>\FrontEnd\HttpProxy\owa\auth\ (any file or modified file that is not part of a standard install)
+\<exchange install path>\FrontEnd\HttpProxy\owa\auth\Current\<any aspx file in this folder or subfolders>
+\<exchange install path>\FrontEnd\HttpProxy\owa\auth\<folder with version number>\<any aspx file in this folder or subfolders>

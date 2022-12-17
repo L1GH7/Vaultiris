@@ -1,0 +1,9 @@
+
+
+from django.urls.conf import path
+from vul_app import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('setup/', views.setup, name='setup'),
+]

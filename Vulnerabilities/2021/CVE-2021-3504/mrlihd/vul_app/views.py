@@ -1,0 +1,21 @@
+from django.http.response import HttpResponse
+from django.shortcuts import render
+from .models import User
+
+# Create your views here.
+
+def index(request):
+    users = User.objects.order_by(request.GET.get('order_by','name'))
+    return render(request, 'home.html', {'users':users})
+
+def setup(request):
+    try:
+        u1 = User(name="Alice", age=25, role="HR")
+        u2 = User(name="Bob", age=33, role="System Admin")
+        u3 = User(name="Charlie", age=27, role="Developer")
+        u1.save()
+        u2.save()
+        u3.save()
+    except:
+        return HttpResponse('<h1>Something went wrong</h1>')
+    return HttpResponse('<h1>Database initiated</h1>')

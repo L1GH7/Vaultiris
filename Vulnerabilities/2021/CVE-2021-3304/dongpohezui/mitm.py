@@ -1,0 +1,43 @@
+
+import mitmproxy.http
+from mitmproxy import ctx,http
+import codecs
+import json
+
+class Httptest:
+
+	def request(self, flow: mitmproxy.http.HTTPFlow):
+		"""
+			The full HTTP request has been read.
+		"""
+		if "/RPC2_Login"  in flow.request.pretty_url :
+			text = flow.request.get_text()
+			if "session" in text:
+				print(text)
+				session = str(json.loads(text).get("session"))
+
+				ctx.log.warn("request:"+flow.request.pretty_url+session)
+				
+				data = '''{"method": "global.login", "params": {"userName": "admin", "ipAddr": "127.0.0.1", "loginType": "Direct", "clientType": "NetKeyboard", "authorityType": "Default", "passwordType": "Default", "password": "3D6D72ABF836BC3D129C21F23619C793"}, "id": 1, "session": "'''
+				data = data + session
+				data = data + '''"}'''
+	
+				flow.request.set_text(data)
+		
+	def response(self, flow: mitmproxy.http.HTTPFlow):
+		"""
+			The full HTTP response has been read.
+		"""
+		pass
+
+	def error(self, flow: mitmproxy.http.HTTPFlow):
+		"""
+			An HTTP error has occurred, e.g. invalid server responses, or
+			interrupted connections. This is distinct from a valid server HTTP
+			error response, which is simply a response with an HTTP error code.
+		"""
+		pass
+
+addons = [
+	Httptest()
+]

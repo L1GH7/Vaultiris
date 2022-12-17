@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  web:
+    container_name: coldfusionx_cve
+    image: jetty:11.0.5
+    ports:
+      - "8080:8080"
+    volumes: 
+      - ./origin:/var/lib/jetty/webapps/ROOT

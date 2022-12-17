@@ -1,0 +1,1 @@
+SecurityEvent  | where EventID == 4688  | where Process has_any ("cmd.exe", "powershell.exe", "PowerShell_ISE.exe")  | where CommandLine has "https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1"

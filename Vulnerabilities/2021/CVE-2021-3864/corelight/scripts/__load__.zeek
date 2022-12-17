@@ -1,0 +1,1 @@
+@load ./omigod.zeek

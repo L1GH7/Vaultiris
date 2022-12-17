@@ -1,0 +1,2 @@
+variable "rancher_domain" {
+}

@@ -1,0 +1,21 @@
+# CVE-2021-34473-NMAP-SCANNER
+A massive scanner for CVE-2021-34473 Microsoft Exchange Windows Vulnerability
+
+# Commands
+```
+nmap -iR 500000 -n -p 443 --script cve202134473.nse > scan500k.txt
+nmap website.com -n -p 443 --script cve202134473.nse
+```
+
+
+# Example 
+```
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-11-16 08:17 Hora PadrÒo de Greenwich
+Nmap scan report for smtp.server.com (191.5.132.68)
+Host is up (0.23s latency).
+Other addresses for smtp.server.com (not scanned): server.com  184.200.11.44
+PORT    STATE SERVICE
+443/tcp open  https
+| test:
+|_  Exchange: VULNERABLE_YES|184.200.11.44|
+```
