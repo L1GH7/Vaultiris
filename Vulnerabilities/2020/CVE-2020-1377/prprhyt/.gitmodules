@@ -1,0 +1,3 @@
+[submodule "challenge_CVE-2020-13777"]
+	path = challenge_CVE-2020-13777
+	url = git@github.com:shigeki/challenge_CVE-2020-13777.git

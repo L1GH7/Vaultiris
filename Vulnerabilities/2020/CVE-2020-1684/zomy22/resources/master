@@ -1,0 +1,9 @@
+interface: 0.0.0.0
+publish_port: 4505
+root_dir: /
+log_file: /var/log/salt/master
+autosign_file: /etc/salt/autosign.conf
+rest_cherrypy: 
+  port: 8000 
+  disable_ssl: true
+

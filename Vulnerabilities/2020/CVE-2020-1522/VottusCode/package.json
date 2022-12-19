@@ -1,0 +1,21 @@
+{
+  "name": "@vottuscode/cve-2020-15227",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "Mia <vottus@vott.us>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chalk": "^4.1.0",
+    "checksum": "^0.1.1",
+    "qs": "^6.9.6",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "@types/checksum": "^0.1.31",
+    "@types/qs": "^6.9.5",
+    "@types/uuid": "^8.3.0",
+    "ts-node": "^9.1.1"
+  }
+}

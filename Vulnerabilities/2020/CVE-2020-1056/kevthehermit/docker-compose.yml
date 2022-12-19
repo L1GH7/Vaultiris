@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  ossn-server:
+    build:
+      context: .
+    environment:
+      MYSQL_USER: "ossn"
+      MYSQL_PASS: "ossn"
+      MYSQL_HOST: "mysqlserver"
+      MYSQL_DBNAME: "ossn"
+    ports:
+      - "80:80"
+    networks:
+      testnet:
+        ipv4_address: 10.2.0.101
+    depends_on:
+      - mysqlserver
+  mysqlserver:
+    image: mysql:5.7
+    environment:
+      MYSQL_USER: "ossn"
+      MYSQL_PASSWORD: "ossn"
+      MYSQL_DATABASE: "ossn"
+      MYSQL_ROOT_PASSWORD: "toor"
+    networks:
+      testnet:
+        ipv4_address: 10.2.0.102
+    volumes:
+      - sql:/var/lib/mysql
+
+networks:
+  testnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.2.0.0/24
+
+volumes:
+  sql:

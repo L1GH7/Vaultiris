@@ -1,0 +1,27 @@
+{
+	"id": "nodebb-plugin-blog-comments",
+	"name": "NodeBB Blog Comments",
+	"description": "Lets NodeBB act as a comments engine/widget for your blog.",
+	"url": "https://github.com/psychobunny/nodebb-plugin-blog-comments",
+	"library": "./library.js",
+	"hooks": [
+		{
+			"hook": "filter:admin.header.build", "method": "addAdminLink"
+		},
+		{
+			"hook": "filter:posts.custom_profile_info", "method": "addLinkbackToArticle"
+		},
+		{
+			"hook": "static:app.load", "method": "init"
+		}
+	],
+	"scripts": [
+		"public/lib/main.js"
+	],
+	"staticDirs": {
+		"templates": "./public/templates",
+		"css": "./public/css",
+		"lib": "./public/lib"
+	},
+	"templates": "./public/templates"
+}

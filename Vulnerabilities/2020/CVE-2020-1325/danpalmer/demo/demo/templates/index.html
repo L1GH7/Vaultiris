@@ -1,0 +1,21 @@
+{% if results %}
+    <h3>Results:</h3>
+    <pre>{{ results }}</pre>
+    <hr>
+{% endif %}
+
+<h3>Set:</h3>
+<form action="/set" method="GET">
+    <label for="k">Key</label>
+    <input id="k" name="k" type="text">
+    <label for="v">Value</label>
+    <input id="v" name="v" type="text">
+    <button type="submit">Set</button>
+</form>
+
+<h3>Get:</h3>
+<form action="/" method="GET">
+    <label for="k">Key</label>
+    <input id="k" name="k" type="text">
+    <button type="submit">Get</button>
+</form>

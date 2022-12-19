@@ -1,0 +1,7 @@
+version: '2'
+services:
+  shardingsphere:
+    image: lazychristmas/cve-2020-1947:v3.0
+    command: sh /apache-shardingsphere-incubating-4.0.0-sharding-ui-bin/bin/start.sh
+    ports:
+      - "8089:8088"

@@ -1,0 +1,67 @@
+
+<input id="console" type="text"></input>
+<script>
+let channels = [
+	{"kind":"open","id":0,"path":"/services/commands"},
+	{"kind":"open","id":1,"path":"/services/logger"},
+	{"kind":"open","id":2,"path":"/services/messageService"},
+	{"kind":"open","id":3,"path":"/services/filesystem"},
+	{"kind":"open","id":4,"path":"/services/fs-watcher"},
+	{"kind":"open","id":5,"path":"/services/workspace"},
+	{"kind":"open","id":6,"path":"/services/envs"},
+	{"kind":"open","id":7,"path":"/services/application"},
+	{"kind":"open","id":8,"path":"/services/task"},
+	{"kind":"open","id":9,"path":"/services/quickPick"},
+	{"kind":"open","id":10,"path":"/services/shell-terminal"},
+	{"kind":"open","id":11,"path":"/services/debug"},
+	{"kind":"open","id":12,"path":"/services/git"},
+	{"kind":"open","id":13,"path":"/services/git-watcher"},
+	{"kind":"open","id":14,"path":"/services/mini-browser-service"},
+	{"kind":"open","id":15,"path":"/services/plugin-dev"},
+	{"kind":"open","id":16,"path":"/services/hostedPlugin"},
+	{"kind":"open","id":17,"path":"/services/plugin-ext"},
+	{"kind":"open","id":18,"path":"/services/plugin-paths"},
+	{"kind":"open","id":19,"path":"/services/search"},
+	{"kind":"open","id":20,"path":"/services/languages"},
+	{"kind":"open","id":21,"path":"/services/search-in-workspace"},
+	{"kind":"open","id":25,"path":"/services/terminals/25"}
+];
+
+
+let ws = new WebSocket("wss://routeklho95fz-codingchili-che.b542.starter-us-east-2a.openshiftapps.com/services");
+
+ws.onmessage = (e) => {
+	let msg = JSON.parse(e.data);
+	if (msg.content) {
+		msg = JSON.parse(msg.content);
+		if (msg.params) {
+			msg = msg.params;
+		}
+	}
+	console.log(msg);
+}; 
+ws.onopen = () => {
+	for (let channel of channels) {
+		ws.send(JSON.stringify(channel));
+	}
+};
+
+window.exec = (e) => {
+	let msg = {
+		kind: "data",
+		id: 25,
+		content: JSON.stringify({"jsonrpc":"2.0","id":25,"method":"write","params": e + "\r\n"})
+	};
+	ws.send(JSON.stringify(msg));
+};
+
+let con = document.getElementById("console");
+
+con.addEventListener('keypress', (e) => {
+    if (e.key == 'Enter') {
+		exec(con.value);
+		con.value = '';
+	}
+});
+con.focus();
+</script>

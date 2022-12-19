@@ -1,0 +1,3 @@
+[submodule "cve-2020-10977"]
+	path = cve-2020-10977
+	url = https://github.com/lisp3r/cve-2020-10977

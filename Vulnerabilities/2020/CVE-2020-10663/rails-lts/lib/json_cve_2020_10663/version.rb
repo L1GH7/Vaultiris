@@ -1,0 +1,3 @@
+module JSON_CVE_2020_10663
+  VERSION = '1.0.0'
+end

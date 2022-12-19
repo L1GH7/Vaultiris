@@ -1,0 +1,14 @@
+{
+    "extends": [
+      "eslint:recommended"
+    ],
+    "env": {
+      "node": true,
+      "browser": false,
+      "es6": false,
+      "mocha": true
+    },
+    "rules": {
+        "no-useless-escape": 0
+    }
+  }
